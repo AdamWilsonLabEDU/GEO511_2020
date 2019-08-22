@@ -1,0 +1,32 @@
+title: "GEO 511: Spatial Data Science"
+type: inverse
+left:
+  - text: "Home"
+    href: index.html
+  - text: "Syllabus"
+    href: Syllabus.html
+  - text: "Schedule"
+    href: Schedule.html
+  - text: "Assignments"
+    menu:
+      - text: "Task list"
+        href: Tasklist.html
+      - text: "DataCamp"
+        href: DataCamp.html
+      - text: "Package Introduction"
+        href: PackageIntro.html
+      - text: "Final Project"
+        href: Project.html
+  - text: "Resources"
+    menu:
+    - text: "Provenance"
+      href: Provenance.html
+    - text: "2018 Project Drafts"
+      href: Projects_2018.html
+    - text: "2017 Final Projects"
+      href: Projects_2017.html
+    - text: "Setting up Github"
+      href: GitSSHNotes.html
+right:
+  - icon: fa-github fa-lg
+    href: https://github.com/adammwilson/RDataScience

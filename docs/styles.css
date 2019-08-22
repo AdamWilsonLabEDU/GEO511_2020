@@ -1,0 +1,134 @@
+
+.screenshot {
+  border: 1px solid #ccc;
+}
+
+table.table td a:only-child:link,
+table.table td a:only-child:visited {
+  text-decoration: none;
+}
+table.table td a:only-child:hover,
+table.table td a:only-child:active {
+  text-decoration: underline;
+}
+
+.well{
+  background-color: #F5F5DC;
+  border-radius: 40px 0 40px 0;
+}
+
+.extraswell{
+  background-color: #ECF9F4;
+  border-radius: 10px 10px 10px 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+
+h1, h2, h3, h4, h5, h6{
+  margin-top:30px;
+}
+
+/*******  Footer ******/
+
+#site-footer {
+height: 50px;
+}
+
+#footer1{
+width: 80%;
+float: left;
+}
+#footer2{
+width: 20%;
+float: right
+}
+
+
+/**************************
+  DEFAULT BOOTSTRAP STYLES
+**************************/
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+  
+.btn-lg {
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+
+.btn-default {
+  background-color: #428bca;
+  font-size: 10px;
+  float: left !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+
+/***********************
+  ROUND BUTTONS
+************************/
+.round {
+  border-radius: 24px;
+}
+
+/***********************
+  CUSTON BTN VALUES from https://bootstrapbay.com/blog/bootstrap-button-styles/
+************************/
+
+.btn {
+    padding: 10px 20px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+
+.btn-primary {
+    background: #0099cc;
+    color: #ffffff;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #33a6cc;
+}
+.btn-primary:active, .btn-primary.active {
+    background: #007299;
+    box-shadow: none;
+}

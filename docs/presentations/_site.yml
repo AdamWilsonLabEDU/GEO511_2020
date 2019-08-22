@@ -1,0 +1,23 @@
+css: https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
+output: 
+  revealjs::revealjs_presentation:
+      lib_dir: externals
+      keep_md: true
+      incremental: false
+      theme: white
+      highlight: tango
+      center: false
+      code_folding: hide
+      css: reveal.css
+      reveal_plugins: ["zoom", "chalkboard"]
+      self_contained: false
+      transition: zoom
+      reveal_options:
+        previewLinks: true
+        mouseWheel: true
+        slideNumber: true
+        minScale: 1
+        maxScale: 3
+        margin: 0.1
+        width: "90%"
+        height: "100%"

@@ -1,0 +1,72 @@
+---
+title: "Course Schedule"
+output:
+  html_document:
+    toc: true
+    toc_depth: 1
+---
+
+```{r, echo=FALSE, message=FALSE, results='hide', purl=FALSE}
+library(tidyverse)
+source("functions.R")
+yamls=yaml_dir()
+
+names=sapply(yamls,function(x) x$name)
+
+sched=read_csv("schedule.csv")
+
+sched%>%
+  mutate(tasklink=ftask(task),
+        preslink=fpres(pres))%>%
+  select(preslink)
+
+```
+
+Course content is designed to be flexible to accommodate student interest and abilities.  The order and timing of course topics may change as the semester progresses.  
+
+**Readings**
+
+We will refer to the following texts (all available online):
+
+* R4DS [_R for Data Science_ by Garrett Grolemund and Hadley Wickham](http://r4ds.had.co.nz)
+* GCR  [_Geocomputation with R_ by Robin Lovelace, Jakub Nowosad, and Jannes Muenchow (CRC Press, 2018)](https://geocompr.robinlovelace.net/)
+* HG [Happy Git with R](https://happygitwithr.com/)
+
+
+## Schedule
+
+```{r table,results='asis',echo=F}
+# This chunk prints an index of all the task titles along with a preview of the sub-tasks 
+cat("| Week | Date | Presentation | Tasks  |  Case Study | [Package Present](PackageIntro.html) |\n")
+cat("|:--|:--|:-:|:-:|:-:|:---|:-:|\n") 
+for(i in weeks$week){
+  #print(i)
+  # Find items for that week
+yamlweeks=sapply(yamls,function(x) x$week)
+yamltype=sapply(yamls,function(x) x$type)
+
+wtasks=yamls[yamlweeks==i & yamltype=="Task"]
+wcs=yamls[yamlweeks==i & yamltype=="Case Study"]
+
+wtasks2=ifelse(length(wtasks)==1, 
+               paste0("[",wtasks[[1]]$title,"](",wtasks[[1]]$url,")"), 
+               " - ")
+
+wcs2=ifelse(length(wcs)==1, 
+               paste0("[",wcs[[1]]$title,"](",wcs[[1]]$url,")"), 
+               " - ")
+
+
+
+  cat(paste(
+    "| ",weeks$week[i],
+    "| ",weeks$date[i],
+#    wreadings,
+    "| ",wpresent,
+    "| ",wtasks2,
+    "| ",wcs2,
+    "| ",ifelse(is.na(weeks$package[i]),"",weeks$package[i]),
+    "|\n "
+    ))
+}
+```
