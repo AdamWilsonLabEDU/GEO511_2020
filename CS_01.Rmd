@@ -4,8 +4,6 @@ week: 1
 subtitle: Write a script that reads in data, calculates a statistic, and makes a plot.
 type: Case Study
 reading:
-  - R4DS [Chapter 1](http://r4ds.had.co.nz/introduction.html)
-  - R4DS [Chapter 2](http://r4ds.had.co.nz/explore-intro.html)
   - Datacamp's [_How to Make a Histogram with Basic R_](https://www.datacamp.com/community/tutorials/make-histogram-basic-r)
   - Datacamp's [_How to Make a Histogram with ggplot_](https://www.datacamp.com/community/tutorials/make-histogram-ggplot2)
 tasks:

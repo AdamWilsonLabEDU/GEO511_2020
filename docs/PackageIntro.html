@@ -386,10 +386,7 @@ div.tocify {
       <a href="Provenance.html">Provenance</a>
     </li>
     <li>
-      <a href="Projects_2018.html">2018 Project Drafts</a>
-    </li>
-    <li>
-      <a href="Projects_2017.html">2017 Final Projects</a>
+      <a href="Projects_2018.html">2018 Projects</a>
     </li>
     <li>
       <a href="GitSSHNotes.html">Setting up Github</a>
@@ -431,7 +428,7 @@ div.tocify {
 <li>Author introduction: a short background (affiliation and other packages, etc.) on at least one of the package authors (<strong>1 slide, 1 minute</strong>)</li>
 <li>Simple demonstration of package code: example input/output from the examples or custom coded examples (<strong>2-3 slides, 3 minutes</strong>)</li>
 </ol>
-<p>There will not be time to actually run any code <em>on-the-fly</em> during your presentation. Instead, copy the code and output into a presentation (powerpoint, etc.) so that you can simply display it. See an <a href="assets/PackagePresentation.pptx">example presentation here</a>.</p>
+<p>There will not be time to actually run any code <em>on-the-fly</em> during your presentation. Instead, use RMarkdown to create a presentation (html) or markdown (md) file so that you can simply display it during class (like the lectures). Then paste your github link into the schedule spreadsheet so we can easily open/view it during class.</p>
 <p>To select a package, I recommend starting with the <a href="https://cran.r-project.org/web/views/">views on CRAN</a> for a topic of interest. Then read the narrative in the task view for something interesting to you and install the package in R with <code>install.package(&quot;packagename&quot;)</code> in R and take a look at what it can do. Most package functions include sample code that performs a function. For example, if I was introducing the <code>dplyr</code> package, I might choose the <code>filter()</code> function. If you look in the help you will find a section called “Examples” that you can use for your example code in your presentation. All you have to do is copy-paste it from the help into the R console and them summarize what it’s doing in your presentation. For example, I might demonstrate (from the <code>filter()</code> documentation) that the following code will select all characters from Star Wars that are human.</p>
 <pre class="r"><code>library(dplyr)
 filter(starwars, species == &quot;Human&quot;)</code></pre>

@@ -9,10 +9,20 @@ output:
 ```{r, echo=FALSE, message=FALSE, results='hide', purl=FALSE}
 library(tidyverse)
 source("functions.R")
-yamls=yaml_dir()
 
-yamls=yamls[order(sapply(yamls,function(x) x$week))]
-weeks=read_csv("weeks.csv")
+yamls=append(
+  yaml_dir(),
+  yaml_dir(dir="pres"))
+
+names=sapply(yamls,function(x) x$name)
+
+weeks=read_csv("schedule.csv")
+
+#sched%>%
+#  mutate(tasklink=ftask(task),
+#        preslink=fpres(pres))%>%
+#  select(preslink)
+
 ```
 
 Course content is designed to be flexible to accommodate student interest and abilities.  The order and timing of course topics may change as the semester progresses.  
@@ -30,7 +40,7 @@ We will refer to the following texts (all available online):
 
 ```{r table,results='asis',echo=F}
 # This chunk prints an index of all the task titles along with a preview of the sub-tasks 
-cat("| Week | Date | Presentation | Topic / Tasks  |  Case Study | [Package Present](PackageIntro.html) |\n")
+cat("| Week | Date | Presentation | Tasks  |  Case Study | [Package Present](PackageIntro.html) |\n")
 cat("|:--|:--|:-:|:-:|:-:|:---|:-:|\n") 
 for(i in weeks$week){
   #print(i)
@@ -40,6 +50,7 @@ yamltype=sapply(yamls,function(x) x$type)
 
 wtasks=yamls[yamlweeks==i & yamltype=="Task"]
 wcs=yamls[yamlweeks==i & yamltype=="Case Study"]
+wpres=yamls[yamlweeks==i & yamltype=="Presentation"]
 
 wtasks2=ifelse(length(wtasks)==1, 
                paste0("[",wtasks[[1]]$title,"](",wtasks[[1]]$url,")"), 
@@ -48,20 +59,16 @@ wtasks2=ifelse(length(wtasks)==1,
 wcs2=ifelse(length(wcs)==1, 
                paste0("[",wcs[[1]]$title,"](",wcs[[1]]$url,")"), 
                " - ")
-
-wpresent=ifelse(length(wtasks)==1,ifelse(!is.null(wtasks[[1]]$presentation), 
-               paste0( "[<i class='fas fa-desktop'>    </i>](presentations/",
-                       wtasks[[1]]$presentation,"){target='_blank'}"), 
-               ""),"")
-#cs_read=sapply(wcs,function(x) x$reading)
-#task_read=sapply(wtasks,function(x) x$reading)
-#wreadings=paste0("| ",paste(cs_read,task_read,collapse="; "),"| ")
+wpres2=ifelse(length(wpres)==1, 
+               paste0( "[<i class='fas fa-desktop'>    </i>](",
+                       wpres[[1]]$url,"){target='_blank'}"), 
+               " - ")
 
   cat(paste(
     "| ",weeks$week[i],
     "| ",weeks$date[i],
 #    wreadings,
-    "| ",wpresent,
+    "| ",wpres2,
     "| ",wtasks2,
     "| ",wcs2,
     "| ",ifelse(is.na(weeks$package[i]),"",weeks$package[i]),

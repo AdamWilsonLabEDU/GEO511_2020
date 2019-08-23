@@ -1,0 +1,28 @@
+---
+title: "Case Studies"
+subtitle: "Set yourself up to follow along efficiently"
+---
+
+During our first class after the prior week's case study was completed we will spend the first 15-30 minutes in a team meeting.  Here are the guidelines.
+
+### Groups
+
+* **Lead:** Those that are prepared to lead the team discussion with their completed case study will enter their name in the [course schedule spreadsheet](https://docs.google.com/spreadsheets/d/1gG3uzYcu6xWbU5A_UqTWZSM1JhA3wRbLHfPVR5Ju9YI/edit?usp=sharing)
+
+* **Support:** Others will write their names next to the leader and sit near the lead.  A minimum of least three members on each team is required.
+
+* **Diversity:** Your groups cannot be identical from week to week.
+
+### Discussion
+
+1. The team lead will present their work to the team for a discussion on how it addresses the case study. 
+2. During the presentation the team discusses additional questions that could help in furthering the analysis. These questions need to be typed under the team lead's task in GitHub.
+2. Team members discuss if the graphical analysis provides answers to the driving question.
+3. Team members make a plan to critique each others work.  If all have completed the task you could possibly do the critiques during this time.
+
+## Leadership Principles
+
+The real world concept that we are connecting to is that there are times when we can show up to a meeting not as prepared.  However, we better have more moments than not where we are contributing to the meeting or we will quickly become unnecessary. 
+
+* Complete the class task before class starts to participate in conversation
+* Be a class lead during class (see syllabus for details)

@@ -2,7 +2,7 @@
 title: My grandfather says climate is cooling
 week: 2 
 type: Case Study
-subtitle: Import data, generate and save a graphic.
+subtitle: Import data and plot a timeseries
 reading:
   - The [ggplot2 vignette](https://ggplot2.tidyverse.org/)
 tasks:

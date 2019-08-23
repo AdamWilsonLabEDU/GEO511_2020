@@ -12,7 +12,7 @@
 
 
 
-<title>Data Wrangling</title>
+<title>Git-02</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -386,10 +386,7 @@ div.tocify {
       <a href="Provenance.html">Provenance</a>
     </li>
     <li>
-      <a href="Projects_2018.html">2018 Project Drafts</a>
-    </li>
-    <li>
-      <a href="Projects_2017.html">2017 Final Projects</a>
+      <a href="Projects_2018.html">2018 Projects</a>
     </li>
     <li>
       <a href="GitSSHNotes.html">Setting up Github</a>
@@ -413,8 +410,8 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Data Wrangling</h1>
-<h3 class="subtitle">Data Transformation (Filtering, selecting, transforming)</h3>
+<h1 class="title toc-ignore">Git-02</h1>
+<h3 class="subtitle">Start using Github to manage course materials</h3>
 
 </div>
 
@@ -422,7 +419,64 @@ div.tocify {
 <div id="reading" class="section level1">
 <h1>Reading</h1>
 <ul>
-<li>Chapters <a href="http://r4ds.had.co.nz">4-5 in R4DS</a></li>
+<li>Chapters <a href="http://r4ds.had.co.nz">4-5 in R4DS</a> - Chapters <a href="http://happygitwithr.com/installation-pain.html" target="blank">4-8 in Happy Git and Github for the useR - Installation</a> - Chapters <a href="http://happygitwithr.com" target="blank">13-15 in Happy Git and Github for the useR - Installation</a></li>
+</ul>
+</div>
+<div id="background" class="section level1">
+<h1>Background</h1>
+<p>Version control systems (VCS) allow developers to maintain a record of how their code has changed over time. When used properly, a VCS can help a developer track down the exact point in time when a bug was introduced or fixed, easily undo changes, and collaborate with other developers.</p>
+<p>There are many types of version control systems. Some of the more popular ones include CVS, subversion, mercurial, and git. In recent years, git has quickly become the most popular of the group.</p>
+<div id="git" class="section level2">
+<h2>Git</h2>
+<p>Git stores files in a type of database called a <code>repository</code> or <code>repo</code>. Most data science teams that work with git keep a central repository on a server somewhere that everyone on the team can access. This repository stores the files and the history of every change made to each file, including who made the changes and when those changes were made.</p>
+<p>Git works with groups of changes called <code>commits</code>. A single commit might have many changes associated with it. Those changes might include updates to, existing files, the addition of new files, or the removal of files.</p>
+</div>
+<div id="example" class="section level2">
+<h2>Example</h2>
+<p>Imagine a developer named Sally who has started a new job for US Robotics. She’s told that her first assignment is to fix a bug in the positronic brain code that is causing all of the robots to walk around in circles. She takes the following steps:</p>
+<ol style="list-style-type: decimal">
+<li>First, Sally will clone the central repository which creates a copy of the repository on her computer.</li>
+</ol>
+<pre><code>git clone https://github.com/us-robotics/brain.git</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Next, Sally finds the bug in the PositronicBrain.R file that is causing the odd behavior. She quickly fixes the bug and saves her changes.</p></li>
+<li><p>Sally’s next step is to add the PositronicBrain.R file to the list of changed files to commit.</p></li>
+</ol>
+<pre><code>git add PositronicBrain.R</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>When Sally is done adding files, she will commit those changes, adding a brief message to describe her changes.</li>
+</ol>
+<pre><code>git commit -m &quot;Fixed the bug that made robots attack ice cream shops.&quot;</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Now that her changes are finished before she can share them, she must pull any changes her teammates have made from the central repository into her local copy.</li>
+</ol>
+<pre><code>git pull</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>After making sure that there isn’t a conflict between her teammates’ changes and her own, she is ready to push her changes up to the central repository.</li>
+</ol>
+<pre><code>git push</code></pre>
+<p>Most of your interactions with a git repository will follow the same six steps that Sally followed. <strong>Note the sequence of the pull and push commands.</strong></p>
+<p>This is critical when working with git: <strong>Always pull before you push.</strong></p>
+<p>As we are getting introduced to git and GitHub, you will be the only one that is working with your repository. This will make the <code>git pull</code> less used in our day-to-day workflow. We will only need to get the workflow for adding files from our local repository to the GitHub central repository.</p>
+</div>
+<div id="course-folder-structure" class="section level2">
+<h2>Course Folder Structure</h2>
+<p>For the rest of the course, you should keep your files organzed in a git-managed repository. After syncing your local computer with your class repository, you will have a folder structure similar to the image below.</p>
+<p><img src="img/folderstructure.png" width="400px" /></p>
+</div>
+</div>
+<div id="tasks" class="section level1">
+<h1>Tasks</h1>
+<ul>
+<li>RStudio and <a href="https://www.youtube.com/watch?v=E2d91v1Twcc" target="blank">the Git GUI</a></li>
+<li>Install git on your computer</li>
+<li>Make sure git works in R-Studio</li>
+<li>Optionally sign up for the <a href="https://education.github.com/pack">GitHub Education pack</a></li>
+<li>Create a new repository for this course by following <a href="https://classroom.github.com/a/etsQwbE7">this link</a>.</li>
+<li>Create a new project in Rstudio and connect it to the new repository in GitHub (these are labeled <code>YEAR-GEO503-GITHUBUSERNAME</code>). Helpful instructions are <a href="http://happygitwithr.com/rstudio-git-github.html#clone-the-new-github-repository-to-your-computer-via-rstudio">here</a></li>
+<li>Edit the README.md file in your repository to include a brief description of the repository (e.g. “Coursework for Spatial Data Science”).</li>
+<li>Stage and Commit your changes to Git (using the git tab in the upper right of RStudio)</li>
+<li>Push the repository up to GitHub</li>
 </ul>
 </div>
 

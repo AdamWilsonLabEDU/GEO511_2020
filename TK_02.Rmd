@@ -1,20 +1,15 @@
 ---
-title: Git-02
+title: Git-01
 week: 2
 type: Task
-subtitle: Start using Github to manage course materials
+subtitle: 
 reading:
   - Chapters [3 in R4DS](http://r4ds.had.co.nz)
-  - Chapters [13-15 in Happy Git and Github for the useR - Installation](http://happygitwithr.com){target='blank'}
   - Overview of [Using the R-Studio GUI by R-Studio](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN){target='blank'}
   - Chapter [8 R for Data Science - Projects](http://r4ds.had.co.nz/workflow-projects.html){target='blank'}
-  - RStudio and [the Git GUI](https://www.youtube.com/watch?v=E2d91v1Twcc){target='blank'}
 tasks:
-  - Create a new repository for this course by following [this link](https://classroom.github.com/a/etsQwbE7).  
-  - Create a new project in Rstudio and connect it to the new repository in GitHub (these are labeled `YEAR-GEO503-GITHUBUSERNAME`). Helpful instructions are [here](http://happygitwithr.com/rstudio-git-github.html#clone-the-new-github-repository-to-your-computer-via-rstudio)
-  - Edit the README.md file in your repository to include a brief description of the repository (e.g. "Coursework for Spatial Data Science").
-  - Stage and Commit your changes to Git (using the git tab in the upper right of RStudio)
-  - Push the repository up to GitHub
+    - Create a [GitHub account](https://github.com/join?source=header-home){target="blank"} and submit your github username [here](https://forms.gle/wDUSvhEQfRYGHN8u8). This username may follow you for years, use something professional that you will want to share with your future employer.
+
 ---
 
 ```{r setup, include=FALSE}
@@ -32,23 +27,8 @@ source("functions.R")
 md_bullet(rmarkdown::metadata$reading)
 ```
 
-## Introduction to Git
-
-See the presentation associated with this task [here](presentations/Week03_Git.html).
-
-## Course Folder Structure
-
-For the rest of the course, you should keep your files organzed in a git-managed repository.  After syncing your local computer with your class repository, you will have a folder structure similar to the image below.
-
-
-```{r, out.width="400px", echo=F}
-knitr::include_graphics("img/folderstructure.png")
-```
-
 # Tasks
 
 ```{r tasks,results='asis',echo=F}
 md_bullet(rmarkdown::metadata$tasks)
 ```
-
-<i> <small> Adapted from [BYU M335 Data Science Course](https://byuistats.github.io/M335) </small> </i>

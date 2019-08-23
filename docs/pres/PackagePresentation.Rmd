@@ -1,0 +1,97 @@
+---
+title: "ggrepel"
+author: "Adam M. Wilson"
+---
+
+## Lead Author: Kamil Slowikowski 
+
+![](slowkow_2018.jpg)
+
+* computational biologist
+   * analysis of functional genomics data 
+   * cell regulation of functions in disease 
+* software tools for statistical tests and data visualization
+
+## ggrepel
+
+### geoms for [ggplot2] to repel overlapping text labels
+
+[ggplot2]: http://ggplot2.tidyverse.org/
+
+Text labels repel away from each other, away from data points, and away
+from edges of the plotting area.
+
+Two main functions:
+
+* `geom_text_repel()`
+* `geom_label_repel()`
+
+
+## Compare `geom_text()` and `geom_text_repel()`
+
+```{r echo=F, eval=T, message=F}
+library(ggrepel)
+set.seed(42)
+dat <- subset(mtcars, wt > 2.75 & wt < 3.45)
+dat$car <- rownames(dat)
+```
+
+```{r comparison, echo=TRUE, eval=F}
+p <- ggplot(dat, aes(wt, mpg, label = car)) +
+  geom_point(color = "red")
+
+p1 <- p + geom_text() + labs(title = "geom_text()")
+
+p2 <- p + geom_text_repel() + labs(title = "geom_text_repel()")
+
+gridExtra::grid.arrange(p1, p2, ncol = 2)
+```
+
+## Comparison
+
+```{r comparison, echo = FALSE, eval = TRUE, message=F}
+```
+
+## Options
+
+ggrepel provides additional options for `geom_text_repel` and `geom_label_repel`:
+
+|Option          |  Description
+|--------------- |  ------------------------------------------------
+|`force`         |  force of repulsion between overlapping text labels
+|`direction`     |  move text labels "both" (default), "x", or "y" directions
+|`max.iter`      |  maximum number of iterations to try to resolve overlaps
+|`nudge_x`       | adjust the starting x position of the text label
+|`nudge_y`       |  adjust the starting y position of the text label
+|`segment.color` | line segment color
+|`segment.size`  | line segment thickness
+|`segment.curvature` | numeric, negative for left-hand and positive for right-hand curves, 0 for straight lines
+|`segment.angle` | 0-180, less than 90 skews control points toward the start point
+|`arrow`         |  render line segment as an arrow with `grid::arrow()`
+
+## Another example
+
+```{R echo=F}
+set.seed(42)
+dat <- subset(mtcars, wt > 2.75 & wt < 3.45)
+dat$car <- rownames(dat)
+dat2 <- subset(mtcars, wt > 3 & wt < 4)
+# Hide all of the text labels.
+dat2$car <- ""
+# Let's just label these items.
+ix_label <- c(2, 3, 14)
+dat2$car[ix_label] <- rownames(dat2)[ix_label]
+dat3 <- rbind(
+  data.frame(
+    wt  = rnorm(n = 10000, mean = 3),
+    mpg = rnorm(n = 10000, mean = 19),
+    car = ""
+  ),
+  dat2[,c("wt", "mpg", "car")]
+)
+
+ggplot(dat3, aes(wt, mpg, label = car)) +
+  geom_point(data = dat3[dat3$car == "",], color = "grey50") +
+  geom_text_repel(box.padding = 0.5) +
+  geom_point(data = dat3[dat3$car != "",], color = "red")
+```
