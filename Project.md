@@ -47,8 +47,6 @@ You should use the project website template (or similar) to generate a html vers
         ![](assets/project_github.png)
     * Your public website link looks something like this:
         ![](assets/project_website.png)
-    * Your submission screen in UBLearns will look like this:
-         ![](assets/project_submit.png)
 
 #### Evaluation Instructions
 
@@ -78,27 +76,25 @@ You will have two opportunites to submit your final project and your final grade
 
 Links to your project website will be uploaded to UBLearns at the end of the semester and posted on the course website.  
 
-The final project will include and be graded as follows:
+The final project will include the following components:
 
 1. **Title** (<25 words)
-2. **Introduction  [~ 200 words, 10%]**
+2. **Introduction  [~ 200 words]**
     * Clearly stated background and questions / hypotheses / problems being addressed. Sets up the analysis in an interesting and compelling way.
 3. **Materials and methods [~ 200 words]**
-    * **Narrative (10%)**: Clear narrative description of the data sources and methods. Includes data from at least two sources that were integrated / merged in R.
-    * **Code (25%)**: The code associated with the project is well organized and easy to follow. Demonstrates mastery of R graphics and functions.
-    * **Data (5%)**: The underlying data are publicly accessible via the web and downloaded/accessed within the Rmd script. If you want to use your own data, you must make it available on a website (e.g. [Figshare](figshare.org)) so that others are able to re-run your code.
-4. **Results [~200 words, 25%]**
+    * **Narrative**: Clear narrative description of the data sources and methods. Includes data from at least two sources that were integrated / merged in R.
+    * **Code**: The code associated with the project is well organized and easy to follow. Demonstrates mastery of R graphics and functions.
+    * **Data**: The underlying data are publicly accessible via the web and downloaded/accessed within the Rmd script. If you want to use your own data, you must make it available on a website (e.g. [Figshare](figshare.org)) so that others are able to re-run your code.
+4. **Results [~200 words]**
     * Tables and figures (maps and other graphics) are carefully planned to convey the results of your analysis. Intense exploration and evidence of many trials and failures. The author looked at the data in many different ways before coming to the final presentation of the data.
-5. **Conclusions [~200 words, 5%]**
+5. **Conclusions [~200 words]**
     * Clear summary adequately describing the results and putting them in context. Discussion of further questions and ways to continue investigation.
-6. **References [5%]**
+6. **References**
     * All sources are cited in a consistent manner
 7. **General Scores**
-    * **General organization (10%)**: Clear labels/headings demarcate separate sections. Excellent flow from one section to the next. Tables and graphics carefully tuned and placed for desired purpose.The 'story' is very well organized, makes good use of graphics, and is easy to understand.
-    * **General Grammar (5%)**: All sentences are well constructed and have varied structure and length. The author makes no errors in grammar, mechanics, and/or spelling.
+    * **General organization**: Clear labels/headings demarcate separate sections. Excellent flow from one section to the next. Tables and graphics carefully tuned and placed for desired purpose.The 'story' is very well organized, makes good use of graphics, and is easy to understand.
+    * **General Grammar**: All sentences are well constructed and have varied structure and length. The author makes no errors in grammar, mechanics, and/or spelling.
 
-See the project rubric below for more details and examples.  
-<a href='assets/rubric.png' target="_blank"> <img src='assets/rubric.png'></a>
 
 Note that the word counts are quite short (~200 words per section).  This does not mean it's _easy_!  In fact, conveying all the necessary information succinctly requires extra effort.  If English is not your first language, you are encouraged to contact the [UB Writing Center](https://www.buffalo.edu/writing.html) to get help writing succinctly and clearly.  They schedule 45 minute sessions to go over your writing which can dramatically improve the quality of your project. Plan ahead to schedule this before upcoming deadlines.
 

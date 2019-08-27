@@ -1,19 +1,17 @@
 ---
-title: Git-01
+title: Graphics Background and Getting started with RStudio
 week: 2
 type: Task
 subtitle: 
 reading:
   - Chapters [3 in R4DS](http://r4ds.had.co.nz)
-  - Overview of [Using the R-Studio GUI by R-Studio](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN){target='blank'}
   - Chapter [8 R for Data Science - Projects](http://r4ds.had.co.nz/workflow-projects.html){target='blank'}
 tasks:
-    - Create a [GitHub account](https://github.com/join?source=header-home){target="blank"} and submit your github username [here](https://forms.gle/wDUSvhEQfRYGHN8u8). This username may follow you for years, use something professional that you will want to share with your future employer.
-
+    - Watch [John Rauser Talk](https://youtu.be/fSgEeI2Xpdc){target='blank'}
+    - Watch [Introduction to RStudio](https://resources.rstudio.com/wistia-rstudio-essentials-2/rstudioessentialsprogrammingpart1-2)
 ---
 
 ```{r setup, include=FALSE}
-
 knitr::opts_chunk$set(echo = TRUE)
 library(knitr)
 library(kableExtra)
@@ -27,8 +25,14 @@ source("functions.R")
 md_bullet(rmarkdown::metadata$reading)
 ```
 
+## Understanding Graphical Perception
+### Background 
+To create graphics that clearly answer questions, you must understand the basics of how the human perceptual system works. [This 40-minute talk by John Rauser](https://youtu.be/fSgEeI2Xpdc){target="blank"}, a data scientist in the technology industry, will give you an overview. You can find the code for the majority of his graphics [here](https://github.com/jrauser/writing/blob/master/how_humans_see_data/hhsd_notes.Rmd){target="blank"}.
+
 # Tasks
 
 ```{r tasks,results='asis',echo=F}
 md_bullet(rmarkdown::metadata$tasks)
 ```
+
+<i> <small> Adapted from [BYU M335 Data Science Course](https://byuistats.github.io/M335){target='blank'} </small> </i>

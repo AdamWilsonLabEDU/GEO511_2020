@@ -17,7 +17,7 @@ Each student wrote a script (using the [R](https://www.r-project.org/) programmi
 You are invited to explore the student projects below (click on a title to visit their website).  Each projects includes the embedded code in addition to their narrative and graphical stories.   If you find something interesting, you are free to download and re-run the script to reproduce the entire analysis (including generating the tables/figures and even the webpage itself).
 
 
-```{r,echo=F, warning=F, message=F, eval=F}
+```{r,echo=F, warning=F, message=F, eval=T}
 library(dplyr)
 #library(kableExtra)
 library(knitr)

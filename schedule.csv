@@ -1,17 +1,17 @@
-﻿week,date,pres,task,case_study,datacamp,package
-1,8/27/19,PS_01,TK_01,CS_01,,
-2,9/3/19,PS_02,TK_02,CS_02,,
-3,9/10/19,PS_03,TK_03,CS_03,,1
-4,9/17/19,PS_04,TK_04,CS_04,,2
-5,9/24/19,PS_05,TK_05,CS_05,,3
-6,10/1/19,PS_06,TK_06,CS_06,,4
-7,10/8/19,PS_07,TK_07,CS_07,,5
-8,10/15/19,PS_08,TK_08,CS_08,,6
-9,10/22/19,PS_09,TK_09,CS_09,,7
-10,10/29/19,PS_10,TK_10,CS_10,,8
-11,11/5/19,PS_11,TK_11,CS_11,,9
-12,11/12/19,PS_12,TK_12,CS_12,,10
-13,11/19/19,PS_13,TK_13,CS_13,,
-14,11/26/19,,,,,
-15,12/3/19,,,,,
-16,12/9/19,,,,,
+﻿week,date,pres1,task,case_study,datacamp
+1,8/27/19,PS_01,TK_01,CS_01,Introduction to R
+2,9/3/19,PS_02,TK_02,CS_02,Data Visualization with ggplot
+3,9/10/19,PS_03_Git,TK_03,CS_03,Introduction to the Tidyverse
+4,9/17/19,PS_04_join,TK_04,CS_04,Working with Geospatial Data in R
+5,9/24/19,,TK_05,CS_05,Spatial Analysis in R with sf and raster
+6,10/1/19,PS_06_raster,TK_06,CS_06,Communicating with Data in the Tidyverse
+7,10/8/19,PS_07_help,TK_07,CS_07,Data Visualization with ggplot 2
+8,10/15/19,PS_08_sf,TK_08,CS_08,Importing Data in R 1
+9,10/22/19,PS_09_weather,TK_09,CS_09,Importing Data in R 2
+10,10/29/19,PS_10_RS,TK_10,CS_10,Cleaning Data in R
+11,11/5/19,PS_11_ParallelProcessing,TK_11,CS_11,Exploratory Data Analysis in R: Case Study
+12,11/12/19,PS_12,TK_12,CS_12,
+13,11/19/19,,TK_13,,
+14,11/26/19,,TK_14,,
+15,12/3/19,,TK_15,,
+16,12/9/19,,,,

@@ -3,78 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>Course Introduction</title>
+  <title>Spatial Data Science (GEO511)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="externals/reveal.js-3.3.0.1/css/reveal.css"/>
 
 
+
+<link rel="stylesheet" href="externals/reveal.js-3.3.0.1/css/theme/black.css" id="theme">
+
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
+.reveal section img {
+  background: rgba(255, 255, 255, 0.85);
 }
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  { background-color: #f8f8f8; }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ef2929; } /* Alert */
-code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #c4a000; } /* Attribute */
-code span.bn { color: #0000cf; } /* BaseN */
-code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4e9a06; } /* Char */
-code span.cn { color: #000000; } /* Constant */
-code span.co { color: #8f5902; font-style: italic; } /* Comment */
-code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
-code span.dt { color: #204a87; } /* DataType */
-code span.dv { color: #0000cf; } /* DecVal */
-code span.er { color: #a40000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #0000cf; } /* Float */
-code span.fu { color: #000000; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
-code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
-code span.ot { color: #8f5902; } /* Other */
-code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code span.sc { color: #000000; } /* SpecialChar */
-code span.ss { color: #4e9a06; } /* SpecialString */
-code span.st { color: #4e9a06; } /* String */
-code span.va { color: #000000; } /* Variable */
-code span.vs { color: #4e9a06; } /* VerbatimString */
-code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
 </style>
-
-<link rel="stylesheet" href="externals/reveal.js-3.3.0.1/css/theme/white.css" id="theme">
-
 
   <!-- some tweaks to reveal css -->
   <style type="text/css">
@@ -513,7 +456,8 @@ document.getElementsByTagName('head')[0].appendChild(style);
     <div class="slides">
 
 <section>
-    <h1 class="title">Course Introduction</h1>
+    <h1 class="title">Spatial Data Science (GEO511)</h1>
+  <h1 class="subtitle"><a href="http://wilsonlab.io/GEO511">wilsonlab.io/GEO511</a></h1>
 </section>
 
 <section id="todays-plan" class="slide level2">
@@ -527,7 +471,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>Who uses it?</li>
 </ol>
 </section>
-<section id="adam-m.-wilson" class="slide level2">
+<section><section id="introductions" class="title-slide slide level1"><h1>Introductions</h1></section><section id="adam-m.-wilson" class="slide level2">
 <h2>Adam M. Wilson</h2>
 <div class="columns-2">
 <p>Assistant Professor of Global Environmental Change<br> Geography Department</p>
@@ -539,8 +483,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>HTML/Websites (including this one!)</li>
 </ul>
 </div>
-</section>
-<section id="who-are-you" class="slide level2">
+</section><section id="who-are-you" class="slide level2">
 <h2>Who are you?</h2>
 <ul>
 <li>Name</li>
@@ -555,46 +498,48 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>What you did over the summer</li>
 </ul></li>
 </ul>
-</section>
-<section id="course-structure" class="slide level2">
-<h2>Course Structure</h2>
-<h3 id="tuesdays">Tuesdays</h3>
-<ul>
-<li>Review/Questions</li>
-<li>~30 Minute Presentation</li>
-<li>Student Package presentations</li>
-<li>Student Case Study discussion</li>
-<li>Semi-guided interactive exercises on your laptops</li>
-</ul>
-<h3 id="thursdays">Thursdays</h3>
-<ul>
-<li>Work in groups on case study</li>
-<li>Questions &amp; informal discussion</li>
-</ul>
-</section>
-<section id="learning-objectives" class="slide level2">
-<h2>3 Learning Objectives</h2>
+</section><section class="slide level2">
+
+<p><img src="01_assets/data-science.png" width=100%></img> –Grolemund &amp; Wickham, R for Data Science, O’Reilly 2016</p>
+</section><section id="course-learning-objectives" class="slide level2">
+<h2>Course Learning Objectives</h2>
 <ol type="1">
 <li>convert data from varied formats/structures to desired format for analysis and visualization</li>
 <li>clean, transform, and merge data attributes/variables appropriately</li>
 <li>effectively display and communicate meaning from spatial, temporal, and textual data</li>
 <li>use current analysis, presentation, and collaboration tools in the spatial data science field.</li>
 </ol>
-</section>
-<section id="this-course-is-not" class="slide level2">
+</section><section id="in-other-words-become-an-r-wizard" class="slide level2">
+<h2>In other words: <br> become an R wizard!</h2>
+</section><section id="course-structure" class="slide level2">
+<h2>Course Structure</h2>
+<p><a href="Syllabus.html">Syllabus Overview</a></p>
+</section><section id="time-committment" class="slide level2">
+<h2>Time committment</h2>
+<p>Plan to spend approximately 5-9 hours each week:</p>
+<ul>
+<li>DataCamp courses: 3-5</li>
+<li>Weekly Tasks: 1</li>
+<li>Case Studies: 1-3</li>
+<li>Project will require more time near end of semester.</li>
+</ul>
+</section><section id="tools" class="slide level2">
+<h2>Tools</h2>
+<ul>
+<li>R</li>
+<li>RStudio</li>
+<li>Slack</li>
+<li>DataCamp</li>
+<li>Git (Version Control)</li>
+</ul>
+</section><section id="this-course-is-not" class="slide level2">
 <h2>This course is NOT</h2>
 <p>A statistics course (see GEO 505, etc.). We will focus on workflow and methods (‘how’ not ‘why’)</p>
-</section>
-<section class="slide level2">
-
-<p><img src="01_assets/data-science.png" width=100%></img> –Grolemund &amp; Wickham, R for Data Science, O’Reilly 2016</p>
-</section>
-<section id="why-write-code-when-you-can-click" class="slide level2">
+</section><section id="why-write-code-when-you-can-click" class="slide level2">
 <h2>Why write code when you can click?</h2>
 <p><img src="01_assets/arcgis.jpg" width=50%></img></p>
 <p>Graphical User Interfaces are useful, especially when you are learning…</p>
-</section>
-<section id="reproducible-research" class="slide level2">
+</section><section id="reproducible-research" class="slide level2">
 <h2>Reproducible Research</h2>
 <ul>
 <li>The ability to reproduce results from an experiment or analysis conducted by another*</li>
@@ -602,45 +547,39 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>Logic of the analysis is represented in output</li>
 <li>Combines computer code with narrative</li>
 </ul>
-</section>
-<section id="typical-gui-workflow" class="slide level2">
+</section><section id="typical-gui-workflow" class="slide level2">
 <h2>Typical GUI Workflow</h2>
 <p><img src="01_assets/workflow1.png" width=100%></img></p>
-</section>
-<section id="organized-and-repeatable-workflow" class="slide level2">
+</section><section id="organized-and-repeatable-workflow" class="slide level2">
 <h2>Organized and repeatable workflow</h2>
 <p><img src="01_assets/workflow2.png" width=100%></img></p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Learning a programming language can help you learn how to think logically.</p>
 <blockquote>
 A man who does not know foreign language is ignorant of his own. <br> – Johann Wolfgang von Goethe (1749 - 1832)
 </blockquote>
-</section>
-<section id="from-graphical-user-interface-gui-to-scripting" class="slide level2">
+</section><section id="from-graphical-user-interface-gui-to-scripting" class="slide level2">
 <h2>From Graphical User Interface (GUI) to Scripting</h2>
 <p><img src="01_assets/08_productivity.png" width=100%></img></p>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <p>Programming gives you access to more computer power.</p>
 <blockquote>
 The computer is incredibly fast, accurate, and stupid. Man is unbelievably slow, inaccurate, and brilliant. The marriage of the two is a force beyond calculation. <br> – Leo Cherne
 </blockquote>
-</section>
-<section id="typical-ub-geo-experience" class="slide level2">
+</section><section id="typical-ub-geo-experience" class="slide level2">
 <h2>Typical UB Geo Experience</h2>
 <h3 id="software-experience" data-inremental="T">Software Experience</h3>
 <ul>
-<li>R</li>
-<li>Python</li>
-<li>Matlab</li>
 <li>ArcGIS</li>
-<li>SPSS</li>
 <li>Erdas Imagine</li>
+<li>Python</li>
+<li>R</li>
+<li>Matlab</li>
+<li>SPSS</li>
 </ul>
-</section>
+</section></section>
 <section><section id="introduction-to-r" class="title-slide slide level1"><h1>Introduction to R</h1></section><section id="r-project-for-statistical-computing" class="slide level2">
 <h2>R Project for Statistical Computing</h2>
 <ul>
@@ -758,9 +697,6 @@ The computer is incredibly fast, accurate, and stupid. Man is unbelievably slow,
 </section><section id="interface-to-r" class="slide level2">
 <h2>Interface to R</h2>
 <p><img data-src="img/rexer_interface.png" /></p>
-</section></section>
-<section><section id="getting-started" class="title-slide slide level1"><h1>Getting Started</h1></section><section id="questions-from-the-readings" class="slide level2">
-<h2>Questions from the readings?</h2>
 </section><section id="many-cheatsheets-available" class="slide level2">
 <h2>Many ‘Cheatsheets’ available</h2>
 <p><a href="https://www.rstudio.com/resources/cheatsheets/" class="uri">https://www.rstudio.com/resources/cheatsheets/</a></p>
@@ -771,31 +707,12 @@ The computer is incredibly fast, accurate, and stupid. Man is unbelievably slow,
 <h2>Data Transformation</h2>
 <p><img data-src="img/CheatSheet_data-transformation.png" /> <a href="https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf" class="uri">https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf</a></p>
 </section></section>
-<section><section id="training-your-eyes" class="title-slide slide level1"><h1>Training your eyes</h1></section><section id="fix-the-errors" class="slide level2">
-<h2>Fix the errors</h2>
-<p>Do you see any errors in the following code?</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">ggplot</span>(<span class="dt">dota =</span> mpg) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy))</a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="kw">fliter</span>(mpg, <span class="dt">cyl =</span> <span class="dv">8</span>)</a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="kw">filter</span>(diamond, carat <span class="op">&gt;</span><span class="st"> </span><span class="dv">3</span>)</a></code></pre></div>
-</section><section id="interpret-these-error-statements" class="slide level2">
-<h2>Interpret these error statements</h2>
-<p>Discuss with your neighbor what the error statement is saying. How would you fix it?</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">dota =</span> mpg) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="op">+</span><span class="st">   </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy))</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; Error in structure(list(data = data, layers = list(), </span></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt; scales = scales_list(),  : </span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt;  argument &quot;data&quot; is missing, with no default</span></a></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">fliter</span>(mpg, <span class="dt">cyl =</span> <span class="dv">8</span>)</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co">#&gt; Error in fliter(mpg, cyl = 8) : could not find function &quot;fliter&quot;</span></a></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">filter</span>(diamond, carat <span class="op">&gt;</span><span class="st"> </span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; Error in filter(diamond, carat &gt; 3) : object &#39;diamond&#39; not found</span></a></code></pre></div>
-</section><section id="lets-get-coding" class="slide level2">
-<h2>Let’s get coding…</h2>
-<p>Open <a href="../01_Rintro.html">today’s activity</a> and work through the exercise.</p>
+<section><section id="next-steps" class="title-slide slide level1"><h1>Next Steps</h1></section><section id="before-thursday" class="slide level2">
+<h2>Before Thursday</h2>
+<ul>
+<li>Complete task list for this week</li>
+<li>Start working on 1st DataCamp Assignment (it will help with the case study on Thursday)</li>
+</ul>
 </section></section>
     </div>
   </div>
@@ -826,7 +743,7 @@ The computer is incredibly fast, accurate, and stupid. Man is unbelievably slow,
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
         width: '90%',
-        height: '100%',
+        height: '90%',
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
         // Bounds for smallest/largest possible scale to apply to content

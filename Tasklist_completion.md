@@ -35,6 +35,12 @@ Below are a set of tasks that we will work on in class (either alone or in small
   </tr>
   <tr>
    <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Read the help file for the function that calculates the mean ( you can run `?mean` or use the GUI). </td>
+   <td style="text-align:left;"> [CS_01](./CS_01.html) </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
    <td style="text-align:left;"> Calculate the mean of the `Petal.Length` field </td>
    <td style="text-align:left;"> [CS_01](./CS_01.html) </td>
    <td style="text-align:right;"> 1 </td>
@@ -53,25 +59,43 @@ Below are a set of tasks that we will work on in class (either alone or in small
   </tr>
   <tr>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:left;"> Click 'Source' in RStudio to run it from beginning to end </td>
+   <td style="text-align:left;"> Click 'Source' in RStudio to run your script from beginning to end </td>
    <td style="text-align:left;"> [CS_01](./CS_01.html) </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:left;"> Read the [course sylabus](Syllabus.html) and make sure you understand our class routine and grading </td>
+   <td style="text-align:left;"> Read the [course syllabus](Syllabus.html) and make sure you understand our class routine and grading </td>
    <td style="text-align:left;"> [TK_01](./TK_01.html) </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:left;"> Get R and R-Studio running on your computer </td>
+   <td style="text-align:left;"> Install R on your computer [from here](https://cloud.r-project.org){target='blank'} </td>
    <td style="text-align:left;"> [TK_01](./TK_01.html) </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:left;"> Watch [John Rauser Talk](https://youtu.be/fSgEeI2Xpdc){target='blank'} </td>
+   <td style="text-align:left;"> Install RStudio Desktop (free version) on your computer [from this source](https://www.rstudio.com/products/rstudio/download/){target='blank'} </td>
+   <td style="text-align:left;"> [TK_01](./TK_01.html) </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Join the Slack Channel by following the link sent via email (ask if you did not receive this link) </td>
+   <td style="text-align:left;"> [TK_01](./TK_01.html) </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Join our DataCamp class following the link sent via email.  Start working on the first assignment (try to finish by Thursday) </td>
+   <td style="text-align:left;"> [TK_01](./TK_01.html) </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Create a [GitHub account](https://github.com/join?source=header-home){target=&quot;blank&quot;} and submit your github username [here](https://forms.gle/wDUSvhEQfRYGHN8u8). This username may follow you for years, use something professional that you will want to share with your future employer. </td>
    <td style="text-align:left;"> [TK_01](./TK_01.html) </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
@@ -131,7 +155,13 @@ Below are a set of tasks that we will work on in class (either alone or in small
   </tr>
   <tr>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:left;"> Create a [GitHub account](https://github.com/join?source=header-home){target=&quot;blank&quot;} and submit your github username [here](https://forms.gle/wDUSvhEQfRYGHN8u8). This username may follow you for years, use something professional that you will want to share with your future employer. </td>
+   <td style="text-align:left;"> Watch [John Rauser Talk](https://youtu.be/fSgEeI2Xpdc){target='blank'} </td>
+   <td style="text-align:left;"> [TK_02](./TK_02.html) </td>
+   <td style="text-align:right;"> 2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Watch [Introduction to RStudio](https://resources.rstudio.com/wistia-rstudio-essentials-2/rstudioessentialsprogrammingpart1-2) </td>
    <td style="text-align:left;"> [TK_02](./TK_02.html) </td>
    <td style="text-align:right;"> 2 </td>
   </tr>
@@ -179,13 +209,7 @@ Below are a set of tasks that we will work on in class (either alone or in small
   </tr>
   <tr>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:left;"> Create a new repository for this course by following [this link](https://classroom.github.com/a/etsQwbE7). </td>
-   <td style="text-align:left;"> [TK_03](./TK_03.html) </td>
-   <td style="text-align:right;"> 3 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:left;"> Create a new project in Rstudio and connect it to the new repository in GitHub (these are labeled `YEAR-GEO503-GITHUBUSERNAME`). Helpful instructions are [here](http://happygitwithr.com/rstudio-git-github.html#clone-the-new-github-repository-to-your-computer-via-rstudio) </td>
+   <td style="text-align:left;"> Create a new project in Rstudio and connect it to the new repository in GitHub. Helpful instructions are [here](http://happygitwithr.com/rstudio-git-github.html#clone-the-new-github-repository-to-your-computer-via-rstudio) </td>
    <td style="text-align:left;"> [TK_03](./TK_03.html) </td>
    <td style="text-align:right;"> 3 </td>
   </tr>

@@ -26,25 +26,29 @@ ___
 ## Tasks
 - Create a new R script in RStudio
 - Load the iris dataset with `data(iris)`
+- Read the help file for the function that calculates the mean ( you can run `?mean` or use the GUI).
 - Calculate the mean of the `Petal.Length` field
 - Plot the distribution of the `Petal.Length` column as a histogram
 - Save the script
-- Click 'Source' in RStudio to run it from beginning to end
+- Click 'Source' in RStudio to run your script from beginning to end
 </div>
 ___
 ## [ TK_01 :  Getting Started ]( ./TK_01.html ) 
    
  
-  Thinking about graphics  
+    
  
  <a class="btn btn-link" href="./TK_01.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i2">Preview Readings & Tasks </button><div id="i2" class="collapse">
 ## Readings
 - Chapters [1-2 in R4DS](http://r4ds.had.co.nz){target='blank'}
 
 ## Tasks
-- Read the [course sylabus](Syllabus.html) and make sure you understand our class routine and grading
-- Get R and R-Studio running on your computer
-- Watch [John Rauser Talk](https://youtu.be/fSgEeI2Xpdc){target='blank'}
+- Read the [course syllabus](Syllabus.html) and make sure you understand our class routine and grading
+- Install R on your computer [from here](https://cloud.r-project.org){target='blank'}
+- Install RStudio Desktop (free version) on your computer [from this source](https://www.rstudio.com/products/rstudio/download/){target='blank'}
+- Join the Slack Channel by following the link sent via email (ask if you did not receive this link)
+- Join our DataCamp class following the link sent via email.  Start working on the first assignment (try to finish by Thursday)
+- Create a [GitHub account](https://github.com/join?source=header-home){target="blank"} and submit your github username [here](https://forms.gle/wDUSvhEQfRYGHN8u8). This username may follow you for years, use something professional that you will want to share with your future employer.
 </div>
 ___
 ## [ CS_02 :  My grandfather says climate is cooling ]( ./CS_02.html ) 
@@ -68,7 +72,7 @@ ___
 - Click 'Source' in RStudio to run the script from beginning to end to re-run the entire process
 </div>
 ___
-## [ TK_02 :  Git-01 ]( ./TK_02.html ) 
+## [ TK_02 :  Graphics Background and Getting started with RStudio ]( ./TK_02.html ) 
    
  
     
@@ -76,11 +80,11 @@ ___
  <a class="btn btn-link" href="./TK_02.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i4">Preview Readings & Tasks </button><div id="i4" class="collapse">
 ## Readings
 - Chapters [3 in R4DS](http://r4ds.had.co.nz)
-- Overview of [Using the R-Studio GUI by R-Studio](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN){target='blank'}
 - Chapter [8 R for Data Science - Projects](http://r4ds.had.co.nz/workflow-projects.html){target='blank'}
 
 ## Tasks
-- Create a [GitHub account](https://github.com/join?source=header-home){target="blank"} and submit your github username [here](https://forms.gle/wDUSvhEQfRYGHN8u8). This username may follow you for years, use something professional that you will want to share with your future employer.
+- Watch [John Rauser Talk](https://youtu.be/fSgEeI2Xpdc){target='blank'}
+- Watch [Introduction to RStudio](https://resources.rstudio.com/wistia-rstudio-essentials-2/rstudioessentialsprogrammingpart1-2)
 </div>
 ___
 ## [ CS_03 :  Wealth over time ]( ./CS_03.html ) 
@@ -101,22 +105,23 @@ ___
 - Save your script as a .R or .Rmd in your course repository
 </div>
 ___
-## [ TK_03 :  Git-02 ]( ./TK_03.html ) 
+## [ TK_03 :  Git Repository ]( ./TK_03.html ) 
    
  
   Start using Github to manage course materials  
  
  <a class="btn btn-link" href="./TK_03.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i6">Preview Readings & Tasks </button><div id="i6" class="collapse">
 ## Readings
-- Chapters [4-5 in R4DS](http://r4ds.had.co.nz) - Chapters [4-8 in Happy Git and Github for the useR - Installation](http://happygitwithr.com/installation-pain.html){target='blank'} - Chapters [13-15 in Happy Git and Github for the useR - Installation](http://happygitwithr.com){target='blank'}
+- Chapters [4-5 in R4DS](http://r4ds.had.co.nz){target='blank'}
+- Chapters [4-8 in Happy Git and Github for the useR - Installation](http://happygitwithr.com/installation-pain.html){target='blank'}
+- Chapters [13-15 in Happy Git and Github for the useR - Installation](http://happygitwithr.com){target='blank'}
 
 ## Tasks
 - RStudio and [the Git GUI](https://www.youtube.com/watch?v=E2d91v1Twcc){target='blank'}
 - Install git on your computer
 - Make sure git works in R-Studio
 - Optionally sign up for the [GitHub Education pack](https://education.github.com/pack)
-- Create a new repository for this course by following [this link](https://classroom.github.com/a/etsQwbE7).
-- Create a new project in Rstudio and connect it to the new repository in GitHub (these are labeled `YEAR-GEO503-GITHUBUSERNAME`). Helpful instructions are [here](http://happygitwithr.com/rstudio-git-github.html#clone-the-new-github-repository-to-your-computer-via-rstudio)
+- Create a new project in Rstudio and connect it to the new repository in GitHub. Helpful instructions are [here](http://happygitwithr.com/rstudio-git-github.html#clone-the-new-github-repository-to-your-computer-via-rstudio)
 - Edit the README.md file in your repository to include a brief description of the repository (e.g. "Coursework for Spatial Data Science").
 - Stage and Commit your changes to Git (using the git tab in the upper right of RStudio)
 - Push the repository up to GitHub

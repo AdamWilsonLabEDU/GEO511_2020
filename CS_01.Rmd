@@ -9,10 +9,11 @@ reading:
 tasks:
   - Create a new R script in RStudio
   - Load the iris dataset with `data(iris)`
+  - Read the help file for the function that calculates the mean ( you can run `?mean` or use the GUI).
   - Calculate the mean of the `Petal.Length` field
   - Plot the distribution of the `Petal.Length` column as a histogram
   - Save the script
-  - Click 'Source' in RStudio to run it from beginning to end
+  - Click 'Source' in RStudio to run your script from beginning to end
 ---
 
 ```{r setup, include=FALSE}
@@ -37,6 +38,8 @@ kable(iris) %>%
   kable_styling() %>%
   scroll_box(width = "100%", height = "200px")
 ```
+
+To work with only one column in the `iris` dataset, try typing `iris$Sepal.Length`.  What does the `$` do?  
 
 For the histogram, you can either use the basic `hist()` function (easier but less powerful) or try to use the `geom_hist()` function in ggplot (more complicated but much more powerful).  See the reading list for hints on these two functions.
 

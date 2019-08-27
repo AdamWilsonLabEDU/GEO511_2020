@@ -3,16 +3,84 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>Week 2</title>
+  <meta name="author" content="Adam M. Wilson" />
+  <title>ggrepel</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="externals/reveal.js-3.3.0.1/css/reveal.css"/>
 
 
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  { background-color: #f8f8f8; }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
-<link rel="stylesheet" href="externals/reveal.js-3.3.0.1/css/theme/white.css" id="theme">
+<link rel="stylesheet" href="externals/reveal.js-3.3.0.1/css/theme/black.css" id="theme">
 
+<style type="text/css">
+.reveal section img {
+  background: rgba(255, 255, 255, 0.85);
+}
+</style>
 
   <!-- some tweaks to reveal css -->
   <style type="text/css">
@@ -451,22 +519,109 @@ document.getElementsByTagName('head')[0].appendChild(style);
     <div class="slides">
 
 <section>
-    <h1 class="title">Week 2</h1>
+    <h1 class="title">ggrepel</h1>
+    <h2 class="author">Adam M. Wilson</h2>
 </section>
 
-<section><section id="becoming-the-critic." class="title-slide slide level1"><h1>Becoming the Critic.</h1></section><section id="original-graph" class="slide level2">
-<h2>Original Graph</h2>
-<p><img data-src="http://www.perceptualedge.com/images/example9problem.gif" /></p>
-</section><section id="revised-graph" class="slide level2">
-<h2>Revised Graph</h2>
-<p><img data-src="http://www.perceptualedge.com/images/example9solution.jpg" /></p>
-</section><section id="section" class="slide level2">
-<h2></h2>
-<blockquote>
-<p>Above all else, show the data</p>
-</blockquote>
-<p><strong>Tufte</strong></p>
-</section></section>
+<section id="lead-author-kamil-slowikowski" class="slide level2">
+<h2>Lead Author: Kamil Slowikowski</h2>
+<p><img data-src="slowkow_2018.jpg" /></p>
+<ul>
+<li>computational biologist
+<ul>
+<li>analysis of functional genomics data</li>
+<li>cell regulation of functions in disease</li>
+</ul></li>
+<li>software tools for statistical tests and data visualization</li>
+</ul>
+</section>
+<section id="ggrepel" class="slide level2">
+<h2>ggrepel</h2>
+<h3 id="geoms-for-ggplot2-to-repel-overlapping-text-labels">geoms for <a href="http://ggplot2.tidyverse.org/">ggplot2</a> to repel overlapping text labels</h3>
+<p>Text labels repel away from each other, away from data points, and away from edges of the plotting area.</p>
+<p>Two main functions:</p>
+<ul>
+<li><code>geom_text_repel()</code></li>
+<li><code>geom_label_repel()</code></li>
+</ul>
+</section>
+<section id="compare-geom_text-and-geom_text_repel" class="slide level2">
+<h2>Compare <code>geom_text()</code> and <code>geom_text_repel()</code></h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dat, <span class="kw">aes</span>(wt, mpg, <span class="dt">label =</span> car)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">color =</span> <span class="st">&quot;red&quot;</span>)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">p1 &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_text</span>() <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;geom_text()&quot;</span>)</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">p2 &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">geom_text_repel</span>() <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;geom_text_repel()&quot;</span>)</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">gridExtra<span class="op">::</span><span class="kw">grid.arrange</span>(p1, p2, <span class="dt">ncol =</span> <span class="dv">2</span>)</a></code></pre></div>
+</section>
+<section id="comparison" class="slide level2">
+<h2>Comparison</h2>
+<p><img data-src="PackagePresentation_files/figure-revealjs/comparison-1.png" /></p>
+</section>
+<section id="options" class="slide level2">
+<h2>Options</h2>
+<p>ggrepel provides additional options for <code>geom_text_repel</code> and <code>geom_label_repel</code>:</p>
+<table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 76%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>force</code></td>
+<td>force of repulsion between overlapping text labels</td>
+</tr>
+<tr class="even">
+<td><code>direction</code></td>
+<td>move text labels “both” (default), “x”, or “y” directions</td>
+</tr>
+<tr class="odd">
+<td><code>max.iter</code></td>
+<td>maximum number of iterations to try to resolve overlaps</td>
+</tr>
+<tr class="even">
+<td><code>nudge_x</code></td>
+<td>adjust the starting x position of the text label</td>
+</tr>
+<tr class="odd">
+<td><code>nudge_y</code></td>
+<td>adjust the starting y position of the text label</td>
+</tr>
+<tr class="even">
+<td><code>segment.color</code></td>
+<td>line segment color</td>
+</tr>
+<tr class="odd">
+<td><code>segment.size</code></td>
+<td>line segment thickness</td>
+</tr>
+<tr class="even">
+<td><code>segment.curvature</code></td>
+<td>numeric, negative for left-hand and positive for right-hand curves, 0 for straight lines</td>
+</tr>
+<tr class="odd">
+<td><code>segment.angle</code></td>
+<td>0-180, less than 90 skews control points toward the start point</td>
+</tr>
+<tr class="even">
+<td><code>arrow</code></td>
+<td>render line segment as an arrow with <code>grid::arrow()</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="another-example" class="slide level2">
+<h2>Another example</h2>
+<p><img data-src="PackagePresentation_files/figure-revealjs/unnamed-chunk-2-1.png" /></p>
+</section>
     </div>
   </div>
 
@@ -496,7 +651,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
         width: '90%',
-        height: '100%',
+        height: '90%',
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
         // Bounds for smallest/largest possible scale to apply to content

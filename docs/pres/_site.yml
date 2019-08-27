@@ -4,7 +4,7 @@ output:
       lib_dir: externals
       keep_md: true
       incremental: false
-      theme: white
+      theme: black
       highlight: tango
       center: false
       code_folding: hide
@@ -20,4 +20,4 @@ output:
         maxScale: 3
         margin: 0.1
         width: "90%"
-        height: "100%"
+        height: "90%"

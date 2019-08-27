@@ -1,5 +1,5 @@
 ---
-title: "Package Introduction"
+title: "Resource Introduction"
 ---
 
 # Description

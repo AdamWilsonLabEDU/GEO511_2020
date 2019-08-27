@@ -18,10 +18,7 @@ names=sapply(yamls,function(x) x$name)
 
 weeks=read_csv("schedule.csv")
 
-#sched%>%
-#  mutate(tasklink=ftask(task),
-#        preslink=fpres(pres))%>%
-#  select(preslink)
+sched=read_csv("schedule.csv")
 
 ```
 
@@ -38,7 +35,65 @@ We will refer to the following texts (all available online):
 
 ## Schedule
 
-```{r table,results='asis',echo=F}
+```{r table1,results='asis',echo=F}
+cat("| Week | Date | Presentation | Tasks  |  Case Study | [DataCamp](https://www.datacamp.com/enterprise/geo511-spatial-data-science) | \n")
+cat("|:-|:-|:-:|:---:|:---:|:---:|\n") 
+
+not_na_exists<-function(x){
+  if(is.na(x)) return("")
+  if(!file.exists(x)) return("")
+  else 
+    return(x)
+}
+
+# link yamls to sched table by file name
+yamlname=sapply(yamls,function(x) x$name)
+sched$task_yaml=match(sched$task,yamlname)
+sched$case_yaml=match(sched$case_study,yamlname)
+sched$pres1_yaml=match(sched$pres1,yamlname)
+
+for(i in sched$week){
+
+  # task=ifelse(!is.na(sched$task[i]),paste0(sched$task[i],".Rmd"),NA)%>%
+  #   not_na_exists()
+  # case=ifelse(!is.na(sched$case_study[i]),
+  #             paste0(sched$case_study[i],".Rmd"),NA)%>%
+  #   not_na_exists()
+  # pres1=ifelse(!is.na(sched$pres1[i]),
+  #              paste0("pres/",sched$pres1[i],".html"),NA)%>%
+  #   not_na_exists()
+  # pres2=ifelse(!is.na(sched$pres1[i]),
+  #              paste0("pres/",sched$pres2[i],".html"),NA)%>%
+  #   not_na_exists()
+  
+  
+  # ttask=ifelse(!is.na(task),yaml_extract(task),"")
+  # tcase=ifelse(!is.na(case),yaml_extract(case),"")
+
+  ttask_tb=paste0("[",yamls[[sched$task_yaml[i]]]$title,"](",
+                  yamls[[sched$task_yaml[i]]]$url,")")
+  tcase_tb=paste0("[",yamls[[sched$case_yaml[i]]]$title,"](",
+                  yamls[[sched$case_yaml[i]]]$url,")")
+  
+  pres1=yamls[[sched$pres1_yaml[i]]]$url
+ 
+  tpres_tb=ifelse(length(pres1)==1,
+                   paste0( "[<i class='fas fa-desktop'>   </i>](",
+                   pres1,"){target='_blank'}"),"")
+ 
+  cat(paste(
+    "| ",sched$week[i],
+    "| ",sched$date[i],
+    "| ",tpres_tb,
+    "| ",ttask_tb,
+    "| ",tcase_tb,
+    "| ",ifelse(!is.na(sched$datacamp[i]),sched$datacamp[i],""),
+    "|\n "
+    ))
+}
+```
+
+```{r table,results='asis',echo=F,eval=F}
 # This chunk prints an index of all the task titles along with a preview of the sub-tasks 
 cat("| Week | Date | Presentation | Tasks  |  Case Study | [Package Present](PackageIntro.html) |\n")
 cat("|:--|:--|:-:|:-:|:-:|:---|:-:|\n") 
@@ -76,3 +131,10 @@ wpres2=ifelse(length(wpres)==1,
     ))
 }
 ```
+
+## Student Leadership and Presentations
+
+[Click here to edit the table below](https://docs.google.com/spreadsheets/d/1gG3uzYcu6xWbU5A_UqTWZSM1JhA3wRbLHfPVR5Ju9YI/edit?usp=sharing)
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSMxIiM16ZBusK8bJGrOwt1h6i5PGkSPXt7I6RukgzGtS3-y4DKjhdJ6Cm438fRBQkGYmhrVay-KzOg/pubhtml?gid=868447735&amp;single=true&amp;widget=true&amp;headers=false" style='height: 1000px; width: 100%;' ></iframe>
+
