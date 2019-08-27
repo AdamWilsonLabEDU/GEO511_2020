@@ -21,7 +21,7 @@ We will refer to the following texts (all available online):
 
 ## Schedule
 
-| Week | Date | Presentation | Tasks  |  Case Study | DataCamp | 
+| Week | Date | Presentation | Tasks  |  Case Study | [DataCamp](https://www.datacamp.com/enterprise/geo511-spatial-data-science) | 
 |:-|:-|:-:|:---:|:---:|:---:|
 |  1 |  8/27/19 |  [<i class='fas fa-desktop'>   </i>](pres/PS_01.html){target='_blank'} |  [Getting Started](./TK_01.html) |  [Your first script](./CS_01.html) |  Introduction to R |
  |  2 |  9/3/19 |  [<i class='fas fa-desktop'>   </i>](pres/PS_02.html){target='_blank'} |  [Graphics Background and Getting started with RStudio](./TK_02.html) |  [My grandfather says climate is cooling](./CS_02.html) |  Data Visualization with ggplot |

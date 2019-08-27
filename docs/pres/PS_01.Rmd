@@ -40,6 +40,8 @@ I Use R:
    * What you did over the summer
 
 
+# Spatial Data Science
+
 ---
 
 <img src="01_assets/data-science.png" width=100%></img>

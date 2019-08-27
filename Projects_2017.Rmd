@@ -18,7 +18,7 @@ Each student wrote a script (using the [R](https://www.r-project.org/) programmi
 You are invited to explore the student projects below (click on a thumbnail to visit their website).  The embedded code reveals their methodological details in addition to their narrative and graphical stories.   If you find something interesting, you are free to download and re-run the script to reproduce the entire analysis (from acquiring the original data through generating the tables/figures and even the webpage itself).
 
 
-```{r,echo=F, warning=F, message=F}
+```{r,echo=F, warning=F, message=F, eval=F}
 library(dplyr)
 #library(kableExtra)
 library(knitr)
@@ -57,7 +57,7 @@ d=d%>%mutate(user=sub("https://","",url))%>%
          img=paste0("assets/projthumbs/web_",user))
 ```
 
-```{r, eval=F, echo=F, message=F}
+```{r, eval=F, echo=F, message=F, eval=F}
 #https://github.com/sindresorhus/pageres-cli
 file.remove(list.files(dirname(d$img[1]),full=T))
 foreach(i=1:nrow(d)) %do% {
@@ -66,7 +66,7 @@ foreach(i=1:nrow(d)) %do% {
 }
 ```
 
-```{r, echo=F, message=F}
+```{r, echo=F, message=F, eval=F}
 library(rvest)
 for(i in 1:nrow(d)) {
   d$title[i] <- read_html(d$url[i]) %>%html_nodes("h1")%>%html_text()%>%first()
@@ -75,7 +75,7 @@ for(i in 1:nrow(d)) {
 ```
 
 
-```{r, eval=F, echo=F, out.width="30%"}
+```{r, eval=F, echo=F, out.width="30%", eval=F}
 for(i in 1:nrow(d)) {
   if(i==1) imgt=bs_carousel(id = "ProjectList") %>% 
       bs_append(
@@ -94,7 +94,7 @@ imgt
 ```
 
 
-```{r,eval=F,results='asis',echo=F, out.width="30%"}
+```{r,eval=F,results='asis',echo=F, out.width="30%", eval=F}
  
     fimg=function(src,href,title=""){
     paste0(" <div class='col-xs-12 col-sm-6 col-md-3'>
@@ -136,7 +136,7 @@ imgt
 
 ```
 
-```{r,asis=T, echo=F}
+```{r,asis=T, echo=F, eval=F}
 # Build html for the image with link
 d$href2=paste0("<a href=",d$url," target='_blank'>",
                " <img src=",d$img,".png alt='' height='30%'>", # height='50%'

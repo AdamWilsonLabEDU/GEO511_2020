@@ -5,10 +5,7 @@ output:
     toc: false
 ---
  
-This course uses a combination of lecture and hands-on exercises to provide a gentle introduction to programming in R with a focus on spatial data processing. The [final project](Project.html) in the course is the construction of a reproducible research workflow as illustrated in the figure below.
-
-<img height="100px" src="00_CourseIntroduction/assets/data-science.png">
-Figure from _R for Data Science_ by Grolemund & Wickham (2017)
+This course uses a combination of lecture and hands-on exercises to provide a gentle introduction to programming in R with a focus on spatial data processing. The [final project](Project.html) in the course is the construction of a reproducible research workflow.
 
 Each student wrote a script (using the [R](https://www.r-project.org/) programming language) to perform these steps and generate a website showcasing their analysis. The focus of the course is on the design and implementation of the complete data processing research workflow itself (not any particular statistics/methods/models). The challenge is to string all the steps together in a _coherent, reproducible flow from raw data to final outputs_.  
 
@@ -19,17 +16,12 @@ You are invited to explore the student projects below (click on a title to visit
 
 ```{r,echo=F, warning=F, message=F, eval=T}
 library(dplyr)
-#library(kableExtra)
 library(knitr)
-library(doParallel)
-registerDoParallel(4)
-#devtools::install_github("ijlyttle/bsplus")
-#library(bsplus)
 
 d=data.frame(url=c(
-  "https://adamwilsonlabedu.github.io/geo503-2018-finalproject-dnkarp/",
+#  "https://adamwilsonlabedu.github.io/geo503-2018-finalproject-dnkarp/",
   "https://adamwilsonlabedu.github.io/geo503-2018-finalproject-YingLuGit/",
-  "https://adamwilsonlabedu.github.io/geo503-2018-finalproject-EllieGaiser",
+#  "https://adamwilsonlabedu.github.io/geo503-2018-finalproject-EllieGaiser",
   "https://adamwilsonlabedu.github.io/geo503-2018-finalproject-Jim-King/",
   "https://adamwilsonlabedu.github.io/geo503-2018-finalproject-nathandubinin/",
   "https://adamwilsonlabedu.github.io/geo503-2018-finalproject-matthewamoia/",
@@ -50,47 +42,48 @@ d=data.frame(url=c(
   "https://adamwilsonlabedu.github.io/geo503-2018-finalproject-wwang52",
   "https://adamwilsonlabedu.github.io/geo503-2018-finalproject-HamedGhodsi90"
   ),
-  group=c(2,1,2,2,1,1,2,2,1,1,1,2,2,2,1,1,2,1,2,1,2,1),
+#  group=c(2,1,2,2,1,1,2,2,1,1,1,2,2,2,1,1,2,1,2,1,2,1),
   stringsAsFactors = F)
 
-d=d%>%mutate(user=sub("/","",sub("https://adamwilsonlabedu.github.io/geo503-2018-finalproject-","",url,ignore.case = T)))
+d=d%>%mutate(user=sub("/","",
+                      sub("https://adamwilsonlabedu.github.io/geo503-2018-finalproject-","",url,
+                          ignore.case = T)))
 ```
 
 
-```{r, echo=F, message=F, results='hide', eval=F}
+```{r, echo=F, message=F, results='hide', eval=T}
 library(rvest)
+
 
 for(i in 1:nrow(d)) {
   print(i)
   d$title[i] <- ifelse(
-    is.na(tryCatch(read_html(d$url[i]), error = function(e){NA})),
+    is.na(tryCatch(read_html(d$url[i], verbose=T), 
+                   error = function(e){NA})),
          NA,
          read_html(d$url[i]) %>% html_nodes("h1")%>%html_text()%>%first()
   )
-#  d$title[i]=read_html(d$url[i]) %>% html_nodes("h1")%>%html_text()%>%first()
-#  d$author[i] <- read_html(d$url[i]) %>%html_nodes(c("h1","h2","h3"))%>%html_text()
 }
 
 ```
 
-# Group 1
-```{r,asis=T, echo=F, eval=F}
+```{r,asis=T, echo=F, eval=T}
 d%>%
   arrange(user)%>%
-  filter(group==1)%>%
+#  filter(group==1)%>%
   mutate(Title=paste0("[",title,"](",url,")"))%>%
   dplyr::select(Student=user,Title)%>%
   kable()
 ```
 
-# Group 2
+<!-- # Group 2 -->
 
-```{r, asis=T, echo=F, eval=F}
-d%>%
-  arrange(user)%>%
-  filter(group==2)%>%
-  mutate(Title=paste0("[",title,"](",url,")"))%>%
-  dplyr::select(Student=user,Title)%>%
-  kable()
+<!-- ```{r, asis=T, echo=F, eval=F} -->
+<!-- d%>% -->
+<!--   arrange(user)%>% -->
+<!--   filter(group==2)%>% -->
+<!--   mutate(Title=paste0("[",title,"](",url,")"))%>% -->
+<!--   dplyr::select(Student=user,Title)%>% -->
+<!--   kable() -->
 
-```
+<!-- ``` -->
