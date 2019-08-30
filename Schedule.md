@@ -24,7 +24,7 @@ We will refer to the following texts (all available online):
 | Week | Date | Presentation | Tasks  |  Case Study | [DataCamp](https://www.datacamp.com/enterprise/geo511-spatial-data-science) | 
 |:-|:-|:-:|:---:|:---:|:---:|
 |  1 |  8/27/19 |  [<i class='fas fa-desktop'>   </i>](pres/PS_01.html){target='_blank'} |  [Getting Started](./TK_01.html) |  [Your first script](./CS_01.html) |  Introduction to R |
- |  2 |  9/3/19 |  [<i class='fas fa-desktop'>   </i>](pres/PS_02.html){target='_blank'} |  [Graphics Background and Getting started with RStudio](./TK_02.html) |  [My grandfather says climate is cooling](./CS_02.html) |  Data Visualization with ggplot |
+ |  2 |  9/3/19 |  [<i class='fas fa-desktop'>   </i>](https://docs.google.com/presentation/d/e/2PACX-1vQNTlhZoW31RdJf0R_Ck0Dxyzzejn6I06uvGnp6C4wmKV8x2vVBBjFyLxqaCbfCykbhp6-TXjacR8A2/pub?start=false&loop=false&delayms=5000){target='_blank'} |  [Graphics Background and Getting started with RStudio](./TK_02.html) |  [My grandfather says climate is cooling](./CS_02.html) |  Data Visualization with ggplot |
  |  3 |  9/10/19 |  [<i class='fas fa-desktop'>   </i>](pres/PS_03_Git.html){target='_blank'} |  [Git Repository](./TK_03.html) |  [Wealth over time](./CS_03.html) |  Introduction to the Tidyverse |
  |  4 |  9/17/19 |  [<i class='fas fa-desktop'>   </i>](pres/PS_04_join.html){target='_blank'} |  [Data Wrangling 2](./TK_04.html) |  [Farthest airport from New York City](./CS_04.html) |  Working with Geospatial Data in R |
  |  5 |  9/24/19 |   |  [Spatial Vector Data](./TK_05.html) |  [Beware the Canadians!](./CS_05.html) |  Spatial Analysis in R with sf and raster |

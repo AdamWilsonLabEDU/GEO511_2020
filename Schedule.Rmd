@@ -53,7 +53,6 @@ sched$case_yaml=match(sched$case_study,yamlname)
 sched$pres1_yaml=match(sched$pres1,yamlname)
 
 for(i in sched$week){
-
   # task=ifelse(!is.na(sched$task[i]),paste0(sched$task[i],".Rmd"),NA)%>%
   #   not_na_exists()
   # case=ifelse(!is.na(sched$case_study[i]),
@@ -75,9 +74,15 @@ for(i in sched$week){
   tcase_tb=paste0("[",yamls[[sched$case_yaml[i]]]$title,"](",
                   yamls[[sched$case_yaml[i]]]$url,")")
   
-  pres1=yamls[[sched$pres1_yaml[i]]]$url
+  pres1=ifelse(
+    grepl("http",sched$pres1[i]),
+    sched$pres1[i],
+    ifelse(
+      is.null(yamls[[sched$pres1_yaml[i]]]$url),
+      NA,
+      yamls[[sched$pres1_yaml[i]]]$url))
  
-  tpres_tb=ifelse(length(pres1)==1,
+  tpres_tb=ifelse(!is.na(pres1),
                    paste0( "[<i class='fas fa-desktop'>   </i>](",
                    pres1,"){target='_blank'}"),"")
  
