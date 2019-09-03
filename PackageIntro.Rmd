@@ -24,6 +24,8 @@ library(dplyr)
 filter(starwars, species == "Human")
 ```
 
+## Example Presentation
 
+Here is an example presentation about the [`ggrepel` package](pres/PackagePresentation.html)
 
 

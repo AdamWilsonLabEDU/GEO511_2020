@@ -43,6 +43,8 @@ filter(starwars, species == "Human")
 ## #   species <chr>, films <list>, vehicles <list>, starships <list>
 ```
 
+## Example Presentation
 
+Here is an example presentation about the [`ggrepel` package](pres/PackagePresentation.html)
 
 
