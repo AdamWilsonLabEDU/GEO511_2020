@@ -48,7 +48,7 @@ dataurl="https://raw.githubusercontent.com/AdamWilsonLab/SpatialDataScience/mast
 
 This url points to a CSV file with monthly mean temperatures from the GISS dataset.  You can [check out the file here](`r dataurl`).  Now use `read_csv()` to download and import the CSV file directly from the website (cool, huh!?).
 
-```{r, message=F, eval=F}
+```{r, message=F, eval=T}
 temp=read_csv(dataurl,
               skip=1, #skip the first line which has column names
               na="999.90", # tell R that 999.90 means missing in this dataset
@@ -67,9 +67,11 @@ Now use your tools to explore the dataset.  You can try `View(temp)` to open the
 
 ## Develop the graphic
 
-You want to make a nice graphic to show your grandfather at your next family gathering.  Be sure to include informative axis labels, a graph title, a graph subtitle describing the source of the data, the raw data, and a smoothed line showing the overal trend through time.
+You want to make a nice graphic to show your grandfather at your next family gathering.  Be sure to include informative axis labels, a graph title, a graph subtitle describing the source of the data, the raw data, and a smoothed line showing the overal trend through time.  
 
-```{r, eval=F,echo=F}
+It should look something like this:
+
+```{r, eval=T,echo=F, warning=F, message=F}
 p1=ggplot(temp,aes(x=YEAR,y=JJA))+
   geom_line(col=grey(.2))+
   geom_smooth(col="red")+
@@ -97,3 +99,5 @@ What do you tell your grandfather?
 # Extra time?
 
 If you have extra time, use the [station selector](https://data.giss.nasa.gov/gistemp/stdata/) to find the links to download additional stations and make additional plots.  You could even merge different stations into the same table and plot them together.  
+
+Can you think of other plots to consider?  Perhaps aggregating to mean temperature by decade?
