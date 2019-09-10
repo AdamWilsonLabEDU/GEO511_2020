@@ -15,3 +15,10 @@ tasks:
 ```{r reading,results='asis',echo=F}
 md_bullet(rmarkdown::metadata$reading)
 ```
+
+
+# Tasks
+
+```{r tasks,results='asis',echo=F}
+md_bullet(rmarkdown::metadata$tasks)
+```

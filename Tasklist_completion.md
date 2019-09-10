@@ -281,6 +281,18 @@ Below are a set of tasks that we will work on in class (either alone or in small
   </tr>
   <tr>
    <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Look ahead at Task 6 (Project Proposal) and start thinking about possibilities </td>
+   <td style="text-align:left;"> [TK_04](./TK_04.html) </td>
+   <td style="text-align:right;"> 4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Post at least one rough project idea (with links, etc.) to Slack in the [Project Channel](https://ubspatialdatascience.slack.com/messages/CDNEG4WN8). </td>
+   <td style="text-align:left;"> [TK_04](./TK_04.html) </td>
+   <td style="text-align:right;"> 4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
    <td style="text-align:left;"> Reproject spatial data using `st_transform()` </td>
    <td style="text-align:left;"> [CS_05](./CS_05.html) </td>
    <td style="text-align:right;"> 5 </td>
@@ -383,6 +395,12 @@ Below are a set of tasks that we will work on in class (either alone or in small
   </tr>
   <tr>
    <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Post links to your project proposal .md file in the [Project Channel on Slack](https://ubspatialdatascience.slack.com/messages/CDNEG4WN8). </td>
+   <td style="text-align:left;"> [TK_07](./TK_07.html) </td>
+   <td style="text-align:right;"> 7 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
    <td style="text-align:left;"> Create a new RMarkdown Document in Rstudio with `File -&gt; New File -&gt; R Markdown` and save it in the case_study folder for this session </td>
    <td style="text-align:left;"> [CS_08](./CS_08.html) </td>
    <td style="text-align:right;"> 8 </td>
@@ -432,12 +450,6 @@ Below are a set of tasks that we will work on in class (either alone or in small
   <tr>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:left;"> Enable website on GitHub </td>
-   <td style="text-align:left;"> [TK_08](./TK_08.html) </td>
-   <td style="text-align:right;"> 8 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:left;"> Complete DataCamp Course in [Reporting with R Markdown](https://www.datacamp.com/courses/reporting-with-r-markdown) </td>
    <td style="text-align:left;"> [TK_08](./TK_08.html) </td>
    <td style="text-align:right;"> 8 </td>
   </tr>

@@ -13,17 +13,6 @@
 #' 
 
 #' 
-#' # Final Presentation
-#' 
-#' <div>
-#' <object data="presentations/Conclusion.pdf" type="application/pdf" width="100%" height="600px"> 
-#'   <p>It appears you don't have a PDF plugin for this browser.
-#'    No biggie... you can <a href="presentations/Conclusion.pdf">click here to
-#'   download the PDF file.</a></p>  
-#'  </object>
-#'  </div>
-#'  <p><a href="presentations/Conclusion.pdf">Download the PDF</a></p>  
-#' 
 #' # Reading
 #' 
 ## ----reading,results='asis',echo=F---------------------------------------
@@ -36,6 +25,3 @@ md_bullet(rmarkdown::metadata$reading)
 md_bullet(rmarkdown::metadata$tasks)
 
 #' 
-#' # Exercise
-#' 
-#' Work through the [exercise illustrated here](13_SDM_Exercise.html).  You do not need to upload anything to github.

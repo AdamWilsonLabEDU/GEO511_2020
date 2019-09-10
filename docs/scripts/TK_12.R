@@ -15,8 +15,6 @@
 #' 
 
 #' 
-#' `r presframe()`
-#' 
 #' # Reading
 #' 
 ## ----reading,results='asis',echo=F---------------------------------------

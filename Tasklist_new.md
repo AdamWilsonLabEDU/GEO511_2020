@@ -157,6 +157,8 @@ ___
 ## Tasks
 - Briefly describe functions that seem especially useful in the README.md file for this week.
 - Confirm that all tasks and case studies you have completed have been committed in your course repository and pushed to Github.
+- Look ahead at Task 6 (Project Proposal) and start thinking about possibilities
+- Post at least one rough project idea (with links, etc.) to Slack in the [Project Channel](https://ubspatialdatascience.slack.com/messages/CDNEG4WN8).
 </div>
 ___
 ## [ CS_05 :  Beware the Canadians! ]( ./CS_05.html ) 
@@ -247,6 +249,7 @@ ___
 
 ## Tasks
 - Complete project proposal and upload .Rmd and .md to Github
+- Post links to your project proposal .md file in the [Project Channel on Slack](https://ubspatialdatascience.slack.com/messages/CDNEG4WN8).
 </div>
 ___
 ## [ CS_08 :  One Script, Many Products ]( ./CS_08.html ) 
@@ -283,7 +286,6 @@ ___
 - Explore various options for your project website
 - Push changes back to GitHub
 - Enable website on GitHub
-- Complete DataCamp Course in [Reporting with R Markdown](https://www.datacamp.com/courses/reporting-with-r-markdown)
 </div>
 ___
 ## [ CS_09 :  Tracking Hurricanes! ]( ./CS_09.html ) 

@@ -7,19 +7,14 @@
 #'   - Chapters  [11, 26-30 in R4DS](http://r4ds.had.co.nz)
 #'   - Browse website about [RMarkdown](https://rmarkdown.rstudio.com/index.html)
 #'   - Browse details about creating [RMarkdown Websites](https://rmarkdown.rstudio.com/rmarkdown_websites.htm)
-#' presentation:
-#'    - PS_08_repro.html
 #' tasks:
 #'    - Create repository for final project
 #'    - Explore various options for your project website
 #'    - Push changes back to GitHub
 #'    - Enable website on GitHub
-#'    - Complete DataCamp Course in [Reporting with R Markdown](https://www.datacamp.com/courses/reporting-with-r-markdown)
 #' ---
 #' 
 
-#' 
-#' `r presframe()`
 #' 
 #' # Reading
 #' 

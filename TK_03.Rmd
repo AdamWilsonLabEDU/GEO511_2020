@@ -27,6 +27,13 @@ tasks:
 md_bullet(rmarkdown::metadata$reading)
 ```
 
+
+# Tasks
+
+```{r tasks,results='asis',echo=F}
+md_bullet(rmarkdown::metadata$tasks)
+```
+
 # Background
 
 Version control systems (VCS) allow developers to maintain a record of how their code has changed over time. When used properly, a VCS can help a developer track down the exact point in time when a bug was introduced or fixed, easily undo changes, and collaborate with other developers.
@@ -88,11 +95,5 @@ For the rest of the course, you should keep your files organzed in a git-managed
 
 ```{r, out.width="400px", echo=F}
 knitr::include_graphics("img/folderstructure.png")
-```
-
-# Tasks
-
-```{r tasks,results='asis',echo=F}
-md_bullet(rmarkdown::metadata$tasks)
 ```
 
