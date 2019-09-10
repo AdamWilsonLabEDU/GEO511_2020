@@ -98,7 +98,7 @@ Host your own server or use another private company, such as BitBucket.
 6. Push those changes to github (back them up)
 7. repeat
 
-See Tasks [1](Tk_01.html) and [2](Tk_02.html).
+See Tasks [1](Tk_03.html) and [2](Tk_04.html).
 
 ## Function of Git Repository for this course
 
@@ -145,9 +145,9 @@ Git has many, many more features...
 
 #  Let's do it!
 
-## Task 2 {data-background-iframe="../TK_02.html"}
+## Task 2 {data-background-iframe="../TK_03.html"}
 
-[Task 2](../TK_02.html)
+[Task 2](../TK_03.html)
 
 # More advanced Git
 

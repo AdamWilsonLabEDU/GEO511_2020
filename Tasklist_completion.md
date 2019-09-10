@@ -197,6 +197,12 @@ Below are a set of tasks that we will work on in class (either alone or in small
   </tr>
   <tr>
    <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Configure Git </td>
+   <td style="text-align:left;"> [TK_03](./TK_03.html) </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
    <td style="text-align:left;"> Make sure git works in R-Studio </td>
    <td style="text-align:left;"> [TK_03](./TK_03.html) </td>
    <td style="text-align:right;"> 3 </td>
@@ -204,6 +210,12 @@ Below are a set of tasks that we will work on in class (either alone or in small
   <tr>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:left;"> Optionally sign up for the [GitHub Education pack](https://education.github.com/pack) </td>
+   <td style="text-align:left;"> [TK_03](./TK_03.html) </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Click on [this link to access the course repository](https://classroom.github.com/a/eekUpAO-) </td>
    <td style="text-align:left;"> [TK_03](./TK_03.html) </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
@@ -233,6 +245,12 @@ Below are a set of tasks that we will work on in class (either alone or in small
   </tr>
   <tr>
    <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Confirm that the changes are visible on your github page </td>
+   <td style="text-align:left;"> [TK_03](./TK_03.html) </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
    <td style="text-align:left;"> Join two datasets using a common column </td>
    <td style="text-align:left;"> [CS_04](./CS_04.html) </td>
    <td style="text-align:right;"> 4 </td>
@@ -252,6 +270,12 @@ Below are a set of tasks that we will work on in class (either alone or in small
   <tr>
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:left;"> Briefly describe functions that seem especially useful in the README.md file for this week. </td>
+   <td style="text-align:left;"> [TK_04](./TK_04.html) </td>
+   <td style="text-align:right;"> 4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Confirm that all tasks and case studies you have completed have been committed in your course repository and pushed to Github. </td>
    <td style="text-align:left;"> [TK_04](./TK_04.html) </td>
    <td style="text-align:right;"> 4 </td>
   </tr>

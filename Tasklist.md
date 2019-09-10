@@ -119,12 +119,15 @@ ___
 ## Tasks
 - RStudio and [the Git GUI](https://www.youtube.com/watch?v=E2d91v1Twcc){target='blank'}
 - Install git on your computer
+- Configure Git
 - Make sure git works in R-Studio
 - Optionally sign up for the [GitHub Education pack](https://education.github.com/pack)
+- Click on [this link to access the course repository](https://classroom.github.com/a/eekUpAO-)
 - Create a new project in Rstudio and connect it to the new repository in GitHub. Helpful instructions are [here](http://happygitwithr.com/rstudio-git-github.html#clone-the-new-github-repository-to-your-computer-via-rstudio)
 - Edit the README.md file in your repository to include a brief description of the repository (e.g. "Coursework for Spatial Data Science").
 - Stage and Commit your changes to Git (using the git tab in the upper right of RStudio)
 - Push the repository up to GitHub
+- Confirm that the changes are visible on your github page
 </div>
 ___
 ## [ CS_04 :  Farthest airport from New York City ]( ./CS_04.html ) 
@@ -153,6 +156,7 @@ ___
 
 ## Tasks
 - Briefly describe functions that seem especially useful in the README.md file for this week.
+- Confirm that all tasks and case studies you have completed have been committed in your course repository and pushed to Github.
 </div>
 ___
 ## [ CS_05 :  Beware the Canadians! ]( ./CS_05.html ) 

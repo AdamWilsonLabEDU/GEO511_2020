@@ -11,8 +11,13 @@
 
 
 
-<link rel="stylesheet" href="externals/reveal.js-3.3.0.1/css/theme/white.css" id="theme">
+<link rel="stylesheet" href="externals/reveal.js-3.3.0.1/css/theme/black.css" id="theme">
 
+<style type="text/css">
+.reveal section img {
+  background: rgba(255, 255, 255, 0.85);
+}
+</style>
 
   <!-- some tweaks to reveal css -->
   <style type="text/css">
@@ -537,7 +542,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>Push those changes to github (back them up)</li>
 <li>repeat</li>
 </ol>
-<p>See Tasks <a href="Tk_01.html">1</a> and <a href="Tk_02.html">2</a>.</p>
+<p>See Tasks <a href="Tk_03.html">1</a> and <a href="Tk_04.html">2</a>.</p>
 </section><section id="function-of-git-repository-for-this-course" class="slide level2">
 <h2>Function of Git Repository for this course</h2>
 <ol type="1">
@@ -577,9 +582,9 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <h2>And much more!</h2>
 <p>Git has many, many more features…</p>
 </section></section>
-<section><section id="lets-do-it" class="title-slide slide level1"><h1>Let’s do it!</h1></section><section id="task-2" class="slide level2" data-background-iframe="../TK_02.html">
+<section><section id="lets-do-it" class="title-slide slide level1"><h1>Let’s do it!</h1></section><section id="task-2" class="slide level2" data-background-iframe="../TK_03.html">
 <h2>Task 2</h2>
-<p><a href="../TK_02.html">Task 2</a></p>
+<p><a href="../TK_03.html">Task 2</a></p>
 </section></section>
 <section><section id="more-advanced-git" class="title-slide slide level1"><h1>More advanced Git</h1></section><section id="git-command-line-from-rstudio" class="slide level2">
 <h2>Git command line from RStudio</h2>
@@ -652,7 +657,7 @@ $ git merge devel  #merge in changes from devel branch</code></pre>
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
         width: '90%',
-        height: '100%',
+        height: '90%',
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
         // Bounds for smallest/largest possible scale to apply to content

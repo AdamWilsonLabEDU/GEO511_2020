@@ -54,14 +54,14 @@ Select two repositories and evaluate them according to the instructions and rubr
 
 1) Explore the final projects in the [class repositor](https://github.com/AdamWilsonLabEDU)
 2) Open the repository and check if there have already been two reviews by checking if there are 2 (or more) "Pull Requests".  For example, in the image below, there are 0 pull requests, so this repository would be available for you to review.  If there are already 2 pull requests, select another repository. ![](assets/pull_reqeust.png)
-2) Go to the github page linked in the assignment and download the repository as a zip file (click on the <img src='assets/download.png' width=100> button).
+2) Go to the GitHub page linked in the assignment and download the repository as a zip file (click on the <img src='assets/download.png' width=100> button).
 3) Unzip the file after it downloads
 4) Open the project or `index.Rmd` in RStudio and click `knit` or  `Build Website` in the `Build` tab in the upper right.
 
 Evaluate the following provide any feedback via pull request.
 1) Website
   1) **Introduction**  [~ 200 words]: Clearly stated background and questions / hypotheses / problems being addressed. Sets up the analysis in an interesting and compelling way.
-  2) **Data**: Script downloads at least one dataset automatically through the internet.  This could use a direct download (e.g. download.file()) or an API (anything from ROpenSci).
+  2) **Data**: Script downloads at least one data set automatically through the internet.  This could use a direct download (e.g. download.file()) or an API (anything from ROpenSci).
   3) **Figure**: The HTML file includes at least one figure of the data.
 2) **Output:** The .Rmd produces HTML output with
   1) section headers for all the major sections of the paper
@@ -71,8 +71,6 @@ Be sure to install any required libraries (do not complain if it fails because y
 
 
 ### Final Draft
-
-You will have two opportunites to submit your final project and your final grade on the project will be the highest of the two submissions.
 
 Links to your project website will be uploaded to UBLearns at the end of the semester and posted on the course website.  
 
@@ -112,6 +110,11 @@ Figures (maps and other graphics) are a vital component of scientific communicat
 
 #### References
 You should cite any relevant materials (including data sources and methods) in the text using a standard author-date citation format (e.g. Wilson, 2015) and then described in a References section.  You can either compile the references manually (e.g. cutting and pasting the citation into the references section) or use the automated system in RMarkdown explained [here](http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html).   Other citation styles are acceptable as long as they are consistent, complete, and easy to understand.  
+
+### Project Ideas
+
+* Summarizing citizen science data collected at the University at Buffalo
+* 
 
 ### Resources
 
