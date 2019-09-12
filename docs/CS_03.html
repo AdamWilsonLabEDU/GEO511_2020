@@ -454,7 +454,7 @@ div.tocify {
 <li>Plot #1 (the first row of plots)
 <ul>
 <li>Use <code>ggplot()</code> and the <code>theme_bw()</code> to duplicate the first plot using the filtered dataset (without Kuwait)</li>
-<li>Specify the appropriate aesthetic mapping (<code>aes()</code>) to color by contintent and adjust the size of the point with <code>size=pop/100000</code>. Remeber that if you adjust the data like this you will also need to update the legend later.</li>
+<li>Specify the appropriate aesthetic mapping (<code>aes()</code>) to color by contintent and adjust the size of the point with <code>size=pop/100000</code>. Remember that if you adjust the data like this you will also need to update the legend later.</li>
 <li>Use <code>scale_y_continuous(trans = &quot;sqrt&quot;)</code> to get the correct scale on the y-axis.</li>
 <li>Use <code>facet_wrap(~year,nrow=1)</code> to divide the plot into separate panels.</li>
 <li>Use <code>labs()</code> to specify more informative x, y, size, and color keys.<br />
@@ -466,7 +466,7 @@ div.tocify {
 <li>Use <code>group_by()</code> to group by <code>continent</code> and <code>year</code></li>
 <li>Use <code>summarize()</code> with the below commands to calculate the data for the black continent average line on the second plot:
 <ul>
-<li><code>gdpPercapweighted = mean(x = gdpPercap, w = pop)</code></li>
+<li><code>gdpPercapweighted = weighted.mean(x = gdpPercap, w = pop)</code></li>
 <li><code>pop = sum(as.numeric(pop))</code></li>
 </ul></li>
 </ul></li>
