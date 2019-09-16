@@ -66,8 +66,7 @@ p1=ggplot(data = gapminder, aes(color = continent, x = lifeExp, y = gdpPercap, s
 p2=ggplot(data = gapminder, aes(color = continent, x = year, y = gdpPercap)) + 
   geom_point(aes(size = pop/100000)) + 
   geom_line(aes(group = country)) +
-  geom_point(data = gapminder.continent, color = "black", aes(size = pop/100000)) +
-  geom_line(data = gapminder.continent, color = "black") +
+  geom_point(data = gapminder.continent, color = "black", aes(size = pop/100000)) +  geom_line(data = gapminder.continent, color = "black") +
   facet_wrap(~continent, nrow = 1) +
   theme_bw() + 
   labs(x = "Year", y = "GDP per capita", color = "Continent", size = "Population (100k)")

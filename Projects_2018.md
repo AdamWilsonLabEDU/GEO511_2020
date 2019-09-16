@@ -37,19 +37,19 @@ You are invited to explore the student projects below (click on a title to visit
   </tr>
   <tr>
    <td style="text-align:left;"> Canacelqr </td>
-   <td style="text-align:left;"> [NA](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-Canacelqr) </td>
+   <td style="text-align:left;"> [Spatial pattern of plant species biodiversity in South Africa—Using Proteaceae family as example](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-Canacelqr) </td>
   </tr>
   <tr>
    <td style="text-align:left;"> HamedGhodsi90 </td>
-   <td style="text-align:left;"> [NA](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-HamedGhodsi90) </td>
+   <td style="text-align:left;"> [Interpreting The Stormwater Management Model (SWMM) Output Files](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-HamedGhodsi90) </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Henryxie1003 </td>
-   <td style="text-align:left;"> [NA](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-Henryxie1003) </td>
+   <td style="text-align:left;"> [Tracking tree phenology of Nature View Park in Buffalo](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-Henryxie1003) </td>
   </tr>
   <tr>
    <td style="text-align:left;"> hkhorasani </td>
-   <td style="text-align:left;"> [NA](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-hkhorasani) </td>
+   <td style="text-align:left;"> [Investigation of the eutrophication trends in the united states’ northeastern and midwestern lakes](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-hkhorasani) </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Jim-King </td>
@@ -85,15 +85,15 @@ You are invited to explore the student projects below (click on a title to visit
   </tr>
   <tr>
    <td style="text-align:left;"> sunjiazh </td>
-   <td style="text-align:left;"> [NA](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-sunjiazh) </td>
+   <td style="text-align:left;"> [A common nosedive of European tourism in 2015](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-sunjiazh) </td>
   </tr>
   <tr>
    <td style="text-align:left;"> talentstuder </td>
-   <td style="text-align:left;"> [NA](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-talentstuder) </td>
+   <td style="text-align:left;"> [October Temperature Analysis in Buffalo and Western New York Area](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-talentstuder) </td>
   </tr>
   <tr>
    <td style="text-align:left;"> wwang52 </td>
-   <td style="text-align:left;"> [NA](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-wwang52) </td>
+   <td style="text-align:left;"> [Higher Education in New York State](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-wwang52) </td>
   </tr>
   <tr>
    <td style="text-align:left;"> YingLuGit </td>
@@ -105,7 +105,7 @@ You are invited to explore the student projects below (click on a title to visit
   </tr>
   <tr>
    <td style="text-align:left;"> zhang224 </td>
-   <td style="text-align:left;"> [NA](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-zhang224) </td>
+   <td style="text-align:left;"> [Connection between Deer Tick and Lyme Disease](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-zhang224) </td>
   </tr>
 </tbody>
 </table>
