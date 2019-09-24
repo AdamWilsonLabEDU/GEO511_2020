@@ -1,5 +1,7 @@
 ---
 title: "Joining / Merging Data"
+type: Presentation
+week: 4
 ---
 
 # Relational Data
