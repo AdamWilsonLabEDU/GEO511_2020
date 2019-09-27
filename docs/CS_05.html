@@ -470,8 +470,8 @@ data(us_states)
 <li>transform to the albers equal area projection:</li>
 </ol>
 <pre class="r"><code>albers=&quot;+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=37.5 +lon_0=-96 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs&quot;</code></pre>
+it easier to use <code>ggplot()</code>
 <ol start="2" style="list-style-type: decimal">
-<li>use <code>st_set_geometry()</code> to specify that the <code>geom</code> column contains the <code>geometry</code>. This will also rename the column from <code>geom</code> to <code>geometry</code> to make it easier to use <code>ggplot()</code></li>
 <li>filter the world dataset to include only <code>name_long==&quot;Canada&quot;</code></li>
 <li>buffer canada to 10km (10000m)</li>
 </ol></li>
