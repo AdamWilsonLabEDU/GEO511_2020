@@ -16,8 +16,6 @@
 #' 
 
 #' 
-#' `r presframe()`
-#' 
 #' # Reading
 #' 
 
@@ -54,10 +52,10 @@ ggplot(world,aes(x=gdpPercap, y=continent, color=continent))+
 #' 
 #' ## Steps
 #' 1. Download the [<i class="fa fa-file-code-o fa-1x" aria-hidden="true"></i> starter R script (if desired)](`r output_nocomment`){target="_blank"}.  Save this directly to your course folder (repository) so you don't lose track of it!
-#' 2. Add code needed to produce the second plot (loading required libraries above and loading the `world` data)
+#' 2. Add code (only 3 lines) needed to produce the second plot (load the required libraries above and load the `world` data)
 #' 2. Copy the code to your clipboard
 #' 3. run `reprex()` to generate the reproducible example in the "Viewer Pane"
-#' 4. Export the preview as an html file and save it in your course repository.  It should look something like this (note the image is intentionally blurred):
+#' 4. Export the preview as an html file and save it in your course repository.  It should look something like this:
 #' ![](assets/reprex.png)
 #' 
 #' </div>

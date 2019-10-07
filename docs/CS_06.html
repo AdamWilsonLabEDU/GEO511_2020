@@ -459,8 +459,14 @@ library(tidyverse)
 library(sf)</code></pre>
 <p>Loading the <code>spData()</code> package may return a warning: <code>To access larger datasets...install spDataLarge...</code>. This is not required - you can use the standard lower resolution files and safely ignore this message.</p>
 <h2 id="data">Data</h2>
+<p>Download monthly WorldClim data</p>
 <pre class="r"><code>data(world)  #load &#39;world&#39; data from spData package
 tmax_monthly &lt;- getData(name = &quot;worldclim&quot;, var=&quot;tmax&quot;, res=10)</code></pre>
+<p>If the Worldclim website is down (e.g. you get an error above), you can get similar long term mean temperature data from the <a href="https://crudata.uea.ac.uk/cru/data/temperature/">Climatic Research Unit (CRU) here</a>. Download these data in netcdf format using the code below:</p>
+<pre class="r"><code>library(ncdf4)
+download.file(&quot;https://crudata.uea.ac.uk/cru/data/temperature/absolute.nc&quot;,&quot;crudata.nc&quot;)
+tmean=raster(&quot;crudata.nc&quot;)</code></pre>
+<p>Note: If you use the CRU data instead of the WorldClim data, you will have to edit/adjust the steps below accordingly.</p>
 <h2 id="steps">Steps</h2>
 <ol style="list-style-type: decimal">
 <li>Prepare country polygon data (the <code>world</code> object).
@@ -490,7 +496,7 @@ tmax_monthly &lt;- getData(name = &quot;worldclim&quot;, var=&quot;tmax&quot;, r
 </div>
 </div>
 <p>Your final result should look something like this:</p>
-<p><img src="CS_06_files/figure-html/unnamed-chunk-3-1.png" /><!-- --></p>
+<p><img src="CS_06_files/figure-html/unnamed-chunk-4-1.png" /><!-- --></p>
 And the summary table will look like this:
 <table>
 <thead>
