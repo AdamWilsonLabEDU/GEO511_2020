@@ -1,0 +1,50 @@
+---
+title: "Carbon Dioxide Concentrations at Mona Loa Observatory"
+author: "Adam M. Wilson"
+date: "10/9/2019"
+output:
+  html_document: default
+  github_document: default
+  powerpoint_presentation: default
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+```
+
+```{r import_data, results='hide',message=FALSE, echo=F}
+# get data
+data=read_table("ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_annmean_mlo.txt",
+                skip = 56) %>% 
+  select(-1)
+  
+```
+
+# Annual Mean Carbon Dioxide Concentrations 1959-Present
+```{r pressure, echo=FALSE}
+ggplot(data,aes(x=year,y=mean))+
+         geom_line(col="red",size=2)+
+  ylab("Mauna Loa Annual Mean CO_2 (ppm)")+
+  xlab("Year")
+```
+
+# Top Five Annual Mean Carbon Dioxide Concentrations at Mona Loa
+```{r, echo=F, warning=FALSE}
+data %>% 
+  arrange(desc(mean)) %>% 
+  select(year,mean) %>% 
+  slice(1:5) %>% 
+  kable(digits=1, align="l") %>% 
+  kable_styling("striped") %>%
+  row_spec(1, color = "red") %>%
+  as_image(width = 10,file = "table.png")
+```
+
+
+```{r, eval=F, echo=F}
+rmarkdown::render("CS_08_template/CS_08_template.Rmd",output_format = "all")
+```

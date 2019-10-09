@@ -260,14 +260,10 @@ ___
  <a class="btn btn-link" href="./CS_08.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i15">Preview Readings & Tasks </button><div id="i15" class="collapse">
 ## Readings
 - Browse website about [RMarkdown](https://rmarkdown.rstudio.com/index.html)
-- list(`Browse [_R Markdown` = "the Definitive Guide_](https://bookdown.org/yihui/rmarkdown/)")
+- Browse [R Markdown, the Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
 
 ## Tasks
-- Create a new RMarkdown Document in Rstudio with `File -> New File -> R Markdown` and save it in the case_study folder for this session
-- Click "Knit" button or `File -> Knit` Document to generate an HTML document
-- Adjust the [YAML header](https://bookdown.org/yihui/rmarkdown/html-document.html) to produce a HTML, Word, and PDF version of the document.
-- Save the outputs in your course folder for this week
-- Think about how you could use this "one document, several outputs" approach in a project and make a few notes in your README.md file for this session.
+- Build a RMarkdown document that downloads a dataset, produces one graph and one table, and exports to four different formats (HTML, GitHub Markdown, Word, Powerpoint).
 </div>
 ___
 ## [ TK_08 :  Create Final Project Webpage ]( ./TK_08.html ) 

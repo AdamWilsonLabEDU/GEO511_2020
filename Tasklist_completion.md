@@ -401,31 +401,7 @@ Below are a set of tasks that we will work on in class (either alone or in small
   </tr>
   <tr>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:left;"> Create a new RMarkdown Document in Rstudio with `File -&gt; New File -&gt; R Markdown` and save it in the case_study folder for this session </td>
-   <td style="text-align:left;"> [CS_08](./CS_08.html) </td>
-   <td style="text-align:right;"> 8 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:left;"> Click &quot;Knit&quot; button or `File -&gt; Knit` Document to generate an HTML document </td>
-   <td style="text-align:left;"> [CS_08](./CS_08.html) </td>
-   <td style="text-align:right;"> 8 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:left;"> Adjust the [YAML header](https://bookdown.org/yihui/rmarkdown/html-document.html) to produce a HTML, Word, and PDF version of the document. </td>
-   <td style="text-align:left;"> [CS_08](./CS_08.html) </td>
-   <td style="text-align:right;"> 8 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:left;"> Save the outputs in your course folder for this week </td>
-   <td style="text-align:left;"> [CS_08](./CS_08.html) </td>
-   <td style="text-align:right;"> 8 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:left;"> Think about how you could use this &quot;one document, several outputs&quot; approach in a project and make a few notes in your README.md file for this session. </td>
+   <td style="text-align:left;"> Build a RMarkdown document that downloads a dataset, produces one graph and one table, and exports to four different formats (HTML, GitHub Markdown, Word, Powerpoint). </td>
    <td style="text-align:left;"> [CS_08](./CS_08.html) </td>
    <td style="text-align:right;"> 8 </td>
   </tr>

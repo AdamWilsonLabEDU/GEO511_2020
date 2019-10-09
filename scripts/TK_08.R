@@ -24,7 +24,7 @@ md_bullet(rmarkdown::metadata$reading)
 #' 
 #' # Tasks
 #' 
-## ----reading,results='asis',echo=F---------------------------------------
+## ----tasks,results='asis',echo=F-----------------------------------------
 md_bullet(rmarkdown::metadata$tasks)
 
 #' 
@@ -47,18 +47,18 @@ md_bullet(rmarkdown::metadata$tasks)
 #' 
 #' Steps:
 #' 
-#' 1. Click on [this link](https://classroom.github.com/a/kCk9ysfI) to make a copy of the project template.  
-#' 2. Open your new repository in GitHub.  It will look something like [https://github.com/AdamWilsonLabEDU/geo503-finalproject-adammwilson](https://github.com/AdamWilsonLabEDU/geo503-finalproject-adammwilson)
+#' 1. Click on [this link](https://classroom.github.com/a/c_nqiAua) to make a copy of the project template.  
+#' 2. Open your new repository in GitHub.  It will look something like [https://github.com/geo511-2019/2019_GEO_511_Project-adammwilson](http://wilsonlab.io/RDataScience_Project/)
 #' 3. Click the green button "Clone or Download" and copy the URL.
 #' 
 #' ## Clone the project template to your computer
 #' Now you will make a local copy on your computer by creating a new project and 'cloning' the repository you just forked.
-#' 
-#' 1. **File -> New Project -> Version Control -> Git**
-#'   * URL: paste from above.  It will be similar to  `https://github.com/AdamWilsonLabEDU/geo503-finalproject-adammwilson` but with your username.
-#'   * Project name: you can rename it if you want or keep the default: `RDataScience_Project`
+#' 1. Open RStudio
+#' 2. **File -> New Project -> Version Control -> Git**
+#'   * URL: paste from above.  It will be similar to  `https://github.com/geo511-2019/2019_GEO_511_Project-adammwilson` but with your username.
+#'   * Project name: you can rename it if you want or keep the default: `2019_GEO_511_Project`
 #'   * Project as subdirectory of `~/Documents/repos` or wherever you want to put it.
-#' 2.  It should download the project to your computer then open it to the `index.Rmd` file.
+#' 3.  It should download the project to your computer then open it to the `index.Rmd` file.
 #' 
 #' ## Play with the project template
 #' 
@@ -72,15 +72,15 @@ md_bullet(rmarkdown::metadata$tasks)
 #'   *  Type in a brief message about the changes you made.  Maybe something like "First update to my project materials"
 #'   * Click `Commit`, then `close`.
 #'   * Click `Push` to push it back up to GitHub.
-#' 2. Now go to your repository website (similar to `https://github.com/AdamWilsonLabEDU/geo503-finalproject-adammwilson`
+#' 2. Now go to your repository website (similar to `https://github.com/geo511-2019/2019_GEO_511_Project-adammwilson`
 #' 3. Publish your website
 #'    * Click settings in the upper right, then scroll down to `GitHub Pages` section
 #'    * Change "Source" to `master branch /docs folder` and click Save
 #'    * Copy your new site's URL to your clipboard
-#'    * Go back to the 'Code' tab for your project respositor (similar to `https://github.com/AdamWilsonLabEDU/geo503-finalproject-adammwilson`) and find the line "No description, website, or topics provided" and click "Edit" on the right as shown in the following figure.
+#'    * Go back to the 'Code' tab for your project respositor and find the line "No description, website, or topics provided" and click "Edit" on the right as shown in the following figure.
 #'    ![](assets/github_website.png)
 #'    * Paste the URL in the "Website" box. This will make it easier for others to find your website.
-#' 4. Go to your new project webpage (URL will be similar to `https://github.com/AdamWilsonLabEDU/geo503-finalproject-adammwilson`.
+#' 4. Go to your new project webpage.
 #' 5.  Now you can `commit` and then `push` your updates from RStudio and your website will be updated.  If you get tired of entering your username and password every time, check out the instructions [here](GitSSHNotes.html).  
 #' 
 #' ## Explore markdown functions
