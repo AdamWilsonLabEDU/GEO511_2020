@@ -4,6 +4,15 @@ type: Presentation
 week: 8
 ---
 
+## Resource Presentations
+
+## Case Study
+
+Questions for leaders:
+
+1. In what situations can a 'reproducible example' be useful?
+2. Check out the help for `reprex()`.  When might you use these different parameters?
+
 ## The goal of reproducible research
 > "The goal of reproducible research is to tie specific instructions to data analysis and experimental data so that scholarship can be recreated, better understood and verified."  <small> Max Kuhn, CRAN Task View: Reproducible Research </small>
 

@@ -52,8 +52,19 @@ storm_data <- read_sf(storms$path)
 ```
 
 ```{r, echo=F, purl=F, warning=F}
+# function to drop storm points not near main tracks
+drop_outliers <- function(x) {
+   central_point=st_union(x) %>% 
+      st_centroid()
+   dists=st_distance(x,central_point) #get distances from central point
+   x2=filter(x,as.numeric(dists)<100000) #keep only points within 100km of centroid 
+   return(x) #return filtered dataset 
+}
+   
+   
 storms <- storm_data%>%
    filter(year>=1950)%>%
+   st_drop_outliers() %>% 
    mutate_if(is.numeric, 
              function(x) ifelse(x==-999.0,NA,x))%>% #-999 to NA
    mutate(decade=floor(year/10)*10) #add decade
