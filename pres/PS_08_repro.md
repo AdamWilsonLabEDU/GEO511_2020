@@ -1,6 +1,17 @@
 ---
 title: "Reproducible Research"
+type: Presentation
+week: 8
 ---
+
+## Resource Presentations
+
+## Case Study
+
+Questions for leaders:
+
+1. In what situations can a 'reproducible example' be useful?
+2. Check out the help for `reprex()`.  When might you use these different parameters?
 
 ## The goal of reproducible research
 > "The goal of reproducible research is to tie specific instructions to data analysis and experimental data so that scholarship can be recreated, better understood and verified."  <small> Max Kuhn, CRAN Task View: Reproducible Research </small>
@@ -22,7 +33,7 @@ title: "Reproducible Research"
 ## Motivations: Claerbout's principle
 
 > "An article about computational result is advertising, not scholarship. The actual scholarship is the full software environment, code and data, that produced the result." 
-<br><small> Claerbout and Karrenbach, Proceedings of the 62nd Annual International Meeting of the Society of Exploration Geophysics. 1992</small>
+<br><br><small> Claerbout and Karrenbach, Proceedings of the 62nd Annual International Meeting of the Society of Exploration Geophysics. 1992</small>
 
 
 ## Benefits are straightforward
@@ -76,19 +87,11 @@ title: "Reproducible Research"
 
 <small>![alt text](img_12/lemon.png)</small>
 
-## Common practices of many scientists {.columns-2}
-
-- Version control is ad hoc
-- Excel handles missing data inconsistently and sometimes incorrectly 
-- Excel uses poor algorithms for many functions
-- Scripting is possible but rare 
-
 ---
-
 <img src="img_12/phd-comic-vcs.gif" alt="alt text" width="400">
 
 
-## Click trails are ephemeral & dangerous {.columns-2}
+## Click trails are ephemeral {.columns-2}
 
 - Lots of human effort for tedious & time-wasting tasks
 - Error-prone due to manual & ad hoc data handling
@@ -133,7 +136,7 @@ Authors informed the journal that the merge of lab results and other survey data
 [Source](http://retractionwatch.com/2014/07/01/bad-spreadsheet-merge-kills-depression-paper-quick-fix-resurrects-it/)
 
 
-## Scripted analyses are superior  {.columns-2}
+## Open scripted analyses provide a solution  {.columns-2}
 
   <img src="img_12/open-science.png" alt="alt text" width="200px">
 

@@ -73,8 +73,13 @@ code span.vs { color: #4e9a06; } /* VerbatimString */
 code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<link rel="stylesheet" href="externals/reveal.js-3.3.0.1/css/theme/white.css" id="theme">
+<link rel="stylesheet" href="externals/reveal.js-3.3.0.1/css/theme/black.css" id="theme">
 
+<style type="text/css">
+.reveal section img {
+  background: rgba(255, 255, 255, 0.85);
+}
+</style>
 
   <!-- some tweaks to reveal css -->
   <style type="text/css">
@@ -516,6 +521,17 @@ document.getElementsByTagName('head')[0].appendChild(style);
     <h1 class="title">Reproducible Research</h1>
 </section>
 
+<section id="resource-presentations" class="slide level2">
+<h2>Resource Presentations</h2>
+</section>
+<section id="case-study" class="slide level2">
+<h2>Case Study</h2>
+<p>Questions for leaders:</p>
+<ol type="1">
+<li>In what situations can a ‘reproducible example’ be useful?</li>
+<li>Check out the help for <code>reprex()</code>. When might you use these different parameters?</li>
+</ol>
+</section>
 <section id="the-goal-of-reproducible-research" class="slide level2">
 <h2>The goal of reproducible research</h2>
 <blockquote>
@@ -538,7 +554,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <section id="motivations-claerbouts-principle" class="slide level2">
 <h2>Motivations: Claerbout’s principle</h2>
 <blockquote>
-<p>“An article about computational result is advertising, not scholarship. The actual scholarship is the full software environment, code and data, that produced the result.” <br><small> Claerbout and Karrenbach, Proceedings of the 62nd Annual International Meeting of the Society of Exploration Geophysics. 1992</small></p>
+<p>“An article about computational result is advertising, not scholarship. The actual scholarship is the full software environment, code and data, that produced the result.” <br><br><small> Claerbout and Karrenbach, Proceedings of the 62nd Annual International Meeting of the Society of Exploration Geophysics. 1992</small></p>
 </blockquote>
 </section>
 <section id="benefits-are-straightforward" class="slide level2">
@@ -591,39 +607,6 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <section class="slide level2">
 
 <p><small><img data-src="img_12/lemon.png" alt="alt text" /></small></p>
-</section>
-<section id="common-practices-of-many-scientists-1" class="slide level2 columns-2">
-<h2>Common practices of many scientists</h2>
-<ul>
-<li>Version control is ad hoc</li>
-<li>Excel handles missing data inconsistently and sometimes incorrectly</li>
-<li>Excel uses poor algorithms for many functions</li>
-<li>Scripting is possible but rare</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<p><img src="img_12/phd-comic-VCS.gif" alt="alt text" width="400"></p>
-</section>
-<section id="click-trails-are-ephemeral-dangerous" class="slide level2 columns-2">
-<h2>Click trails are ephemeral &amp; dangerous</h2>
-<ul>
-<li>Lots of human effort for tedious &amp; time-wasting tasks</li>
-<li>Error-prone due to manual &amp; ad hoc data handling</li>
-<li>Difficult to record - hard to reconstruct a ‘click history’</li>
-<li>Tiny changes in data or method require extensive reworking</li>
-</ul>
-</section>
-<section id="case-study-reinhart-and-rogoff-controversy" class="slide level2">
-<h2>Case study: Reinhart and Rogoff controversy</h2>
-<ul>
-<li>2010: Claimed high debt-to-GDP ratios led to low GDP growth</li>
-<li>Threshold to growth at a debt-to-GDP ratio of &gt;90%</li>
-<li>Substantial popular impact on autsterity politics</li>
-</ul>
-</section>
-<section class="slide level2">
-
 <p><img src="img_12/reinhart_rogoff_coding_error_0.png" alt="alt text" width="400"></p>
 </section>
 <section class="slide level2">
@@ -650,8 +633,8 @@ document.getElementsByTagName('head')[0].appendChild(style);
 </blockquote>
 <p><a href="http://retractionwatch.com/2014/07/01/bad-spreadsheet-merge-kills-depression-paper-quick-fix-resurrects-it/">Source</a></p>
 </section>
-<section id="scripted-analyses-are-superior" class="slide level2 columns-2">
-<h2>Scripted analyses are superior</h2>
+<section id="open-scripted-analyses-provide-a-solution" class="slide level2 columns-2">
+<h2>Open scripted analyses provide a solution</h2>
 <p><img src="img_12/open-science.png" alt="alt text" width="200px"></p>
 <ul>
 <li>Plain text files readable for a <em>long</em> time</li>
@@ -842,7 +825,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
         width: '90%',
-        height: '100%',
+        height: '90%',
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
         // Bounds for smallest/largest possible scale to apply to content
