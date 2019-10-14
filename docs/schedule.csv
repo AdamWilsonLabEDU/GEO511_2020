@@ -6,7 +6,7 @@
 5,9/24/19,PS_05,TK_05,CS_05,Spatial Analysis in R with sf and raster
 6,10/1/19,PS_06_raster,TK_06,CS_06,Communicating with Data in the Tidyverse
 7,10/8/19,PS_07_help,TK_07,CS_07,Data Visualization with ggplot 2
-8,10/15/19,PS_08_sf,TK_08,CS_08,Importing Data in R 1
+8,10/15/19,PS_08_repro,TK_08,CS_08,Importing Data in R 1
 9,10/22/19,PS_09_weather,TK_09,CS_09,Importing Data in R 2
 10,10/29/19,PS_10_RS,TK_10,CS_10,Cleaning Data in R
 11,11/5/19,PS_11_ParallelProcessing,TK_11,CS_11,Exploratory Data Analysis in R: Case Study

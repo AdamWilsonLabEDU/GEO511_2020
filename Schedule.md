@@ -30,7 +30,7 @@ We will refer to the following texts (all available online):
  |  5 |  9/24/19 |  [<i class='fas fa-desktop'>   </i>](pres/PS_05.html){target='_blank'} |  [Spatial Vector Data](./TK_05.html) |  [Beware the Canadians!](./CS_05.html) |  Spatial Analysis in R with sf and raster |
  |  6 |  10/1/19 |  [<i class='fas fa-desktop'>   </i>](pres/PS_06_raster.html){target='_blank'} |  [Spatial Raster Data](./TK_06.html) |  [Find hottest country on each continent](./CS_06.html) |  Communicating with Data in the Tidyverse |
  |  7 |  10/8/19 |  [<i class='fas fa-desktop'>   </i>](pres/PS_07_help.html){target='_blank'} |  [Project Proposal](./TK_07.html) |  [Getting Help!](./CS_07.html) |  Data Visualization with ggplot 2 |
- |  8 |  10/15/19 |  [<i class='fas fa-desktop'>   </i>](pres/PS_08_sf.html){target='_blank'} |  [Create Final Project Webpage](./TK_08.html) |  [One Script, Many Products](./CS_08.html) |  Importing Data in R 1 |
+ |  8 |  10/15/19 |  [<i class='fas fa-desktop'>   </i>](pres/PS_08_repro.html){target='_blank'} |  [Create Final Project Webpage](./TK_08.html) |  [One Script, Many Products](./CS_08.html) |  Importing Data in R 1 |
  |  9 |  10/22/19 |  [<i class='fas fa-desktop'>   </i>](pres/PS_09_weather.html){target='_blank'} |  [APIs, time-series, and weather Data](./TK_09.html) |  [Tracking Hurricanes!](./CS_09.html) |  Importing Data in R 2 |
  |  10 |  10/29/19 |  [<i class='fas fa-desktop'>   </i>](pres/PS_10_RS.html){target='_blank'} |  [Remote Sensing](./TK_10.html) |  []() |  Cleaning Data in R |
  |  11 |  11/5/19 |  [<i class='fas fa-desktop'>   </i>](pres/PS_11_ParallelProcessing.html){target='_blank'} |  [Project First Draft](./TK_11.html) |  [Parallel Computing with R](./CS_11.html) |  Exploratory Data Analysis in R: Case Study |

@@ -31,7 +31,7 @@ md_bullet(rmarkdown::metadata$tasks)
 #' ## Overview
 #' One convenient way to share research details is through a public website that includes all the information needed to reproduce the project.  You will do this for your final project.
 #' 
-#' Today we will make a copy of a template for your final project, edit it, and 'push' it back up to your github account.  You can check out the template code at [https://github.com/AdamWilsonLab/RDataScience_Project](https://github.com/AdamWilsonLab/RDataScience_Project) and the template website at [http://adamwilson.us/RDataScience_Project/](http://adamwilson.us/RDataScience_Project/)
+#' Today we will make a copy of a template for your final project, edit it, and 'push' it back up to your github account.  You can check out the template code at [https://github.com/AdamWilsonLab/RDataScience_Project](https://github.com/AdamWilsonLab/RDataScience_Project) and the template website at [http://wilsonlab.io/RDataScience_Project/](http://wilsonlab.io/RDataScience_Project/)
 #' 
 #' ## R Markdown
 #' 
@@ -53,6 +53,7 @@ md_bullet(rmarkdown::metadata$tasks)
 #' 
 #' ## Clone the project template to your computer
 #' Now you will make a local copy on your computer by creating a new project and 'cloning' the repository you just forked.
+#' 
 #' 1. Open RStudio
 #' 2. **File -> New Project -> Version Control -> Git**
 #'   * URL: paste from above.  It will be similar to  `https://github.com/geo511-2019/2019_GEO_511_Project-adammwilson` but with your username.
