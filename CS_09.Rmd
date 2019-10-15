@@ -64,7 +64,7 @@ drop_outliers <- function(x) {
    
 storms <- storm_data%>%
    filter(year>=1950)%>%
-   st_drop_outliers() %>% 
+   drop_outliers() %>% 
    mutate_if(is.numeric, 
              function(x) ifelse(x==-999.0,NA,x))%>% #-999 to NA
    mutate(decade=floor(year/10)*10) #add decade
