@@ -1,7 +1,7 @@
 ---
 title: "Carbon Dioxide Concentrations at Mona Loa Observatory"
 author: "Adam M. Wilson"
-date: "10/9/2019"
+date: "October 9"
 output:
   html_document: default
   github_document: default
@@ -17,10 +17,19 @@ library(kableExtra)
 ```
 
 ```{r import_data, results='hide',message=FALSE, echo=F}
+
+drop_outliers <- function(x) {
+   x2=na.omit(x) #remove observations with missing values
+   return(x) #return filtered dataset 
+}
+   
+
 # get data
 data=read_table("ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_annmean_mlo.txt",
                 skip = 56) %>% 
-  select(-1)
+  select(-1) %>% 
+  drop_outliers()
+
   
 ```
 
