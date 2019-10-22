@@ -1,5 +1,7 @@
 ---
 title:  APIs, time-series, and weather Data
+type: Presentation
+week: 9
 ---
 
 
@@ -55,7 +57,10 @@ c1=content$parse$wikitext%>%
 cat(c1[3:4])
 ```
 
-In Programming language|computer programming, an application programming interface (API) is a set of subroutine definitions, communication protocols, and tools for building software.  In general terms, it is a set of clearly defined methods of communication among various components. 
+```
+## 
+##  An application programming interface (API) is an Interface (computing)|interface or communication protocol between a Client–server model|client and a server intended to simplify the building of client-side software.
+```
 
 ## Many data providers now have APIs
 
@@ -91,11 +96,48 @@ The URL you will request information from.
 
 * Data.gov API: https://www.data.gov/developers/apis
 * Github API: https://api.github.com
+* U.S. Census API:  http://api.census.gov
 
 
 ## Some R Packages for specific APIs
 
-### `FedData` package
+## Census data
+
+```r
+library(tidycensus)
+
+net_migration <- get_estimates(geography = "county",
+                               variables = "RNETMIG",
+                               geometry = TRUE,
+                               shift_geo = TRUE)
+
+
+net_migration <- net_migration %>%
+  mutate(groups = case_when(
+    value > 15 ~ "+15 and up",
+    value > 5 ~ "+5 to +15",
+    value > -5 ~ "-5 to +5",
+    value > -15 ~ "-15 to -5",
+    TRUE ~ "-15 and below"
+  ))
+
+ggplot() +
+  geom_sf(data = net_migration, aes(fill = groups, color = groups), lwd = 0.1) +
+  geom_sf(data = tidycensus::state_laea, fill = NA, color = "black", lwd = 0.1) +
+  scale_fill_brewer(palette = "PuOr", direction = -1) +
+  scale_color_brewer(palette = "PuOr", direction = -1, guide = FALSE) +
+  coord_sf(datum = NA) +
+  labs(title = "Net migration per 1000 residents by county",
+       subtitle = "US Census Bureau 2017 Population Estimates",
+       fill = "Rate",
+       caption = "Data acquired with the R tidycensus package")
+```
+
+## Results
+
+![](PS_09_weather_files/figure-revealjs/census-1.png)
+
+## `FedData` package
 
 * National Elevation Dataset digital elevation models (1 and 1/3 arc-second; USGS)
 * National Hydrography Dataset (USGS)
@@ -128,7 +170,7 @@ Handles downloading data directly from NOAA APIv2.
 
 ## GHCN 
 
-<iframe src="https://www.ncdc.noaa.gov/ghcn-daily-description" width=100% height=400px></iframe>
+<iframe src="https://www.ncdc.noaa.gov/ghcnd-data-access" width=100% height=400px></iframe>
 
 ## Libraries
 
@@ -292,14 +334,14 @@ buffalo=buffalo_c%>%
 Now use that location to spatially filter stations.
 
 ```r
-buffalo_b=st_buffer(buffalo, 0.05) #radius of buffer in decimal degrees
+buffalo_b=st_buffer(buffalo, 0.1) #radius of buffer in decimal degrees
 st1=st_within(st_filtered,buffalo_b)%>% #find stations in the buffered polygon
   apply(1, any) 
 str(st1)
 ```
 
 ```
-##  logi [1:192024] FALSE FALSE FALSE FALSE FALSE FALSE ...
+##  logi [1:192884] FALSE FALSE FALSE FALSE FALSE FALSE ...
 ```
 
 ```r
@@ -308,16 +350,31 @@ kable(st_filtered[st1,])
 
 
 
-|id          | elevation|state |name               |gsn_flag |wmo_id    |element | first_year| last_year|geometry             |
-|:-----------|---------:|:-----|:------------------|:--------|:---------|:-------|----------:|---------:|:--------------------|
-|US1NYER0079 |     206.7|NY    |DEPEW 0.1 S        |         |          |PRCP    |       1998|      2019|c(-78.7049, 42.9108) |
-|US1NYER0083 |      96.9|NY    |WILLIAMSVILLE 1 NW |         |          |PRCP    |       2010|      2014|c(-78.7663, 42.9698) |
-|US1NYER0102 |     214.3|NY    |CHEEKTOWAGA 2.7 NE |         |          |PRCP    |       2013|      2019|c(-78.7193, 42.9412) |
-|US1NYER0107 |     186.2|NY    |AMHERST 3.3 ENE    |         |          |PRCP    |       2014|      2018|c(-78.7269, 42.9855) |
-|US1NYER0124 |     199.0|NY    |CHEEKTOWAGA 1.3 NW |         |          |PRCP    |       2016|      2016|c(-78.7679, 42.9235) |
-|USW00014733 |     211.2|NY    |BUFFALO            |         |HCN 72528 |TMAX    |       1938|      2019|c(-78.7369, 42.9486) |
-|USW00014733 |     211.2|NY    |BUFFALO            |         |HCN 72528 |TMIN    |       1938|      2019|c(-78.7369, 42.9486) |
-|USW00014733 |     211.2|NY    |BUFFALO            |         |HCN 72528 |PRCP    |       1938|      2019|c(-78.7369, 42.9486) |
+|id          | elevation|state |name                  |gsn_flag |wmo_id    |element | first_year| last_year|geometry             |
+|:-----------|---------:|:-----|:---------------------|:--------|:---------|:-------|----------:|---------:|:--------------------|
+|US1NYER0004 |     184.1|NY    |WILLIAMSVILLE 4.1 N   |         |          |PRCP    |       2009|      2011|c(-78.7432, 43.0216) |
+|US1NYER0006 |     187.1|NY    |KENMORE 2.7 E         |         |          |PRCP    |       2008|      2012|c(-78.8176, 42.9625) |
+|US1NYER0007 |     214.0|NY    |WILLIAMSVILLE 2.7 E   |         |          |PRCP    |       2008|      2019|c(-78.6879, 42.9693) |
+|US1NYER0013 |     182.6|NY    |WEST SENECA 2.3 NW    |         |          |PRCP    |       1998|      2019|c(-78.7854, 42.8593) |
+|US1NYER0035 |     203.9|NY    |WEST SENECA 2.6 ENE   |         |          |PRCP    |       2008|      2010|c(-78.7034, 42.8526) |
+|US1NYER0040 |     185.6|NY    |EAST AMHERST 1.4 ESE  |         |          |PRCP    |       2008|      2008|c(-78.6705, 43.0153) |
+|US1NYER0046 |     199.3|NY    |WILLIAMSVILLE 3.6 ENE |         |          |PRCP    |       2008|      2009|c(-78.677, 42.986)   |
+|US1NYER0054 |     178.0|NY    |EAST AMHERST 1.2 WNW  |         |          |PRCP    |       2009|      2019|c(-78.719, 43.0225)  |
+|US1NYER0068 |     222.5|NY    |LANCASTER 2.1 NNW     |         |          |PRCP    |       2009|      2010|c(-78.6785, 42.9314) |
+|US1NYER0079 |     206.7|NY    |DEPEW 0.1 S           |         |          |PRCP    |       1998|      2019|c(-78.7049, 42.9108) |
+|US1NYER0083 |      96.9|NY    |WILLIAMSVILLE 1 NW    |         |          |PRCP    |       2010|      2014|c(-78.7663, 42.9698) |
+|US1NYER0102 |     214.3|NY    |CHEEKTOWAGA 2.7 NE    |         |          |PRCP    |       2013|      2019|c(-78.7193, 42.9412) |
+|US1NYER0104 |     179.5|NY    |WILLIAMSVILLE 2.2 NNW |         |          |PRCP    |       2013|      2019|c(-78.7526, 42.9942) |
+|US1NYER0107 |     186.2|NY    |AMHERST 3.3 ENE       |         |          |PRCP    |       2014|      2018|c(-78.7269, 42.9855) |
+|US1NYER0122 |     204.5|NY    |CHEEKTOWAGA 2.4 NW    |         |          |PRCP    |       2015|      2019|c(-78.783, 42.9346)  |
+|US1NYER0124 |     199.0|NY    |CHEEKTOWAGA 1.3 NW    |         |          |PRCP    |       2016|      2016|c(-78.7679, 42.9235) |
+|US1NYER0132 |     213.4|NY    |LANCASTER 1.9 SSE     |         |          |PRCP    |       2017|      2019|c(-78.6603, 42.8744) |
+|US1NYER0135 |     187.5|NY    |WEST SENECA 1.5 NW    |         |          |PRCP    |       2017|      2019|c(-78.7716, 42.854)  |
+|US1NYER0147 |     180.7|NY    |WILLIAMSVILLE 2.4 N   |         |          |PRCP    |       1998|      2018|c(-78.7403, 42.9974) |
+|US1NYER0159 |     222.2|NY    |LANCASTER 2.9 NE      |         |          |PRCP    |       2018|      2019|c(-78.6336, 42.9334) |
+|USW00014733 |     211.2|NY    |BUFFALO               |         |HCN 72528 |TMAX    |       1938|      2019|c(-78.7369, 42.9486) |
+|USW00014733 |     211.2|NY    |BUFFALO               |         |HCN 72528 |TMIN    |       1938|      2019|c(-78.7369, 42.9486) |
+|USW00014733 |     211.2|NY    |BUFFALO               |         |HCN 72528 |PRCP    |       1938|      2019|c(-78.7369, 42.9486) |
 
 ---
 
@@ -335,11 +392,11 @@ d=meteo_pull_monitors(monitors=c("USW00014733"),
 ```
 
 ```
-## file last updated:  2017-10-24 21:24:25
+## file last updated:  2019-10-21 13:09:14
 ```
 
 ```
-## file min/max dates: 1938-05-01 / 2017-10-31
+## file min/max dates: 1938-05-01 / 2019-10-31
 ```
 
 ```r
@@ -406,7 +463,7 @@ table(d$qflag_tmin)
 ```
 ## 
 ##           G     I     S 
-## 29026     2     7     4
+## 29756     2     7     4
 ```
 * **G** failed gap check
 * **I** failed internal consistency check
@@ -442,7 +499,7 @@ ggplot(d_filtered,
 Limit to a few years and plot the daily range and average temperatures.
 
 ```r
-d_filtered_recent=filter(d_filtered,date>as.Date("2013-01-01"))
+d_filtered_recent=filter(d_filtered,date>as.Date("2015-01-01"))
 
   ggplot(d_filtered_recent,
          aes(ymax=tmax,ymin=tmin,x=date))+
@@ -451,7 +508,7 @@ d_filtered_recent=filter(d_filtered,date>as.Date("2013-01-01"))
 ```
 
 ```
-## Warning: Removed 11 rows containing missing values (geom_path).
+## Warning: Removed 13 rows containing missing values (geom_path).
 ```
 
 ![](PS_09_weather_files/figure-revealjs/unnamed-chunk-19-1.png)
@@ -513,7 +570,7 @@ ggplot(d_filtered_recent,aes(y=tmin,x=lag(tmin)))+
 ```
 
 ```
-## Warning: Removed 12 rows containing missing values (geom_point).
+## Warning: Removed 14 rows containing missing values (geom_point).
 ```
 
 ![](PS_09_weather_files/figure-revealjs/unnamed-chunk-23-1.png)
@@ -631,7 +688,7 @@ d_filtered2%>%
 |period |     n|     tmin|     tmax|     prcp|
 |:------|-----:|--------:|--------:|--------:|
 |early  | 13394| 4.199753| 13.67348| 25.09372|
-|late   | 15645| 4.764507| 13.75706| 28.44032|
+|late   | 16375| 4.774282| 13.75139| 28.56570|
 
 ---
 
@@ -663,7 +720,7 @@ d_filtered2%>%
 ##    year     n
 ##   <dbl> <int>
 ## 1  1938   245
-## 2  2017   304
+## 2  2019   304
 ```
 
 ---
@@ -672,7 +729,7 @@ Plot 10-year means (excluding years without complete data):
 
 ```r
 d_filtered2%>%
-  filter(year>1938, year<2017)%>%
+  filter(year>1938, year<2019)%>%
   group_by(dec)%>%
   summarize(
             n=n(),
@@ -687,13 +744,13 @@ d_filtered2%>%
 ![](PS_09_weather_files/figure-revealjs/unnamed-chunk-31-1.png)
 
 
-## Look for specific events: was 2017 unusually hot in Buffalo, NY?
-Let's compare 2017 with all the previous years in the dataset.  First add 'day of year' to the data to facilitate showing all years on the same plot.
+## Look for specific events: was 2019 unusually hot in Buffalo, NY?
+Let's compare 2019 with all the previous years in the dataset.  First add 'day of year' to the data to facilitate showing all years on the same plot.
 
 ```r
 df=d_filtered2%>%
   mutate(doy=as.numeric(format(date,"%j")),
-         doydate=as.Date(paste("2017-",doy),format="%Y-%j"))
+         doydate=as.Date(paste("2019-",doy),format="%Y-%j"))
 ```
 
 ---
@@ -704,8 +761,9 @@ Then plot all years (in grey) and add 2017 in red.
 ggplot(df,aes(x=doydate,y=tmax,group=year))+
   geom_line(col="grey",alpha=.5)+ # plot each year in grey
   stat_smooth(aes(group=1),col="black")+   # Add a smooth GAM to estimate the long-term mean
-  geom_line(data=filter(df,year>2016),col="red")+  # add 2017 in red
-  scale_x_date(labels = date_format("%b"),date_breaks = "2 months")
+  geom_line(data=filter(df,year==2019),col="red")+  # add 2017 in red
+  scale_x_date(labels = date_format("%b"),date_breaks = "2 months") + 
+  xlab("Day of year")
 ```
 
 ```
@@ -716,20 +774,19 @@ ggplot(df,aes(x=doydate,y=tmax,group=year))+
 
 ---
 
-Then 'zoom' into just the past few months and add 2017 in red.
+Then 'zoom' into just the past few months and add 2019 in red.
 
 ```r
 ggplot(df,aes(x=doydate,y=tmax,group=year))+
   geom_line(col="grey",alpha=.5)+
   stat_smooth(aes(group=1),col="black")+
-  geom_line(data=filter(df,year>2016),col="red")+
+  geom_line(data=filter(df,year==2019),col="red")+
   scale_x_date(labels = date_format("%b"),date_breaks = "2 months",
-               lim=c(as.Date("2017-08-01"),as.Date("2017-10-31")))
+               lim=c(as.Date("2019-08-01"),as.Date("2019-10-31")))
 ```
 
 ![](PS_09_weather_files/figure-revealjs/unnamed-chunk-34-1.png)
 
-So there was an unusually warm spell in late September.
 
 ## Summarize by season
 
@@ -767,47 +824,48 @@ summary(lm1)$r.squared
 ```
 
 ```
-## [1] 0.2338852
+## [1] 0.2595873
 ```
 
 ```r
-tidy(lm1)%>%kable()
+tidy(lm1)%>%kable() 
 ```
 
 
 
 |term        |    estimate| std.error| statistic|   p.value|
 |:-----------|-----------:|---------:|---------:|---------:|
-|(Intercept) | -23.5510090| 8.0425217| -2.928311| 0.0044803|
-|year        |   0.0197133| 0.0040659|  4.848415| 0.0000063|
+|(Intercept) | -25.1389291| 7.7169440| -3.257627| 0.0016571|
+|year        |   0.0205215| 0.0038993|  5.262818| 0.0000012|
 
 ## Linear regression for _each_ season
 
 ```r
 # fit a lm model for each group
-models <- 
-  d_filtered2%>%
-  group_by(season)%>%
-  nest() %>%
-  mutate(lm_tmin = purrr::map(data, ~lm(tmin ~ year, data = .)),
-        tmax_tidy = purrr::map(lm_tmin, broom::tidy))%>%
-  unnest(tmax_tidy, .drop = T)%>%
-  filter(term=="year")
-models
+  d_filtered2 %>%
+  group_by(season) %>% #process by season
+  nest() %>% # cut into groups
+  mutate(
+    lm_tmin = purrr::map(data, .f = ~ lm(tmin ~ year, data = .)), #fit model for each group
+    tmin_tidy = purrr::map(lm_tmin, broom::tidy) #summarize model for each group
+  ) %>%
+  unnest(tmin_tidy) %>%
+  filter(term == "year") %>% 
+  select(-data, -lm_tmin) %>% 
+  kable()
 ```
 
-```
-## # A tibble: 4 x 6
-##   season term  estimate std.error statistic  p.value
-##   <chr>  <chr>    <dbl>     <dbl>     <dbl>    <dbl>
-## 1 Spring year    0.0156   0.00348      4.48 7.56e- 6
-## 2 Summer year    0.0205   0.00189     10.9  2.77e-27
-## 3 Fall   year    0.0160   0.00323      4.97 6.87e- 7
-## 4 Winter year    0.0145   0.00316      4.59 4.60e- 6
-```
+
+
+|season |term |  estimate| std.error| statistic|  p.value|
+|:------|:----|---------:|---------:|---------:|--------:|
+|Spring |year | 0.0144491| 0.0033594|  4.301160| 1.72e-05|
+|Summer |year | 0.0212577| 0.0018155| 11.709039| 0.00e+00|
+|Fall   |year | 0.0157276| 0.0031219|  5.037759| 5.00e-07|
+|Winter |year | 0.0140660| 0.0030484|  4.614171| 4.00e-06|
 
 ## Autoregressive models
-See [Time Series Analysis Task View](https://cran.r-project.org/web/views/TimeSeries.html) for summary of available packages/models. 
+See [Time Series Analysis Task View](https://cran.r-project.org/web/views/TimeSeries.html) for summary of available pack,-ages/models. 
 
 * Moving average (MA) models
 * autoregressive (AR) models
