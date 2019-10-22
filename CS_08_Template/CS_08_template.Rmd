@@ -23,14 +23,12 @@ drop_outliers <- function(x) {
    return(x) #return filtered dataset 
 }
    
-
 # get data
 data=read_table("ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_annmean_mlo.txt",
                 skip = 56) %>% 
   select(-1) %>% 
   drop_outliers()
 
-  
 ```
 
 # Annual Mean Carbon Dioxide Concentrations 1959-Present
