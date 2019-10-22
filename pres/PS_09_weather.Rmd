@@ -170,10 +170,6 @@ Handles downloading data directly from NOAA APIv2.
 
 # Global Historical Climatology Network (GHCN)
 
-## GHCN 
-
-<iframe src="https://www.ncdc.noaa.gov/ghcnd-data-access" width=100% height=400px></iframe>
-
 ## Libraries
 
 ```{r,results='hide',message=FALSE, warning=F}
