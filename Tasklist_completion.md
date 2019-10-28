@@ -455,6 +455,24 @@ Below are a set of tasks that we will work on in class (either alone or in small
   </tr>
   <tr>
    <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Extract a timeseries from a single location in a netcdf file (part 1) </td>
+   <td style="text-align:left;"> [CS_10](./CS_10.html) </td>
+   <td style="text-align:right;"> 10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Calculate a monthly climatology from a weekely timeseries (part 2) </td>
+   <td style="text-align:left;"> [CS_10](./CS_10.html) </td>
+   <td style="text-align:right;"> 10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Summarize Land Surface Temperature by Land Cover (part 3) </td>
+   <td style="text-align:left;"> [CS_10](./CS_10.html) </td>
+   <td style="text-align:right;"> 10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
    <td style="text-align:left;"> Work through the materials on [processing MODIS RS data](09_RemoteSensing_appeears.html) </td>
    <td style="text-align:left;"> [TK_10](./TK_10.html) </td>
    <td style="text-align:right;"> 10 </td>

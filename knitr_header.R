@@ -9,7 +9,7 @@ options(knitr.duplicate.label = 'allow')
 
 presentation_theme <- ggplot2::theme_grey()+
                 ggplot2::theme(
-                  text = ggplot2::element_text(size = 25, colour = "black"))
+                  text = ggplot2::element_text(size = 18, colour = "black"))
   
 ggplot2::theme_set(presentation_theme)
   
