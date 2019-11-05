@@ -3,11 +3,19 @@ library(spData)
 library(sf)
 
 ## New Packages
-library(tictoc) #for timing how long things take
+library(mapview) # new package that makes easy leaflet maps
 library(foreach)
 library(doParallel)
 registerDoParallel(2)
 getDoParWorkers() # check registered cores
 
-#define working projection (EASE-Grid, https://nsidc.org/data/ease)
-proj="+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+library(tidycensus)
+racevars <- c(White = "P005003", 
+              Black = "P005004", 
+              Asian = "P005006", 
+              Hispanic = "P004003")
+
+options(tigris_use_cache = TRUE)
+erie <- get_decennial(geography = "block", variables = racevars, 
+                  state = "NY", county = "Erie County", geometry = TRUE,
+                  summary_var = "P001001", cache_table=T) 

@@ -7,10 +7,10 @@
 #'    - Parallel [Computing with the R Language in a Supercomputing Environment](https://link.springer.com/chapter/10.1007/978-3-642-13872-0_64)
 #'    - CRAN Task View [High Performance and Parallel Computing with R](http://cran.r-project.org/web/views/HighPerformanceComputing.html)
 #' tasks:
-#'    - Reproject `world` dataset to a global equal area projection
-#'    - Write a parallel `foreach()` loop to identify the a spatial relationships of each country
-#'    - Set the output of the `foreach()` funtion to return a simple matrix
-#'    - Confirm that your parallel loop returns the same answer as a typical "sequential" approach
+#'    - Download spatial data from the U.S. Census 
+#'    - Write a parallel `foreach()` loop to generate a point representing each person in each census polygon (block/tract)
+#'    - Set the output of the `foreach()` funtion to return a spatial (`sf`) object 
+#'    - Make a 'dot map' of the racial distribution in Buffalo, NY.
 #' ---
 #' 
 
@@ -26,20 +26,22 @@
 #' 
 #' ## Background
 #' 
+#' The census data do not include specific addresses (the finest spatial information is the census block), so it's common to see chloropleths representing the aggregate statistics of the underlying polygon.  This is accurate, but not so personal.Folks at the University of Virginia developed a simple yet effective visualization approach, called the 'Racial Dot Map' which conveys a simple idea - one dot equals one person.
+#' 
+#' The idea is really simple, simply randomly generate a point for each person of each racial identity within each polygon.   Can you do it?  Can you do it using multiple cores on your computer?
+#' 
+#' 
 ## ----cache=F, message=F,warning=FALSE, results='hide'--------------------
 library(tidyverse)
 library(spData)
 library(sf)
 
 ## New Packages
-library(tictoc) #for timing how long things take
+library(mapview) # new package that makes easy leaflet maps
 library(foreach)
 library(doParallel)
 registerDoParallel(2)
 getDoParWorkers() # check registered cores
-
-#define working projection (EASE-Grid, https://nsidc.org/data/ease)
-proj="+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
 
 #' 
 #' <div class="well">
@@ -50,30 +52,36 @@ proj="+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,
 #' 
 #' Write an Rmd script that:
 #' 
-#' * Loads the `world` dataset in the `spData` package
-#'    * Reproject the `world` dataset to the Equal-Area Scalable Earth Grid (EASE-Grid) ([EASE-Grid ](https://nsidc.org/data/ease)) using `st_transform()` and the proj4 projection in the code above
-#' * Runs a parallel `foreach()` to loop over countries (`name_long`) that:
-#'    * `filter` the world object to include only one country at a time.
-#'    * use `st_is_within_distance` to find the distance from that country to all other countries in the `world` object within 100000m Set `sparse=F` to return a simple vector of `TRUE/FALSE` for countries within the distance.
-#'    * set `.combine=rbind` to return a simple matrix.
-#' * Confirm that you get the same answer without using foreach:
-#'    * simply use `st_is_within_distance` with the transformed `world` object as both `x` and `y` object.
-#'    * compare the results with `identical()`
-#'    * if you are curious, you can also check the time difference with `system.time()`.
-#'    
+#' * Downloads block-level data on population by race in each census block in Buffalo using `get_dicennial()` function of the `tidycensus` package.  You can use the following code:
+## ---- message=F----------------------------------------------------------
+library(tidycensus)
+racevars <- c(White = "P005003", 
+              Black = "P005004", 
+              Asian = "P005006", 
+              Hispanic = "P004003")
+
+options(tigris_use_cache = TRUE)
+erie <- get_decennial(geography = "block", variables = racevars, 
+                  state = "NY", county = "Erie County", geometry = TRUE,
+                  summary_var = "P001001", cache_table=T) 
+
+#' * Crop the county-level data to `c(xmin=-78.9,xmax=-78.85,ymin=42.888,ymax=42.92)` to reduce the computational burdern. Feel free to enlarge this area if your computer is fast (or you are patient)
+#' * Write a foreach loop that does the following steps _for each racial group_ in the `variable` column of the `erie` dataset and rbind the results.
+#'    * filter the the data to include only one race at time
+#'    * use `st_sample()` to generate random points for each person that resided within each polygon.  You will have to set `size=.$value`.  The `.` indicates that the column comes from the dataset that was passed to the function.
+#'    * convert the points to spatial features with `st_as_sf()`
+#'    * `mutate` to add a column named `variable` that is set to the current racial group (from the foreach loop)
+#' * Use the `mapview()` function in the `mapview` package to make a leaflet map of the dataset and set the `zcol` to the racial identity of each point. You can adjust any of the visualization parameters (such as `cex` for size).
 #'    
 #' </div>
 #' </div>
 #' 
+#' 
 
 #' 
-#' The first 10 rows/columns of the resulting matrix (e.g. `x_par[1:10,1:10]`) should look like this:
+#' Your final result should look something like this:
 
 #' 
-#' Note that in this example the sequential version typically runs faster than the parallel version due to the relatively small size of the dataset and computation needed.
-#' 
-#' 
-#' ---
 #' 
 #' <div class="extraswell">
 #' <button data-toggle="collapse" class="btn btn-link" data-target="#extras">
@@ -81,11 +89,11 @@ proj="+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,
 #' </button>
 #' <div id="extras" class="collapse">
 #' 
-#' This approach could be used to identify which countries were 'close' to others.  For example, Identify which countries are within `r dist`m of Costa Rica:
+#' Update the map to include:
 #' 
-
-#' 
-#' And plot them:
+#' * Other racial groups
+#' * Adjust colors to match the original
+#' * Summarize the data in different ways
 #' 
 
 #' 
