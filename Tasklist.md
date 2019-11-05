@@ -355,10 +355,10 @@ ___
 - CRAN Task View [High Performance and Parallel Computing with R](http://cran.r-project.org/web/views/HighPerformanceComputing.html)
 
 ## Tasks
-- Reproject `world` dataset to a global equal area projection
-- Write a parallel `foreach()` loop to identify the a spatial relationships of each country
-- Set the output of the `foreach()` funtion to return a simple matrix
-- Confirm that your parallel loop returns the same answer as a typical "sequential" approach
+- Download spatial data from the U.S. Census
+- Write a parallel `foreach()` loop to generate a point representing each person in each census polygon (block/tract)
+- Set the output of the `foreach()` funtion to return a spatial (`sf`) object
+- Make a 'dot map' of the racial distribution in Buffalo, NY.
 </div>
 ___
 ## [ TK_11 :  Project First Draft ]( ./TK_11.html ) 
@@ -405,10 +405,10 @@ ___
 - Browse the [HTML Widgets page](http://gallery.htmlwidgets.org/) for many more examples. Take notes in your readme.md about potential uses in your project.
 </div>
 ___
-## [ TK_13 :  Thanksgiving Week (Tuesday Class Optional) ]( ./TK_13.html ) 
+## [ TK_13 :  TBD ]( ./TK_13.html ) 
    
  
-  Optional Course Workshop  
+    
  
  <a class="btn btn-link" href="./TK_13.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i25">Preview Readings & Tasks </button><div id="i25" class="collapse">
 ## Readings

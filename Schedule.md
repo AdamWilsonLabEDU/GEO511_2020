@@ -35,7 +35,7 @@ We will refer to the following texts (all available online):
  |  10 |  10/29/19 |  [<i class='fas fa-desktop'>   </i>](pres/PS_10_RS.html){target='_blank'} |  [Remote Sensing](./TK_10.html) |  [Satellite Remote Sensing](./CS_10.html) |  Cleaning Data in R |
  |  11 |  11/5/19 |  [<i class='fas fa-desktop'>   </i>](pres/PS_11_ParallelProcessing.html){target='_blank'} |  [Project First Draft](./TK_11.html) |  [Parallel Computing with R](./CS_11.html) |  Exploratory Data Analysis in R: Case Study |
  |  12 |  11/12/19 |  [<i class='fas fa-desktop'>   </i>](pres/PS_12.html){target='_blank'} |  [Project Peer Review](./TK_12.html) |  [Dynamic HTML graph of Daily Temperatures](./CS_12.html) |   |
- |  13 |  11/19/19 |   |  [Thanksgiving Week (Tuesday Class Optional)](./TK_13.html) |  []() |   |
+ |  13 |  11/19/19 |   |  [TBD](./TK_13.html) |  []() |   |
  |  14 |  11/26/19 |   |  [Thanksgiving Week (Tuesday Class Optional)](./TK_14.html) |  []() |   |
  |  15 |  12/3/19 |   |  [Final Presentation](./TK_15.html) |  [Final Presentation](./TK_15.html) |   |
  |  16 |  12/9/19 |   |  [Publish Final Project](./TK_16.html) |  []() |   |
