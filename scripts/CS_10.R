@@ -55,9 +55,10 @@ library(ncdf4) # to import data from netcdf format
 ## lst_url="https://github.com/adammwilson/DataScienceData/blob/master/inst/extdata/appeears/MOD11A2.006_aid0001.nc?raw=true"
 ## 
 ## # download them
-## download.file(lulc_url,destfile="data/MCD12Q1.051_aid0001.nc")
-## download.file(lst_url,destfile="data/MOD11A2.006_aid0001.nc")
+## download.file(lulc_url,destfile="data/MCD12Q1.051_aid0001.nc", mode="wb")
+## download.file(lst_url,destfile="data/MOD11A2.006_aid0001.nc", mode="wb")
 
+#' 
 #' 
 #' You should also edit your .gitignore file (in your tasks repository folder) to include `*data*` on one line. This will prevent git from adding these files.  
 #' 
@@ -251,8 +252,9 @@ lst=setZ(lst,tdates)
 #' 1. Use `lw=SpatialPoints(data.frame(x= -78.791547,y=43.007211))` to define a new Spatial Point at that location.
 #' 2. Set the projection of your point with `projection()` to `"+proj=longlat"`.
 #' 3. Transform the point to the projection of the raster using `spTransform()`.
-#' 4. Extract the LST data for that location with: `extract(lst,lw,buffer=1000,fun=mean,na.rm=T)`
-#' 5. Plot it with `ggplot()` including points for the raw data and a smooth version as a line.  You will probably want to adjust both `span` and `n` in `geom_smooth`.
+#' 4. Extract the LST data for that location with: `extract(lst,lw,buffer=1000,fun=mean,na.rm=T)`.  You may want to transpose them with `t()` to convert it from a wide matrix to long vector.
+#' 5. Extract the dates for each layer with `getZ(lst)` and combine them into a data.frame with the transposed raster values.  You could use `data.frame()`, `cbind.data.frame()` or `bind_cols()` to do this. The goal is to make a single dataframe with the dates and lst values in columns.
+#' 6. Plot it with `ggplot()` including points for the raw data and a smooth version as a line.  You will probably want to adjust both `span` and `n` in `geom_smooth`.
 #' 
 #' </div>
 #' </div>

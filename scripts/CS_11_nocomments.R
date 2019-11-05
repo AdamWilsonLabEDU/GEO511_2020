@@ -3,6 +3,7 @@ library(spData)
 library(sf)
 
 ## New Packages
+library(tictoc) #for timing how long things take
 library(foreach)
 library(doParallel)
 registerDoParallel(2)

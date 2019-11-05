@@ -1,14 +1,11 @@
 ---
-title:  Final Project 2nd Draft / Building and summarizing models 
-subtitle:  Building a species distribution model
+title:  Thanksgiving Week (Tuesday Class Optional)
 week: 14
 type: Task
 reading:
   - Chapter [23-25 in R4DS](http://r4ds.had.co.nz)
 tasks:
-   - Commit second draft of final project to GitHub for review
-   - Demonstrate a simple presence/absence model in spatial context. 
-   - Model spatial dependence (autocorrelation) in the response. 
+  - Bring any questions to class on Tuesday.
 ---
 
 ```{r, echo=FALSE, message=FALSE, results='hide', purl=FALSE}

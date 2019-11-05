@@ -419,19 +419,17 @@ ___
 - Come to class with any questions
 </div>
 ___
-## [ TK_14 :  Final Project 2nd Draft / Building and summarizing models ]( ./TK_14.html ) 
+## [ TK_14 :  Thanksgiving Week (Tuesday Class Optional) ]( ./TK_14.html ) 
    
  
-  Building a species distribution model  
+    
  
  <a class="btn btn-link" href="./TK_14.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i26">Preview Readings & Tasks </button><div id="i26" class="collapse">
 ## Readings
 - Chapter [23-25 in R4DS](http://r4ds.had.co.nz)
 
 ## Tasks
-- Commit second draft of final project to GitHub for review
-- Demonstrate a simple presence/absence model in spatial context.
-- Model spatial dependence (autocorrelation) in the response.
+- Bring any questions to class on Tuesday.
 </div>
 ___
 ## [ TK_15 :  Final Presentation ]( ./TK_15.html ) 
@@ -445,6 +443,7 @@ ___
 - Wikipedia pages about [Ignite Sessions](http://en.wikipedia.org/wiki/Ignite_(event))
 
 ## Tasks
+- Commit second (or final) version of final project to GitHub
 - Prepare to give your 5 minute presentation
 - Present your analysis to your roommates, significant other, etc. and update your presentation based on the feedback
 - Get feedback from 2-3 fellow classmates on your presentation and update it based on their feedback
@@ -457,6 +456,20 @@ ___
   Commit the final version of your project  
  
  <a class="btn btn-link" href="./TK_16.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i28">Preview Readings & Tasks </button><div id="i28" class="collapse">
+## Readings
+- 
+
+## Tasks
+- Finalize your project and commit to GitHub
+- Confirm the final version renders correctly on your website
+</div>
+___
+## [ TK_17 :  Publish Final Project ]( ./TK_17.html ) 
+   
+ 
+  Commit the final version of your project  
+ 
+ <a class="btn btn-link" href="./TK_17.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i29">Preview Readings & Tasks </button><div id="i29" class="collapse">
 ## Readings
 - 
 

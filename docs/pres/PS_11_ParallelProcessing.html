@@ -73,8 +73,13 @@ code span.vs { color: #4e9a06; } /* VerbatimString */
 code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<link rel="stylesheet" href="externals/reveal.js-3.3.0.1/css/theme/white.css" id="theme">
+<link rel="stylesheet" href="externals/reveal.js-3.3.0.1/css/theme/black.css" id="theme">
 
+<style type="text/css">
+.reveal section img {
+  background: rgba(255, 255, 255, 0.85);
+}
+</style>
 
   <!-- some tweaks to reveal css -->
   <style type="text/css">
@@ -516,7 +521,13 @@ document.getElementsByTagName('head')[0].appendChild(style);
     <h1 class="title">Parallel Processing</h1>
 </section>
 
-<section id="serial-computing" class="slide level2">
+<section id="resource-presentations" class="slide level2">
+<h2>Resource Presentations</h2>
+</section>
+<section id="case-study-discussion" class="slide level2">
+<h2>Case Study Discussion</h2>
+</section>
+<section><section id="introduction-to-parallel-processing" class="title-slide slide level1"><h1>Introduction to Parallel Processing</h1></section><section id="serial-computing" class="slide level2">
 <h2>Serial Computing</h2>
 <p>Most (legacy) software is written for serial computation:</p>
 <ul>
@@ -524,8 +535,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>Instructions executed sequentially on a single processor</li>
 </ul>
 <p><img data-src="PS_11/serialProblem.gif" alt="https://computing.llnl.gov/tutorials/parallel_comp/" /> <br><span style="color:grey; font-size:0.5em;">Figure from <a href="https://computing.llnl.gov/tutorials/parallel_comp/">here</a> </span></p>
-</section>
-<section id="parallel-computation" class="slide level2">
+</section><section id="parallel-computation" class="slide level2">
 <h2>Parallel computation</h2>
 <ul>
 <li>Problem divided into discrete parts that can be solved concurrently</li>
@@ -533,8 +543,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>Overall control/coordination mechanism</li>
 </ul>
 <p><img src="PS_11/parallelProblem.gif" alt="alt text" width="75%"> <br><span style="color:grey; font-size:0.5em;">Figure from <a href="https://computing.llnl.gov/tutorials/parallel_comp/">here</a> </span></p>
-</section>
-<section id="flynns-taxonomy" class="slide level2">
+</section><section id="flynns-taxonomy" class="slide level2">
 <h2>Flynn’s taxonomy</h2>
 <p>A classification of computer architectures (<a href="http://dx.doi.org/10.1109/TC.1972.5009071">Flynn, 1972</a>)</p>
 <h3 id="four-categories">Four Categories</h3>
@@ -553,8 +562,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 </ul></li>
 </ul></li>
 </ol>
-</section>
-<section class="slide level2">
+</section><section class="slide level2">
 
 <ol start="3" type="1">
 <li><em>Multiple Instruction, Single Data (MISD)</em>
@@ -574,12 +582,10 @@ document.getElementsByTagName('head')[0].appendChild(style);
 </ul></li>
 </ul></li>
 </ol>
-</section>
-<section id="flynns-taxonomy-1" class="slide level2">
+</section><section id="flynns-taxonomy-1" class="slide level2">
 <h2>Flynn’s Taxonomy</h2>
 <p><img src="PS_11/SISD.png" alt="alt text" width="60%"> <br><span style="color:grey; font-size:0.5em;">Figure from <a href="http://en.wikipedia.org/wiki/Flynn%27s_taxonomy">here</a></span></p>
-</section>
-<section id="our-focus-single-instruction-multiple-data-simd" class="slide level2">
+</section><section id="our-focus-single-instruction-multiple-data-simd" class="slide level2">
 <h2>Our focus: <em>Single Instruction, Multiple Data (SIMD)</em></h2>
 <ol type="1">
 <li>Parallel functions within an R script
@@ -596,8 +602,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>NOT planning to discuss in this session</li>
 </ul></li>
 </ol>
-</section>
-<section id="r-packages" class="slide level2">
+</section><section id="r-packages" class="slide level2">
 <h2>R Packages</h2>
 <p>There are many R packages for parallelization, check out the CRAN Task View on <a href="http://cran.r-project.org/web/views/HighPerformanceComputing.html">High-Performance and Parallel Computing</a> for an overview. For example:</p>
 <ul>
@@ -606,8 +611,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li><a href="https://stat.ethz.ch/R-manual/R-devel/library/parallel/doc/parallel.pdf">parallel</a> Built in R package (since v2.14.0).</li>
 <li><a href="https://github.com/hadley/multidplyr/blob/master/vignettes/multidplyr.md">multidplyr</a></li>
 </ul>
-</section>
-<section id="foreach-package" class="slide level2">
+</section><section id="foreach-package" class="slide level2">
 <h2>Foreach Package</h2>
 <p>In this session we’ll focus on the foreach package, which has numerous advantages including:</p>
 <ul>
@@ -615,8 +619,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>flexibility of parallel ‘backends’ from laptops to supercomputers (<code>multicore</code>, <code>parallel</code>, <code>snow</code>, <code>Rmpi</code>, etc.)</li>
 <li>nice options for combining output from parallelized jobs</li>
 </ul>
-</section>
-<section id="documentation-for-foreach" class="slide level2">
+</section><section id="documentation-for-foreach" class="slide level2">
 <h2>Documentation for foreach:</h2>
 <ul>
 <li><a href="http://cran.r-project.org/web/packages/foreach/foreach.pdf">foreach manual</a></li>
@@ -629,12 +632,13 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li><a href="http://cran.r-project.org/web/packages/doMPI/vignettes/doMPI.pdf">doMPI</a>: Interface to MPI (Message-Passing Interface)</li>
 <li><a href="http://cran.r-project.org/web/packages/doSNOW/doSNOW.pdf">doSNOW</a>: Simple Network of Workstations</li>
 </ul>
-</section>
+</section></section>
 <section><section id="examples" class="title-slide slide level1"><h1>Examples</h1></section><section id="libraries" class="slide level2">
 <h2>Libraries</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co">## New Packages</span></a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">library</span>(foreach)</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">library</span>(doParallel)</a></code></pre></div>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">library</span>(doParallel)</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
 </section><section id="sequential-for-loops" class="slide level2">
 <h2><em>Sequential</em> <code>for</code> loops</h2>
 <h3 id="with-for">With <code>for()</code></h3>
@@ -642,11 +646,18 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <a class="sourceLine" id="cb2-2" data-line-number="2"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) </a>
 <a class="sourceLine" id="cb2-3" data-line-number="3">  x[i]=i<span class="op">^</span><span class="dv">2</span></a>
 <a class="sourceLine" id="cb2-4" data-line-number="4">x</a></code></pre></div>
+</section><section id="sequential-for-loops-1" class="slide level2">
+<h2><em>Sequential</em> <code>for</code> loops</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">x=<span class="kw">vector</span>()</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) </a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">  x[i]=i<span class="op">^</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">x</a></code></pre></div>
 <pre><code>## [1] 1 4 9</code></pre>
-<h3 id="with-foreach">With <code>foreach()</code></h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">foreach</span>(<span class="dt">i=</span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) <span class="op">%do%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="st">  </span>i<span class="op">^</span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3">x</a></code></pre></div>
+</section><section id="with-foreach" class="slide level2">
+<h2>With <code>foreach()</code></h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">foreach</span>(<span class="dt">i=</span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) <span class="op">%do%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="st">  </span>i<span class="op">^</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">x</a></code></pre></div>
 <pre><code>## [[1]]
 ## [1] 1
 ## 
@@ -655,40 +666,36 @@ document.getElementsByTagName('head')[0].appendChild(style);
 ## 
 ## [[3]]
 ## [1] 9</code></pre>
-</section><section id="manipulating-output" class="slide level2">
-<h2>Manipulating output</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">foreach</span>(<span class="dt">i=</span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) <span class="op">%do%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="st">  </span>i<span class="op">^</span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb6-3" data-line-number="3">x</a></code></pre></div>
-<pre><code>## [[1]]
-## [1] 1
-## 
-## [[2]]
-## [1] 4
-## 
-## [[3]]
-## [1] 9</code></pre>
-<p>Note that <code>x</code> is a list with one element for each iterator variable (<code>i</code>). You can also specify a function to use to combine the outputs with <code>.combine</code>. Let’s concatenate the results into a vector with <code>c</code>.</p>
+<p><code>x</code> is a list with one element for each iterator variable (<code>i</code>). You can also specify a function to use to combine the outputs with <code>.combine</code>. Let’s concatenate the results into a vector with <code>c</code>.</p>
 </section><section id="sequential-foreach-loop-with-.combine" class="slide level2">
 <h2><em>Sequential</em> <code>foreach()</code> loop with <code>.combine</code></h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">foreach</span>(<span class="dt">i=</span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span>,<span class="dt">.combine=</span><span class="st">&#39;c&#39;</span>) <span class="op">%do%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="st">  </span>i<span class="op">^</span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3">x</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">foreach</span>(<span class="dt">i=</span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span>,<span class="dt">.combine=</span><span class="st">&#39;c&#39;</span>) <span class="op">%do%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="st">  </span>i<span class="op">^</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">x</a></code></pre></div>
 <pre><code>## [1] 1 4 9</code></pre>
 <p>Tells <code>foreach()</code> to first calculate each iteration, then <code>.combine</code> them with a <code>c(...)</code></p>
 </section><section id="sequential-foreach-loop-with-.combine-1" class="slide level2">
 <h2><em>Sequential</em> <code>foreach()</code> loop with <code>.combine</code></h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">foreach</span>(<span class="dt">i=</span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span>,<span class="dt">.combine=</span><span class="st">&#39;rbind&#39;</span>) <span class="op">%do%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="st">  </span>i<span class="op">^</span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb10-3" data-line-number="3">x</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">foreach</span>(<span class="dt">i=</span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span>,<span class="dt">.combine=</span><span class="st">&#39;rbind&#39;</span>) <span class="op">%do%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="st">  </span>i<span class="op">^</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb9-3" data-line-number="3">x</a></code></pre></div>
 <pre><code>##          [,1]
 ## result.1    1
 ## result.2    4
 ## result.3    9</code></pre>
+</section><section id="another-example" class="slide level2">
+<h2>Another example</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">8</span>, <span class="dv">8</span>, <span class="dt">by=</span><span class="fl">0.2</span>)</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2">v &lt;-<span class="st"> </span><span class="kw">foreach</span>(<span class="dt">y=</span>x, <span class="dt">.combine=</span><span class="st">&quot;cbind&quot;</span>) <span class="op">%do%</span><span class="st"> </span>{</a>
+<a class="sourceLine" id="cb11-3" data-line-number="3">    r &lt;-<span class="st"> </span><span class="kw">sqrt</span>(x<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span>y<span class="op">^</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb11-4" data-line-number="4">    <span class="kw">sin</span>(r) <span class="op">/</span><span class="st"> </span>r </a>
+<a class="sourceLine" id="cb11-5" data-line-number="5">}</a>
+<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="kw">persp</span>(x, x, v)</a></code></pre></div>
+<p><img data-src="PS_11_ParallelProcessing_files/figure-revealjs/unnamed-chunk-7-1.png" /></p>
 </section><section id="parallel-foreach-loop" class="slide level2">
 <h2><em>Parallel</em> <code>foreach()</code> loop</h2>
-<p>So far we’ve only used <code>%do%</code> which only uses a single processor.</p>
-<p>Must register a <em>parallel backend</em> with one of the <code>do</code> functions such as <code>doParallel()</code>. On most multicore systems, the easiest backend is typically <code>doParallel()</code>. On linux and mac, it uses <code>fork</code> system call and on Windows machines it uses <code>snow</code> backend. The nice thing is it chooses automatically for the system.</p>
+<p>So far we’ve used <code>%do%</code> which uses a single processor.</p>
+<p>Must register a <em>parallel backend</em> with one of the <code>do*</code> functions. On most multicore systems, the easiest backend is typically <code>doParallel()</code>. On linux and mac, it uses <code>fork</code> system call and on Windows machines it uses <code>snow</code> backend. The nice thing is it chooses automatically for the system.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">registerDoParallel</span>(<span class="dv">3</span>) <span class="co"># register specified number of workers</span></a>
 <a class="sourceLine" id="cb12-2" data-line-number="2"><span class="co">#registerDoParallel() # or, reserve all all available cores </span></a>
 <a class="sourceLine" id="cb12-3" data-line-number="3"><span class="kw">getDoParWorkers</span>() <span class="co"># check registered cores</span></a></code></pre></div>
@@ -701,6 +708,75 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <a class="sourceLine" id="cb14-3" data-line-number="3"><span class="st">  </span>i<span class="op">^</span><span class="dv">2</span></a>
 <a class="sourceLine" id="cb14-4" data-line-number="4">x</a></code></pre></div>
 <pre><code>## [1] 1 4 9</code></pre>
+</section><section id="test-the-relative-speed" class="slide level2">
+<h2>Test the relative speed</h2>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">library</span>(tictoc)</a>
+<a class="sourceLine" id="cb16-2" data-line-number="2"><span class="co">## Sequential</span></a>
+<a class="sourceLine" id="cb16-3" data-line-number="3"><span class="kw">tic</span>()</a>
+<a class="sourceLine" id="cb16-4" data-line-number="4">x &lt;-<span class="st"> </span><span class="kw">foreach</span>(<span class="dt">i=</span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">.combine=</span><span class="st">&#39;c&#39;</span>) <span class="op">%do%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb16-5" data-line-number="5"><span class="st">  </span>i<span class="op">^</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb16-6" data-line-number="6"><span class="kw">toc</span>()</a></code></pre></div>
+<pre><code>## 0.061 sec elapsed</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="co">## Parallel</span></a>
+<a class="sourceLine" id="cb18-2" data-line-number="2"><span class="kw">tic</span>()</a>
+<a class="sourceLine" id="cb18-3" data-line-number="3">x &lt;-<span class="st"> </span><span class="kw">foreach</span>(<span class="dt">i=</span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">.combine=</span><span class="st">&#39;c&#39;</span>) <span class="op">%dopar%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb18-4" data-line-number="4"><span class="st">  </span>i<span class="op">^</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb18-5" data-line-number="5"><span class="kw">toc</span>()</a></code></pre></div>
+<pre><code>## 0.051 sec elapsed</code></pre>
+</section><section id="test-the-relative-speed-1" class="slide level2">
+<h2>Test the relative speed</h2>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="co"># Sequential</span></a>
+<a class="sourceLine" id="cb20-2" data-line-number="2"><span class="kw">tic</span>()</a>
+<a class="sourceLine" id="cb20-3" data-line-number="3">x &lt;-<span class="st"> </span><span class="kw">foreach</span>(<span class="dt">i=</span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">.combine=</span><span class="st">&#39;c&#39;</span>) <span class="op">%do%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb20-4" data-line-number="4"><span class="st">  </span><span class="kw">Sys.sleep</span>(<span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb20-5" data-line-number="5"><span class="kw">toc</span>()</a></code></pre></div>
+<pre><code>## 9.013 sec elapsed</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="co">## Parallel</span></a>
+<a class="sourceLine" id="cb22-2" data-line-number="2"><span class="kw">tic</span>()</a>
+<a class="sourceLine" id="cb22-3" data-line-number="3">x &lt;-<span class="st"> </span><span class="kw">foreach</span>(<span class="dt">i=</span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">.combine=</span><span class="st">&#39;c&#39;</span>) <span class="op">%dopar%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb22-4" data-line-number="4"><span class="st">  </span><span class="kw">Sys.sleep</span>(<span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb22-5" data-line-number="5"><span class="kw">toc</span>()</a></code></pre></div>
+<pre><code>## 3.04 sec elapsed</code></pre>
+</section><section id="nested-foreach-loops" class="slide level2">
+<h2>Nested foreach loops</h2>
+<p>Example from the <a href="https://cran.r-project.org/web/packages/foreach/vignettes/nested.pdf">foreach vignette</a></p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">avec =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span></a>
+<a class="sourceLine" id="cb24-2" data-line-number="2">bvec =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb24-3" data-line-number="3">sim &lt;-<span class="st"> </span><span class="cf">function</span>(a, b)  <span class="co"># example function</span></a>
+<a class="sourceLine" id="cb24-4" data-line-number="4">  <span class="dv">10</span> <span class="op">*</span><span class="st"> </span>a <span class="op">+</span><span class="st"> </span>b <span class="op">^</span><span class="st"> </span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb24-5" data-line-number="5"><span class="co"># use a standard nested for() loop:</span></a>
+<a class="sourceLine" id="cb24-6" data-line-number="6">x &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>, <span class="kw">length</span>(avec), <span class="kw">length</span>(bvec))</a>
+<a class="sourceLine" id="cb24-7" data-line-number="7"><span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(bvec)) {</a>
+<a class="sourceLine" id="cb24-8" data-line-number="8">  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(avec)) {</a>
+<a class="sourceLine" id="cb24-9" data-line-number="9">    x[i, j] &lt;-<span class="st"> </span><span class="kw">sim</span>(avec[i], bvec[j])</a>
+<a class="sourceLine" id="cb24-10" data-line-number="10">  }</a>
+<a class="sourceLine" id="cb24-11" data-line-number="11">}</a>
+<a class="sourceLine" id="cb24-12" data-line-number="12">x</a></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]   11   14   19
+## [2,]   21   24   29
+## [3,]   31   34   39
+## [4,]   41   44   49</code></pre>
+</section><section id="nested-foreach" class="slide level2">
+<h2>Nested Foreach</h2>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">foreach</span>(<span class="dt">b=</span>bvec, <span class="dt">.combine=</span><span class="st">&#39;cbind&#39;</span>) <span class="op">%:%</span></a>
+<a class="sourceLine" id="cb26-2" data-line-number="2"><span class="st">  </span><span class="kw">foreach</span>(<span class="dt">a=</span>avec, <span class="dt">.combine=</span><span class="st">&#39;c&#39;</span>) <span class="op">%do%</span><span class="st"> </span>{</a>
+<a class="sourceLine" id="cb26-3" data-line-number="3">    <span class="kw">sim</span>(a,b)</a>
+<a class="sourceLine" id="cb26-4" data-line-number="4">  }</a>
+<a class="sourceLine" id="cb26-5" data-line-number="5">x</a></code></pre></div>
+<pre><code>##      result.1 result.2 result.3
+## [1,]       11       14       19
+## [2,]       21       24       29
+## [3,]       31       34       39
+## [4,]       41       44       49</code></pre>
+<p>Again, simply change <code>%do%</code> to <code>%dopar%</code> to execute in parallel.</p>
+</section><section id="alternative-backends-dompi" class="slide level2">
+<h2>Alternative backends: doMPI</h2>
+<p><em>Message Passing Interface</em>: specification for an API for passing messages between different computers.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">library</span>(doMPI)</a>
+<a class="sourceLine" id="cb28-2" data-line-number="2">cl &lt;-<span class="st"> </span><span class="kw">startMPIcluster</span>(<span class="dt">count=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb28-3" data-line-number="3"><span class="kw">registerDoMPI</span>(cl)</a></code></pre></div>
+<p>See <a href="https://ubccr.freshdesk.com/support/solutions/articles/13000010161-mpi-and-parallel-computing">here for details on using MPI on UB’s High Performance Computer Cluster.</a></p>
 </section><section id="review-basic-steps" class="slide level2">
 <h2>Review Basic Steps</h2>
 <p>Most parallel computing:</p>
@@ -721,15 +797,28 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <section><section id="raster-package" class="title-slide slide level1"><h1>Raster Package</h1></section><section id="parallel-processing-with-raster" class="slide level2">
 <h2>Parallel processing with raster</h2>
 <p>Some functions in the raster package also easy to parallelize.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">ncores=<span class="dv">2</span></a>
-<a class="sourceLine" id="cb16-2" data-line-number="2"><span class="kw">beginCluster</span>(ncores)</a>
-<a class="sourceLine" id="cb16-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb16-4" data-line-number="4">fn=<span class="cf">function</span>(x) x<span class="op">^</span><span class="dv">3</span></a>
-<a class="sourceLine" id="cb16-5" data-line-number="5"><span class="kw">system.time</span>(<span class="kw">clusterR</span>(r, fn, <span class="dt">verbose=</span>T))</a>
-<a class="sourceLine" id="cb16-6" data-line-number="6"><span class="kw">endCluster</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw">library</span>(raster)</a>
+<a class="sourceLine" id="cb29-2" data-line-number="2">ncores=<span class="dv">2</span></a>
+<a class="sourceLine" id="cb29-3" data-line-number="3"><span class="kw">beginCluster</span>(ncores)</a>
+<a class="sourceLine" id="cb29-4" data-line-number="4">fn=<span class="cf">function</span>(x){</a>
+<a class="sourceLine" id="cb29-5" data-line-number="5">  x<span class="op">^</span><span class="dv">3</span> <span class="co">#define some function to calculate</span></a>
+<a class="sourceLine" id="cb29-6" data-line-number="6">}</a>
+<a class="sourceLine" id="cb29-7" data-line-number="7">r=<span class="kw">raster</span>() <span class="co"># make an empty raster</span></a>
+<a class="sourceLine" id="cb29-8" data-line-number="8"><span class="kw">values</span>(r)&lt;-<span class="kw">rnorm</span>(<span class="kw">ncell</span>(r)) <span class="co">#fill it with random numbers</span></a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="kw">tic</span>()</a>
+<a class="sourceLine" id="cb30-2" data-line-number="2">result1=<span class="kw">calc</span>(r,fn)</a>
+<a class="sourceLine" id="cb30-3" data-line-number="3"><span class="kw">toc</span>()</a></code></pre></div>
+<pre><code>## 0.052 sec elapsed</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="kw">tic</span>()</a>
+<a class="sourceLine" id="cb32-2" data-line-number="2">result2=<span class="kw">clusterR</span>(r, fn, <span class="dt">verbose=</span>T)</a>
+<a class="sourceLine" id="cb32-3" data-line-number="3"><span class="kw">toc</span>()</a></code></pre></div>
+<pre><code>## 0.767 sec elapsed</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="kw">identical</span>(result1,result2)</a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="kw">endCluster</span>()</a></code></pre></div>
 </section><section id="raster-package-1" class="slide level2">
 <h2>Raster package</h2>
-<p>Does <em>not</em> work with:</p>
+<p>The following <code>raster</code> functions are <em>not</em> parallelized:</p>
 <ul>
 <li>merge</li>
 <li>crop</li>
@@ -779,7 +868,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
         width: '90%',
-        height: '100%',
+        height: '90%',
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
         // Bounds for smallest/largest possible scale to apply to content

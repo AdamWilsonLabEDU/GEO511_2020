@@ -563,21 +563,15 @@ Below are a set of tasks that we will work on in class (either alone or in small
   </tr>
   <tr>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:left;"> Commit second draft of final project to GitHub for review </td>
+   <td style="text-align:left;"> Bring any questions to class on Tuesday. </td>
    <td style="text-align:left;"> [TK_14](./TK_14.html) </td>
    <td style="text-align:right;"> 14 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:left;"> Demonstrate a simple presence/absence model in spatial context. </td>
-   <td style="text-align:left;"> [TK_14](./TK_14.html) </td>
-   <td style="text-align:right;"> 14 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:left;"> Model spatial dependence (autocorrelation) in the response. </td>
-   <td style="text-align:left;"> [TK_14](./TK_14.html) </td>
-   <td style="text-align:right;"> 14 </td>
+   <td style="text-align:left;"> Commit second (or final) version of final project to GitHub </td>
+   <td style="text-align:left;"> [TK_15](./TK_15.html) </td>
+   <td style="text-align:right;"> 15 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 0 </td>
@@ -613,6 +607,18 @@ Below are a set of tasks that we will work on in class (either alone or in small
    <td style="text-align:right;"> 0 </td>
    <td style="text-align:left;"> Confirm the final version renders correctly on your website </td>
    <td style="text-align:left;"> [TK_16](./TK_16.html) </td>
+   <td style="text-align:right;"> 16 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Finalize your project and commit to GitHub </td>
+   <td style="text-align:left;"> [TK_17](./TK_17.html) </td>
+   <td style="text-align:right;"> 16 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> Confirm the final version renders correctly on your website </td>
+   <td style="text-align:left;"> [TK_17](./TK_17.html) </td>
    <td style="text-align:right;"> 16 </td>
   </tr>
 </tbody>

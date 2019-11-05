@@ -1,6 +1,14 @@
 ---
 title: "Parallel Processing"
+week: 11
+type: Presentation
 ---
+
+## Resource Presentations
+
+## Case Study Discussion
+
+# Introduction to Parallel Processing
 
 ## Serial Computing
 Most (legacy) software is written for serial computation:
@@ -96,6 +104,7 @@ In this session we'll focus on the foreach package, which has numerous advantage
 ## New Packages
 library(foreach)
 library(doParallel)
+library(tidyverse)
 ```
 
 ## _Sequential_ `for` loops
@@ -110,11 +119,23 @@ for(i in 1:3)
 x
 ```
 
+
+## _Sequential_ `for` loops
+
+
+```r
+x=vector()
+for(i in 1:3) 
+  x[i]=i^2
+x
+```
+
 ```
 ## [1] 1 4 9
 ```
 
-### With `foreach()`
+
+## With `foreach()`
 
 ```r
 x <- foreach(i=1:3) %do% 
@@ -133,26 +154,7 @@ x
 ## [1] 9
 ```
 
-## Manipulating output
-
-```r
-x <- foreach(i=1:3) %do% 
-  i^2
-x
-```
-
-```
-## [[1]]
-## [1] 1
-## 
-## [[2]]
-## [1] 4
-## 
-## [[3]]
-## [1] 9
-```
-
-Note that `x` is a list with one element for each iterator variable (`i`).  You can also specify a function to use to combine the outputs with `.combine`.  Let's concatenate the results into a vector with `c`.
+`x` is a list with one element for each iterator variable (`i`).  You can also specify a function to use to combine the outputs with `.combine`.  Let's concatenate the results into a vector with `c`.
 
 ## _Sequential_ `foreach()` loop with `.combine`
 
@@ -183,11 +185,26 @@ x
 ## result.3    9
 ```
 
+
+## Another example
+
+```r
+x <- seq(-8, 8, by=0.2)
+v <- foreach(y=x, .combine="cbind") %do% {
+    r <- sqrt(x^2 + y^2)
+    sin(r) / r 
+}
+persp(x, x, v)
+```
+
+![](PS_11_ParallelProcessing_files/figure-revealjs/unnamed-chunk-7-1.png)
+
+
 ## _Parallel_ `foreach()` loop
 
-So far we've only used `%do%` which only uses a single processor.
+So far we've used `%do%` which uses a single processor.
 
-Must register a _parallel backend_ with one of the `do` functions such as `doParallel()`. On most multicore systems, the easiest backend is typically `doParallel()`. On linux and mac, it uses `fork` system call and on Windows machines it uses `snow` backend. The nice thing is it chooses automatically for the system.
+Must register a _parallel backend_ with one of the `do*` functions. On most multicore systems, the easiest backend is typically `doParallel()`. On linux and mac, it uses `fork` system call and on Windows machines it uses `snow` backend. The nice thing is it chooses automatically for the system.
 
 
 ```r
@@ -215,6 +232,119 @@ x
 ## [1] 1 4 9
 ```
 
+## Test the relative speed
+
+
+```r
+library(tictoc)
+## Sequential
+tic()
+x <- foreach(i=1:3, .combine='c') %do% 
+  i^2
+toc()
+```
+
+```
+## 0.061 sec elapsed
+```
+
+```r
+## Parallel
+tic()
+x <- foreach(i=1:3, .combine='c') %dopar% 
+  i^2
+toc()
+```
+
+```
+## 0.051 sec elapsed
+```
+
+## Test the relative speed
+
+
+```r
+# Sequential
+tic()
+x <- foreach(i=1:3, .combine='c') %do% 
+  Sys.sleep(3)
+toc()
+```
+
+```
+## 9.013 sec elapsed
+```
+
+```r
+## Parallel
+tic()
+x <- foreach(i=1:3, .combine='c') %dopar% 
+  Sys.sleep(3)
+toc()
+```
+
+```
+## 3.04 sec elapsed
+```
+
+## Nested foreach loops
+Example from the [foreach vignette](https://cran.r-project.org/web/packages/foreach/vignettes/nested.pdf)
+
+```r
+avec = 1:4
+bvec = 1:3
+sim <- function(a, b)  # example function
+  10 * a + b ^ 2
+# use a standard nested for() loop:
+x <- matrix(0, length(avec), length(bvec))
+for (j in 1:length(bvec)) {
+  for (i in 1:length(avec)) {
+    x[i, j] <- sim(avec[i], bvec[j])
+  }
+}
+x
+```
+
+```
+##      [,1] [,2] [,3]
+## [1,]   11   14   19
+## [2,]   21   24   29
+## [3,]   31   34   39
+## [4,]   41   44   49
+```
+
+## Nested Foreach
+
+
+```r
+x <- foreach(b=bvec, .combine='cbind') %:%
+  foreach(a=avec, .combine='c') %do% {
+    sim(a,b)
+  }
+x
+```
+
+```
+##      result.1 result.2 result.3
+## [1,]       11       14       19
+## [2,]       21       24       29
+## [3,]       31       34       39
+## [4,]       41       44       49
+```
+
+Again, simply change `%do%` to `%dopar%` to execute in parallel.
+
+## Alternative backends: doMPI
+_Message Passing Interface_: specification for an API for passing messages between different computers.
+
+```r
+library(doMPI)
+cl <- startMPIcluster(count=2)
+registerDoMPI(cl)
+```
+
+See [here for details on using MPI on UB's High Performance Computer Cluster.](https://ubccr.freshdesk.com/support/solutions/articles/13000010161-mpi-and-parallel-computing)
+
 ## Review Basic Steps
 Most parallel computing:
 
@@ -236,17 +366,52 @@ Some functions in the raster package also easy to parallelize.
 
 
 ```r
+library(raster)
 ncores=2
 beginCluster(ncores)
+fn=function(x){
+  x^3 #define some function to calculate
+}
+r=raster() # make an empty raster
+values(r)<-rnorm(ncell(r)) #fill it with random numbers
+```
 
-fn=function(x) x^3
-system.time(clusterR(r, fn, verbose=T))
+
+```r
+tic()
+result1=calc(r,fn)
+toc()
+```
+
+```
+## 0.052 sec elapsed
+```
+
+```r
+tic()
+result2=clusterR(r, fn, verbose=T)
+toc()
+```
+
+```
+## 0.767 sec elapsed
+```
+
+```r
+identical(result1,result2)
+```
+
+```
+## [1] TRUE
+```
+
+```r
 endCluster()
 ```
 
 ## Raster package
 
-Does _not_ work with:
+The following `raster` functions are _not_ parallelized:
 
 * merge
 * crop

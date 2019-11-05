@@ -40,6 +40,7 @@ library(spData)
 library(sf)
 
 ## New Packages
+library(tictoc) #for timing how long things take
 library(foreach)
 library(doParallel)
 registerDoParallel(2)
@@ -60,7 +61,7 @@ Write an Rmd script that:
 * Loads the `world` dataset in the `spData` package
    * Reproject the `world` dataset to the Equal-Area Scalable Earth Grid (EASE-Grid) ([EASE-Grid ](https://nsidc.org/data/ease)) using `st_transform()` and the proj4 projection in the code above
 * Runs a parallel `foreach()` to loop over countries (`name_long`) that:
-   * `filter` the world object to include only on country at a time.
+   * `filter` the world object to include only one country at a time.
    * use `st_is_within_distance` to find the distance from that country to all other countries in the `world` object within 100000m Set `sparse=F` to return a simple vector of `TRUE/FALSE` for countries within the distance.
    * set `.combine=rbind` to return a simple matrix.
 * Confirm that you get the same answer without using foreach:
@@ -77,18 +78,49 @@ data("world")
 dist=100000 # distance in m
 world2=st_transform(world,proj)
 
-#system.time(
+library(tidycensus)
+racevars <- c(White = "P005003", 
+              Black = "P005004", 
+              Asian = "P005006", 
+              Hispanic = "P004003")
+
+buffalo <- get_decennial(geography = "block", variables = racevars, 
+                  state = "NY", county = "Erie County", geometry = TRUE,
+                  summary_var = "P001001") 
+
+head(buffalo)
+
+buffalo_dot %>% 
+   mutate(pct = 100 * (value / summary_value)) %>%
+  ggplot(aes(fill = pct)) +
+  facet_wrap(~variable) +
+  geom_sf(color = NA) +
+  coord_sf(crs = 26915) + 
+  scale_fill_viridis_c()
+
+buffalo_dot <- buffalo %>% 
+   st_crop(c(xmin=-78.9,xmax=-78.7,ymin=42.85,ymax=42.95)) %>% 
+   st_transform(proj) %>% 
+   st_sample(size=buffalo$value)
+
+n=1000
+world_points=st_sample(world2,size=n)
+plot(world_points)
+
+
+tic()
   x_seq <- world2%>%
   st_is_within_distance(world2,dist,sparse=F)
-#)
+toc()
 
-#system.time(
-  x_par <- foreach(i=unique(world$name_long),.combine=rbind) %dopar% {
+tic()
+x_par <- foreach(i=unique(world$name_long),.combine=rbind) %dopar% {
   world2%>%
     filter(name_long==i)%>%
     st_is_within_distance(world2,dist=dist,sparse = F)
   }
-#)
+toc()
+
 #identical(x_seq,x_par)
 ```
 

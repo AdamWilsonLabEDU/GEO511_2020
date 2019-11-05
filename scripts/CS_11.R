@@ -32,6 +32,7 @@ library(spData)
 library(sf)
 
 ## New Packages
+library(tictoc) #for timing how long things take
 library(foreach)
 library(doParallel)
 registerDoParallel(2)
@@ -52,7 +53,7 @@ proj="+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,
 #' * Loads the `world` dataset in the `spData` package
 #'    * Reproject the `world` dataset to the Equal-Area Scalable Earth Grid (EASE-Grid) ([EASE-Grid ](https://nsidc.org/data/ease)) using `st_transform()` and the proj4 projection in the code above
 #' * Runs a parallel `foreach()` to loop over countries (`name_long`) that:
-#'    * `filter` the world object to include only on country at a time.
+#'    * `filter` the world object to include only one country at a time.
 #'    * use `st_is_within_distance` to find the distance from that country to all other countries in the `world` object within 100000m Set `sparse=F` to return a simple vector of `TRUE/FALSE` for countries within the distance.
 #'    * set `.combine=rbind` to return a simple matrix.
 #' * Confirm that you get the same answer without using foreach:

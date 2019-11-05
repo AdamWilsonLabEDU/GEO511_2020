@@ -437,6 +437,7 @@ library(spData)
 library(sf)
 
 ## New Packages
+library(tictoc) #for timing how long things take
 library(foreach)
 library(doParallel)
 registerDoParallel(2)
@@ -458,7 +459,7 @@ Show Hints
 </ul></li>
 <li>Runs a parallel <code>foreach()</code> to loop over countries (<code>name_long</code>) that:
 <ul>
-<li><code>filter</code> the world object to include only on country at a time.</li>
+<li><code>filter</code> the world object to include only one country at a time.</li>
 <li>use <code>st_is_within_distance</code> to find the distance from that country to all other countries in the <code>world</code> object within 100000m Set <code>sparse=F</code> to return a simple vector of <code>TRUE/FALSE</code> for countries within the distance.</li>
 <li>set <code>.combine=rbind</code> to return a simple matrix.</li>
 </ul></li>
@@ -471,6 +472,9 @@ Show Hints
 </ul>
 </div>
 </div>
+<p><img src="CS_11_files/figure-html/unnamed-chunk-2-1.png" /><!-- --></p>
+<pre><code>## 5.221 sec elapsed</code></pre>
+<pre><code>## 11.823 sec elapsed</code></pre>
 The first 10 rows/columns of the resulting matrix (e.g. <code>x_par[1:10,1:10]</code>) should look like this:
 <table>
 <thead>

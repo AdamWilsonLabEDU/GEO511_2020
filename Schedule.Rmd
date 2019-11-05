@@ -16,7 +16,7 @@ yamls=append(
 
 names=sapply(yamls,function(x) x$name)
 
-weeks=read_csv("schedule.csv")
+#weeks=read_csv("schedule.csv")
 
 sched=read_csv("schedule.csv")
 
@@ -69,11 +69,6 @@ for(i in sched$week){
   # ttask=ifelse(!is.na(task),yaml_extract(task),"")
   # tcase=ifelse(!is.na(case),yaml_extract(case),"")
 
-  ttask_tb=paste0("[",yamls[[sched$task_yaml[i]]]$title,"](",
-                  yamls[[sched$task_yaml[i]]]$url,")")
-  tcase_tb=paste0("[",yamls[[sched$case_yaml[i]]]$title,"](",
-                  yamls[[sched$case_yaml[i]]]$url,")")
-  
   pres1=ifelse(
     grepl("http",sched$pres1[i]),
     sched$pres1[i],
@@ -86,6 +81,13 @@ for(i in sched$week){
                    paste0( "[<i class='fas fa-desktop'>   </i>](",
                    pres1,"){target='_blank'}"),"")
  
+  ttask_tb=paste0("[",yamls[[sched$task_yaml[i]]]$title,"](",
+                  yamls[[sched$task_yaml[i]]]$url,")")
+ 
+  tcase_tb=paste0("[",yamls[[sched$case_yaml[i]]]$title,"](",
+                  yamls[[sched$case_yaml[i]]]$url,")")
+  
+  
   cat(paste(
     "| ",sched$week[i],
     "| ",sched$date[i],

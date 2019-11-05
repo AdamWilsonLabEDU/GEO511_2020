@@ -17,8 +17,8 @@ library(ncdf4) # to import data from netcdf format
 ## lst_url="https://github.com/adammwilson/DataScienceData/blob/master/inst/extdata/appeears/MOD11A2.006_aid0001.nc?raw=true"
 ## 
 ## # download them
-## download.file(lulc_url,destfile="data/MCD12Q1.051_aid0001.nc")
-## download.file(lst_url,destfile="data/MOD11A2.006_aid0001.nc")
+## download.file(lulc_url,destfile="data/MCD12Q1.051_aid0001.nc", mode="wb")
+## download.file(lst_url,destfile="data/MOD11A2.006_aid0001.nc", mode="wb")
 
 lulc=stack("data/MCD12Q1.051_aid0001.nc",varname="Land_Cover_Type_1")
 lst=stack("data/MOD11A2.006_aid0001.nc",varname="LST_Day_1km")
