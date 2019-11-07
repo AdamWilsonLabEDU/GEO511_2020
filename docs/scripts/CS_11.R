@@ -26,10 +26,14 @@
 #' 
 #' ## Background
 #' 
-#' The census data do not include specific addresses (the finest spatial information is the census block), so it's common to see chloropleths representing the aggregate statistics of the underlying polygon.  This is accurate, but not so personal.Folks at the University of Virginia developed a simple yet effective visualization approach, called the 'Racial Dot Map' which conveys a simple idea - one dot equals one person.
+#' The census data do not include specific addresses (the finest spatial information is the census block), so it's common to see chloropleths representing the aggregate statistics of the underlying polygon.  This is accurate, but not so personal.  Folks at the University of Virginia developed a simple yet effective visualization approach, called the ['Racial Dot Map'](https://demographics.virginia.edu/DotMap/index.html) which conveys a simple idea - one dot equals one person.  Here's how it looks for Buffalo, NY.
 #' 
-#' The idea is really simple, simply randomly generate a point for each person of each racial identity within each polygon.   Can you do it?  Can you do it using multiple cores on your computer?
+#' ![](https://www.buffalorising.com/2015/06/the-racial-dot-map/)
 #' 
+#' 
+#' The idea is really simple.  One just randomly generates a point for each person of each racial identity within each polygon.   
+#' 
+#' Can you do it?  Can you do it using multiple cores on your computer?
 #' 
 ## ----cache=F, message=F,warning=FALSE, results='hide'--------------------
 library(tidyverse)
@@ -40,7 +44,7 @@ library(sf)
 library(mapview) # new package that makes easy leaflet maps
 library(foreach)
 library(doParallel)
-registerDoParallel(2)
+registerDoParallel(4)
 getDoParWorkers() # check registered cores
 
 #' 
@@ -65,13 +69,13 @@ erie <- get_decennial(geography = "block", variables = racevars,
                   state = "NY", county = "Erie County", geometry = TRUE,
                   summary_var = "P001001", cache_table=T) 
 
-#' * Crop the county-level data to `c(xmin=-78.9,xmax=-78.85,ymin=42.888,ymax=42.92)` to reduce the computational burdern. Feel free to enlarge this area if your computer is fast (or you are patient)
-#' * Write a foreach loop that does the following steps _for each racial group_ in the `variable` column of the `erie` dataset and rbind the results.
+#' * Crop the county-level data to `c(xmin=-78.9,xmax=-78.85,ymin=42.888,ymax=42.92)` to reduce the computational burdern. Feel free to enlarge this area if your computer is fast (or you are patient).
+#' * Write a foreach loop that does the following steps _for each racial group_ in the `variable` column of the `erie` dataset and rbind the results into a single `sf` object.  You may want to convert the variable column into a factor and use `levels()` or use `unique()`.
 #'    * filter the the data to include only one race at time
-#'    * use `st_sample()` to generate random points for each person that resided within each polygon.  You will have to set `size=.$value`.  The `.` indicates that the column comes from the dataset that was passed to the function.
-#'    * convert the points to spatial features with `st_as_sf()`
+#'    * use `st_sample()` to generate random points for each person that resided within each polygon.  If you use a pipe (`%>%`), you will have to set `size=.$value`.  The `.` indicates that the column comes from the dataset that was passed to the function. See [here](https://magrittr.tidyverse.org/reference/pipe.html) for details on how to use the `.` in a pipe.
+#'    * convert the points from `st_sample()` to spatial features with `st_as_sf()`
 #'    * `mutate` to add a column named `variable` that is set to the current racial group (from the foreach loop)
-#' * Use the `mapview()` function in the `mapview` package to make a leaflet map of the dataset and set the `zcol` to the racial identity of each point. You can adjust any of the visualization parameters (such as `cex` for size).
+#' * Use the `mapview()` function in the `mapview` package to make a leaflet map of the dataset and set the `zcol` to the racial identity of each point. You can adjust any of the visualization parameters (such as `cex` for size).  [Read more about mapview here](https://r-spatial.github.io/mapview/).  It's a new and really easy way to make leaflet maps from many types of spatial data.
 #'    
 #' </div>
 #' </div>
@@ -81,7 +85,6 @@ erie <- get_decennial(geography = "block", variables = racevars,
 #' 
 #' Your final result should look something like this:
 
-#' 
 #' 
 #' <div class="extraswell">
 #' <button data-toggle="collapse" class="btn btn-link" data-target="#extras">
@@ -93,7 +96,7 @@ erie <- get_decennial(geography = "block", variables = racevars,
 #' 
 #' * Other racial groups
 #' * Adjust colors to match the original
-#' * Summarize the data in different ways
+#' * Summarize the data in different ways (e.g. plot the polygon data, calculate indices, etc.)
 #' 
 
 #' 

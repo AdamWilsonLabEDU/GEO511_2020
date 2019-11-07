@@ -6,7 +6,7 @@ library(sf)
 library(mapview) # new package that makes easy leaflet maps
 library(foreach)
 library(doParallel)
-registerDoParallel(2)
+registerDoParallel(4)
 getDoParWorkers() # check registered cores
 
 library(tidycensus)
