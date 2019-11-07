@@ -28,7 +28,7 @@
 #' 
 #' The census data do not include specific addresses (the finest spatial information is the census block), so it's common to see chloropleths representing the aggregate statistics of the underlying polygon.  This is accurate, but not so personal.  Folks at the University of Virginia developed a simple yet effective visualization approach, called the ['Racial Dot Map'](https://demographics.virginia.edu/DotMap/index.html) which conveys a simple idea - one dot equals one person.  Here's how it looks for Buffalo, NY.
 #' 
-#' ![](https://www.buffalorising.com/2015/06/the-racial-dot-map/)
+#' ![](https://www.buffalorising.com/wp-content/uploads/2015/06/2010-census-Buffalo-NY-1110x738.jpg)
 #' 
 #' 
 #' The idea is really simple.  One just randomly generates a point for each person of each racial identity within each polygon.   
