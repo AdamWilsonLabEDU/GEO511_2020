@@ -93,11 +93,22 @@ erie <- get_decennial(geography = "block", variables = racevars,
 buffalo <- erie %>% 
    st_crop(c(xmin=-78.9,xmax=-78.85,ymin=42.888,ymax=42.92))
 
+# function to drop storm points not near main tracks
+drop_outliers <- function(x) {
+   central_point=st_union(x) %>% 
+      st_centroid()
+   dists=st_distance(x,central_point) #get distances from central point
+   x2=filter(x,as.numeric(dists)<100000) #keep only points within 100km of centroid 
+   return(x) #return filtered dataset 
+}
+
+
 buffalo_dots=
    foreach(r=unique(buffalo$variable),.combine=rbind)%dopar%{
    filter(buffalo,variable==r) %>%  #do one variable at a time
    st_sample(size=.$value) %>%  #generate a point for each person randomly
    st_as_sf() %>%  #convert to a full sf object
+   drop_outliers() %>% 
    mutate(variable=r) #add the variable onto the points
    }
 ```
