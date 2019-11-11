@@ -21,8 +21,8 @@ left:
     menu:
     - text: "Provenance"
       href: Provenance.html
-    - text: "2018 Projects"
-      href: Projects_2018.html
+    - text: "Past Projects"
+      href: Past_projects.html
     - text: "Setting up Github"
       href: GitSSHNotes.html
 right:

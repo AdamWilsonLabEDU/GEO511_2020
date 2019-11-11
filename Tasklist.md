@@ -381,6 +381,7 @@ ___
  
  <a class="btn btn-link" href="./CS_12.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i23">Preview Readings & Tasks </button><div id="i23" class="collapse">
 ## Readings
+- Browse the [HTML Widgets page](http://gallery.htmlwidgets.org/) for many more examples. Take notes in your readme.md about potential uses in your project.
 - Explore the [DyGraphs webpage](http://rstudio.github.io/dygraphs/)
 
 ## Tasks
@@ -401,8 +402,6 @@ ___
 
 ## Tasks
 - Review at least two other students' projects and make comments via a _pull request_ in GitHub.
-- Browse the [Leaflet website](http://rstudio.github.io/leaflet/) and take notes in your readme.md about potential uses in your project. What data could you use?  How would you display it?
-- Browse the [HTML Widgets page](http://gallery.htmlwidgets.org/) for many more examples. Take notes in your readme.md about potential uses in your project.
 </div>
 ___
 ## [ TK_13 :  TBD ]( ./TK_13.html ) 

@@ -4,6 +4,7 @@ subtitle: Using DyGraph library.
 week: 12
 type: Case Study
 reading:
+   - Browse the [HTML Widgets page](http://gallery.htmlwidgets.org/) for many more examples. Take notes in your readme.md about potential uses in your project.
    - Explore the [DyGraphs webpage](http://rstudio.github.io/dygraphs/)
 tasks:
    - Download daily weather data for Buffalo, NY using an API

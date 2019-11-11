@@ -539,18 +539,6 @@ Below are a set of tasks that we will work on in class (either alone or in small
   </tr>
   <tr>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:left;"> Browse the [Leaflet website](http://rstudio.github.io/leaflet/) and take notes in your readme.md about potential uses in your project. What data could you use?  How would you display it? </td>
-   <td style="text-align:left;"> [TK_12](./TK_12.html) </td>
-   <td style="text-align:right;"> 12 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:left;"> Browse the [HTML Widgets page](http://gallery.htmlwidgets.org/) for many more examples. Take notes in your readme.md about potential uses in your project. </td>
-   <td style="text-align:left;"> [TK_12](./TK_12.html) </td>
-   <td style="text-align:right;"> 12 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 0 </td>
    <td style="text-align:left;"> Continue working on final project </td>
    <td style="text-align:left;"> [TK_13](./TK_13.html) </td>
    <td style="text-align:right;"> 13 </td>

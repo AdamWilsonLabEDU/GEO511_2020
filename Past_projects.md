@@ -1,5 +1,5 @@
 ---
-title: "2018 Virtual Poster Session"
+title: "Virtual Poster Session"
 output:
   html_document:
     toc: false
@@ -13,6 +13,86 @@ Each student wrote a script (using the [R](https://www.r-project.org/) programmi
 
 You are invited to explore the student projects below (click on a title to visit their website).  Each projects includes the embedded code in addition to their narrative and graphical stories.   If you find something interesting, you are free to download and re-run the script to reproduce the entire analysis (including generating the tables/figures and even the webpage itself).
 
+## 2019
+
+
+
+
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Student </th>
+   <th style="text-align:left;"> Title </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> AJKlisavage </td>
+   <td style="text-align:left;"> [Invasive Species Tracker](https://geo511-2019.github.io/2019-geo511-project-AJKlisavage) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> anuwatpe </td>
+   <td style="text-align:left;"> [Opoid-Related Deaths in New York State](https://geo511-2019.github.io/2019-geo511-project-anuwatpe) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> austin3087 </td>
+   <td style="text-align:left;"> [GEO-511 Semester Project](https://geo511-2019.github.io/2019-geo511-project-austin3087) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> davidjtor </td>
+   <td style="text-align:left;"> [GEO 511: Spatial Data Science Project](https://geo511-2019.github.io/2019-geo511-project-davidjtor) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> gbream </td>
+   <td style="text-align:left;"> [Building, Crossdating, and Analyzing a Tree Ring Chronology from Geneseo, NY](https://geo511-2019.github.io/2019-geo511-project-gbream) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> hsare </td>
+   <td style="text-align:left;"> [I have the best titles](https://geo511-2019.github.io/2019-geo511-project-hsare) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> jpreg </td>
+   <td style="text-align:left;"> [I have the best titles](https://geo511-2019.github.io/2019-geo511-project-jpreg) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> katlynse </td>
+   <td style="text-align:left;"> [The Construction and Deconstruction of Empanada](https://geo511-2019.github.io/2019-geo511-project-katlynse) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> kli57 </td>
+   <td style="text-align:left;"> [Unmixing vegetation, soil and urban using linear mixture analysis](https://geo511-2019.github.io/2019-geo511-project-kli57) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> mitchhitch-1 </td>
+   <td style="text-align:left;"> [Tool for identifing replicate field study locations](https://geo511-2019.github.io/2019-geo511-project-mitchhitch-1) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> moiraone </td>
+   <td style="text-align:left;"> [I have the best titles](https://geo511-2019.github.io/2019-geo511-project-moiraone) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> oliviadelos </td>
+   <td style="text-align:left;"> [I have the best titles](https://geo511-2019.github.io/2019-geo511-project-oliviadelos) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Stella-Liao </td>
+   <td style="text-align:left;"> [NA](https://geo511-2019.github.io/2019-geo511-project-Stella-Liao) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> yliu282 </td>
+   <td style="text-align:left;"> [I have the best titles](https://geo511-2019.github.io/2019-geo511-project-yliu282) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> zolal-ayazpour </td>
+   <td style="text-align:left;"> [I have the best titles](https://geo511-2019.github.io/2019-geo511-project-zolal-ayazpour) </td>
+  </tr>
+</tbody>
+</table>
+
+
+
+## 2018
 
 
 
@@ -109,15 +189,3 @@ You are invited to explore the student projects below (click on a title to visit
   </tr>
 </tbody>
 </table>
-
-<!-- # Group 2 -->
-
-<!-- ```{r, asis=T, echo=F, eval=F} -->
-<!-- d%>% -->
-<!--   arrange(user)%>% -->
-<!--   filter(group==2)%>% -->
-<!--   mutate(Title=paste0("[",title,"](",url,")"))%>% -->
-<!--   dplyr::select(Student=user,Title)%>% -->
-<!--   kable() -->
-
-<!-- ``` -->
