@@ -8,9 +8,12 @@ knitr::opts_knit$set(root.dir = NULL)
 knitr::opts_chunk$set(fig.width=800,fig.height=400)
 ```
 
-# Logistics
-<iframe class='embed-responsive-item' src='schedule.html'  width=100% height=700px allowfullscreen></iframe>
+## Logistics
+<iframe class='embed-responsive-item' src='Schedule.html'  width=100% height=700px allowfullscreen></iframe>
 
+## Resource Presentations
+
+## Case Studies
 
 # HTML Visualization
 
@@ -48,7 +51,15 @@ geocode("Buffalo, NY")
 m <- leaflet() %>% setView(lng = -78.88642, lat = 42.89606, zoom = 12) %>%   addTiles()
 ```
 
+Most HTML outputs will need to be run with `frameWidget()` to appear in a rmarkdown document.  Simply wrap the output with:
+
+```{r,  echo=T, eval=F}
+frameWidget(m,height =500)
+```
+
+
 ---
+
 
 ```{r,  echo=F}
 frameWidget(m,height =500)
@@ -206,8 +217,8 @@ rg1=browsable(tagList(
 ---
 <iframe class='embed-responsive-item' src='rgl.html'  width=100% height=700px allowfullscreen></iframe>
 
-# Final Projects
+## Flexdashboard
 
-## Interactive elements
+[Also check out the flexdashboard format](https://rmarkdown.rstudio.com/flexdashboard/)
 
-Consider embedding interactive elements in your site.
+

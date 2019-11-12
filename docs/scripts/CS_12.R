@@ -61,10 +61,13 @@ d$date=as.Date(d$date)
 #' 1. Convert `d` into an `xts` time series object using `xts()`.  You will need to specifify which column has the data (`d$tmax`) and `order.by=d$date`. See `?xts` for help. 
 #' 2. Use `dygraph()` to draw the plot
 #' 3. Set the title of the dygraph to be `main="Daily Maximum Temperature in Buffalo, NY"`
-#' 3. Add a `dyRangeSelector()` with a `dateWindow` of `c("2017-01-01", "2017-12-31")`
-#' 
+#' 4. Add a `dyRangeSelector()` with a `dateWindow` of `c("2017-01-01", "2017-12-31")`
+#' 5. Explore other options.  You could download another variable (precipitation?) and add it to the plot. Or imagine another way to visualize the data using one of the other interactive libraries.  
 #' 
 #' ## Output
 #' 
-#' Your final graph should look something like this:
+#' At a minimum, your final graph should look something like this:
 #' 
+
+#' 
+#' What other visualizations can you make with these data?
