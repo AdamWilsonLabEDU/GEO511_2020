@@ -41,8 +41,10 @@ d=data.frame(url=
   stringsAsFactors = F)
 
 d=d%>%mutate(user=sub("/","",
-                      sub("https://geo511-2019.github.io/2019-geo511-project-","",url,
-                          ignore.case = T)))
+      sub("https://geo511-2019.github.io/2019-geo511-project-","",url,
+                          ignore.case = T)),
+      github=paste0("https://github.com/geo511-2019/2019-geo511-project-",
+                   user))
 ```
 
 
@@ -63,8 +65,9 @@ for(i in 1:nrow(d)) {
 d%>%
   arrange(user)%>%
 #  filter(group==1)%>%
-  mutate(Title=paste0("[",title,"](",url,")"))%>%
-  dplyr::select(Student=user,Title)%>%
+  mutate(Title=paste0("[",title,"](",url,")"),
+         GitHub=paste("<a href=",github,"> <i class='fab fa-github'></i></a>"))%>%
+  dplyr::select(Student=user,GitHub,Title)%>%
   kable()
 ```
 
