@@ -18,6 +18,7 @@ You are invited to explore the student projects below (click on a title to visit
 library(tidyverse)
 library(knitr)
 library(rvest)
+library(fontawesome)
 
 d=data.frame(url=
   paste0("https://geo511-2019.github.io/",c(
@@ -66,7 +67,7 @@ d%>%
   arrange(user)%>%
 #  filter(group==1)%>%
   mutate(Title=paste0("[",title,"](",url,")"),
-         GitHub=paste("<a href=",github,"> <i class='fab fa-github'></i></a>"))%>%
+         GitHub=paste("<a href=",github,">",fa('github',fill ="#2780E3"),"</i></a>"))%>%
   dplyr::select(Student=user,GitHub,Title)%>%
   kable()
 ```
