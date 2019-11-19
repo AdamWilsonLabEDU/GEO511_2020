@@ -16,20 +16,20 @@ tasks:
 ```{r setup, include=FALSE, purl=F}
 source("functions.R")
 source("knitr_header.R")
-library(knitr)
+library(knitr) 
 ```
 
 # Reading
 
 ```{r reading,results='asis',echo=F,purl=F}
-md_bullet(rmarkdown::metadata$reading)
+md_bullet(rmarkdown::metadata$reading) 
 ```
 
 
 # Tasks
 
 ```{r tasks,results='asis',echo=F, purl=F}
-md_bullet(rmarkdown::metadata$tasks)
+md_bullet(rmarkdown::metadata$tasks) 
 ```
 
 ## Background
@@ -93,7 +93,7 @@ erie <- get_decennial(geography = "block", variables = racevars,
 buffalo <- erie %>% 
    st_crop(c(xmin=-78.9,xmax=-78.85,ymin=42.888,ymax=42.92))
 
-# function to drop storm points not near main tracks
+# function to drop sampled points far from polygon centroids
 drop_outliers <- function(x) {
    central_point=st_union(x) %>% 
       st_centroid()
@@ -108,7 +108,7 @@ buffalo_dots=
    filter(buffalo,variable==r) %>%  #do one variable at a time
    st_sample(size=.$value) %>%  #generate a point for each person randomly
    st_as_sf() %>%  #convert to a full sf object
-   drop_outliers() %>% 
+   drop_outliers() %>% # drop outliers
    mutate(variable=r) #add the variable onto the points
    }
 ```
