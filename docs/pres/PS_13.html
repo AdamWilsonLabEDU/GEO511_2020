@@ -521,17 +521,6 @@ document.getElementsByTagName('head')[0].appendChild(style);
     <h1 class="title">Final Project Notes</h1>
 </section>
 
-<section class="slide level2">
-
-<pre><code>## ── Attaching packages ───────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
-<pre><code>## ✔ ggplot2 3.2.1     ✔ purrr   0.3.2
-## ✔ tibble  2.1.3     ✔ dplyr   0.8.3
-## ✔ tidyr   1.0.0     ✔ stringr 1.4.0
-## ✔ readr   1.3.1     ✔ forcats 0.4.0</code></pre>
-<pre><code>## ── Conflicts ──────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
-## ✖ dplyr::filter() masks stats::filter()
-## ✖ dplyr::lag()    masks stats::lag()</code></pre>
-</section>
 <section id="logistics" class="slide level2">
 <h2>Logistics</h2>
 <iframe class="embed-responsive-item" src="../Schedule.html" width="100%" height="700px" allowfullscreen>
@@ -545,41 +534,42 @@ document.getElementsByTagName('head')[0].appendChild(style);
 </section>
 <section><section id="project-suggestions" class="title-slide slide level1"><h1>Project Suggestions</h1></section><section id="messages" class="slide level2">
 <h2>Messages</h2>
+<p>If you have something like this in your website:</p>
 <pre><code>library(dplyr)
 ## 
 ## Attaching package: &#39;dplyr&#39;
 ## The following objects are masked from &#39;package:stats&#39;:
 ## 
 ##     filter, lag</code></pre>
-<p>Use:</p>
+<p>Remove/hide it with:</p>
 <pre><code>  {r message=F, warning=F, results=&quot;hide&quot;}</code></pre>
-<p>to hide output.</p>
 </section><section id="code-output" class="slide level2">
 <h2>Code output</h2>
-<p>Best to summarize everything as a table or figure - don’t simply print output:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">lm</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>)<span class="op">~</span><span class="kw">runif</span>(<span class="dv">10</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="st">  </span><span class="kw">summary</span>()</a></code></pre></div>
+<p>Don’t simply print output! Better to summarize everything as a table or figure.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">lm</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>)<span class="op">~</span><span class="kw">runif</span>(<span class="dv">10</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="st">  </span><span class="kw">summary</span>()</a></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = rnorm(10) ~ runif(10))
 ## 
 ## Residuals:
 ##     Min      1Q  Median      3Q     Max 
-## -2.0331 -0.8768 -0.2823  0.8712  2.6910 
+## -1.6249 -0.3599  0.2165  0.4598  1.6566 
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(&gt;|t|)
-## (Intercept)  -0.2699     1.0144  -0.266    0.797
-## runif(10)     1.2580     1.9198   0.655    0.531
+## (Intercept)   0.8172     0.7820   1.045    0.327
+## runif(10)    -0.8060     2.0654  -0.390    0.707
 ## 
-## Residual standard error: 1.517 on 8 degrees of freedom
-## Multiple R-squared:  0.05094,    Adjusted R-squared:  -0.06769 
-## F-statistic: 0.4294 on 1 and 8 DF,  p-value: 0.5307</code></pre>
+## Residual standard error: 1 on 8 degrees of freedom
+## Multiple R-squared:  0.01868,    Adjusted R-squared:  -0.104 
+## F-statistic: 0.1523 on 1 and 8 DF,  p-value: 0.7065</code></pre>
 </section><section id="code-output-1" class="slide level2">
 <h2>Code output</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">lm</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>)<span class="op">~</span><span class="kw">runif</span>(<span class="dv">10</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="st">  </span>broom<span class="op">::</span><span class="kw">tidy</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="st">  </span>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="dt">digits =</span> <span class="dv">2</span>)</a></code></pre></div>
+<p>Convert results to properly formatted output.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">lm</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>)<span class="op">~</span><span class="kw">runif</span>(<span class="dv">10</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="st">  </span>broom<span class="op">::</span><span class="kw">tidy</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="st">  </span>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="dt">digits =</span> <span class="dv">2</span>)</a></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -593,33 +583,32 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">0.17</td>
-<td style="text-align: right;">0.69</td>
-<td style="text-align: right;">0.24</td>
-<td style="text-align: right;">0.82</td>
+<td style="text-align: right;">0.93</td>
+<td style="text-align: right;">0.70</td>
+<td style="text-align: right;">1.33</td>
+<td style="text-align: right;">0.22</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">runif(10)</td>
-<td style="text-align: right;">-0.89</td>
-<td style="text-align: right;">1.46</td>
-<td style="text-align: right;">-0.61</td>
-<td style="text-align: right;">0.56</td>
+<td style="text-align: right;">-1.50</td>
+<td style="text-align: right;">1.14</td>
+<td style="text-align: right;">-1.32</td>
+<td style="text-align: right;">0.22</td>
 </tr>
 </tbody>
 </table>
-<p>Convert results to properly formatted output.</p>
 </section><section id="code-folding" class="slide level2">
 <h2>Code folding?</h2>
-<p>Add <code>code_folding: hide</code> to your YAML to hide all code by default.</p>
+<p>If you have really long code chunks, you can add <code>code_folding: hide</code> to your YAML to hide all code by default.</p>
 <pre><code>output:
   html_document:
     code_folding: hide</code></pre>
 </section><section id="chunks" class="slide level2">
 <h2>Chunks</h2>
-<p>Break up chunks with narrative to explain what the code is doing.</p>
+<p>Break up chunks with narrative to explain what the code is doing. Chunks longer than ~20 lines should probably be broken up.</p>
 </section><section id="spelling" class="slide level2">
 <h2>Spelling</h2>
-<p>Use spell check (Edit-&gt;Check Spelling!</p>
+<p>Don’t forget to use spell check (Edit-&gt;Check Spelling)! It’s not automatic!</p>
 </section><section id="convert-.rmd-to-.r" class="slide level2">
 <h2>Convert .Rmd to .R</h2>
 <p>You can always convert a .Rmd file to a .R file (with or without comments) like this:</p>

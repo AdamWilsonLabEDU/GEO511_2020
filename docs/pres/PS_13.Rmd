@@ -3,7 +3,7 @@ title: "Final Project Notes"
 type: Presentation
 week: 13
 ---
-```{r setup, echo=F, results='hide'}
+```{r setup, message=FALSE, warning=F, echo=F, results='hide'}
 knitr::opts_knit$set(root.dir = NULL)
 knitr::opts_chunk$set(fig.width=800,fig.height=400)
 library(tidyverse)
@@ -22,7 +22,7 @@ library(knitr)
 
 ## Messages
 
-
+If you have something like this in your website:
 ```
 library(dplyr)
 ## 
@@ -32,17 +32,16 @@ library(dplyr)
 ##     filter, lag
 ```
 
-Use:
+Remove/hide it with:
+
 ```
   {r message=F, warning=F, results="hide"}
 ``` 
 
-to hide output.
-
 
 ## Code output
 
-Best to summarize everything as a table or figure - don't simply print output:
+Don't simply print output!  Better to summarize everything as a table or figure. 
 
 ```{r}
 lm(rnorm(10)~runif(10)) %>% 
@@ -51,17 +50,19 @@ lm(rnorm(10)~runif(10)) %>%
 
 ## Code output
 
+Convert results to properly formatted output. 
+
 ```{r}
 lm(rnorm(10)~runif(10)) %>% 
   broom::tidy() %>% 
   knitr::kable(digits = 2)
 ```
 
-Convert results to properly formatted output. 
+
 
 ## Code folding?
 
-Add `code_folding: hide` to your YAML to hide all code by default.
+If you have really long code chunks, you can add `code_folding: hide` to your YAML to hide all code by default.
 
 ```
 output:
@@ -71,11 +72,11 @@ output:
 
 ## Chunks
 
-Break up chunks with narrative to explain what the code is doing.
+Break up chunks with narrative to explain what the code is doing.  Chunks longer than ~20 lines should probably be broken up.
 
 ## Spelling
 
-Use spell check (Edit->Check Spelling!
+Don't forget to use spell check (Edit->Check Spelling)!  It's not automatic!
 
 
 ## Convert .Rmd to .R 
