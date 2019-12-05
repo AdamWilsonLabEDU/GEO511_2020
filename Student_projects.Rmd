@@ -28,17 +28,18 @@ d=data.frame(url=
   "2019-geo511-project-davidjtor",
   "2019-geo511-project-jpreg",
   "2019-geo511-project-gbream",
-  "2019-geo511-project-hsare",
   "2019-geo511-project-katlynse",
+  "2019-geo511-project-hsare",
   "2019-geo511-project-kli57",
   "2019-geo511-project-mitchhitch-1",
   "2019-geo511-project-moiraone",
+  "2019-geo511-project-mimonzil",
   "2019-geo511-project-oliviadelos2",
   "2019-geo511-project-Stella-Liao",
   "2019-geo511-project-zolal-ayazpour",
   "2019-geo511-project-yliu282"
   )),
-  group=c(rep(1,8),rep(2,7)),
+  group=c(rep(1,7),rep(2,9)),
   stringsAsFactors = F)
 
 d=d%>%mutate(user=sub("/","",
