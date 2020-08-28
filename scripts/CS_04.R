@@ -30,7 +30,7 @@
 
 #' 
 #' You will need to load the necessary packages
-## ---- message=FALSE------------------------------------------------------
+## ---- message=FALSE-----------------------------------------------------------
 library(tidyverse)
 library(nycflights13)
 

@@ -39,7 +39,7 @@
 #' ### Current Version of your code
 #' You have started working on the figure but can't seem to make it work like you want.  Here is your current version of the code (and the resulting figure):
 #' 
-## ---- warning=F, fig.width=15--------------------------------------------
+## ---- warning=F, fig.width=15-------------------------------------------------
 ggplot(world,aes(x=gdpPercap, y=continent, color=continent))+
    geom_density(alpha=0.5,color=F)
 

@@ -26,21 +26,21 @@ filter(starwars, species == "Human")
 ```
 
 ```
-## # A tibble: 35 x 13
-##    name  height  mass hair_color skin_color eye_color birth_year gender
-##    <chr>  <int> <dbl> <chr>      <chr>      <chr>          <dbl> <chr> 
-##  1 Luke…    172    77 blond      fair       blue            19   male  
-##  2 Dart…    202   136 none       white      yellow          41.9 male  
-##  3 Leia…    150    49 brown      light      brown           19   female
-##  4 Owen…    178   120 brown, gr… light      blue            52   male  
-##  5 Beru…    165    75 brown      light      blue            47   female
-##  6 Bigg…    183    84 black      light      brown           24   male  
-##  7 Obi-…    182    77 auburn, w… fair       blue-gray       57   male  
-##  8 Anak…    188    84 blond      fair       blue            41.9 male  
-##  9 Wilh…    180    NA auburn, g… fair       blue            64   male  
-## 10 Han …    180    80 brown      fair       brown           29   male  
-## # … with 25 more rows, and 5 more variables: homeworld <chr>,
-## #   species <chr>, films <list>, vehicles <list>, starships <list>
+## # A tibble: 35 x 14
+##    name  height  mass hair_color skin_color eye_color birth_year sex   gender
+##    <chr>  <int> <dbl> <chr>      <chr>      <chr>          <dbl> <chr> <chr> 
+##  1 Luke…    172    77 blond      fair       blue            19   male  mascu…
+##  2 Dart…    202   136 none       white      yellow          41.9 male  mascu…
+##  3 Leia…    150    49 brown      light      brown           19   fema… femin…
+##  4 Owen…    178   120 brown, gr… light      blue            52   male  mascu…
+##  5 Beru…    165    75 brown      light      blue            47   fema… femin…
+##  6 Bigg…    183    84 black      light      brown           24   male  mascu…
+##  7 Obi-…    182    77 auburn, w… fair       blue-gray       57   male  mascu…
+##  8 Anak…    188    84 blond      fair       blue            41.9 male  mascu…
+##  9 Wilh…    180    NA auburn, g… fair       blue            64   male  mascu…
+## 10 Han …    180    80 brown      fair       brown           29   male  mascu…
+## # … with 25 more rows, and 5 more variables: homeworld <chr>, species <chr>,
+## #   films <list>, vehicles <list>, starships <list>
 ```
 
 ## Example Presentation

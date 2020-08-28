@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -238,6 +237,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -266,6 +266,12 @@ $(document).ready(function () {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -441,6 +447,7 @@ div.tocify {
 <p>In this exercise you will recreate the two graphics shown below using <code>gapminder</code> dataset from <code>library(gapminder)</code> (get them to match as closely as you can). Specific instructions/steps are listed in the ‘Detailed Steps’ section.</p>
 <div id="wealth-and-life-expectancy-through-time" class="section level2">
 <h2>Wealth and life expectancy through time</h2>
+<pre><code>## Warning: package &#39;gapminder&#39; was built under R version 4.0.2</code></pre>
 <p><img src="CS_03_files/figure-html/code1-1.png" /><!-- --><img src="CS_03_files/figure-html/code1-2.png" /><!-- --></p>
 </div>
 <div id="detailed-steps" class="section level2">
@@ -585,7 +592,7 @@ $(document).ready(function ()  {
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
       },
       ignoreSelector: ".toc-ignore",
       scrollTo: 0

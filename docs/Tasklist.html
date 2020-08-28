@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -238,6 +237,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -266,6 +266,12 @@ $(document).ready(function () {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -454,7 +460,7 @@ div.tocify {
 <li>Install RStudio Desktop (free version) on your computer <a href="https://www.rstudio.com/products/rstudio/download/" target="blank">from this source</a></li>
 <li>Join the Slack Channel by following the link sent via email (ask if you did not receive this link)</li>
 <li>Join our DataCamp class following the link sent via email. Start working on the first assignment (try to finish by Thursday)</li>
-<li>Create a <a href="https://github.com/join?source=header-home" target="blank">GitHub account</a> and submit your github username <a href="https://forms.gle/wDUSvhEQfRYGHN8u8">here</a>. This username may follow you for years, use something professional that you will want to share with your future employer.</li>
+<li>Create a <a href="https://github.com/join?source=header-home" target="blank">GitHub account</a> and submit your github username <a href="https://forms.gle/7gJCeKcUMFbcZ4jY8">here</a>. This username may follow you for years, use something professional that you will want to share with your future employer.</li>
 </ul>
 </div>
 <hr />
@@ -856,41 +862,34 @@ div.tocify {
 </div>
 <hr />
 </div>
+<div id="cs_15-final-challenge" class="section level2">
+<h2><a href="./CS_15.html">CS_15 : Final Challenge</a></h2>
+<a class="btn btn-link" href="./CS_15.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i24">Preview Readings &amp; Tasks </button>
+<div id="i24" class="collapse">
+<h2 id="readings-23">## Readings</h2>
+<h2 id="tasks-23">## Tasks</h2>
+</div>
+<hr />
+</div>
 <div id="tk_12-project-peer-review" class="section level2">
 <h2><a href="./TK_12.html">TK_12 : Project Peer Review</a></h2>
-<a class="btn btn-link" href="./TK_12.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i24">Preview Readings &amp; Tasks </button>
-<div id="i24" class="collapse">
-<h2 id="readings-23">Readings</h2>
+<a class="btn btn-link" href="./TK_12.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i25">Preview Readings &amp; Tasks </button>
+<div id="i25" class="collapse">
+<h2 id="readings-24">Readings</h2>
 <ul>
 <li>GitHub <a href="https://help.github.com/articles/about-pull-requests/">Pull Requests</a></li>
 <li>Chapter <a href="http://r4ds.had.co.nz">28 in R4DS</a></li>
 </ul>
-<h2 id="tasks-23">Tasks</h2>
+<h2 id="tasks-24">Tasks</h2>
 <ul>
 <li>Review at least two other students’ projects and make comments via a <em>pull request</em> in GitHub.</li>
 </ul>
 </div>
 <hr />
 </div>
-<div id="tk_13-project-workshop" class="section level2">
-<h2><a href="./TK_13.html">TK_13 : Project Workshop</a></h2>
-<a class="btn btn-link" href="./TK_13.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i25">Preview Readings &amp; Tasks </button>
-<div id="i25" class="collapse">
-<h2 id="readings-24">Readings</h2>
-<ul>
-<li>NULL</li>
-</ul>
-<h2 id="tasks-24">Tasks</h2>
-<ul>
-<li>Continue working on final project</li>
-<li>Come to class with any questions</li>
-</ul>
-</div>
-<hr />
-</div>
-<div id="tk_14-thanksgiving-week-tuesday-class-optional" class="section level2">
-<h2><a href="./TK_14.html">TK_14 : Thanksgiving Week (Tuesday Class Optional)</a></h2>
-<a class="btn btn-link" href="./TK_14.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i26">Preview Readings &amp; Tasks </button>
+<div id="tk_13-thanksgiving-week-tuesday-class-optional" class="section level2">
+<h2><a href="./TK_13.html">TK_13 : Thanksgiving Week (Tuesday Class Optional)</a></h2>
+<a class="btn btn-link" href="./TK_13.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i26">Preview Readings &amp; Tasks </button>
 <div id="i26" class="collapse">
 <h2 id="readings-25">Readings</h2>
 <ul>
@@ -903,17 +902,33 @@ div.tocify {
 </div>
 <hr />
 </div>
+<div id="tk_14-project-workshop" class="section level2">
+<h2><a href="./TK_14.html">TK_14 : Project Workshop</a></h2>
+<a class="btn btn-link" href="./TK_14.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i27">Preview Readings &amp; Tasks </button>
+<div id="i27" class="collapse">
+<h2 id="readings-26">Readings</h2>
+<ul>
+<li>NULL</li>
+</ul>
+<h2 id="tasks-26">Tasks</h2>
+<ul>
+<li>Continue working on final project</li>
+<li>Come to class with any questions</li>
+</ul>
+</div>
+<hr />
+</div>
 <div id="tk_15-final-presentation" class="section level2">
 <h2><a href="./TK_15.html">TK_15 : Final Presentation</a></h2>
 <p>Present your project to the class</p>
-<a class="btn btn-link" href="./TK_15.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i27">Preview Readings &amp; Tasks </button>
-<div id="i27" class="collapse">
-<h2 id="readings-26">Readings</h2>
+<a class="btn btn-link" href="./TK_15.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i28">Preview Readings &amp; Tasks </button>
+<div id="i28" class="collapse">
+<h2 id="readings-27">Readings</h2>
 <ul>
 <li>Wikipedia pages about <a href="http://en.wikipedia.org/wiki/Lightning_Talk">Lightning talks</a></li>
 <li>Wikipedia pages about <a href="http://en.wikipedia.org/wiki/Ignite_(event)">Ignite Sessions</a></li>
 </ul>
-<h2 id="tasks-26">Tasks</h2>
+<h2 id="tasks-27">Tasks</h2>
 <ul>
 <li>Commit second (or final) version of final project to GitHub</li>
 <li>Prepare to give your 5 minute presentation</li>
@@ -927,10 +942,10 @@ div.tocify {
 <div id="tk_16-publish-final-project" class="section level2">
 <h2><a href="./TK_16.html">TK_16 : Publish Final Project</a></h2>
 <p>Commit the final version of your project</p>
-<a class="btn btn-link" href="./TK_16.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i28">Preview Readings &amp; Tasks </button>
-<div id="i28" class="collapse">
-<h2 id="readings-27">## Readings</h2>
-<h2 id="tasks-27">Tasks</h2>
+<a class="btn btn-link" href="./TK_16.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i29">Preview Readings &amp; Tasks </button>
+<div id="i29" class="collapse">
+<h2 id="readings-28">## Readings</h2>
+<h2 id="tasks-28">Tasks</h2>
 <ul>
 <li>Finalize your project and commit to GitHub</li>
 <li>Confirm the final version renders correctly on your website</li>
@@ -941,10 +956,10 @@ div.tocify {
 <div id="tk_17-publish-final-project" class="section level2">
 <h2><a href="./TK_17.html">TK_17 : Publish Final Project</a></h2>
 <p>Commit the final version of your project</p>
-<a class="btn btn-link" href="./TK_17.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i29">Preview Readings &amp; Tasks </button>
-<div id="i29" class="collapse">
-<h2 id="readings-28">## Readings</h2>
-<h2 id="tasks-28">Tasks</h2>
+<a class="btn btn-link" href="./TK_17.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i30">Preview Readings &amp; Tasks </button>
+<div id="i30" class="collapse">
+<h2 id="readings-29">## Readings</h2>
+<h2 id="tasks-29">Tasks</h2>
 <ul>
 <li>Finalize your project and commit to GitHub</li>
 <li>Confirm the final version renders correctly on your website</li>
@@ -1052,7 +1067,7 @@ $(document).ready(function ()  {
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
       },
       ignoreSelector: ".toc-ignore",
       scrollTo: 0

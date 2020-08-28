@@ -45,7 +45,7 @@
 #' 
 #' ## Libraries
 #' You will need to load the following packages
-## ----warning=FALSE, message=FALSE----------------------------------------
+## ----warning=FALSE, message=FALSE---------------------------------------------
 library(raster)
 library(sp)
 library(spData)
@@ -57,14 +57,14 @@ library(sf)
 #' 
 #' ## Data
 #' Download monthly WorldClim data
-## ----message=F-----------------------------------------------------------
+## ----message=F----------------------------------------------------------------
 data(world)  #load 'world' data from spData package
 tmax_monthly <- getData(name = "worldclim", var="tmax", res=10)
 
 #' 
 #' 
 #' If the Worldclim website is down (e.g. you get an error above), you can get similar long term mean temperature data from the [Climatic Research Unit (CRU) here](https://crudata.uea.ac.uk/cru/data/temperature/).  Download these data in netcdf format using the code below: 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 library(ncdf4)
 download.file("https://crudata.uea.ac.uk/cru/data/temperature/absolute.nc","crudata.nc")
 tmean=raster("crudata.nc")

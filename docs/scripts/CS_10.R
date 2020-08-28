@@ -14,7 +14,7 @@
 #' 
 #' # Tasks
 #' 
-## ----tasks,results='asis',echo=F-----------------------------------------
+## ----tasks,results='asis',echo=F----------------------------------------------
 md_bullet(rmarkdown::metadata$tasks)
 
 #' 
@@ -24,7 +24,7 @@ md_bullet(rmarkdown::metadata$tasks)
 #' 
 #' ### Libraries
 #' 
-## ----results='hide',message=FALSE, warning=F-----------------------------
+## ----results='hide',message=FALSE, warning=F----------------------------------
 library(raster)
 library(rasterVis)
 library(rgdal)
@@ -47,7 +47,7 @@ library(ncdf4) # to import data from netcdf format
 #' 
 #' ## Land Use Land Cover
 #' 
-## ---- eval=F, warning=F--------------------------------------------------
+## ---- eval=F, warning=F-------------------------------------------------------
 ## # Create afolder to hold the downloaded data
 ## dir.create("data",showWarnings = F) #create a folder to hold the data
 ## 
@@ -64,7 +64,7 @@ library(ncdf4) # to import data from netcdf format
 #' 
 #' 
 #' ## Load data into R
-## ---- warning=F, message=F, results="hide"-------------------------------
+## ---- warning=F, message=F, results="hide"------------------------------------
 lulc=stack("data/MCD12Q1.051_aid0001.nc",varname="Land_Cover_Type_1")
 lst=stack("data/MOD11A2.006_aid0001.nc",varname="LST_Day_1km")
 
@@ -81,13 +81,13 @@ lst=stack("data/MOD11A2.006_aid0001.nc",varname="LST_Day_1km")
 #' 
 #' 
 #' ## Explore LULC data
-## ---- warning=F, message=FALSE,results='hide'----------------------------
+## ---- warning=F, message=FALSE,results='hide'---------------------------------
 plot(lulc)
 
 #'  
 #' 
 #' We'll just pick one year to work with to keep this simple:
-## ---- warning=F----------------------------------------------------------
+## ---- warning=F---------------------------------------------------------------
 lulc=lulc[[13]]
 plot(lulc)
 
@@ -96,7 +96,7 @@ plot(lulc)
 #' 
 #' Assign land cover clases from [MODIS website](https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mcd12q1)
 #' 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
   Land_Cover_Type_1 = c(
     Water = 0, 
     `Evergreen Needleleaf forest` = 1, 
@@ -128,7 +128,7 @@ kable(head(lcd))
 
 #' 
 #' Convert LULC raster into a 'factor' (categorical) raster.  This requires building the Raster Attribute Table (RAT).  Unfortunately, this is a bit of manual process as follows.
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 # convert to raster (easy)
 lulc=as.factor(lulc)
 
@@ -145,7 +145,7 @@ levels(lulc)=left_join(levels(lulc)[[1]],lcd)
 #' ## Convert LST to Degrees C 
 #' You can convert LST from Degrees Kelvin (K) to Celcius (C) with `offs()`.
 #' 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 offs(lst)=-273.15
 plot(lst[[1:10]])
 
@@ -231,7 +231,7 @@ plot(lst[[1:10]])
 
 #' 
 #' Convert those values to a proper R Date format by dropping the "X" and using `as.Date()`.
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 tdates=names(lst)%>%
   sub(pattern="X",replacement="")%>%
   as.Date("%Y.%m.%d")
@@ -321,7 +321,7 @@ lst=setZ(lst,tdates)
 #' 
 #' One potential plot is as follows:
 #' 
-## ----fig.height=6, echo=F, message=F-------------------------------------
+## ----fig.height=6, echo=F, message=F------------------------------------------
 lcds2 %>% 
   filter(landcover%in%c("Urban & built-up","Deciduous Broadleaf forest")) %>% 
   ggplot(aes(y=value,x=month))+

@@ -8,29 +8,20 @@ DataCamp offers interactive R, Python, Sheets, SQL and shell courses on topics i
 
 ## DataCamp in this course
 
-As a student in this course, you will receive a six month subscription to DataCamp's 'premium' materials.  We will use DataCamp to reinforce your learning _and_ assess your development. Throughout the semester, various chapters/courses will be assigned via DataCamp.  You must complete the assigned chapters by the due dates designated in your [DataCamp 'classroom'](https://www.datacamp.com/enterprise/spatial-data-science).
+As a student in this course, you will receive a six month subscription to DataCamp's 'premium' materials.  We will use DataCamp to reinforce your learning _and_ assess your development. Throughout the semester, various chapters/courses will be assigned via DataCamp.  I have assigned due dates to each DataCamp assignment that are aligned with course content and case studies.  It is _highly recommened to complete the assigned chapters by the due dates_ designated in your [DataCamp 'classroom'](https://www.datacamp.com/enterprise/geo511-fall-2020), but in terms of your grade the only deadline is the end of the semester.
 
 See [Syllabus for more information.](Syllabus.html)  
-
-Introduction to R 4 hours
-Intermediate R 6 hours
-Introduction to the TidyVerse 4 hours
-Importing data in R (1&2 6 hours)
-Cleaning data in R (4 hours)
-Introduction to data (4 hours)
 
 
 ## Additional recommended DataCamp courses
 
-The courses listed below are optional (if not assigned in your [classroom](https://www.datacamp.com/enterprise/spatial-data-science)) but you may find them useful to further your own development (or even to work on your final project in this or other courses).
+The courses listed below are optional (if not assigned in your [classroom](https://www.datacamp.com/enterprise/geo511-fall-2020)) but you may find them useful to further your own development (or even to work on your final project in this or other courses).
 
 See all the [available courses in DataCamp here.](https://www.datacamp.com/courses).
 
 
 
 ### Foundational Skills
-* [Working with the RStudio IDE (Part 1)](https://www.datacamp.com/courses/working-with-the-rstudio-ide-part-1)
-* [Working with the RStudio IDE (Part 2)](https://www.datacamp.com/courses/working-with-the-rstudio-ide-part-2)
 * [Introduction to R](https://www.datacamp.com/courses/free-introduction-to-r) 
 
 ### Data Wrangling

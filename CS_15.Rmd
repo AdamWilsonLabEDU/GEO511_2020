@@ -1,0 +1,58 @@
+---
+title: Final Challenge
+week: 12
+type: Case Study
+---
+
+## Write a short script to perform the following steps
+
+1. Import the data on atmospheric $CO_2$ from the link below into R
+
+```{r} 
+data_url="http://scrippsco2.ucsd.edu/assets/data/atmospheric/stations/in_situ_co2/monthly/monthly_in_situ_co2_mlo.csv"
+```
+
+2. Remove the header of the file to retain only the data
+3. Filter out missing data (`-99.99`)
+4. Update the column names using the `colnames` vector below
+
+```{r setup, message=F}
+colnames=c("year","month","excel","decimal_year","co2","co2_seasonal","co2_fit","co2_seasonalfit","co2_filled","co2_seasonalfilled")
+```
+
+5. Calculate the mean $CO_2$ for each year from the `co2` column
+6. plot a simple ggplot line graph of mean annual $CO_2$ concentration each year as shown below
+
+
+
+
+```{r, purl=F, echo=F, message=F}
+library(tidyverse)
+
+httr::set_config(httr::config(ssl_verifypeer = 0L)) 
+tf=tempfile()
+httr::GET(data_url, httr::write_disk(tf, overwrite=TRUE))
+
+read_csv(tf,
+  skip=57,
+  col_names=colnames,
+  na="-99.99") %>% 
+  group_by(year) %>% 
+  summarize(mean=mean(co2,na.rm=T)) %>% 
+  ggplot(aes(x=year,y=mean))+
+  geom_line()
+
+if(F){
+  library(tidyverse)
+  read_csv(data_url,
+  skip=57,
+  col_names=colnames,
+  na="-99.99") %>% 
+  group_by(year) %>% 
+  summarize(mean=mean(co2,na.rm=T)) %>% 
+  ggplot(aes(x=year,y=mean))+
+  geom_line()
+
+}
+
+```

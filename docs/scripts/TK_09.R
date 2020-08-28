@@ -16,14 +16,14 @@
 #' 
 #' # Reading
 #' 
-## ----reading,results='asis',echo=F---------------------------------------
+## ----reading,results='asis',echo=F--------------------------------------------
 md_bullet(rmarkdown::metadata$reading)
 
 #' 
 #' 
 #' # Tasks
 #' 
-## ----tasks,results='asis',echo=F-----------------------------------------
+## ----tasks,results='asis',echo=F----------------------------------------------
 md_bullet(rmarkdown::metadata$tasks)
 
 #' 

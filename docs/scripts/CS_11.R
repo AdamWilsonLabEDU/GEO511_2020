@@ -35,7 +35,7 @@
 #' 
 #' Can you do it?  Can you do it using multiple cores on your computer?
 #' 
-## ----cache=F, message=F,warning=FALSE, results='hide'--------------------
+## ----cache=F, message=F,warning=FALSE, results='hide'-------------------------
 library(tidyverse)
 library(spData)
 library(sf)
@@ -57,7 +57,7 @@ getDoParWorkers() # check registered cores
 #' Write an Rmd script that:
 #' 
 #' * Downloads block-level data on population by race in each census block in Buffalo using `get_dicennial()` function of the `tidycensus` package.  You can use the following code:
-## ---- message=F----------------------------------------------------------
+## ---- message=F---------------------------------------------------------------
 library(tidycensus)
 racevars <- c(White = "P005003", 
               Black = "P005004", 

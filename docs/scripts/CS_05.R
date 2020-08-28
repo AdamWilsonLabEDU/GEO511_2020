@@ -45,7 +45,7 @@
 #' 
 #' ## Libraries
 #' You will need to load the following packages
-## ----warning=FALSE, message=FALSE----------------------------------------
+## ----warning=FALSE, message=FALSE---------------------------------------------
 library(spData)
 library(sf)
 library(tidyverse)
@@ -53,7 +53,7 @@ library(tidyverse)
 
 #' 
 #' ## Data
-## ----message=F-----------------------------------------------------------
+## ----message=F----------------------------------------------------------------
 #load 'world' data from spData package
 data(world)  
 # load 'states' boundaries from spData package
@@ -65,7 +65,7 @@ data(us_states)
 #' ## Steps
 #' 1. `world` dataset
 #'     1. transform to the albers equal area projection:
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 albers="+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=37.5 +lon_0=-96 +x_0=0 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs"
 
 #' it easier to use `ggplot()`

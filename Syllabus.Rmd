@@ -11,7 +11,7 @@ Professor Adam M. Wilson ([wilsonlab.io](wilsonlab.io))
 Office Hours: Thursdays 9:00-11:00am
 
 ## Schedule 
-Tuesdays/Thursdays 2-3:20pm in 144 Wilkeson Quad.  
+Tuesdays/Thursdays 2-3:20pm virtually via Zoom.  
 
 ## Course Structure	
 The course will focus on programming in the R language. Typical class sessions will consist of a short (<30 minute) lecture followed by interactive exercises and activities.   All class activities will use [RStudio](rstudio.com). 
@@ -40,7 +40,7 @@ These learning outcomes are related to those expected of students completing the
 The major course components are as follows:
 
 ## Data Camp courses
-Several mini-courses will be assigned via DataCamp throughout the semester.  These assignments will be graded as pass/fail (pass if you finish the course, fail if you don't). These typically take about 3-5 hours per course, but some people report taking much longer (up to 8 hours). You can use the 'hints' provided to complete the exercises (but try not to!).   See full [DataCamp Description](http://adamwilson.us/SpatialDataScience/DataCamp.html) for more details.
+Several mini-courses will be assigned via DataCamp throughout the semester.  These assignments will be graded as pass/fail (pass if you finish the course, fail if you don't). These typically take about 3-5 hours per course, but some people report taking much longer (up to 8 hours). You can use the 'hints' provided to complete the exercises (but try not to!).   See full [DataCamp Description](DataCamp.html) for more details.
 
 ## Tasks
 The course includes many tasks that are performed both in and out of class (see the [tasklist](Tasklist.html)). You will 'commit' evidence of completing these tasks to your course respository on GitHub.
@@ -59,29 +59,28 @@ Most weeks we will spend 15-30 minutes in a team meeting where you will discuss 
 
 ## Resource presentation
 Each student will have the opportunity to introduce a R-related resource in a 5 minute presentation during class.  Most students choose to describe a R package that does something they are interested in, but you could also introduce us to other kinds of resources (useful online forums, web resources, online textbooks, etc). [See here for more information about the resource presentation](PackageIntro.html).  
+
 ## Final Project
 The final project will consist of a poster-length reproducible analysis published in html format.  This project can be related to the student’s own research or a separate topic.  
 
 ## Weekly Rhythm
 
 1. **Preparation**   
-    A. Read Assigned Material   
-    B. Work on class tasks and DataCamp assignments
-    C. Submit questions for class discussion on Slack
+    a. Read Assigned Material   
+    b. Work on class tasks and DataCamp assignments
+    c. Submit questions for class discussion on Slack
 2. **Class Time Tuesday**
-    A. Student Resource Presentation   
-    B. Case Study Team Meetings
-    C. Review of questions from reading and daily class tasks   
-    D. Topic and Case Study Introduction
+    a. Meet with your Case Study Teams
 3. **Continue Preparation**   
-    A. Read Assigned Material   
-    B. Work on class tasks and DataCamp assignments    
-    C. Submit questions for class discussion on Slack
+    a. Finish case studies and prepare to present
+    b. Work on class tasks and DataCamp assignments    
+    c. Submit questions for class discussion on Slack
 4. **Class Time Thursday**   
-    A. Review of student questions from reading and daily class tasks  
-    B. Group Work on Case Studies
-5. **Case Study Completion**    
-6. **Rinse and Repeat**   
+    a. Review questions from reading and daily class tasks  
+    b. Student Resource Presentation   
+    c. Share Case Study with class
+    d. Topic and Case Study Introduction
+5. **Rinse and Repeat**   
 
 
 ## Grading
@@ -91,7 +90,7 @@ Individual tasks in the class will not be traditionally graded. If your work mee
 In a specifications-grading system all tasks are evaluated on a high-standards pass/fail basis using checklists of task requirements and expectations. Letter grades are earned by passing marks on a set of tasks. This system provides for a variety of choice and is closer to how learning, and work, is done in the real world. It will be easy to tell if work is complete, done in good faith, and consistent with the requirements.  The definitive word is "complete".  Starting them or getting them almost done is not completing.  
 
 
-```{r echo=FALSE, message=F}
+```{r echo=FALSE, message=F, warning=F}
 library(tidyverse)
 library(kableExtra)
 
@@ -117,13 +116,12 @@ glevel %>%
 ```
 
 
+#### Coding Challenge
 
-<!-- #### Coding Challenge -->
+On the last day of class you will be asked to complete a coding challenge.  You will not be able to work with others, but will be able to ask questions of the instructor. The coding challenge will use the techniques and programming developed from the course and is meant to demonstrate a foundational understanding of the course material.
 
-<!-- On the last day of class you will have the 1.5 hours of class to complete a coding challenge.  You will not be able to work with others, but will be able to ask questions of the teacher in class. The coding challenge will use the techniques and programming developed from the course. -->
-
-<!-- 1. **You must pass the challenge to keep grade earned from your [completed tasks](Syllabus.html).** -->
-<!-- 2. Failure to pass the challenge will lower your 1-2 steps. -->
+1. **You must pass the challenge to keep grade earned from your [completed tasks](Syllabus.html).**
+2. Failure to pass the challenge will lower your grade 1-2 steps.
 
 **There will be no final exam.**
 
@@ -138,10 +136,14 @@ glevel %>%
         * the key concepts and techniques that you learned during the course (~500-1,000 words)
         * a semester task form that records your completed tasks during the semester
         * a grade request based your completion of course tasks (using the table above) 
-* Final project
+* Final project website
 
 ## Textbook
 We will read parts of [_R for Data Science_](http://r4ds.had.co.nz/) and [_Geocomputation with R_](https://geocompr.robinlovelace.net/) which are both available online. All additional materials will be available through [the course website](http://wilsonlab.io/GEO511).
+
+## On-time Completion
+
+There is not a strict definition of _on-time_ in this course.  In general, on-time means that you have come to class with the reading and tasks complete so that you can actively participate in the conversation. You have to define **prepared** for class.  You should note that the workload in this course does not allow you to fall behind.  If you blow off a week, it will be challenging to catch back up.
 
 ## Attendance Policy
 This class will include ample opportunities for in-class discussion and you are expected to attend every class session unless you have a valid excuse (as defined by the [University at Buffalo’s class attendance policy](http://undergrad-catalog.buffalo.edu/policies/course/attendance.html):
@@ -154,13 +156,7 @@ See the University website for cancellations/delays due to weather or other unfo
 
 ## Academic Integrity 
 
-### On-time Completion
-
-There is not a strict definition of _on-time_ in this course.  In general, on-time means that you have come to class with the reading and tasks complete so that you can actively participate in the conversation. You have to define **prepared** for class.  You should note that the workload in this course does not allow you to fall behind.  If you blow off a week, it will be challenging to catch back up.
-
-### Academic integrity
-
-Academic integrity is a fundamental university value. Through the honest completion of academic work, students sustain the integrity of the university while facilitating the university's imperative for the transmission of knowledge and culture based upon the generation of new and innovative ideas. Examples of academic dishonesty include: submitting work from another course, plagiarism, cheating, falsification, misrepresentation, and usage of confidential documents. 
+[Academic integrity](https://academicintegrity.buffalo.edu/) is critical to the learning process. It is your responsibility as a student to complete your work in an honest fashion, upholding the expectations your individual instructors have for you in this regard. The ultimate goal is to ensure that you learn the content in your courses in accordance with UB’s academic integrity principles, regardless of whether instruction is in-person or remote.  Thank you for upholding your own personal integrity and ensuring UB’s tradition of academic excellence. Examples of academic dishonesty include: submitting work from another course, plagiarism, cheating, falsification, misrepresentation, and usage of confidential documents. 
 
 Writing computer code often involves use of existing code chunks (e.g. copying an example from the documentation) which complicates identification/definition of academic dishonesty. The primary goal of the course is to learn how to **program and think** as a data scientist concerning data wrangling and visualization.  I want you to use your time as efficiently as possible to meet this goal.  With this goal in mind here are some guiding principles.
 
@@ -173,7 +169,7 @@ If there is reason to believe that submitted code was simply copied from elsewhe
 If a student is suspected of academic dishonesty, then a three-step consultative resolution will be employed. First, the instructor will notify the student of the incident and arrange a meeting. Second, the instructor will orally inform the student of the sanction, which could include: warning, revision, reduction in grade, or failure of course. Third, the instructor will provide the student with a written copy of the decision.  See the university policy for more information (https://catalog.buffalo.edu/policies/integrity.html). Please review it and ask if you have any questions.  
 
 ## Accessibility Resources
-If you have any disability which requires reasonable accommodations to enable you to participate in this course, please contact the Office of Accessibility Resources, 25 Capen Hall, 645-2608, and also the instructor of this course.  The office will provide you with information and review appropriate arrangements for reasonable accommodations (http://www.student-affairs.buffalo.edu/ods/)  
+If you have any disability which requires reasonable accommodations to enable you to participate in this course, please contact the Office of Accessibility Resources in 60 Capen Hall, 716-645-2608 and also the instructor of this course during the first week of class. The office will provide you with information and review appropriate arrangements for reasonable accommodations, which can be found on the web at: http://www.buffalo.edu/studentlife/who-we-are/departments/accessibility.html.
 
 # Course Content
 Course content is designed to be flexible to accommodate student interest and abilities.  The order and timing of course topics may change as the semester progresses.  See the [course schedule on the website for detailed course content](Schedule.html).

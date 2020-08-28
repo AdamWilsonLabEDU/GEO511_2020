@@ -12,13 +12,13 @@
 #' 
 #' # Reading
 #' 
-## ----reading,results='asis',echo=F---------------------------------------
+## ----reading,results='asis',echo=F--------------------------------------------
 #md_bullet(rmarkdown::metadata$reading)
 
 #' 
 #' # Tasks
 #' 
-## ----reading,results='asis',echo=F---------------------------------------
+## ----reading,results='asis',echo=F--------------------------------------------
 md_bullet(rmarkdown::metadata$tasks)
 
 #' 

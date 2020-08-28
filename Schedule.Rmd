@@ -36,7 +36,7 @@ We will refer to the following texts (all available online):
 ## Schedule
 
 ```{r table1,results='asis',echo=F}
-cat("| Week | Date | Presentation | Tasks  |  Case Study | [DataCamp](https://www.datacamp.com/enterprise/geo511-spatial-data-science) | \n")
+cat("| Week | Date | Presentation | Tasks  |  Case Study | [DataCamp](https://www.datacamp.com/enterprise/geo511-fall-2020) | \n")
 cat("|:-|:-|:-:|:---:|:---:|:---:|\n") 
 
 not_na_exists<-function(x){
@@ -143,5 +143,5 @@ wpres2=ifelse(length(wpres)==1,
 
 [Click here to edit the table below](https://docs.google.com/spreadsheets/d/1gG3uzYcu6xWbU5A_UqTWZSM1JhA3wRbLHfPVR5Ju9YI/edit?usp=sharing)
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSMxIiM16ZBusK8bJGrOwt1h6i5PGkSPXt7I6RukgzGtS3-y4DKjhdJ6Cm438fRBQkGYmhrVay-KzOg/pubhtml?gid=868447735&amp;single=true&amp;widget=true&amp;headers=false" style='height: 1000px; width: 100%;' ></iframe>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&amp;single=true&amp;widget=true&amp;headers=false" style="height: 1000px; width: 100%;"></iframe>
 

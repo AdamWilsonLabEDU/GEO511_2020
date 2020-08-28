@@ -27,7 +27,7 @@
 #' ## Background
 #' In this session you will explore several ways to generate dynamic and interactive data displays.  These include making maps and graphs that you can pan/zoom, select features for more information, and interact with in other ways.  The most common output format is HTML, which can easily be embedded in a website (such as your final project!).
 #' 
-## ----cache=F, message=F,warning=FALSE------------------------------------
+## ----cache=F, message=F,warning=FALSE-----------------------------------------
 library(dplyr)
 library(ggplot2)
 library(ggmap)
@@ -44,7 +44,7 @@ library(widgetframe)
 #' 
 #' First use the following code to download the daily weather data.
 #' 
-## ---- messages=F, warning=F, results=F-----------------------------------
+## ---- messages=F, warning=F, results=F----------------------------------------
 library(rnoaa)
 library(xts)
 library(dygraphs)

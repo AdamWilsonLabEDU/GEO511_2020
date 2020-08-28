@@ -48,7 +48,7 @@ ___
 - Install RStudio Desktop (free version) on your computer [from this source](https://www.rstudio.com/products/rstudio/download/){target='blank'}
 - Join the Slack Channel by following the link sent via email (ask if you did not receive this link)
 - Join our DataCamp class following the link sent via email.  Start working on the first assignment (try to finish by Thursday)
-- Create a [GitHub account](https://github.com/join?source=header-home){target="blank"} and submit your github username [here](https://forms.gle/wDUSvhEQfRYGHN8u8). This username may follow you for years, use something professional that you will want to share with your future employer.
+- Create a [GitHub account](https://github.com/join?source=header-home){target="blank"} and submit your github username [here](https://forms.gle/7gJCeKcUMFbcZ4jY8). This username may follow you for years, use something professional that you will want to share with your future employer.
 </div>
 ___
 ## [ CS_02 :  My grandfather says climate is cooling ]( ./CS_02.html ) 
@@ -390,12 +390,25 @@ ___
 - Save the graph to your project folder using Export->Save as Webpage
 </div>
 ___
+## [ CS_15 :  Final Challenge ]( ./CS_15.html ) 
+   
+ 
+    
+ 
+ <a class="btn btn-link" href="./CS_15.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i24">Preview Readings & Tasks </button><div id="i24" class="collapse">
+## Readings
+- 
+
+## Tasks
+- 
+</div>
+___
 ## [ TK_12 :  Project Peer Review ]( ./TK_12.html ) 
    
  
     
  
- <a class="btn btn-link" href="./TK_12.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i24">Preview Readings & Tasks </button><div id="i24" class="collapse">
+ <a class="btn btn-link" href="./TK_12.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i25">Preview Readings & Tasks </button><div id="i25" class="collapse">
 ## Readings
 - GitHub [Pull Requests](https://help.github.com/articles/about-pull-requests/)
 - Chapter [28 in R4DS](http://r4ds.had.co.nz)
@@ -404,12 +417,25 @@ ___
 - Review at least two other students' projects and make comments via a _pull request_ in GitHub.
 </div>
 ___
-## [ TK_13 :  Project Workshop ]( ./TK_13.html ) 
+## [ TK_13 :  Thanksgiving Week (Tuesday Class Optional) ]( ./TK_13.html ) 
    
  
     
  
- <a class="btn btn-link" href="./TK_13.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i25">Preview Readings & Tasks </button><div id="i25" class="collapse">
+ <a class="btn btn-link" href="./TK_13.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i26">Preview Readings & Tasks </button><div id="i26" class="collapse">
+## Readings
+- Chapter [23-25 in R4DS](http://r4ds.had.co.nz)
+
+## Tasks
+- Bring any questions to class on Tuesday.
+</div>
+___
+## [ TK_14 :  Project Workshop ]( ./TK_14.html ) 
+   
+ 
+    
+ 
+ <a class="btn btn-link" href="./TK_14.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i27">Preview Readings & Tasks </button><div id="i27" class="collapse">
 ## Readings
 - NULL
 
@@ -418,25 +444,12 @@ ___
 - Come to class with any questions
 </div>
 ___
-## [ TK_14 :  Thanksgiving Week (Tuesday Class Optional) ]( ./TK_14.html ) 
-   
- 
-    
- 
- <a class="btn btn-link" href="./TK_14.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i26">Preview Readings & Tasks </button><div id="i26" class="collapse">
-## Readings
-- Chapter [23-25 in R4DS](http://r4ds.had.co.nz)
-
-## Tasks
-- Bring any questions to class on Tuesday.
-</div>
-___
 ## [ TK_15 :  Final Presentation ]( ./TK_15.html ) 
    
  
   Present your project to the class  
  
- <a class="btn btn-link" href="./TK_15.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i27">Preview Readings & Tasks </button><div id="i27" class="collapse">
+ <a class="btn btn-link" href="./TK_15.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i28">Preview Readings & Tasks </button><div id="i28" class="collapse">
 ## Readings
 - Wikipedia pages about [Lightning talks](http://en.wikipedia.org/wiki/Lightning_Talk)
 - Wikipedia pages about [Ignite Sessions](http://en.wikipedia.org/wiki/Ignite_(event))
@@ -454,7 +467,7 @@ ___
  
   Commit the final version of your project  
  
- <a class="btn btn-link" href="./TK_16.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i28">Preview Readings & Tasks </button><div id="i28" class="collapse">
+ <a class="btn btn-link" href="./TK_16.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i29">Preview Readings & Tasks </button><div id="i29" class="collapse">
 ## Readings
 - 
 
@@ -468,7 +481,7 @@ ___
  
   Commit the final version of your project  
  
- <a class="btn btn-link" href="./TK_17.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i29">Preview Readings & Tasks </button><div id="i29" class="collapse">
+ <a class="btn btn-link" href="./TK_17.html" role="button" >Full Description</a><button data-toggle="collapse" class="btn btn-link" data-target="#i30">Preview Readings & Tasks </button><div id="i30" class="collapse">
 ## Readings
 - 
 

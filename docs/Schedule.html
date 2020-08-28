@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -238,6 +237,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -266,6 +266,12 @@ $(document).ready(function () {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -440,13 +446,13 @@ div.tocify {
 <th align="center">Presentation</th>
 <th align="center">Tasks</th>
 <th align="center">Case Study</th>
-<th align="center"><a href="https://www.datacamp.com/enterprise/geo511-spatial-data-science">DataCamp</a></th>
+<th align="center"><a href="https://www.datacamp.com/enterprise/geo511-fall-2020">DataCamp</a></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left">8/27/19</td>
+<td align="left">8/31/20</td>
 <td align="center"><a href="pres/PS_01.html" target="_blank"><i class='fas fa-desktop'> </i></a></td>
 <td align="center"><a href="./TK_01.html">Getting Started</a></td>
 <td align="center"><a href="./CS_01.html">Your first script</a></td>
@@ -454,15 +460,15 @@ div.tocify {
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="left">9/3/19</td>
+<td align="left">9/7/20</td>
 <td align="center"><a href="https://docs.google.com/presentation/d/e/2PACX-1vQNTlhZoW31RdJf0R_Ck0Dxyzzejn6I06uvGnp6C4wmKV8x2vVBBjFyLxqaCbfCykbhp6-TXjacR8A2/pub?start=false&amp;loop=false&amp;delayms=5000" target="_blank"><i class='fas fa-desktop'> </i></a></td>
 <td align="center"><a href="./TK_02.html">Graphics Background and Getting started with RStudio</a></td>
 <td align="center"><a href="./CS_02.html">My grandfather says climate is cooling</a></td>
-<td align="center">Data Visualization with ggplot</td>
+<td align="center">Introduction to Data Visualization with ggplot</td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
-<td align="left">9/10/19</td>
+<td align="left">9/14/20</td>
 <td align="center"><a href="https://docs.google.com/presentation/d/e/2PACX-1vQz-fvEBOO92SUMjbdfmlr3aQ4AYVTrblX1R33DTOxMYJIF5icvGhzOinvf4cdAgqmc2NFA7gFf_Wmx/pub?start=false&amp;loop=false&amp;delayms=3000" target="_blank"><i class='fas fa-desktop'> </i></a></td>
 <td align="center"><a href="./TK_03.html">Git Repository</a></td>
 <td align="center"><a href="./CS_03.html">Wealth over time</a></td>
@@ -470,71 +476,71 @@ div.tocify {
 </tr>
 <tr class="even">
 <td align="left">4</td>
-<td align="left">9/17/19</td>
+<td align="left">9/21/20</td>
 <td align="center"><a href="https://docs.google.com/presentation/d/e/2PACX-1vQGwl7rKVV13salaZ9-wTf4hLggWIV4ydTjKlkMSm8LA6oO10tusMBtzaGIaY_vPVD1wf-QO9Y_tqHW/pub?start=false&amp;loop=false&amp;delayms=3000" target="_blank"><i class='fas fa-desktop'> </i></a></td>
 <td align="center"><a href="./TK_04.html">Data Wrangling 2</a></td>
 <td align="center"><a href="./CS_04.html">Farthest airport from New York City</a></td>
-<td align="center">Working with Geospatial Data in R</td>
-</tr>
-<tr class="odd">
-<td align="left">5</td>
-<td align="left">9/24/19</td>
-<td align="center"><a href="pres/PS_05.html" target="_blank"><i class='fas fa-desktop'> </i></a></td>
-<td align="center"><a href="./TK_05.html">Spatial Vector Data</a></td>
-<td align="center"><a href="./CS_05.html">Beware the Canadians!</a></td>
-<td align="center">Spatial Analysis in R with sf and raster</td>
-</tr>
-<tr class="even">
-<td align="left">6</td>
-<td align="left">10/1/19</td>
-<td align="center"><a href="pres/PS_06_raster.html" target="_blank"><i class='fas fa-desktop'> </i></a></td>
-<td align="center"><a href="./TK_06.html">Spatial Raster Data</a></td>
-<td align="center"><a href="./CS_06.html">Find hottest country on each continent</a></td>
 <td align="center">Communicating with Data in the Tidyverse</td>
 </tr>
 <tr class="odd">
+<td align="left">5</td>
+<td align="left">9/28/20</td>
+<td align="center"><a href="pres/PS_05.html" target="_blank"><i class='fas fa-desktop'> </i></a></td>
+<td align="center"><a href="./TK_05.html">Spatial Vector Data</a></td>
+<td align="center"><a href="./CS_05.html">Beware the Canadians!</a></td>
+<td align="center">Visualizing Geospatial Data in R</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="left">10/5/20</td>
+<td align="center"><a href="pres/PS_06_raster.html" target="_blank"><i class='fas fa-desktop'> </i></a></td>
+<td align="center"><a href="./TK_06.html">Spatial Raster Data</a></td>
+<td align="center"><a href="./CS_06.html">Find hottest country on each continent</a></td>
+<td align="center">Spatial Analysis in R with sf and raster</td>
+</tr>
+<tr class="odd">
 <td align="left">7</td>
-<td align="left">10/8/19</td>
+<td align="left">10/12/20</td>
 <td align="center"><a href="pres/PS_07_help.html" target="_blank"><i class='fas fa-desktop'> </i></a></td>
 <td align="center"><a href="./TK_07.html">Project Proposal</a></td>
 <td align="center"><a href="./CS_07.html">Getting Help!</a></td>
-<td align="center">Data Visualization with ggplot 2</td>
+<td align="center">Interactive maps with leaflet in R</td>
 </tr>
 <tr class="even">
 <td align="left">8</td>
-<td align="left">10/15/19</td>
+<td align="left">10/19/20</td>
 <td align="center"><a href="pres/PS_08_repro.html" target="_blank"><i class='fas fa-desktop'> </i></a></td>
 <td align="center"><a href="./TK_08.html">Create Final Project Webpage</a></td>
 <td align="center"><a href="./CS_08.html">One Script, Many Products</a></td>
-<td align="center">Importing Data in R 1</td>
+<td align="center">Intermediate Data Visualization with ggplot2</td>
 </tr>
 <tr class="odd">
 <td align="left">9</td>
-<td align="left">10/22/19</td>
+<td align="left">10/26/20</td>
 <td align="center"><a href="pres/PS_09_weather.html" target="_blank"><i class='fas fa-desktop'> </i></a></td>
 <td align="center"><a href="./TK_09.html">APIs, time-series, and weather Data</a></td>
 <td align="center"><a href="./CS_09.html">Tracking Hurricanes!</a></td>
-<td align="center">Importing Data in R 2</td>
-</tr>
-<tr class="even">
-<td align="left">10</td>
-<td align="left">10/29/19</td>
-<td align="center"><a href="pres/PS_10_RS.html" target="_blank"><i class='fas fa-desktop'> </i></a></td>
-<td align="center"><a href="./TK_10.html">Remote Sensing</a></td>
-<td align="center"><a href="./CS_10.html">Satellite Remote Sensing</a></td>
-<td align="center">Cleaning Data in R</td>
-</tr>
-<tr class="odd">
-<td align="left">11</td>
-<td align="left">11/5/19</td>
-<td align="center"><a href="pres/PS_11_ParallelProcessing.html" target="_blank"><i class='fas fa-desktop'> </i></a></td>
-<td align="center"><a href="./TK_11.html">Project First Draft</a></td>
-<td align="center"><a href="./CS_11.html">Parallel Computing with R</a></td>
 <td align="center">Exploratory Data Analysis in R: Case Study</td>
 </tr>
 <tr class="even">
+<td align="left">10</td>
+<td align="left">11/2/20</td>
+<td align="center"><a href="pres/PS_10_RS.html" target="_blank"><i class='fas fa-desktop'> </i></a></td>
+<td align="center"><a href="./TK_10.html">Remote Sensing</a></td>
+<td align="center"><a href="./CS_10.html">Satellite Remote Sensing</a></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="left">11</td>
+<td align="left">11/9/20</td>
+<td align="center"><a href="pres/PS_11_ParallelProcessing.html" target="_blank"><i class='fas fa-desktop'> </i></a></td>
+<td align="center"><a href="./TK_11.html">Project First Draft</a></td>
+<td align="center"><a href="./CS_11.html">Parallel Computing with R</a></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
 <td align="left">12</td>
-<td align="left">11/12/19</td>
+<td align="left">11/16/20</td>
 <td align="center"><a href="pres/PS_12.html" target="_blank"><i class='fas fa-desktop'> </i></a></td>
 <td align="center"><a href="./TK_12.html">Project Peer Review</a></td>
 <td align="center"><a href="./CS_12.html">Dynamic HTML graph of Daily Temperatures</a></td>
@@ -542,23 +548,23 @@ div.tocify {
 </tr>
 <tr class="odd">
 <td align="left">13</td>
-<td align="left">11/19/19</td>
-<td align="center"><a href="pres/PS_13.html" target="_blank"><i class='fas fa-desktop'> </i></a></td>
-<td align="center"><a href="./TK_13.html">Project Workshop</a></td>
+<td align="left">11/23/20</td>
+<td align="center"></td>
+<td align="center"><a href="./TK_13.html">Thanksgiving Week (Tuesday Class Optional)</a></td>
 <td align="center"><a href=""></a></td>
 <td align="center"></td>
 </tr>
 <tr class="even">
 <td align="left">14</td>
-<td align="left">11/26/19</td>
-<td align="center"></td>
-<td align="center"><a href="./TK_14.html">Thanksgiving Week (Tuesday Class Optional)</a></td>
+<td align="left">11/30/20</td>
+<td align="center"><a href="pres/PS_13.html" target="_blank"><i class='fas fa-desktop'> </i></a></td>
+<td align="center"><a href="./TK_14.html">Project Workshop</a></td>
 <td align="center"><a href=""></a></td>
 <td align="center"></td>
 </tr>
 <tr class="odd">
 <td align="left">15</td>
-<td align="left">12/3/19</td>
+<td align="left">12/7/20</td>
 <td align="center"></td>
 <td align="center"><a href="./TK_15.html">Final Presentation</a></td>
 <td align="center"><a href="./TK_15.html">Final Presentation</a></td>
@@ -566,7 +572,7 @@ div.tocify {
 </tr>
 <tr class="even">
 <td align="left">16</td>
-<td align="left">12/9/19</td>
+<td align="left">12/14/20</td>
 <td align="center"></td>
 <td align="center"><a href="./TK_16.html">Publish Final Project</a></td>
 <td align="center"><a href=""></a></td>
@@ -578,7 +584,7 @@ div.tocify {
 <div id="student-leadership-and-presentations" class="section level2">
 <h2>Student Leadership and Presentations</h2>
 <p><a href="https://docs.google.com/spreadsheets/d/1gG3uzYcu6xWbU5A_UqTWZSM1JhA3wRbLHfPVR5Ju9YI/edit?usp=sharing">Click here to edit the table below</a></p>
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSMxIiM16ZBusK8bJGrOwt1h6i5PGkSPXt7I6RukgzGtS3-y4DKjhdJ6Cm438fRBQkGYmhrVay-KzOg/pubhtml?gid=868447735&amp;single=true&amp;widget=true&amp;headers=false" style="height: 1000px; width: 100%;">
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&amp;single=true&amp;widget=true&amp;headers=false" style="height: 1000px; width: 100%;">
 </iframe>
 </div>
 
@@ -682,7 +688,7 @@ $(document).ready(function ()  {
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
       },
       ignoreSelector: ".toc-ignore",
       scrollTo: 0

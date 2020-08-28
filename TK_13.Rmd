@@ -1,29 +1,27 @@
 ---
-title:  Project Workshop
-subtitle:  
+title:  Thanksgiving Week (Tuesday Class Optional)
 week: 13
 type: Task
 reading:
-  - 
+  - Chapter [23-25 in R4DS](http://r4ds.had.co.nz)
 tasks:
-   - Continue working on final project
-   - Come to class with any questions
+  - Bring any questions to class on Tuesday.
 ---
-
-
-This week we will focus on the development of your final projects.
-
-
 
 ```{r, echo=FALSE, message=FALSE, results='hide', purl=FALSE}
 source("functions.R")
 source("knitr_header.R")
 ```
 
-# Tasks
+# Reading
 
 ```{r reading,results='asis',echo=F}
-md_bullet(rmarkdown::metadata$tasks)
+md_bullet(rmarkdown::metadata$reading)
 ```
 
+# Tasks
+
+```{r tasks,results='asis',echo=F}
+md_bullet(rmarkdown::metadata$tasks)
+```
 

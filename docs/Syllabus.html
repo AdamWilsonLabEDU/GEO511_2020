@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -239,6 +238,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -267,6 +267,12 @@ $(document).ready(function () {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -425,7 +431,7 @@ div.tocify {
 <p>Office Hours: Thursdays 9:00-11:00am</p>
 <div id="schedule" class="section level2">
 <h2>Schedule</h2>
-<p>Tuesdays/Thursdays 2-3:20pm in 144 Wilkeson Quad.</p>
+<p>Tuesdays/Thursdays 2-3:20pm virtually via Zoom.</p>
 </div>
 <div id="course-structure" class="section level2">
 <h2>Course Structure</h2>
@@ -460,7 +466,7 @@ div.tocify {
 <p>The major course components are as follows:</p>
 <div id="data-camp-courses" class="section level2">
 <h2>Data Camp courses</h2>
-<p>Several mini-courses will be assigned via DataCamp throughout the semester. These assignments will be graded as pass/fail (pass if you finish the course, fail if you don’t). These typically take about 3-5 hours per course, but some people report taking much longer (up to 8 hours). You can use the ‘hints’ provided to complete the exercises (but try not to!). See full <a href="http://adamwilson.us/SpatialDataScience/DataCamp.html">DataCamp Description</a> for more details.</p>
+<p>Several mini-courses will be assigned via DataCamp throughout the semester. These assignments will be graded as pass/fail (pass if you finish the course, fail if you don’t). These typically take about 3-5 hours per course, but some people report taking much longer (up to 8 hours). You can use the ‘hints’ provided to complete the exercises (but try not to!). See full <a href="DataCamp.html">DataCamp Description</a> for more details.</p>
 </div>
 <div id="tasks" class="section level2">
 <h2>Tasks</h2>
@@ -481,27 +487,42 @@ div.tocify {
 </div>
 <div id="resource-presentation" class="section level2">
 <h2>Resource presentation</h2>
-<p>Each student will have the opportunity to introduce a R-related resource in a 5 minute presentation during class. Most students choose to describe a R package that does something they are interested in, but you could also introduce us to other kinds of resources (useful online forums, web resources, online textbooks, etc). <a href="PackageIntro.html">See here for more information about the resource presentation</a>.<br />
-## Final Project The final project will consist of a poster-length reproducible analysis published in html format. This project can be related to the student’s own research or a separate topic.</p>
+<p>Each student will have the opportunity to introduce a R-related resource in a 5 minute presentation during class. Most students choose to describe a R package that does something they are interested in, but you could also introduce us to other kinds of resources (useful online forums, web resources, online textbooks, etc). <a href="PackageIntro.html">See here for more information about the resource presentation</a>.</p>
+</div>
+<div id="final-project" class="section level2">
+<h2>Final Project</h2>
+<p>The final project will consist of a poster-length reproducible analysis published in html format. This project can be related to the student’s own research or a separate topic.</p>
 </div>
 <div id="weekly-rhythm" class="section level2">
 <h2>Weekly Rhythm</h2>
 <ol style="list-style-type: decimal">
-<li><strong>Preparation</strong><br />
-A. Read Assigned Material<br />
-B. Work on class tasks and DataCamp assignments C. Submit questions for class discussion on Slack</li>
-<li><strong>Class Time Tuesday</strong> A. Student Resource Presentation<br />
-B. Case Study Team Meetings C. Review of questions from reading and daily class tasks<br />
-D. Topic and Case Study Introduction</li>
-<li><strong>Continue Preparation</strong><br />
-A. Read Assigned Material<br />
-B. Work on class tasks and DataCamp assignments<br />
-C. Submit questions for class discussion on Slack</li>
-<li><strong>Class Time Thursday</strong><br />
-A. Review of student questions from reading and daily class tasks<br />
-B. Group Work on Case Studies</li>
-<li><strong>Case Study Completion</strong><br />
+<li><strong>Preparation</strong>
+<ol style="list-style-type: lower-alpha">
+<li>Read Assigned Material<br />
 </li>
+<li>Work on class tasks and DataCamp assignments</li>
+<li>Submit questions for class discussion on Slack</li>
+</ol></li>
+<li><strong>Class Time Tuesday</strong>
+<ol style="list-style-type: lower-alpha">
+<li>Meet with your Case Study Teams</li>
+</ol></li>
+<li><strong>Continue Preparation</strong>
+<ol style="list-style-type: lower-alpha">
+<li>Finish case studies and prepare to present</li>
+<li>Work on class tasks and DataCamp assignments<br />
+</li>
+<li>Submit questions for class discussion on Slack</li>
+</ol></li>
+<li><strong>Class Time Thursday</strong>
+<ol style="list-style-type: lower-alpha">
+<li>Review questions from reading and daily class tasks<br />
+</li>
+<li>Student Resource Presentation<br />
+</li>
+<li>Share Case Study with class</li>
+<li>Topic and Case Study Introduction</li>
+</ol></li>
 <li><strong>Rinse and Repeat</strong></li>
 </ol>
 </div>
@@ -722,11 +743,15 @@ no
 </tr>
 </tbody>
 </table>
-<!-- #### Coding Challenge -->
-<!-- On the last day of class you will have the 1.5 hours of class to complete a coding challenge.  You will not be able to work with others, but will be able to ask questions of the teacher in class. The coding challenge will use the techniques and programming developed from the course. -->
-<!-- 1. **You must pass the challenge to keep grade earned from your [completed tasks](Syllabus.html).** -->
-<!-- 2. Failure to pass the challenge will lower your 1-2 steps. -->
+<div id="coding-challenge" class="section level4">
+<h4>Coding Challenge</h4>
+<p>On the last day of class you will be asked to complete a coding challenge. You will not be able to work with others, but will be able to ask questions of the instructor. The coding challenge will use the techniques and programming developed from the course and is meant to demonstrate a foundational understanding of the course material.</p>
+<ol style="list-style-type: decimal">
+<li><strong>You must pass the challenge to keep grade earned from your <a href="Syllabus.html">completed tasks</a>.</strong></li>
+<li>Failure to pass the challenge will lower your grade 1-2 steps.</li>
+</ol>
 <p><strong>There will be no final exam.</strong></p>
+</div>
 </div>
 <div id="semester-deliverables" class="section level2">
 <h2>Semester Deliverables</h2>
@@ -748,12 +773,16 @@ no
 <li>a grade request based your completion of course tasks (using the table above)</li>
 </ul></li>
 </ul></li>
-<li>Final project</li>
+<li>Final project website</li>
 </ul>
 </div>
 <div id="textbook" class="section level2">
 <h2>Textbook</h2>
 <p>We will read parts of <a href="http://r4ds.had.co.nz/"><em>R for Data Science</em></a> and <a href="https://geocompr.robinlovelace.net/"><em>Geocomputation with R</em></a> which are both available online. All additional materials will be available through <a href="http://wilsonlab.io/GEO511">the course website</a>.</p>
+</div>
+<div id="on-time-completion" class="section level2">
+<h2>On-time Completion</h2>
+<p>There is not a strict definition of <em>on-time</em> in this course. In general, on-time means that you have come to class with the reading and tasks complete so that you can actively participate in the conversation. You have to define <strong>prepared</strong> for class. You should note that the workload in this course does not allow you to fall behind. If you blow off a week, it will be challenging to catch back up.</p>
 </div>
 <div id="attendance-policy" class="section level2">
 <h2>Attendance Policy</h2>
@@ -766,13 +795,7 @@ no
 </div>
 <div id="academic-integrity" class="section level2">
 <h2>Academic Integrity</h2>
-<div id="on-time-completion" class="section level3">
-<h3>On-time Completion</h3>
-<p>There is not a strict definition of <em>on-time</em> in this course. In general, on-time means that you have come to class with the reading and tasks complete so that you can actively participate in the conversation. You have to define <strong>prepared</strong> for class. You should note that the workload in this course does not allow you to fall behind. If you blow off a week, it will be challenging to catch back up.</p>
-</div>
-<div id="academic-integrity-1" class="section level3">
-<h3>Academic integrity</h3>
-<p>Academic integrity is a fundamental university value. Through the honest completion of academic work, students sustain the integrity of the university while facilitating the university’s imperative for the transmission of knowledge and culture based upon the generation of new and innovative ideas. Examples of academic dishonesty include: submitting work from another course, plagiarism, cheating, falsification, misrepresentation, and usage of confidential documents.</p>
+<p><a href="https://academicintegrity.buffalo.edu/">Academic integrity</a> is critical to the learning process. It is your responsibility as a student to complete your work in an honest fashion, upholding the expectations your individual instructors have for you in this regard. The ultimate goal is to ensure that you learn the content in your courses in accordance with UB’s academic integrity principles, regardless of whether instruction is in-person or remote. Thank you for upholding your own personal integrity and ensuring UB’s tradition of academic excellence. Examples of academic dishonesty include: submitting work from another course, plagiarism, cheating, falsification, misrepresentation, and usage of confidential documents.</p>
 <p>Writing computer code often involves use of existing code chunks (e.g. copying an example from the documentation) which complicates identification/definition of academic dishonesty. The primary goal of the course is to learn how to <strong>program and think</strong> as a data scientist concerning data wrangling and visualization. I want you to use your time as efficiently as possible to meet this goal. With this goal in mind here are some guiding principles.</p>
 <ul>
 <li>You can see others code in the classroom repositories on <a href="https://github.com">Github</a>. Think of your classmate’s code as a resource but not a crutch.
@@ -784,10 +807,9 @@ no
 <p>If there is reason to believe that submitted code was simply copied from elsewhere, the student will be asked to verbally (and specifically) explain the code used in the analysis to ensure comprehension.</p>
 <p>If a student is suspected of academic dishonesty, then a three-step consultative resolution will be employed. First, the instructor will notify the student of the incident and arrange a meeting. Second, the instructor will orally inform the student of the sanction, which could include: warning, revision, reduction in grade, or failure of course. Third, the instructor will provide the student with a written copy of the decision. See the university policy for more information (<a href="https://catalog.buffalo.edu/policies/integrity.html" class="uri">https://catalog.buffalo.edu/policies/integrity.html</a>). Please review it and ask if you have any questions.</p>
 </div>
-</div>
 <div id="accessibility-resources" class="section level2">
 <h2>Accessibility Resources</h2>
-<p>If you have any disability which requires reasonable accommodations to enable you to participate in this course, please contact the Office of Accessibility Resources, 25 Capen Hall, 645-2608, and also the instructor of this course. The office will provide you with information and review appropriate arrangements for reasonable accommodations (<a href="http://www.student-affairs.buffalo.edu/ods/" class="uri">http://www.student-affairs.buffalo.edu/ods/</a>)</p>
+<p>If you have any disability which requires reasonable accommodations to enable you to participate in this course, please contact the Office of Accessibility Resources in 60 Capen Hall, 716-645-2608 and also the instructor of this course during the first week of class. The office will provide you with information and review appropriate arrangements for reasonable accommodations, which can be found on the web at: <a href="http://www.buffalo.edu/studentlife/who-we-are/departments/accessibility.html" class="uri">http://www.buffalo.edu/studentlife/who-we-are/departments/accessibility.html</a>.</p>
 </div>
 </div>
 <div id="course-content" class="section level1">
@@ -895,7 +917,7 @@ $(document).ready(function ()  {
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
       },
       ignoreSelector: ".toc-ignore",
       scrollTo: 0

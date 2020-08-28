@@ -16,7 +16,7 @@ yamls=yamls[order(sapply(yamls,function(x) x$week))]
 Below are a set of tasks that we will work on in class (either alone or in small groups).
 
 
-```{r reading2,results='asis',echo=F}
+```{r eval=F, reading2,results='asis',echo=F}
 # This chunk prints an index of all the task titles along with a preview of the sub-tasks 
 tasks=do.call(rbind.data.frame,lapply(yamls, FUN=function(x) {
   cbind.data.frame(

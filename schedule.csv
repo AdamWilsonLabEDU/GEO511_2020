@@ -1,17 +1,17 @@
 ﻿week,date,pres1,task,case_study,datacamp
-1,8/27/19,PS_01,TK_01,CS_01,Introduction to R
-2,9/3/19,https://docs.google.com/presentation/d/e/2PACX-1vQNTlhZoW31RdJf0R_Ck0Dxyzzejn6I06uvGnp6C4wmKV8x2vVBBjFyLxqaCbfCykbhp6-TXjacR8A2/pub?start=false&loop=false&delayms=5000,TK_02,CS_02,Data Visualization with ggplot
-3,9/10/19,https://docs.google.com/presentation/d/e/2PACX-1vQz-fvEBOO92SUMjbdfmlr3aQ4AYVTrblX1R33DTOxMYJIF5icvGhzOinvf4cdAgqmc2NFA7gFf_Wmx/pub?start=false&loop=false&delayms=3000,TK_03,CS_03,Introduction to the Tidyverse
-4,9/17/19,https://docs.google.com/presentation/d/e/2PACX-1vQGwl7rKVV13salaZ9-wTf4hLggWIV4ydTjKlkMSm8LA6oO10tusMBtzaGIaY_vPVD1wf-QO9Y_tqHW/pub?start=false&loop=false&delayms=3000,TK_04,CS_04,Working with Geospatial Data in R
-5,9/24/19,PS_05,TK_05,CS_05,Spatial Analysis in R with sf and raster
-6,10/1/19,PS_06_raster,TK_06,CS_06,Communicating with Data in the Tidyverse
-7,10/8/19,PS_07_help,TK_07,CS_07,Data Visualization with ggplot 2
-8,10/15/19,PS_08_repro,TK_08,CS_08,Importing Data in R 1
-9,10/22/19,PS_09_weather,TK_09,CS_09,Importing Data in R 2
-10,10/29/19,PS_10_RS,TK_10,CS_10,Cleaning Data in R
-11,11/5/19,PS_11_ParallelProcessing,TK_11,CS_11,Exploratory Data Analysis in R: Case Study
-12,11/12/19,PS_12,TK_12,CS_12,
-13,11/19/19,PS_13,TK_13,,
-14,11/26/19,,TK_14,,
-15,12/3/19,,TK_15,TK_15,
-16,12/9/19,,TK_16,,
+1,8/31/20,PS_01,TK_01,CS_01,Introduction to R
+2,9/7/20,https://docs.google.com/presentation/d/e/2PACX-1vQNTlhZoW31RdJf0R_Ck0Dxyzzejn6I06uvGnp6C4wmKV8x2vVBBjFyLxqaCbfCykbhp6-TXjacR8A2/pub?start=false&loop=false&delayms=5000,TK_02,CS_02,Introduction to Data Visualization with ggplot
+3,9/14/20,https://docs.google.com/presentation/d/e/2PACX-1vQz-fvEBOO92SUMjbdfmlr3aQ4AYVTrblX1R33DTOxMYJIF5icvGhzOinvf4cdAgqmc2NFA7gFf_Wmx/pub?start=false&loop=false&delayms=3000,TK_03,CS_03,Introduction to the Tidyverse
+4,9/21/20,https://docs.google.com/presentation/d/e/2PACX-1vQGwl7rKVV13salaZ9-wTf4hLggWIV4ydTjKlkMSm8LA6oO10tusMBtzaGIaY_vPVD1wf-QO9Y_tqHW/pub?start=false&loop=false&delayms=3000,TK_04,CS_04,Communicating with Data in the Tidyverse
+5,9/28/20,PS_05,TK_05,CS_05,Visualizing Geospatial Data in R
+6,10/5/20,PS_06_raster,TK_06,CS_06,Spatial Analysis in R with sf and raster
+7,10/12/20,PS_07_help,TK_07,CS_07,Interactive maps with leaflet in R
+8,10/19/20,PS_08_repro,TK_08,CS_08,Intermediate Data Visualization with ggplot2
+9,10/26/20,PS_09_weather,TK_09,CS_09,Exploratory Data Analysis in R: Case Study
+10,11/2/20,PS_10_RS,TK_10,CS_10,Select your own courses (8000 XP)
+11,11/9/20,PS_11_ParallelProcessing,TK_11,CS_11,
+12,11/16/20,PS_12,TK_12,CS_12,
+13,11/23/20,,TK_13,,
+14,11/30/20,PS_13,TK_14,,
+15,12/7/20,,TK_15,TK_15,
+16,12/14/20,,TK_16,,
