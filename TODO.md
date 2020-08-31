@@ -34,10 +34,6 @@ examples:
 
 # Structure updates
 
-Add a datacamp course/chapter for each/most of the 14 case studies
-Use datacamp education for instruction/assignments
-Then class time for questions/case studies / student presentation of case studies
-Build index of student projects on website to facilitate?
 first draft submitted earilier for video feedback.
 
 File Structure
@@ -63,45 +59,12 @@ General repository rules:
     hint: (e.g., 'git pull ...') before pushing again.
     hint: See the 'Note about fast-forwards' in 'git push --help' for details.```
 
-Grading changes - specs grading instead of percentages
-30% datacamp
-30% final project
-30% participation: tasks, and case studies
-10% leadership (package presentation, leading a study group)
 
 Package presentation?  IF keeping, use a Rmd structure inside course repositories so they can be opened on the fly.
-
-For grade: include letter to instructor with grade request.
-
-Schedule Page (one row per week with):
-date, readings, datacamp, present last week's case study, package presentation, tasks, casestudies.
-
-
-## Notes on content
-
-## Structure of case studies
-
-* Fold hints in a button
-* Fold "Extra Work" in a button
-
-
-## Typical week/session
-Finish last week's case study and commit, read chapter, take DataCamp course, perform tasks and commit to github, meet in class for: questions & case studies
-
-## Datacamp
-Weekly courses due before topic in class
-
-### Assigned
-* [Introduction to R](https://www.datacamp.com/courses/free-introduction-to-r)
-* [Exploratory Data Analysis in R: Case Study](https://www.datacamp.com/courses/exploratory-data-analysis-in-r-case-study)
-* [Spatial Analysis in R with sf and raster](https://www.datacamp.com/courses/spatial-analysis-in-r-with-sf-and-raster)
 
 
 ## Tasks to add
 early:
-
-* set up datacamp account
-* explore available datacamp courses and select 3-5 interesting ones (list these in README)
 * Data visualization: https://dcl-2017-04.github.io/curriculum/vis-perception.html
 
 
@@ -113,16 +76,10 @@ early:
 * Add short description to top-level README in github repository
 
 
-
 ### Project related tasks
 * convert project to separate tasks and upload to git repository
-
-late:
-earn an additional 5,000 datacamp XP in a topic/course of your choosing
-
 
 ## Every Semester
 * update google sheets links - do I still need to do this with classroom?
 * Create new assignment
 * Update github classroom links in task 2
-*

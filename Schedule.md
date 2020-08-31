@@ -32,7 +32,7 @@ We will refer to the following texts (all available online):
  |  7 |  10/12/20 |  [<i class='fas fa-desktop'>   </i>](pres/PS_07_help.html){target='_blank'} |  [Project Proposal](./TK_07.html) |  [Getting Help!](./CS_07.html) |  Interactive maps with leaflet in R |
  |  8 |  10/19/20 |  [<i class='fas fa-desktop'>   </i>](pres/PS_08_repro.html){target='_blank'} |  [Create Final Project Webpage](./TK_08.html) |  [One Script, Many Products](./CS_08.html) |  Intermediate Data Visualization with ggplot2 |
  |  9 |  10/26/20 |  [<i class='fas fa-desktop'>   </i>](pres/PS_09_weather.html){target='_blank'} |  [APIs, time-series, and weather Data](./TK_09.html) |  [Tracking Hurricanes!](./CS_09.html) |  Exploratory Data Analysis in R: Case Study |
- |  10 |  11/2/20 |  [<i class='fas fa-desktop'>   </i>](pres/PS_10_RS.html){target='_blank'} |  [Remote Sensing](./TK_10.html) |  [Satellite Remote Sensing](./CS_10.html) |   |
+ |  10 |  11/2/20 |  [<i class='fas fa-desktop'>   </i>](pres/PS_10_RS.html){target='_blank'} |  [Remote Sensing](./TK_10.html) |  [Satellite Remote Sensing](./CS_10.html) |  Select your own courses (8000 XP) |
  |  11 |  11/9/20 |  [<i class='fas fa-desktop'>   </i>](pres/PS_11_ParallelProcessing.html){target='_blank'} |  [Project First Draft](./TK_11.html) |  [Parallel Computing with R](./CS_11.html) |   |
  |  12 |  11/16/20 |  [<i class='fas fa-desktop'>   </i>](pres/PS_12.html){target='_blank'} |  [Project Peer Review](./TK_12.html) |  [Dynamic HTML graph of Daily Temperatures](./CS_12.html) |   |
  |  13 |  11/23/20 |   |  [Thanksgiving Week (Tuesday Class Optional)](./TK_13.html) |  []() |   |
@@ -45,7 +45,8 @@ We will refer to the following texts (all available online):
 
 ## Student Leadership and Presentations
 
-[Click here to edit the table below](https://docs.google.com/spreadsheets/d/1gG3uzYcu6xWbU5A_UqTWZSM1JhA3wRbLHfPVR5Ju9YI/edit?usp=sharing)
+[Click here to edit the table below](https://docs.google.com/spreadsheets/d/1hH61DFHifYLdrbH3RQTIkR3zmo0ImpUg0tdHdBQF3Vw/edit?usp=sharing)
+
 
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&amp;single=true&amp;widget=true&amp;headers=false" style="height: 1000px; width: 100%;"></iframe>
 

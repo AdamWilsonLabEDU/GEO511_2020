@@ -76,10 +76,13 @@ The final project will consist of a poster-length reproducible analysis publishe
     b. Work on class tasks and DataCamp assignments    
     c. Submit questions for class discussion on Slack
 4. **Class Time Thursday**   
-    a. Review questions from reading and daily class tasks  
-    b. Student Resource Presentation   
-    c. Share Case Study with class
-    d. Topic and Case Study Introduction
+    a. Updates & Questions from reading and daily class tasks [~10 minutes]  
+    b. Student Resource Presentation(s) [20 minutes]   
+    c. Case Study Presentation [30 minutes]
+        * One group selected to share solution
+        * Other groups share other approaches / solutions
+        * General discussion about methods
+    d. Case Study Introduction (for following week) [20 minutes]
 5. **Rinse and Repeat**   
 
 
@@ -103,18 +106,10 @@ In a specifications-grading system all tasks are evaluated on a high-standards p
   </tr>
  </thead>
 <tbody>
-  <tr>
-   <td style="text-align:center;"> A </td>
-   <td style="text-align:center;"> 14 </td>
-   <td style="text-align:center;"> 13 </td>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 11 </td>
-   <td style="text-align:center;"> yes </td>
-   <td style="text-align:center;"> yes </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> A- </td>
-   <td style="text-align:center;"> 13 </td>
+  <tr grouplength="2"><td colspan="7" style="border-bottom: 1px solid;"><strong>Leader</strong></td></tr>
+<tr>
+   <td style="text-align:center; padding-left: 2em;" indentlevel="1"> A </td>
+   <td style="text-align:center;"> 12 </td>
    <td style="text-align:center;"> 11 </td>
    <td style="text-align:center;"> 3 </td>
    <td style="text-align:center;"> 10 </td>
@@ -122,54 +117,66 @@ In a specifications-grading system all tasks are evaluated on a high-standards p
    <td style="text-align:center;"> yes </td>
   </tr>
   <tr>
-   <td style="text-align:center;"> B+ </td>
-   <td style="text-align:center;"> 12 </td>
-   <td style="text-align:center;"> 8 </td>
+   <td style="text-align:center; padding-left: 2em;" indentlevel="1"> A- </td>
+   <td style="text-align:center;"> 11 </td>
+   <td style="text-align:center;"> 10 </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 10 </td>
+   <td style="text-align:center;"> yes </td>
+   <td style="text-align:center;"> yes </td>
+  </tr>
+  <tr grouplength="3"><td colspan="7" style="border-bottom: 1px solid;"><strong>Supporter</strong></td></tr>
+<tr>
+   <td style="text-align:center; padding-left: 2em;" indentlevel="1"> B+ </td>
+   <td style="text-align:center;"> 10 </td>
+   <td style="text-align:center;"> 9 </td>
    <td style="text-align:center;"> 2 </td>
    <td style="text-align:center;"> 9 </td>
    <td style="text-align:center;"> yes </td>
    <td style="text-align:center;"> yes </td>
   </tr>
   <tr>
-   <td style="text-align:center;"> B </td>
-   <td style="text-align:center;"> 11 </td>
+   <td style="text-align:center; padding-left: 2em;" indentlevel="1"> B </td>
+   <td style="text-align:center;"> 9 </td>
    <td style="text-align:center;"> 8 </td>
    <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 8 </td>
+   <td style="text-align:center;"> 9 </td>
    <td style="text-align:center;"> no </td>
    <td style="text-align:center;"> no </td>
   </tr>
   <tr>
-   <td style="text-align:center;"> B- </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 6 </td>
+   <td style="text-align:center; padding-left: 2em;" indentlevel="1"> B- </td>
+   <td style="text-align:center;"> 8 </td>
+   <td style="text-align:center;"> 7 </td>
    <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 8 </td>
+   <td style="text-align:center;"> no </td>
+   <td style="text-align:center;"> no </td>
+  </tr>
+  <tr grouplength="2"><td colspan="7" style="border-bottom: 1px solid;"><strong>Wannabe</strong></td></tr>
+<tr>
+   <td style="text-align:center; padding-left: 2em;" indentlevel="1"> C </td>
+   <td style="text-align:center;"> 7 </td>
+   <td style="text-align:center;"> 6 </td>
+   <td style="text-align:center;"> 0 </td>
    <td style="text-align:center;"> 7 </td>
    <td style="text-align:center;"> no </td>
    <td style="text-align:center;"> no </td>
   </tr>
   <tr>
-   <td style="text-align:center;"> C </td>
-   <td style="text-align:center;"> 9 </td>
+   <td style="text-align:center; padding-left: 2em;" indentlevel="1"> C- </td>
+   <td style="text-align:center;"> 6 </td>
    <td style="text-align:center;"> 5 </td>
    <td style="text-align:center;"> 0 </td>
    <td style="text-align:center;"> 6 </td>
    <td style="text-align:center;"> no </td>
    <td style="text-align:center;"> no </td>
   </tr>
-  <tr>
-   <td style="text-align:center;"> C- </td>
-   <td style="text-align:center;"> 8 </td>
+  <tr grouplength="1"><td colspan="7" style="border-bottom: 1px solid;"><strong>None</strong></td></tr>
+<tr>
+   <td style="text-align:center; padding-left: 2em;" indentlevel="1"> D </td>
    <td style="text-align:center;"> 5 </td>
-   <td style="text-align:center;"> 0 </td>
-   <td style="text-align:center;"> 5 </td>
-   <td style="text-align:center;"> no </td>
-   <td style="text-align:center;"> no </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> D </td>
-   <td style="text-align:center;"> 5 </td>
-   <td style="text-align:center;"> 5 </td>
+   <td style="text-align:center;"> 4 </td>
    <td style="text-align:center;"> 0 </td>
    <td style="text-align:center;"> 5 </td>
    <td style="text-align:center;"> no </td>
