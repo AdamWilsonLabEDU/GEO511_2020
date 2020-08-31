@@ -7,11 +7,10 @@ week: 1
 
 ## Today's plan
 1. Who am I?
-2. Course Groups
-3. Who are You?
-4. Course Overview
-5. Website, UBLearns, DataCamp, GitHub
-6. What is R and who uses it?
+2. Who are You?
+3. Course Overview
+5. What is R 
+6. Who uses R?
 
 # Introductions
 
@@ -40,6 +39,8 @@ I Use R:
       * Something you want to learn / do
       * What you did over the summer
 
+
+# Course Overview
 
 ## Spatial Data Science
 
@@ -98,6 +99,15 @@ Plan to spend approximately 5-11 hours each week:
 </iframe>
 [source](http://wilsonlab.io/GEO511/TK_01.html)
 
+## Case Study for this week
+
+<iframe
+  src="http://wilsonlab.io/GEO511/CS_01.html"
+  width="100%" height="800">
+</iframe>
+[source](http://wilsonlab.io/GEO511/CS_01.html)
+
+
 ## Groups in this course
 
 * 5 groups of ~3-4 students
@@ -108,46 +118,18 @@ Plan to spend approximately 5-11 hours each week:
 
 ## Meet your group
 
-* 5 minute breakout session
-* Say hello, share your experiences
+* 10 minute breakout session
+* Topics
+   * Introduce again
+   * Do you have any experience writing code? (if so, which languages, etc.)?
+   * What do you hope to learn from this course?
+   * What activity did you enjoy this summer?
+* After ~10 minutes, we'll return to single group to summarize 
 
 
-# Why Write Code?
 
-## Why write code when you can click?
+# What is R and who uses it?
 
-<img src="01_assets/arcgis.jpg" width=50%></img>
-
-Graphical User Interfaces are useful, especially when you are learning...
-
-## Typical GUI Workflow
-<img src="01_assets/workflow1.png" width=100%></img>
-
-## Organized and repeatable workflow
-<img src="01_assets/workflow2.png" width=100%></img>
-
----
-Learning a programming language can help you learn how to think logically.
-
-<blockquote>
-A man who does not know foreign language is ignorant of his own.
-<br> -- Johann Wolfgang von Goethe (1749 - 1832)
-</blockquote>
-
-## From Graphical User Interface (GUI) to Scripting
-
-<img src="01_assets/08_productivity.png" width=100%></img>
-
----
-
-Programming gives you access to more computer power.
-
-<blockquote>
-The computer is incredibly fast, accurate, and stupid. Man is unbelievably slow, inaccurate, and brilliant. The marriage of the two is a force beyond calculation. <br> -- Leo Cherne
-</blockquote>
-
-
-# Introduction to R
 
 ## R Project for Statistical Computing
 
@@ -191,17 +173,12 @@ R is a dialect of the S language  developed at Bell Laboratories (formerly AT&T)
 [source](https://www.r-graph-gallery.com/connection-map.html)
 
 
-## Spatial data in R
+## Spatial Data Processing in R
 
 Packages: `sf, sp, maptools, rgeos, raster, ggmap`
 
 R can perform many GIS functions and workflows (often better than a GIS!).
 
-
-## Parallel Processing
-For BIG jobs:
-multi-core processors / high performance computing with foreach.
-<img src="01_assets//05_parallel.png" width=100%></img>
 
 ## Strengths & Limitations
 
@@ -215,15 +192,6 @@ multi-core processors / high performance computing with foreach.
      * Various packages and clever programming can overcome this… <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
 * Free like beer **AND** speech! <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
 
-## R vs Python
-
-<iframe
-  src="https://s3.amazonaws.com/assets.datacamp.com/email/other/Python+vs+R+(1).png"
-  width="100%" height="800">
-</iframe>
-[source](https://s3.amazonaws.com/assets.datacamp.com/email/other/Python+vs+R+(1).png)
-
-
 ## R Interface
 
 <img src="01_assets//01_terminal.png" width=100%></img>
@@ -236,7 +204,6 @@ But there are other options...
 
 Mac, Windows, Linux, and over the web…
 
-
 # Who uses R
 
 ## Popularity of Data Science Software
@@ -248,30 +215,20 @@ Mac, Windows, Linux, and over the web…
 
 
 ## Scholarly Articles
-![](https://i1.wp.com/r4stats.com/wp-content/uploads/2017/06/Fig_2a_ScholarlyImpact2016-3.png?w=650)
+![](https://i1.wp.com/r4stats.com/wp-content/uploads/2019/03/Fig_2a_ScholarlyImpact2018-1.png?w=650)
 
-Number of scholarly articles found in the most recent complete year (2016) for the more popular data science software. To be included, software must be used in at least 750 scholarly articles.
-
-## Trend in scholarly articles
-![](https://i0.wp.com/r4stats.com/wp-content/uploads/2017/06/Fig_2d_ScholarlyImpact2016.png?w=650)
-
-The number of scholarly articles found in each year by Google Scholar. Only the top six “classic" statistics packages are shown.
-
-## Trend in scholarly articles
-![](https://i0.wp.com/r4stats.com/wp-content/uploads/2017/06/Fig_2e_ScholarlyImpactSubset2016.png?w=650)
-
-The number of scholarly articles found in each year by Google Scholar for classic statistics packages after the curves for SPSS and SAS have been removed.
- 
-## Rexer's biannual Data Science Survey 
-![](img/rexer_tooluse.png)
-
-1,220 respondents from 72 different countries
-
-## Tool Use
-![](img/rexer_rise.png)
+Number of scholarly articles found in the most recent complete year (2018) for the more popular data science software. To be included, software must be used in at least 750 scholarly articles.
 
 ## Interface to R
 ![](img/rexer_interface.png)
+
+## R vs Python
+<iframe
+  src="https://s3.amazonaws.com/assets.datacamp.com/email/other/Python+vs+R+(1).png"
+  width="100%" height="800">
+</iframe>
+[source](https://s3.amazonaws.com/assets.datacamp.com/email/other/Python+vs+R+(1).png)
+
 
 ## Many 'Cheatsheets' available
 
@@ -281,4 +238,41 @@ The number of scholarly articles found in each year by Google Scholar for classi
 </iframe>
 [source](https://www.rstudio.com/resources/cheatsheets/)
 
+
+# Why code at all?
+
+## Why write code when you can click?
+
+<img src="01_assets/arcgis.jpg" width=50%></img>
+
+Graphical User Interfaces are useful, especially when you are learning...
+
+## Typical GUI Workflow
+<img src="01_assets/workflow1.png" width=100%></img>
+
+## Organized and repeatable workflow
+<img src="01_assets/workflow2.png" width=100%></img>
+
+## Learning a programming language can help you learn how to think logically.
+
+<blockquote>
+A man who does not know foreign language is ignorant of his own.
+<br> -- Johann Wolfgang von Goethe (1749 - 1832)
+</blockquote>
+
+## Programming gives you access to more computer power.
+
+<blockquote>
+The computer is incredibly fast, accurate, and stupid. Man is unbelievably slow, inaccurate, and brilliant. The marriage of the two is a force beyond calculation. <br> -- Leo Cherne
+</blockquote>
+
+## From Graphical User Interface (GUI) to Scripting
+
+<img src="01_assets/08_productivity.png" width=100%></img>
+
+
+## Parallel Processing
+For BIG jobs:
+multi-core processors / high performance computing with foreach.
+<img src="01_assets//05_parallel.png" width=100%></img>
 

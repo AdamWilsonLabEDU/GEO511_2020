@@ -47,10 +47,13 @@ d=d%>%mutate(user=sub("/","",
                           ignore.case = T)),
       github=paste0("https://github.com/geo511-2019/2019-geo511-project-",
                    user))
+save(d,file="Student_projects_data.Rdata")
 ```
 
 
 ```{r, echo=F, message=F, results='hide', eval=T}
+load("Student_projects_data.Rdata")
+
 for(i in 1:nrow(d)) {
   print(i)
   d$title[i] <- ifelse(
@@ -68,7 +71,7 @@ d%>%
   arrange(user)%>%
 #  filter(group==1)%>%
   mutate(Title=paste0("[",title,"](",url,")"),
-         GitHub=paste("<a href=",github,">",fa('github',fill ="#2780E3"),"</i></a>"))%>%
+         GitHub=paste("<a href=",github,"><i>",fa('github',fill ="#2780E3"),"</i></a>"))%>%
   dplyr::select(Student=user,GitHub,Title, group)%>%
   kable()
 ```

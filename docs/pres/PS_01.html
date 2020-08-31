@@ -464,11 +464,10 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <h2>Today’s plan</h2>
 <ol type="1">
 <li>Who am I?</li>
-<li>Course Groups</li>
 <li>Who are You?</li>
 <li>Course Overview</li>
-<li>Website, UBLearns, DataCamp, GitHub</li>
-<li>What is R and who uses it?</li>
+<li>What is R</li>
+<li>Who uses R?</li>
 </ol>
 </section>
 <section><section id="introductions" class="title-slide slide level1"><h1>Introductions</h1></section><section id="adam-m.-wilson" class="slide level2">
@@ -501,7 +500,8 @@ document.getElementsByTagName('head')[0].appendChild(style);
 </ul></li>
 </ul></li>
 </ul>
-</section><section id="spatial-data-science" class="slide level2">
+</section></section>
+<section><section id="course-overview" class="title-slide slide level1"><h1>Course Overview</h1></section><section id="spatial-data-science" class="slide level2">
 <h2>Spatial Data Science</h2>
 <p><img src="01_assets/data-science.png" width=100%></img> –Grolemund &amp; Wickham, R for Data Science, O’Reilly 2016</p>
 </section><section id="course-learning-objectives" class="slide level2">
@@ -512,6 +512,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>Effectively display and communicate meaning from spatial, temporal, and textual data</li>
 <li>Use current analysis, presentation, and collaboration tools in the spatial data science field.</li>
 </ol>
+<p>This course is NOT a statistics course (see GEO 505, etc.).</p>
 </section><section id="in-other-words-become-an-r-wizard" class="slide level2">
 <h2>In other words: <br> become an R wizard!</h2>
 </section><section id="tools" class="slide level2">
@@ -537,10 +538,6 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>Case Studies: 1-5</li>
 <li>Project will require more time near end of semester.</li>
 </ul>
-</section><section id="spatial-data-science-1" class="slide level2">
-<h2>Spatial Data Science</h2>
-<p><img src="01_assets/data-science.png" width=100%></img> –Grolemund &amp; Wickham, R for Data Science, O’Reilly 2016</p>
-<p>This course is NOT a statistics course (see GEO 505, etc.). We will focus on workflow and methods (‘how’ not ‘why’)</p>
 </section><section id="course-schedule" class="slide level2">
 <h2>Course Schedule</h2>
 <iframe src="http://wilsonlab.io/GEO511/Schedule.html" width="100%" height="800">
@@ -551,6 +548,11 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <iframe src="http://wilsonlab.io/GEO511/TK_01.html" width="100%" height="800">
 </iframe>
 <p><a href="http://wilsonlab.io/GEO511/TK_01.html">source</a></p>
+</section><section id="case-study-for-this-week" class="slide level2">
+<h2>Case Study for this week</h2>
+<iframe src="http://wilsonlab.io/GEO511/CS_01.html" width="100%" height="800">
+</iframe>
+<p><a href="http://wilsonlab.io/GEO511/CS_01.html">source</a></p>
 </section><section id="groups-in-this-course" class="slide level2">
 <h2>Groups in this course</h2>
 <ul>
@@ -565,26 +567,18 @@ document.getElementsByTagName('head')[0].appendChild(style);
 </section><section id="meet-your-group" class="slide level2">
 <h2>Meet your group</h2>
 <ul>
-<li>5 minute breakout session</li>
-<li>Say hello, share your experiences</li>
+<li>10 minute breakout session</li>
+<li>Topics
+<ul>
+<li>Introduce again</li>
+<li>Do you have any experience writing code? (if so, which languages, etc.)?</li>
+<li>What do you hope to learn from this course?</li>
+<li>What activity did you enjoy this summer?</li>
+</ul></li>
+<li>After ~10 minutes, we’ll return to single group to summarize</li>
 </ul>
 </section></section>
-<section><section id="why-write-code" class="title-slide slide level1"><h1>Why Write Code?</h1></section><section id="why-write-code-when-you-can-click" class="slide level2">
-<h2>Why write code when you can click?</h2>
-<p><img src="01_assets/arcgis.jpg" width=50%></img></p>
-<p>Graphical User Interfaces are useful, especially when you are learning…</p>
-</section><section id="typical-gui-workflow" class="slide level2">
-<h2>Typical GUI Workflow</h2>
-<p><img src="01_assets/workflow1.png" width=100%></img></p>
-</section><section id="organized-and-repeatable-workflow" class="slide level2">
-<h2>Organized and repeatable workflow</h2>
-<p><img src="01_assets/workflow2.png" width=100%></img></p>
-<p>Programming gives you access to more computer power.</p>
-<blockquote>
-The computer is incredibly fast, accurate, and stupid. Man is unbelievably slow, inaccurate, and brilliant. The marriage of the two is a force beyond calculation. <br> – Leo Cherne
-</blockquote>
-</section></section>
-<section><section id="introduction-to-r" class="title-slide slide level1"><h1>Introduction to R</h1></section><section id="r-project-for-statistical-computing" class="slide level2">
+<section><section id="what-is-r-and-who-uses-it" class="title-slide slide level1"><h1>What is R and who uses it?</h1></section><section id="r-project-for-statistical-computing" class="slide level2">
 <h2>R Project for Statistical Computing</h2>
 <ul>
 <li>Free and Open source</li>
@@ -621,13 +615,10 @@ The computer is incredibly fast, accurate, and stupid. Man is unbelievably slow,
 <iframe src="https://www.r-graph-gallery.com/connection-map.html" width="100%" height="800">
 </iframe>
 <p><a href="https://www.r-graph-gallery.com/connection-map.html">source</a></p>
-</section><section id="spatial-data-in-r" class="slide level2">
-<h2>Spatial data in R</h2>
+</section><section id="spatial-data-processing-in-r" class="slide level2">
+<h2>Spatial Data Processing in R</h2>
 <p>Packages: <code>sf, sp, maptools, rgeos, raster, ggmap</code></p>
 <p>R can perform many GIS functions and workflows (often better than a GIS!).</p>
-</section><section id="parallel-processing" class="slide level2">
-<h2>Parallel Processing</h2>
-<p>For BIG jobs: multi-core processors / high performance computing with foreach. <img src="01_assets/05_parallel.png" width=100%></img></p>
 </section><section id="strengths-limitations" class="slide level2">
 <h2>Strengths &amp; Limitations</h2>
 <ul>
@@ -645,11 +636,6 @@ The computer is incredibly fast, accurate, and stupid. Man is unbelievably slow,
 </ul></li>
 <li>Free like beer <strong>AND</strong> speech! <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></li>
 </ul>
-</section><section id="r-vs-python" class="slide level2">
-<h2>R vs Python</h2>
-<iframe src="https://s3.amazonaws.com/assets.datacamp.com/email/other/Python+vs+R+(1).png" width="100%" height="800">
-</iframe>
-<p><a href="https://s3.amazonaws.com/assets.datacamp.com/email/other/Python+vs+R+(1).png">source</a></p>
 </section><section id="r-interface" class="slide level2">
 <h2>R Interface</h2>
 <p><img src="01_assets/01_terminal.png" width=100%></img></p>
@@ -666,31 +652,48 @@ The computer is incredibly fast, accurate, and stupid. Man is unbelievably slow,
 <p><a href="http://r4stats.com/articles/popularity">source</a></p>
 </section><section id="scholarly-articles" class="slide level2">
 <h2>Scholarly Articles</h2>
-<p><img data-src="https://i1.wp.com/r4stats.com/wp-content/uploads/2017/06/Fig_2a_ScholarlyImpact2016-3.png?w=650" /></p>
-<p>Number of scholarly articles found in the most recent complete year (2016) for the more popular data science software. To be included, software must be used in at least 750 scholarly articles.</p>
-</section><section id="trend-in-scholarly-articles" class="slide level2">
-<h2>Trend in scholarly articles</h2>
-<p><img data-src="https://i0.wp.com/r4stats.com/wp-content/uploads/2017/06/Fig_2d_ScholarlyImpact2016.png?w=650" /></p>
-<p>The number of scholarly articles found in each year by Google Scholar. Only the top six “classic” statistics packages are shown.</p>
-</section><section id="trend-in-scholarly-articles-1" class="slide level2">
-<h2>Trend in scholarly articles</h2>
-<p><img data-src="https://i0.wp.com/r4stats.com/wp-content/uploads/2017/06/Fig_2e_ScholarlyImpactSubset2016.png?w=650" /></p>
-<p>The number of scholarly articles found in each year by Google Scholar for classic statistics packages after the curves for SPSS and SAS have been removed.</p>
-</section><section id="rexers-biannual-data-science-survey" class="slide level2">
-<h2>Rexer’s biannual Data Science Survey</h2>
-<p><img data-src="img/rexer_tooluse.png" /></p>
-<p>1,220 respondents from 72 different countries</p>
-</section><section id="tool-use" class="slide level2">
-<h2>Tool Use</h2>
-<p><img data-src="img/rexer_rise.png" /></p>
+<p><img data-src="https://i1.wp.com/r4stats.com/wp-content/uploads/2019/03/Fig_2a_ScholarlyImpact2018-1.png?w=650" /></p>
+<p>Number of scholarly articles found in the most recent complete year (2018) for the more popular data science software. To be included, software must be used in at least 750 scholarly articles.</p>
 </section><section id="interface-to-r" class="slide level2">
 <h2>Interface to R</h2>
 <p><img data-src="img/rexer_interface.png" /></p>
+</section><section id="r-vs-python" class="slide level2">
+<h2>R vs Python</h2>
+<iframe src="https://s3.amazonaws.com/assets.datacamp.com/email/other/Python+vs+R+(1).png" width="100%" height="800">
+</iframe>
+<p><a href="https://s3.amazonaws.com/assets.datacamp.com/email/other/Python+vs+R+(1).png">source</a></p>
 </section><section id="many-cheatsheets-available" class="slide level2">
 <h2>Many ‘Cheatsheets’ available</h2>
 <iframe src="https://www.rstudio.com/resources/cheatsheets/" width="100%" height="800">
 </iframe>
 <p><a href="https://www.rstudio.com/resources/cheatsheets/">source</a></p>
+</section></section>
+<section><section id="why-code-at-all" class="title-slide slide level1"><h1>Why code at all?</h1></section><section id="why-write-code-when-you-can-click" class="slide level2">
+<h2>Why write code when you can click?</h2>
+<p><img src="01_assets/arcgis.jpg" width=50%></img></p>
+<p>Graphical User Interfaces are useful, especially when you are learning…</p>
+</section><section id="typical-gui-workflow" class="slide level2">
+<h2>Typical GUI Workflow</h2>
+<p><img src="01_assets/workflow1.png" width=100%></img></p>
+</section><section id="organized-and-repeatable-workflow" class="slide level2">
+<h2>Organized and repeatable workflow</h2>
+<p><img src="01_assets/workflow2.png" width=100%></img></p>
+</section><section id="learning-a-programming-language-can-help-you-learn-how-to-think-logically." class="slide level2">
+<h2>Learning a programming language can help you learn how to think logically.</h2>
+<blockquote>
+A man who does not know foreign language is ignorant of his own. <br> – Johann Wolfgang von Goethe (1749 - 1832)
+</blockquote>
+</section><section id="programming-gives-you-access-to-more-computer-power." class="slide level2">
+<h2>Programming gives you access to more computer power.</h2>
+<blockquote>
+The computer is incredibly fast, accurate, and stupid. Man is unbelievably slow, inaccurate, and brilliant. The marriage of the two is a force beyond calculation. <br> – Leo Cherne
+</blockquote>
+</section><section id="from-graphical-user-interface-gui-to-scripting" class="slide level2">
+<h2>From Graphical User Interface (GUI) to Scripting</h2>
+<p><img src="01_assets/08_productivity.png" width=100%></img></p>
+</section><section id="parallel-processing" class="slide level2">
+<h2>Parallel Processing</h2>
+<p>For BIG jobs: multi-core processors / high performance computing with foreach. <img src="01_assets/05_parallel.png" width=100%></img></p>
 </section></section>
     </div>
   </div>
