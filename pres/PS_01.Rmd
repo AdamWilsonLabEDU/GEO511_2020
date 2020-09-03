@@ -95,8 +95,6 @@ This course is NOT a statistics course (see GEO 505, etc.).
     d. Case Study Introduction (for following week) [20 minutes]
 5. **Rinse and Repeat**   
 
-
-
 ## Time committment
 
 Plan to spend approximately 5-11 hours each week:
@@ -120,6 +118,14 @@ Plan to spend approximately 5-11 hours each week:
   width="100%" height="800">
 </iframe>
 [source](http://wilsonlab.io/GEO511/TK_01.html)
+
+## Resource Presentations
+
+<iframe
+  src="http://wilsonlab.io/GEO511/PackageIntro.html"
+  width="100%" height="800">
+</iframe>
+[source](http://wilsonlab.io/GEO511/PackageIntro.html)
 
 ## 1st Case Study ("due" next week)
 
@@ -145,7 +151,7 @@ Plan to spend approximately 5-11 hours each week:
    * Introduce again
    * Do you have any experience writing code? (if so, which languages, etc.)?
    * What do you hope to learn from this course?
-   * What activity did you enjoy this summer?
+   * Identify leader for next week (who will be prepared to explain Case Study 1)
 * After ~10 minutes, we'll return to single group to summarize 
 
 ## Selecting the Case Study Presentation
