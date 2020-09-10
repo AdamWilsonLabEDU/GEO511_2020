@@ -45,6 +45,6 @@ filter(starwars, species == "Human")
 
 ## Example Presentation
 
-Here is an example presentation about the [`ggrepel` package](pres/PackagePresentation.html) that was built using this [R Markdown file](pres/PackagePresentation.Rmd).
+Here is an example presentation about the [`ggrepel` package](pres/PackagePresentation.html) that was built using this [R Markdown file](pres/PackagePresentation.Rmd), which is [also visible on github](https://github.com/AdamWilsonLab/GEO511/blob/master/pres/PackagePresentation.Rmd).
 
 
