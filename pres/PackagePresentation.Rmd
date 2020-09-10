@@ -11,6 +11,8 @@ author: "Adam M. Wilson"
    * analysis of functional genomics data 
    * cell regulation of functions in disease 
 * software tools for statistical tests and data visualization
+* Postdoc at Harvard
+* Last paper in PNAS titled _CUX1 and IκBζ (NFKBIZ) mediate the synergistic inflammatory response to TNF and IL-17A in stromal fibroblasts_
 
 ## ggrepel
 
