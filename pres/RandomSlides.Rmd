@@ -1,0 +1,61 @@
+---
+title: "RandomSlides"
+author: "Adam M. Wilson"
+date: "9/9/2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+
+
+# Becoming the Critic.
+
+## Original Graph
+![](http://www.perceptualedge.com/images/example9problem.gif)
+
+## Revised Graph
+![](http://www.perceptualedge.com/images/example9solution.jpg)
+
+
+# Training your eyes
+
+## Fix the errors
+
+Do you see any errors in the following code?
+
+```{R, eval=FALSE}
+library(tidyverse)
+
+ggplot(dota = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy))
+
+fliter(mpg, cyl = 8)
+filter(diamond, carat > 3)
+
+```
+
+## Interpret these error statements
+
+Discuss with your neighbor what the error statement is saying. How would you fix it?
+
+```{R, eval=FALSE}
+ggplot(dota = mpg) + 
++   geom_point(mapping = aes(x = displ, y = hwy))
+#> Error in structure(list(data = data, layers = list(), 
+#> scales = scales_list(),  : 
+#>  argument "data" is missing, with no default
+```
+
+```{r, eval=FALSE}
+fliter(mpg, cyl = 8)
+#> Error in fliter(mpg, cyl = 8) : could not find function "fliter"
+```
+
+```{r, eval=FALSE}
+filter(diamond, carat > 3)
+#> Error in filter(diamond, carat > 3) : object 'diamond' not found
+```

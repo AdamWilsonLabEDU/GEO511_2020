@@ -20,6 +20,9 @@ library(knitr)
 library(rvest)
 library(fontawesome)
 
+update=F
+
+if(update){
 d=data.frame(url=
   paste0("https://geo511-2019.github.io/",c(
   "2019-geo511-project-AJKlisavage",
@@ -47,13 +50,6 @@ d=d%>%mutate(user=sub("/","",
                           ignore.case = T)),
       github=paste0("https://github.com/geo511-2019/2019-geo511-project-",
                    user))
-save(d,file="Student_projects_data.Rdata")
-```
-
-
-```{r, echo=F, message=F, results='hide', eval=T}
-load("Student_projects_data.Rdata")
-
 for(i in 1:nrow(d)) {
   print(i)
   d$title[i] <- ifelse(
@@ -64,6 +60,13 @@ for(i in 1:nrow(d)) {
   )
 }
 
+save(d,file="Student_projects_data.Rdata")
+}
+```
+
+
+```{r, echo=F, message=F, results='hide', eval=T}
+load("Student_projects_data.Rdata")
 ```
 
 ```{r,asis=T, echo=F, eval=T}

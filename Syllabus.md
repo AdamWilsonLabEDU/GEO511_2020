@@ -106,9 +106,8 @@ In a specifications-grading system all tasks are evaluated on a high-standards p
   </tr>
  </thead>
 <tbody>
-  <tr grouplength="2"><td colspan="7" style="border-bottom: 1px solid;"><strong>Leader</strong></td></tr>
-<tr>
-   <td style="text-align:center; padding-left: 2em;" indentlevel="1"> A </td>
+  <tr>
+   <td style="text-align:center;"> A </td>
    <td style="text-align:center;"> 12 </td>
    <td style="text-align:center;"> 11 </td>
    <td style="text-align:center;"> 3 </td>
@@ -117,7 +116,7 @@ In a specifications-grading system all tasks are evaluated on a high-standards p
    <td style="text-align:center;"> yes </td>
   </tr>
   <tr>
-   <td style="text-align:center; padding-left: 2em;" indentlevel="1"> A- </td>
+   <td style="text-align:center;"> A- </td>
    <td style="text-align:center;"> 11 </td>
    <td style="text-align:center;"> 10 </td>
    <td style="text-align:center;"> 3 </td>
@@ -125,9 +124,8 @@ In a specifications-grading system all tasks are evaluated on a high-standards p
    <td style="text-align:center;"> yes </td>
    <td style="text-align:center;"> yes </td>
   </tr>
-  <tr grouplength="3"><td colspan="7" style="border-bottom: 1px solid;"><strong>Supporter</strong></td></tr>
-<tr>
-   <td style="text-align:center; padding-left: 2em;" indentlevel="1"> B+ </td>
+  <tr>
+   <td style="text-align:center;"> B+ </td>
    <td style="text-align:center;"> 10 </td>
    <td style="text-align:center;"> 9 </td>
    <td style="text-align:center;"> 2 </td>
@@ -136,7 +134,7 @@ In a specifications-grading system all tasks are evaluated on a high-standards p
    <td style="text-align:center;"> yes </td>
   </tr>
   <tr>
-   <td style="text-align:center; padding-left: 2em;" indentlevel="1"> B </td>
+   <td style="text-align:center;"> B </td>
    <td style="text-align:center;"> 9 </td>
    <td style="text-align:center;"> 8 </td>
    <td style="text-align:center;"> 2 </td>
@@ -145,7 +143,7 @@ In a specifications-grading system all tasks are evaluated on a high-standards p
    <td style="text-align:center;"> no </td>
   </tr>
   <tr>
-   <td style="text-align:center; padding-left: 2em;" indentlevel="1"> B- </td>
+   <td style="text-align:center;"> B- </td>
    <td style="text-align:center;"> 8 </td>
    <td style="text-align:center;"> 7 </td>
    <td style="text-align:center;"> 1 </td>
@@ -153,9 +151,8 @@ In a specifications-grading system all tasks are evaluated on a high-standards p
    <td style="text-align:center;"> no </td>
    <td style="text-align:center;"> no </td>
   </tr>
-  <tr grouplength="2"><td colspan="7" style="border-bottom: 1px solid;"><strong>Wannabe</strong></td></tr>
-<tr>
-   <td style="text-align:center; padding-left: 2em;" indentlevel="1"> C </td>
+  <tr>
+   <td style="text-align:center;"> C </td>
    <td style="text-align:center;"> 7 </td>
    <td style="text-align:center;"> 6 </td>
    <td style="text-align:center;"> 0 </td>
@@ -164,7 +161,7 @@ In a specifications-grading system all tasks are evaluated on a high-standards p
    <td style="text-align:center;"> no </td>
   </tr>
   <tr>
-   <td style="text-align:center; padding-left: 2em;" indentlevel="1"> C- </td>
+   <td style="text-align:center;"> C- </td>
    <td style="text-align:center;"> 6 </td>
    <td style="text-align:center;"> 5 </td>
    <td style="text-align:center;"> 0 </td>
@@ -172,9 +169,8 @@ In a specifications-grading system all tasks are evaluated on a high-standards p
    <td style="text-align:center;"> no </td>
    <td style="text-align:center;"> no </td>
   </tr>
-  <tr grouplength="1"><td colspan="7" style="border-bottom: 1px solid;"><strong>None</strong></td></tr>
-<tr>
-   <td style="text-align:center; padding-left: 2em;" indentlevel="1"> D </td>
+  <tr>
+   <td style="text-align:center;"> D </td>
    <td style="text-align:center;"> 5 </td>
    <td style="text-align:center;"> 4 </td>
    <td style="text-align:center;"> 0 </td>
@@ -188,7 +184,7 @@ In a specifications-grading system all tasks are evaluated on a high-standards p
 
 #### Coding Challenge
 
-On the last day of class you will be asked to complete a coding challenge.  You will not be able to work with others, but will be able to ask questions of the instructor. The coding challenge will use the techniques and programming developed from the course and is meant to demonstrate a foundational understanding of the course material.
+On the last day of class you will be asked to complete a coding challenge.  You will not be able to work with others.  The coding challenge will use the techniques and programming developed from the course and is meant to demonstrate a foundational understanding of the course material.
 
 1. **You must pass the challenge to keep grade earned from your [completed tasks](Syllabus.html).**
 2. Failure to pass the challenge will lower your grade 1-2 steps.

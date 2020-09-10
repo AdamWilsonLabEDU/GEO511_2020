@@ -9,6 +9,7 @@ reading:
 tasks:
     - Watch [John Rauser Talk](https://youtu.be/fSgEeI2Xpdc){target='blank'}
     - Watch [Programming - Part 1 (Writing code in RStudio)](https://rstudio.com/resources/webinars/programming-part-1-writing-code-in-rstudio/)
+    - Watch [Managing - Part 1 (Projects in RStudio)](https://rstudio.com/resources/webinars/managing-part-1-projects-in-rstudio/)
 ---
 
 ```{r setup, include=FALSE}

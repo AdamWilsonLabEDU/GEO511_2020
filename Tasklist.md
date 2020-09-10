@@ -24,11 +24,12 @@ ___
 - Datacamp's [_How to Make a Histogram with ggplot_](https://www.datacamp.com/community/tutorials/make-histogram-ggplot2)
 
 ## Tasks
-- Create a new R script in RStudio
-- Load the iris dataset with `data(iris)`
-- Read the help file for the function that calculates the mean ( you can run `?mean` or use the GUI).
-- Calculate the mean of the `Petal.Length` field
-- Plot the distribution of the `Petal.Length` column as a histogram
+- Create a new R script in RStudio (File->New File->R Script)
+- Save this file somewhere you will find it later
+- In your new script, load the iris dataset with `data(iris)`
+- Read the help file for the function that calculates the mean (you can run `?mean` or use the GUI).
+- Calculate the mean of the `Petal.Length` field and save it as an object named `petal_length_mean`
+- Plot the distribution of the `Petal.Length` column as a histogram (`?hist`)
 - Save the script
 - Click 'Source' in RStudio to run your script from beginning to end
 </div>
@@ -44,11 +45,11 @@ ___
 
 ## Tasks
 - Read the [course syllabus](Syllabus.html) and make sure you understand our class routine and grading
-- Install R on your computer [from here](https://cloud.r-project.org){target='blank'}
+- Install R on your computer [from here](https://cloud.r-project.org){target='blank'} if you haven't already installed it.
 - Install RStudio Desktop (free version) on your computer [from this source](https://www.rstudio.com/products/rstudio/download/){target='blank'}
 - Join the Slack Channel by following the link sent via email (ask if you did not receive this link)
 - Join our DataCamp class following the link sent via email.  Start working on the first assignment (try to finish by Thursday)
-- Create a [GitHub account](https://github.com/join?source=header-home){target="blank"} and submit your github username [here](https://forms.gle/7gJCeKcUMFbcZ4jY8). This username may follow you for years, use something professional that you will want to share with your future employer.
+- Create a [GitHub account](https://github.com/join?source=header-home){target="blank"} and submit your github username to the form sent to your email. This username may follow you for years, use something professional that you will want to share with your future employer.
 </div>
 ___
 ## [ CS_02 :  My grandfather says climate is cooling ]( ./CS_02.html ) 
@@ -84,7 +85,8 @@ ___
 
 ## Tasks
 - Watch [John Rauser Talk](https://youtu.be/fSgEeI2Xpdc){target='blank'}
-- Watch [Introduction to RStudio](https://resources.rstudio.com/wistia-rstudio-essentials-2/rstudioessentialsprogrammingpart1-2)
+- Watch [Programming - Part 1 (Writing code in RStudio)](https://rstudio.com/resources/webinars/programming-part-1-writing-code-in-rstudio/)
+- Watch [Managing - Part 1 (Projects in RStudio)](https://rstudio.com/resources/webinars/managing-part-1-projects-in-rstudio/)
 </div>
 ___
 ## [ CS_03 :  Wealth over time ]( ./CS_03.html ) 
@@ -122,7 +124,7 @@ ___
 - Configure Git
 - Make sure git works in R-Studio
 - Optionally sign up for the [GitHub Education pack](https://education.github.com/pack)
-- Click on [this link to access the course repository](https://classroom.github.com/a/eekUpAO-)
+- Click on [this link to access the course repository]()
 - Create a new project in Rstudio and connect it to the new repository in GitHub. Helpful instructions are [here](http://happygitwithr.com/rstudio-git-github.html#clone-the-new-github-repository-to-your-computer-via-rstudio)
 - Edit the README.md file in your repository to include a brief description of the repository (e.g. "Coursework for Spatial Data Science").
 - Stage and Commit your changes to Git (using the git tab in the upper right of RStudio)

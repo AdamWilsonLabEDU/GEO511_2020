@@ -4,7 +4,7 @@ title: "Resource Introduction"
 
 # Description
 
-Each student will be expected to introduce a package (or two) that is relevant to their research interests in a 5 minute presentation during a class session.  The objectives are:
+Each student will be expected to introduce an R-related resource that is relevant to their research interests in a 5 minute presentation during a class session.  Most students elect to introduce an R package, but you could also introduce a data source, interesting blog, etc., as long as it's relevant to the course.  If you are aren't sure, please ask Professor Wilson.  The objectives are:
 
 * Learn how to find/download/install a new package and learn how to use it
 * Teach your peers about existing R packages that may be useful in their research
@@ -15,7 +15,7 @@ The presentation must include:
 2. Author introduction: a short background (affiliation and other packages, etc.) on at least one of the package authors (**1 slide, 1 minute**)
 2. Simple demonstration of package code: example input/output from the examples or custom coded examples (**2-3 slides, 3 minutes**)
 
-There will not be time to actually run any code *on-the-fly* during your presentation.  Instead, use RMarkdown to create a presentation (html) or markdown (md) file so that you can simply display it during class (like the lectures).  Then paste your github link into the schedule spreadsheet so we can easily open/view it during class.
+There will not be time to actually run any code *on-the-fly* during your presentation.  Instead, use RMarkdown to create a presentation (html) or markdown (md) file so that you can simply display it during class (like the lectures).  Then paste your github link into the schedule spreadsheet so we can easily open/view it during class. For the first few weeks, you may simply share your screen and use a powerpoint or other presentation software.
 
 To select a package, I recommend starting with the [views on CRAN](https://cran.r-project.org/web/views/) for a topic of interest.  Then read the narrative in the task view for something interesting to you and install the package in R with `install.package("packagename")` in R and take a look at what it can do.  Most package functions include sample code that performs a function.    For example, if I was introducing the `dplyr` package, I might choose the `filter()` function.  If you look in the help you will find a section called "Examples" that you can use for your example code in your presentation.  All you have to do is copy-paste it from the help into the R console and them summarize what it's doing in your presentation.  For example, I might demonstrate (from the `filter()` documentation) that the following code will select all characters from Star Wars that are human.
 

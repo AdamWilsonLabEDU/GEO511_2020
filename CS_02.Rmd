@@ -33,17 +33,19 @@ md_bullet(rmarkdown::metadata$reading)
 
 You are at a family gathering at Niagara Falls and your grandfather, who lives nearby, claims that summer temperatures are colder now than they were when he was a kid in the 1920s.  Your inner data scientist thinks this is unlikely but you decide to look into it.
 
-You will use the NASA GISS temperature record for the Buffalo Niagara Airport available [from this website](https://data.giss.nasa.gov/cgi-bin/gistemp/stdata_show.cgi?id=425003010120&dt=1&ds=5).  Later we'll learn how to use APIs to interact with online databases, but for now we'll work with a simple csv file.
+You will use the NASA GISS temperature record for the Buffalo Niagara Airport available [from this website](https://data.giss.nasa.gov/cgi-bin/gistemp/stdata_show_v4.cgi?id=USW00014733&ds=14&dt=1).  Later we'll learn how to use APIs to interact with online databases, but for now we'll work with a simple csv file.
 
 # Instructions
 
 ## Download the temperature data
 
+If you explore the NASA GISS website for a station ([Buffalo, NY website](https://data.giss.nasa.gov/cgi-bin/gistemp/stdata_show_v4.cgi?id=USW00014733&ds=14&dt=1)), you'll find they provide a link to download the data directly as a comma-separated-values (CSV) file.  CSV files are simple text files with commas in between the values.  They are a common format for storing and sharing relatively small tabular datasets because they are so simple that many different software can open them, from Excel to ArcGIS.
+
 ```{r, message=F}
 library(tidyverse)
 
-# define the link to the data - you can try this in your browser too
-dataurl="https://raw.githubusercontent.com/AdamWilsonLab/SpatialDataScience/master/docs/02_assets/buffaloweather.csv"
+# define the link to the data - you can try this in your browser too.  Note that the URL ends in .csv.
+dataurl="https://data.giss.nasa.gov/tmp/gistemp/STATIONS/tmp_USW00014733_14_0_1/station.csv"
 ```
 
 This url points to a CSV file with monthly mean temperatures from the GISS dataset.  You can [check out the file here](`r dataurl`).  Now use `read_csv()` to download and import the CSV file directly from the website (cool, huh!?).
@@ -63,7 +65,7 @@ temp=read_csv(dataurl,
 
 ## Explore the data
 
-Now use your tools to explore the dataset.  You can try `View(temp)` to open the table in a browsable 'excel-like' window.  Or `summary(temp)` to get summaries of each column.
+Now use your tools to explore the dataset.  You can try `View(temp)` to open the table in a browsable 'excel-like' window.  Or `summary(temp)` to get summaries of each column. Or `glimpse(temp)`.
 
 ## Develop the graphic
 
@@ -71,12 +73,12 @@ You want to make a nice graphic to show your grandfather at your next family gat
 
 It should look something like this:
 
-```{r, eval=T,echo=F, warning=F, message=F}
+```{r, eval=T, purl=F, echo=F, warning=F, message=F}
 p1=ggplot(temp,aes(x=YEAR,y=JJA))+
   geom_line(col=grey(.2))+
   geom_smooth(col="red")+
   ylab("Mean Summer Temperatures (C)")+
-  ggtitle("Mean Summer Temperatures in Buffalo, NY (1880-2018)",
+  ggtitle("Mean Summer Temperatures in Buffalo, NY",
           subtitle = "Summer includes June, July, and August\nData from the Global Historical Climate Network\nRed line is a LOESS smooth")+
   xlab("Year")
 p1
@@ -98,6 +100,6 @@ What do you tell your grandfather?
 
 # Extra time?
 
-If you have extra time, use the [station selector](https://data.giss.nasa.gov/gistemp/stdata/) to find the links to download additional stations and make additional plots.  You could even merge different stations into the same table and plot them together.  
+If you have extra time, use the [station selector](https://data.giss.nasa.gov/gistemp/station_data_v4_globe/) to find the links to download additional stations and make additional plots.  You could even merge different stations into the same table and plot them together.  
 
 Can you think of other plots to consider?  Perhaps aggregating to mean temperature by decade?

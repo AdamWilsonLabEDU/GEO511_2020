@@ -373,7 +373,7 @@ div.tocify {
       <a href="DataCamp.html">DataCamp</a>
     </li>
     <li>
-      <a href="PackageIntro.html">Package Introduction</a>
+      <a href="PackageIntro.html">Resource Introduction</a>
     </li>
     <li>
       <a href="Project.html">Final Project</a>
@@ -430,17 +430,18 @@ div.tocify {
 <div id="background" class="section level1">
 <h1>Background</h1>
 <p>You are at a family gathering at Niagara Falls and your grandfather, who lives nearby, claims that summer temperatures are colder now than they were when he was a kid in the 1920s. Your inner data scientist thinks this is unlikely but you decide to look into it.</p>
-<p>You will use the NASA GISS temperature record for the Buffalo Niagara Airport available <a href="https://data.giss.nasa.gov/cgi-bin/gistemp/stdata_show.cgi?id=425003010120&amp;dt=1&amp;ds=5">from this website</a>. Later we’ll learn how to use APIs to interact with online databases, but for now we’ll work with a simple csv file.</p>
+<p>You will use the NASA GISS temperature record for the Buffalo Niagara Airport available <a href="https://data.giss.nasa.gov/cgi-bin/gistemp/stdata_show_v4.cgi?id=USW00014733&amp;ds=14&amp;dt=1">from this website</a>. Later we’ll learn how to use APIs to interact with online databases, but for now we’ll work with a simple csv file.</p>
 </div>
 <div id="instructions" class="section level1">
 <h1>Instructions</h1>
 <div id="download-the-temperature-data" class="section level2">
 <h2>Download the temperature data</h2>
+<p>If you explore the NASA GISS website for a station (<a href="https://data.giss.nasa.gov/cgi-bin/gistemp/stdata_show_v4.cgi?id=USW00014733&amp;ds=14&amp;dt=1">Buffalo, NY website</a>), you’ll find they provide a link to download the data directly as a comma-separated-values (CSV) file. CSV files are simple text files with commas in between the values. They are a common format for storing and sharing relatively small tabular datasets because they are so simple that many different software can open them, from Excel to ArcGIS.</p>
 <pre class="r"><code>library(tidyverse)
 
-# define the link to the data - you can try this in your browser too
-dataurl=&quot;https://raw.githubusercontent.com/AdamWilsonLab/SpatialDataScience/master/docs/02_assets/buffaloweather.csv&quot;</code></pre>
-<p>This url points to a CSV file with monthly mean temperatures from the GISS dataset. You can <a href="https://raw.githubusercontent.com/AdamWilsonLab/SpatialDataScience/master/docs/02_assets/buffaloweather.csv">check out the file here</a>. Now use <code>read_csv()</code> to download and import the CSV file directly from the website (cool, huh!?).</p>
+# define the link to the data - you can try this in your browser too.  Note that the URL ends in .csv.
+dataurl=&quot;https://data.giss.nasa.gov/tmp/gistemp/STATIONS/tmp_USW00014733_14_0_1/station.csv&quot;</code></pre>
+<p>This url points to a CSV file with monthly mean temperatures from the GISS dataset. You can <a href="https://data.giss.nasa.gov/tmp/gistemp/STATIONS/tmp_USW00014733_14_0_1/station.csv">check out the file here</a>. Now use <code>read_csv()</code> to download and import the CSV file directly from the website (cool, huh!?).</p>
 <pre class="r"><code>temp=read_csv(dataurl,
               skip=1, #skip the first line which has column names
               na=&quot;999.90&quot;, # tell R that 999.90 means missing in this dataset
@@ -454,7 +455,7 @@ dataurl=&quot;https://raw.githubusercontent.com/AdamWilsonLab/SpatialDataScience
 </div>
 <div id="explore-the-data" class="section level2">
 <h2>Explore the data</h2>
-<p>Now use your tools to explore the dataset. You can try <code>View(temp)</code> to open the table in a browsable ‘excel-like’ window. Or <code>summary(temp)</code> to get summaries of each column.</p>
+<p>Now use your tools to explore the dataset. You can try <code>View(temp)</code> to open the table in a browsable ‘excel-like’ window. Or <code>summary(temp)</code> to get summaries of each column. Or <code>glimpse(temp)</code>.</p>
 </div>
 <div id="develop-the-graphic" class="section level2">
 <h2>Develop the graphic</h2>
@@ -480,7 +481,7 @@ dataurl=&quot;https://raw.githubusercontent.com/AdamWilsonLab/SpatialDataScience
 </div>
 <div id="extra-time" class="section level1">
 <h1>Extra time?</h1>
-<p>If you have extra time, use the <a href="https://data.giss.nasa.gov/gistemp/stdata/">station selector</a> to find the links to download additional stations and make additional plots. You could even merge different stations into the same table and plot them together.</p>
+<p>If you have extra time, use the <a href="https://data.giss.nasa.gov/gistemp/station_data_v4_globe/">station selector</a> to find the links to download additional stations and make additional plots. You could even merge different stations into the same table and plot them together.</p>
 <p>Can you think of other plots to consider? Perhaps aggregating to mean temperature by decade?</p>
 </div>
 
