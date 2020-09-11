@@ -10,6 +10,9 @@ library(sp)
 library(sf)
 library(tidyverse)
 library(spData)
+library(tmap)
+library(tmaptools)
+
 ```
 
 ---

@@ -63,6 +63,8 @@ temp=read_csv(dataurl,
 # in the column names and R doesn't like that.
 ```
 
+If the command above gives you an error, open [the page](https://data.giss.nasa.gov/cgi-bin/gistemp/stdata_show_v4.cgi?id=USW00014733&ds=14&dt=1) in the browser and update the `dataurl` link to download the csv. 
+
 ## Explore the data
 
 Now use your tools to explore the dataset.  You can try `View(temp)` to open the table in a browsable 'excel-like' window.  Or `summary(temp)` to get summaries of each column. Or `glimpse(temp)`.

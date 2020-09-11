@@ -1,6 +1,15 @@
 ---
 title: "ggrepel"
 author: "Adam M. Wilson"
+css: https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
+output: 
+  revealjs::revealjs_presentation:
+      lib_dir: externals
+      keep_md: true
+      theme: black
+      highlight: tango
+      self_contained: false
+      transition: zoom
 ---
 
 ## Lead Author: Kamil Slowikowski 
