@@ -26,6 +26,22 @@ Topics for leaders:
 > "The goal of reproducible research is to tie specific instructions to data analysis and experimental data so that scholarship can be recreated, better understood and verified."  <small> Max Kuhn, CRAN Task View: Reproducible Research </small>
 
 
+## Reproducible Research
+
+> "The goal of reproducible research is to tie specific instructions to data analysis and experimental data so that scholarship can be recreated, better understood, and verified."  
+
+<small> Max Kuhn, CRAN Task View: Reproducible Research </small>
+
+
+## Philosphy  
+Remember, the data and code are _real_, the products (tables, figures) are ephemeral...  
+
+## The Claerbout Principle
+> "An article about computational result is advertising, not scholarship. The actual scholarship is the full software environment, code and data, that produced the result." 
+
+<small> Claerbout and Karrenbach, Proceedings of the 62nd Annual International Meeting of the Society of Exploration Geophysics. 1992</small>
+
+
 ## Our work exists on a spectrum of reproducibility
 <img src="img_12/peng-spectrum.jpg" alt="alt text" width="800">
 

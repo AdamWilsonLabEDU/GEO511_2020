@@ -4,29 +4,71 @@ type: Presentation
 week: 2
 ---
 
-# Version Control: \n Keeping track of your files.
+## Today's agenda
 
----
+1. Q&A
+    * Datacamp - Late doesn't matter, you still must complete them
+2. Resource Presentation
+3. Case Study Presentations
+4. Case Study Introduction
 
-> "The goal of reproducible research is to tie specific instructions to data analysis and experimental data so that scholarship can be recreated, better understood, and verified."  
-
-<small> Max Kuhn, CRAN Task View: Reproducible Research </small>
-
-
-## Philosphy  
-Remember, the data and code are _real_, the products (tables, figures) are ephemeral...  
+## Questions?
 
 
-## Our work exists on a spectrum of reproducibility
-<img src="Week_03_Git_assets/peng-spectrum.jpg" alt="alt text" width="800">
 
-<small>Peng 2011, _Science_ 334(6060) pp. 1226-1227</small>
+## Course Schedule
+<iframe
+  src="http://wilsonlab.io/GEO511/Schedule.html"
+  width="100%" height="800">
+</iframe>
+[source](http://wilsonlab.io/GEO511/Schedule.html)
 
-### The Claerbout Principle
-> "An article about computational result is advertising, not scholarship. The actual scholarship is the full software environment, code and data, that produced the result." 
+## Resource Presentations
 
-<small> Claerbout and Karrenbach, Proceedings of the 62nd Annual International Meeting of the Society of Exploration Geophysics. 1992</small>
+<iframe
+  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&single=true"
+  width="100%" height="800">
+</iframe>
+[source](https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&single=true)
 
+# Case Study Presentations
+
+## Let's pick a winner!
+
+<iframe
+  src="https://wheelofnames.com/bw4-gdt"
+  width="100%" height="500">
+</iframe>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&amp;single=true&amp;widget=true&amp;headers=false" style="height: 200px; width: 100%;"></iframe>
+
+
+# Version Control
+
+## Version control with file names
+
+> - `FirstDraft.docx`
+> - `SecondDraft.docx`
+> - `SecondDraft_advisor_comments.docx`
+> - `FinalDraft.docx`
+> - `FinalDraft_advisor_comments.docx`
+> - `FinalDraft_advisor_comments_revised.docx`
+> - `FinalDraft_advisor_comments_916.docx`
+> - `FinalDraft_advisor_comments_Oct10.docx`
+> - `FinalDraft_Nov2_add_figure.docx`
+> - `FinalDraft_advisor_comments_Nov 13.docx`
+> - `Final_final.docx`
+> - `Final_final_revised.docx`
+> - `Final_final_final.docx`
+> - `Final_final_final_final.docx`
+> - `Final_final_why_the_#$*&(@_did_I_come_to_grad_school.docx`
+
+## There must be a better way to keep track of changes!
+
+* Microsoft / Google Docs "Track Changes" (kind of)
+* [SVN](https://subversion.apache.org/)
+      * Centralized (must 'check out' to make changes)
+* [Git](https://git-scm.com/)
+      * Decentralized (everyone has an independent copy)
 
 ## Tracking changes with version control 
 
@@ -80,13 +122,16 @@ The important stuff is hidden in the `.git` folder.
 * Platform to collaboratively develop code
 * Social media to show off your coding wizardry
 
-## Example: course website managed with GitHub
-
-[https://github.com/AdamWilsonLab/SpatialDataScience](https://github.com/AdamWilsonLab/SpatialDataScience)
-
 ## Github Alternatives
 
 Host your own server or use another private company, such as BitBucket.
+
+## Function of Git/GitHub Repository for this course
+
+1. Force you to learn git (a little)
+2. Force you to organize
+3. Prepare you for collaborative coding
+4. Allow me to see your in-class _participation_
 
 ## Git use in this course
 
@@ -98,23 +143,16 @@ Host your own server or use another private company, such as BitBucket.
 6. Push those changes to github (back them up)
 7. repeat
 
+Typically steps 4,5, and 6 are done at the same time.
+
 See Tasks [1](Tk_03.html) and [2](Tk_04.html).
-
-## Function of Git Repository for this course
-
-1. Force you to learn git (a little)
-2. Force you to organize
-3. Prepare you for collaborative coding
-4. Allow me to see your in-class _participation_
 
 ## Commit to GitHub from within RStudio
 
-### Basic Steps
+## Basic Steps
 
 1. Edit: make changes to a file in the repository you cloned above
-2. Stage: tell git which changes you want to commit
-3. Commit (with a message)
-4. Push: send the updated files to GitHub
+2. Stage/Commit/Push: tell git which changes you want to commit, commit them, and Push to Github
 
 ## Edit
 
@@ -134,6 +172,14 @@ Add a _commit message_ and click commit.
 <img src="Week_03_Git_assets/Push.png" alt="alt text" width="100%">
 
 Click the green arrow to sync with GitHub.
+
+## Do's and don'ts
+
+* **DO** only commit text files (like `*.R` scripts) and possibly very small datasets
+* **DO NOT** commit large or non-text files (like `*.ppt`) especially if they will change often (git has 100MB maximum)
+* **DO** use `.gitignore` to ignore certain files and filetypes
+* **DO NOT** move files around after starting the course repository
+* **DO NOT** edit/move the `.git` or `tests` folder
 
 ## Git File Lifecycle
 

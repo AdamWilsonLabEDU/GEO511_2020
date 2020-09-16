@@ -459,24 +459,66 @@ document.getElementsByTagName('head')[0].appendChild(style);
     <h1 class="title">Version Control</h1>
 </section>
 
-<section><section id="version-control-keeping-track-of-your-files." class="title-slide slide level1"><h1>Version Control: Keeping track of your files.</h1></section><section class="slide level2">
-
-<blockquote>
-<p>“The goal of reproducible research is to tie specific instructions to data analysis and experimental data so that scholarship can be recreated, better understood, and verified.”</p>
-</blockquote>
-<p><small> Max Kuhn, CRAN Task View: Reproducible Research </small></p>
-</section><section id="philosphy" class="slide level2">
-<h2>Philosphy</h2>
-<p>Remember, the data and code are <em>real</em>, the products (tables, figures) are ephemeral…</p>
-</section><section id="our-work-exists-on-a-spectrum-of-reproducibility" class="slide level2">
-<h2>Our work exists on a spectrum of reproducibility</h2>
-<p><img src="Week_03_Git_assets/peng-spectrum.jpg" alt="alt text" width="800"></p>
-<p><small>Peng 2011, <em>Science</em> 334(6060) pp. 1226-1227</small></p>
-<h3 id="the-claerbout-principle">The Claerbout Principle</h3>
-<blockquote>
-<p>“An article about computational result is advertising, not scholarship. The actual scholarship is the full software environment, code and data, that produced the result.”</p>
-</blockquote>
-<p><small> Claerbout and Karrenbach, Proceedings of the 62nd Annual International Meeting of the Society of Exploration Geophysics. 1992</small></p>
+<section id="todays-agenda" class="slide level2">
+<h2>Today’s agenda</h2>
+<ol type="1">
+<li>Q&amp;A
+<ul>
+<li>Datacamp - Late doesn’t matter, you still must complete them</li>
+</ul></li>
+<li>Resource Presentation</li>
+<li>Case Study Presentations</li>
+<li>Case Study Introduction</li>
+</ol>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions?</h2>
+</section>
+<section id="course-schedule" class="slide level2">
+<h2>Course Schedule</h2>
+<iframe src="http://wilsonlab.io/GEO511/Schedule.html" width="100%" height="800">
+</iframe>
+<p><a href="http://wilsonlab.io/GEO511/Schedule.html">source</a></p>
+</section>
+<section id="resource-presentations" class="slide level2">
+<h2>Resource Presentations</h2>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&amp;single=true" width="100%" height="800">
+</iframe>
+<p><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&amp;single=true">source</a></p>
+</section>
+<section><section id="case-study-presentations" class="title-slide slide level1"><h1>Case Study Presentations</h1></section><section id="lets-pick-a-winner" class="slide level2">
+<h2>Let’s pick a winner!</h2>
+<iframe src="https://wheelofnames.com/bw4-gdt" width="100%" height="500">
+</iframe>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&amp;single=true&amp;widget=true&amp;headers=false" style="height: 200px; width: 100%;">
+</iframe>
+</section></section>
+<section><section id="version-control" class="title-slide slide level1"><h1>Version Control</h1></section><section id="version-control-with-file-names" class="slide level2">
+<h2>Version control with file names</h2>
+<ul>
+<li class="fragment"><code>FirstDraft.docx</code></li>
+<li class="fragment"><code>SecondDraft.docx</code></li>
+<li class="fragment"><code>SecondDraft_advisor_comments.docx</code></li>
+<li class="fragment"><code>FinalDraft.docx</code></li>
+<li class="fragment"><code>FinalDraft_advisor_comments.docx</code></li>
+<li class="fragment"><code>FinalDraft_advisor_comments_revised.docx</code></li>
+<li class="fragment"><code>FinalDraft_advisor_comments_916.docx</code></li>
+<li class="fragment"><code>FinalDraft_advisor_comments_Oct10.docx</code></li>
+<li class="fragment"><code>FinalDraft_Nov2_add_figure.docx</code></li>
+<li class="fragment"><code>FinalDraft_advisor_comments_Nov 13.docx</code></li>
+<li class="fragment"><code>Final_final.docx</code></li>
+<li class="fragment"><code>Final_final_revised.docx</code></li>
+<li class="fragment"><code>Final_final_final.docx</code></li>
+<li class="fragment"><code>Final_final_final_final.docx</code></li>
+<li class="fragment"><code>Final_final_why_the_#$*&amp;(@_did_I_come_to_grad_school.docx</code></li>
+</ul>
+</section><section id="there-must-be-a-better-way-to-keep-track-of-changes" class="slide level2">
+<h2>There must be a better way to keep track of changes!</h2>
+<ul>
+<li>Microsoft / Google Docs “Track Changes” (kind of)</li>
+<li><a href="https://subversion.apache.org/">SVN</a> * Centralized (must ‘check out’ to make changes)</li>
+<li><a href="https://git-scm.com/">Git</a> * Decentralized (everyone has an independent copy)</li>
+</ul>
 </section><section id="tracking-changes-with-version-control" class="slide level2">
 <h2>Tracking changes with version control</h2>
 <p><strong>Payoffs</strong></p>
@@ -525,12 +567,17 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>Platform to collaboratively develop code</li>
 <li>Social media to show off your coding wizardry</li>
 </ul>
-</section><section id="example-course-website-managed-with-github" class="slide level2">
-<h2>Example: course website managed with GitHub</h2>
-<p><a href="https://github.com/AdamWilsonLab/SpatialDataScience">https://github.com/AdamWilsonLab/SpatialDataScience</a></p>
 </section><section id="github-alternatives" class="slide level2">
 <h2>Github Alternatives</h2>
 <p>Host your own server or use another private company, such as BitBucket.</p>
+</section><section id="function-of-gitgithub-repository-for-this-course" class="slide level2">
+<h2>Function of Git/GitHub Repository for this course</h2>
+<ol type="1">
+<li>Force you to learn git (a little)</li>
+<li>Force you to organize</li>
+<li>Prepare you for collaborative coding</li>
+<li>Allow me to see your in-class <em>participation</em></li>
+</ol>
 </section><section id="git-use-in-this-course" class="slide level2">
 <h2>Git use in this course</h2>
 <ol type="1">
@@ -542,23 +589,15 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>Push those changes to github (back them up)</li>
 <li>repeat</li>
 </ol>
+<p>Typically steps 4,5, and 6 are done at the same time.</p>
 <p>See Tasks <a href="Tk_03.html">1</a> and <a href="Tk_04.html">2</a>.</p>
-</section><section id="function-of-git-repository-for-this-course" class="slide level2">
-<h2>Function of Git Repository for this course</h2>
-<ol type="1">
-<li>Force you to learn git (a little)</li>
-<li>Force you to organize</li>
-<li>Prepare you for collaborative coding</li>
-<li>Allow me to see your in-class <em>participation</em></li>
-</ol>
 </section><section id="commit-to-github-from-within-rstudio" class="slide level2">
 <h2>Commit to GitHub from within RStudio</h2>
-<h3 id="basic-steps">Basic Steps</h3>
+</section><section id="basic-steps" class="slide level2">
+<h2>Basic Steps</h2>
 <ol type="1">
 <li>Edit: make changes to a file in the repository you cloned above</li>
-<li>Stage: tell git which changes you want to commit</li>
-<li>Commit (with a message)</li>
-<li>Push: send the updated files to GitHub</li>
+<li>Stage/Commit/Push: tell git which changes you want to commit, commit them, and Push to Github</li>
 </ol>
 </section><section id="edit" class="slide level2">
 <h2>Edit</h2>
@@ -575,6 +614,15 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <h2>Sync (<code>push</code>)</h2>
 <p><img src="Week_03_Git_assets/Push.png" alt="alt text" width="100%"></p>
 <p>Click the green arrow to sync with GitHub.</p>
+</section><section id="dos-and-donts" class="slide level2">
+<h2>Do’s and don’ts</h2>
+<ul>
+<li><strong>DO</strong> only commit text files (like <code>*.R</code> scripts) and possibly very small datasets</li>
+<li><strong>DO NOT</strong> commit large or non-text files (like <code>*.ppt</code>) especially if they will change often (git has 100MB maximum)</li>
+<li><strong>DO</strong> use <code>.gitignore</code> to ignore certain files and filetypes</li>
+<li><strong>DO NOT</strong> move files around after starting the course repository</li>
+<li><strong>DO NOT</strong> edit/move the <code>.git</code> or <code>tests</code> folder</li>
+</ul>
 </section><section id="git-file-lifecycle" class="slide level2">
 <h2>Git File Lifecycle</h2>
 <p><img src="Week_03_Git_assets/lifecycle.png" alt="alt text" width="100%"></p>
