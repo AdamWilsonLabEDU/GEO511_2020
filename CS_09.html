@@ -451,13 +451,24 @@ data(us_states)</code></pre>
 <p>In this case study you will download storm track data from NOAA, make a summary plot, and quantify how many storms have hit each of the United States. This will require you to use a spatial join (<code>st_join</code>).</p>
 <div id="your-goal" class="section level3">
 <h3>Your goal</h3>
+<pre class="r"><code># 2020 update - it appears NOAA changed the URL which broke the R function.  Use the following instead of storm_shp().
+dataurl=&quot;https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r00/access/shapefile/IBTrACS.NA.list.v04r00.points.zip&quot;
+tdir=tempdir()
+download.file(dataurl,destfile=file.path(tdir,&quot;temp.zip&quot;))
+unzip(file.path(tdir,&quot;temp.zip&quot;),exdir = tdir)
+list.files(tdir)</code></pre>
+<pre><code>## [1] &quot;file6d111342935&quot;                   &quot;file6d16596f0b7&quot;                  
+## [3] &quot;IBTrACS.NA.list.v04r00.points.dbf&quot; &quot;IBTrACS.NA.list.v04r00.points.prj&quot;
+## [5] &quot;IBTrACS.NA.list.v04r00.points.shp&quot; &quot;IBTrACS.NA.list.v04r00.points.shx&quot;
+## [7] &quot;temp.zip&quot;</code></pre>
+<pre class="r"><code>storm_data &lt;- read_sf(list.files(tdir,pattern=&quot;.shp&quot;))</code></pre>
 <p>Your desired figure looks something like the following: <img src="CS_09_files/figure-html/unnamed-chunk-4-1.png" /><!-- --></p>
 Calculate a table of the five states that have experienced the most storms.
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
-NAME
+state
 </th>
 <th style="text-align:right;">
 storms
@@ -470,7 +481,7 @@ storms
 Florida
 </td>
 <td style="text-align:right;">
-77
+82
 </td>
 </tr>
 <tr>
@@ -478,7 +489,7 @@ Florida
 North Carolina
 </td>
 <td style="text-align:right;">
-51
+61
 </td>
 </tr>
 <tr>
@@ -486,7 +497,7 @@ North Carolina
 Georgia
 </td>
 <td style="text-align:right;">
-49
+55
 </td>
 </tr>
 <tr>
@@ -494,7 +505,7 @@ Georgia
 Texas
 </td>
 <td style="text-align:right;">
-48
+52
 </td>
 </tr>
 <tr>
@@ -502,7 +513,7 @@ Texas
 South Carolina
 </td>
 <td style="text-align:right;">
-40
+47
 </td>
 </tr>
 </tbody>
@@ -540,9 +551,10 @@ Show Hints
 <li>Calculate table of the five states with most storms.
 <ul>
 <li>use <code>st_transform</code> to reproject <code>us_states</code> to the reference system of the <code>storms</code> object (you can extract a CRS from a sf object with <code>st_crs(storms)</code></li>
+<li>Rename the <code>NAME</code> column in the state data to <code>state</code> to avoid confusion with storm name using <code>select(state=NAME)</code></li>
 <li>Perform a spatial join between the storm database and the states object with: <code>storm_states &lt;- st_join(storms, states,</code> <code>join = st_intersects,left = F)</code>. This will ’add` the state to any storm that was recorded within that state.</li>
-<li>Use <code>group_by(NAME)</code> to group the next step by US state (beware that there is <code>NAME</code> for name of state and <code>Name</code> for name of storm. storm_states</li>
-<li>use <code>summarize(storms=length(unique(Name)))</code> to count how many unique storms occurred in each state.</li>
+<li>Use <code>group_by(state)</code> to group the next step by US state</li>
+<li>use <code>summarize(storms=length(unique(NAME)))</code> to count how many unique storms occurred in each state.</li>
 <li>use <code>arrange(desc(storms))</code> to sort by the number of storms in each state</li>
 <li>use <code>slice(1:5)</code> to keep only the top 5 states ```</li>
 </ul></li>
@@ -556,8 +568,9 @@ Extra time? Try this…
 </button>
 <div id="extras" class="collapse">
 <p>Try to replicate the following graphic using the data you transformed above.</p>
+<pre><code>## `summarise()` regrouping output by &#39;state&#39; (override with `.groups` argument)</code></pre>
 <p><img src="CS_09_files/figure-html/unnamed-chunk-6-1.png" /><!-- --></p>
-<p>Can you sort the rows (states) in order of storm frequency (instead of alphabetical?</p>
+<p>Can you sort the rows (states) in order of storm frequency (instead of alphabetical)?</p>
 </div>
 </div>
 </div>

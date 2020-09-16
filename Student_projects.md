@@ -134,9 +134,6 @@ You are invited to explore the student projects below (click on a title to visit
 
 
 
-
-
-
 <table>
  <thead>
   <tr>

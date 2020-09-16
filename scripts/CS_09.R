@@ -46,6 +46,8 @@ data(us_states)
 
 #' 
 
+#' 
+
 #' Your desired figure looks something like the following:
 
 #' 
@@ -82,10 +84,11 @@ data(us_states)
 #'    `xlim=region[c(1,3)])` to crop the plot to the region.
 #' 4. Calculate table of the five states with most storms.
 #'    * use `st_transform` to reproject `us_states` to the reference system of the `storms` object (you can extract a CRS from a sf object with `st_crs(storms)`
+#'    * Rename the `NAME` column in the state data to `state` to avoid confusion with storm name using `select(state=NAME)`
 #'    * Perform a spatial join between the storm database and the states object with: `storm_states <- st_join(storms, states, `
 #'    `join = st_intersects,left = F)`.  This will 'add` the state to any storm that was recorded within that state.
-#'    * Use `group_by(NAME)` to group the next step by US state (beware that there is `NAME` for name of state and `Name` for name of storm.  storm_states
-#'    * use `summarize(storms=length(unique(Name)))` to count how many unique storms occurred in each state.
+#'    * Use `group_by(state)` to group the next step by US state
+#'    * use `summarize(storms=length(unique(NAME)))` to count how many unique storms occurred in each state.
 #'    * use `arrange(desc(storms))` to sort by the number of storms in each state
 #'    * use `slice(1:5)` to keep only the top 5 states
 #' ```
@@ -107,6 +110,6 @@ data(us_states)
 #' 
 
 #' 
-#' Can you sort the rows (states) in order of storm frequency (instead of alphabetical?
+#' Can you sort the rows (states) in order of storm frequency (instead of alphabetical)?
 #' </div>
 #' </div>

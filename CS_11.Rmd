@@ -114,7 +114,7 @@ buffalo_dots=
 ```
 
 Your final result should look something like this:
-```{r, echo=F, purl=F, fig.width=2,fig.height=2, warning=F}
+```{r, echo=F, purl=F, fig.width=2,fig.height=2, warning=F, as.is=T}
 mapview(buffalo_dots,zcol="variable",cex=1,lwd=0)
 ```
 

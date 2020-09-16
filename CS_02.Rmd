@@ -46,7 +46,11 @@ library(tidyverse)
 
 # define the link to the data - you can try this in your browser too.  Note that the URL ends in .csv.
 dataurl="https://data.giss.nasa.gov/tmp/gistemp/STATIONS/tmp_USW00014733_14_0_1/station.csv"
+
+# if the url above gives you trouble, you can download a copy from my github
+dataurl="https://raw.githubusercontent.com/AdamWilsonLab/GEO511/master/CS_02.csv"
 ```
+
 
 This url points to a CSV file with monthly mean temperatures from the GISS dataset.  You can [check out the file here](`r dataurl`).  Now use `read_csv()` to download and import the CSV file directly from the website (cool, huh!?).
 

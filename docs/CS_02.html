@@ -440,8 +440,11 @@ div.tocify {
 <pre class="r"><code>library(tidyverse)
 
 # define the link to the data - you can try this in your browser too.  Note that the URL ends in .csv.
-dataurl=&quot;https://data.giss.nasa.gov/tmp/gistemp/STATIONS/tmp_USW00014733_14_0_1/station.csv&quot;</code></pre>
-<p>This url points to a CSV file with monthly mean temperatures from the GISS dataset. You can <a href="https://data.giss.nasa.gov/tmp/gistemp/STATIONS/tmp_USW00014733_14_0_1/station.csv">check out the file here</a>. Now use <code>read_csv()</code> to download and import the CSV file directly from the website (cool, huh!?).</p>
+dataurl=&quot;https://data.giss.nasa.gov/tmp/gistemp/STATIONS/tmp_USW00014733_14_0_1/station.csv&quot;
+
+# if the url above gives you trouble, you can download a copy from my github
+dataurl=&quot;https://raw.githubusercontent.com/AdamWilsonLab/GEO511/master/CS_02.csv&quot;</code></pre>
+<p>This url points to a CSV file with monthly mean temperatures from the GISS dataset. You can <a href="https://raw.githubusercontent.com/AdamWilsonLab/GEO511/master/CS_02.csv">check out the file here</a>. Now use <code>read_csv()</code> to download and import the CSV file directly from the website (cool, huh!?).</p>
 <pre class="r"><code>temp=read_csv(dataurl,
               skip=1, #skip the first line which has column names
               na=&quot;999.90&quot;, # tell R that 999.90 means missing in this dataset

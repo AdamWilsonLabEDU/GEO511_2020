@@ -46,9 +46,19 @@ data(us_states)
 In this case study you will download storm track data from NOAA, make a summary plot, and quantify how many storms have hit each of the United States.  This will require you to use a spatial join (`st_join`).
 
 ### Your goal
-```{r download_data, echo=F, purl=F, warning=F}
+```{r download_data, eval=F, echo=F, purl=F, warning=F}
 storms <- storm_shp(basin = "NA")
 storm_data <- read_sf(storms$path)
+```
+
+```{r download_data2, eval=T, echo=T, purl=F, warning=F}
+# 2020 update - it appears NOAA changed the URL which broke the R function.  Use the following instead of storm_shp().
+dataurl="https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r00/access/shapefile/IBTrACS.NA.list.v04r00.points.zip"
+tdir=tempdir()
+download.file(dataurl,destfile=file.path(tdir,"temp.zip"))
+unzip(file.path(tdir,"temp.zip"),exdir = tdir)
+list.files(tdir)
+storm_data <- read_sf(list.files(tdir,pattern=".shp"))
 ```
 
 ```{r, echo=F, purl=F, warning=F}
@@ -95,15 +105,16 @@ map1
 Calculate a table of the five states that have experienced the most storms.
 ```{r, echo=F, purl=F, warning=F, message=F}
 library(knitr);library(kableExtra)
-states<- st_transform(us_states,st_crs(storms))
+states<- st_transform(us_states,st_crs(storms)) %>% 
+   dplyr::select(state=NAME)
 
 storm_states <- st_join(storms, states, 
-                join = st_intersects, 
-                left = F)
+                         join = st_intersects, 
+                         left = F)
 
 storm_states%>%
-   group_by(NAME)%>%
-   summarize(storms=length(unique(Name)))%>%
+   group_by(state)%>%
+   summarize(storms=length(unique(NAME)))%>%
    st_set_geometry(NULL)%>%
    arrange(desc(storms))%>%
    slice(1:5)%>%
@@ -140,10 +151,11 @@ storm_states%>%
    `xlim=region[c(1,3)])` to crop the plot to the region.
 4. Calculate table of the five states with most storms.
    * use `st_transform` to reproject `us_states` to the reference system of the `storms` object (you can extract a CRS from a sf object with `st_crs(storms)`
+   * Rename the `NAME` column in the state data to `state` to avoid confusion with storm name using `select(state=NAME)`
    * Perform a spatial join between the storm database and the states object with: `storm_states <- st_join(storms, states, `
    `join = st_intersects,left = F)`.  This will 'add` the state to any storm that was recorded within that state.
-   * Use `group_by(NAME)` to group the next step by US state (beware that there is `NAME` for name of state and `Name` for name of storm.  storm_states
-   * use `summarize(storms=length(unique(Name)))` to count how many unique storms occurred in each state.
+   * Use `group_by(state)` to group the next step by US state
+   * use `summarize(storms=length(unique(NAME)))` to count how many unique storms occurred in each state.
    * use `arrange(desc(storms))` to sort by the number of storms in each state
    * use `slice(1:5)` to keep only the top 5 states
 ```
@@ -165,19 +177,20 @@ Try to replicate the following graphic using the data you transformed above.
 
 ```{r, echo=F, purl=F, fig.height=10,fig.width=10}
 storm_states_year <- storm_states%>%
-   group_by(NAME,year)%>%
-   summarize(storms=length(unique(Name)))
+   group_by(state,year)%>%
+   summarize(storms=length(unique(NAME))) 
 
 ggplot(storm_states_year,
-#       aes(y=fct_reorder(NAME,storms),
-       aes(y=NAME,
+#       aes(y=fct_reorder(state, storms),
+       aes(y=state,
            x=year,
            fill=storms))+
    geom_tile()+
    scale_fill_viridis_c(name="# Storms")+
    ylab("State")
+
 ```
 
-Can you sort the rows (states) in order of storm frequency (instead of alphabetical?
+Can you sort the rows (states) in order of storm frequency (instead of alphabetical)?
 </div>
 </div>

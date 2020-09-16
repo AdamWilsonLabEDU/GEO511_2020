@@ -22,7 +22,7 @@ library(fontawesome)
 
 update=F
 
-if(update){
+#if(update){
 d=data.frame(url=
   paste0("https://geo511-2019.github.io/",c(
   "2019-geo511-project-AJKlisavage",
@@ -51,7 +51,7 @@ d=d%>%mutate(user=sub("/","",
       github=paste0("https://github.com/geo511-2019/2019-geo511-project-",
                    user))
 for(i in 1:nrow(d)) {
-  print(i)
+#  print(i)
   d$title[i] <- ifelse(
     is.na(tryCatch(read_html(d$url[i], verbose=T), 
                    error = function(e){NA})),
@@ -60,13 +60,13 @@ for(i in 1:nrow(d)) {
   )
 }
 
-save(d,file="Student_projects_data.Rdata")
-}
+#save(d,file="2020_Student_projects_data.Rdata")
+#}
 ```
 
 
 ```{r, echo=F, message=F, results='hide', eval=T}
-load("Student_projects_data.Rdata")
+#load("2020_Student_projects_data.Rdata")
 ```
 
 ```{r,asis=T, echo=F, eval=T}
@@ -84,7 +84,9 @@ d%>%
 ## 2018
 
 ```{r,echo=F, warning=F, message=F, eval=T}
-d=data.frame(url=c(
+#if(update){
+
+  d_2018=data.frame(url=c(
 #  "https://adamwilsonlabedu.github.io/geo503-2018-finalproject-dnkarp/",
   "https://adamwilsonlabedu.github.io/geo503-2018-finalproject-YingLuGit/",
 #  "https://adamwilsonlabedu.github.io/geo503-2018-finalproject-EllieGaiser",
@@ -110,28 +112,28 @@ d=data.frame(url=c(
   ),
   stringsAsFactors = F)
 
-d=d%>%mutate(user=sub("/","",
+d_2018=d_2018%>%mutate(user=sub("/","",
                       sub("https://adamwilsonlabedu.github.io/geo503-2018-finalproject-","",url,
                           ignore.case = T)))
-```
-
-
-```{r, echo=F, message=F, results='hide', eval=T}
-
-for(i in 1:nrow(d)) {
-  print(i)
-  d$title[i] <- ifelse(
-    is.na(tryCatch(read_html(d$url[i], verbose=T), 
+for(i in 1:nrow(d_2018)) {
+ # print(i)
+  d_2018$title[i] <- ifelse(
+    is.na(tryCatch(read_html(d_2018$url[i], verbose=T), 
                    error = function(e){NA})),
          NA,
-         read_html(d$url[i]) %>% html_nodes("h1")%>%html_text()%>%first()
+         read_html(d_2018$url[i]) %>% html_nodes("h1")%>%html_text()%>%first()
   )
 }
+
+#save(d_2018,file="2020_Student_projects_data.Rdata")
+#}
 
 ```
 
 ```{r,asis=T, echo=F, eval=T}
-d%>%
+#load("2020_Student_projects_data.Rdata")
+
+d_2018%>%
   arrange(user)%>%
 #  filter(group==1)%>%
   mutate(Title=paste0("[",title,"](",url,")"))%>%
