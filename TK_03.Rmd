@@ -21,6 +21,15 @@ tasks:
   - Confirm that the changes are visible on your github page
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(kableExtra)
+source("functions.R")
+
+```
+
+
 # Reading
 
 ```{r reading,results='asis',echo=F}
