@@ -41,6 +41,14 @@ week: 2
 </iframe>
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&amp;single=true&amp;widget=true&amp;headers=false" style="height: 200px; width: 100%;"></iframe>
 
+# Next Week's Case Study
+
+<iframe
+  src="http://wilsonlab.io/GEO511/CS_03.html"
+  width="100%" height="800">
+</iframe>
+[source](http://wilsonlab.io/GEO511/CS_03.html)
+
 
 # Version Control
 
@@ -181,25 +189,11 @@ Click the green arrow to sync with GitHub.
 * **DO NOT** move files around after starting the course repository
 * **DO NOT** edit/move the `.git` or `tests` folder
 
-## Git File Lifecycle
-
-<img src="Week_03_Git_assets/Lifecycle.png" alt="alt text" width="100%">
-
 ## And much more!
 
 Git has many, many more features...
 
-#  Let's do it!
-
-## Task 2 {data-background-iframe="../TK_03.html"}
-
-[Task 2](../TK_03.html)
-
-# More advanced Git
-
-## Git command line from RStudio
-
-RStudio has limited functionality.  
+RStudio GUI has limited functionality.  
 
 <img src="Week_03_Git_assets/CommandLine.png" alt="alt text" width="75%">
 

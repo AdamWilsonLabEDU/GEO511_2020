@@ -7,7 +7,7 @@ output:
 ---
 
 ```{r, echo=FALSE, message=FALSE, results='hide', purl=FALSE}
-library(tidyverse)
+library(tidyverse) 
 source("functions.R")
 
 yamls=append(
