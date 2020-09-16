@@ -160,7 +160,7 @@ ___
 - Briefly describe functions that seem especially useful in the README.md file for this week.
 - Confirm that all tasks and case studies you have completed have been committed in your course repository and pushed to Github.
 - Look ahead at Task 6 (Project Proposal) and start thinking about possibilities
-- Post at least one rough project idea (with links, etc.) to Slack in the [Project Channel](https://ubspatialdatascience.slack.com/messages/CDNEG4WN8).
+- Post at least one rough project idea (with links, etc.) to Slack in the Projects Channel.
 </div>
 ___
 ## [ CS_05 :  Beware the Canadians! ]( ./CS_05.html ) 

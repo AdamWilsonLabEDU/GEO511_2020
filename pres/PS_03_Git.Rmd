@@ -8,9 +8,11 @@ week: 2
 
 1. Q&A
     * Datacamp - Late doesn't matter, you still must complete them
-2. Resource Presentation
-3. Case Study Presentations
-4. Case Study Introduction
+2. Project Overview
+3. Resource Presentation
+4. Case Study Presentations
+5. Case Study Introduction
+6. Git Overview
 
 ## Questions?
 
@@ -22,6 +24,45 @@ week: 2
   width="100%" height="800">
 </iframe>
 [source](http://wilsonlab.io/GEO511/Schedule.html)
+
+# Project Overview
+
+## Project Timeline
+
+Infographic/Poster
+
+* Week 7 (10/12)  Project proposal due
+* Week 8 (10/19) Set up Project Website
+* Week 11 (11/9) First Draft
+* Week 12 (11/16) Peer review of final projects
+* Week 15 (12/7) Final Presentations
+
+## Project Requirements
+
+* Fairly Open / Flexible
+* Data:
+      * 2+ sources
+      * 3+ dimensions (e.g. latitude, longitude, time, and maybe more) 
+      * Publically available downloaded within the R/Rmd script
+Question / Problem: Analysis centered on a single question/topic/problem
+
+
+Common mistake: taking on too much - small and beautiful better than large and gangling.
+
+## Project Structure
+
+* Title 						[<25 words]
+* Introduction  				[~ 150 words]
+* Materials and methods 		[~ 150 words]
+* Results 						[~200 words]
+* Conclusions 					[~200 words]
+* References
+
+Total						[~1.5 pages of text]
+And all code to reproduce the analysis [1-5 pages of code]!!
+
+## Browse previous projects
+
 
 ## Resource Presentations
 
