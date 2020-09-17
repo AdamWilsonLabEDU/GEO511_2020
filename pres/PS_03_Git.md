@@ -14,15 +14,19 @@ week: 2
 5. Case Study Introduction
 6. Git Overview
 
-## Github Error Messages
+## Github- "Who are you?"
+"Please tell me who you are". 
 
 ```
-Run failed for master (1f4a6cb)
-Repository: geo511-2020/geo511-2020-tasks-name
-Workflow: classroom-tests
+## install if needed (do this exactly once):
+## install.packages("usethis")
+library(usethis)
+use_git_config(
+    user.name = "Jane Doe",
+    user.email = "jane@example.org")
 ```
 
-## Questions?
+## Other Questions?
 
 
 
@@ -39,6 +43,7 @@ Workflow: classroom-tests
 
 Infographic/Poster
 
+* Week 4 (9/21) Rough Project Idea to Slack
 * Week 7 (10/12)  Project proposal due
 * Week 8 (10/19) Set up Project Website
 * Week 11 (11/9) First Draft
@@ -71,6 +76,11 @@ And all code to reproduce the analysis [1-5 pages of code]!!
 
 ## Browse previous projects
 
+<iframe
+  src="http://wilsonlab.io/GEO511/Student_projects.html"
+  width="100%" height="800">
+</iframe>
+[source](http://wilsonlab.io/GEO511/Student_projects.html)
 
 ## Resource Presentations
 
