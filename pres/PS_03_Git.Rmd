@@ -14,6 +14,14 @@ week: 2
 5. Case Study Introduction
 6. Git Overview
 
+## Github Error Messages
+
+```
+Run failed for master (1f4a6cb)
+Repository: geo511-2020/geo511-2020-tasks-name
+Workflow: classroom-tests
+```
+
 ## Questions?
 
 
