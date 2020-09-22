@@ -4,7 +4,7 @@ output:
       lib_dir: externals
       keep_md: true
       incremental: false
-      theme: black
+      theme: sky
       highlight: tango
       center: false
       code_folding: hide
