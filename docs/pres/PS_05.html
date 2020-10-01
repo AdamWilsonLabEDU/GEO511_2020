@@ -657,8 +657,8 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <h2>Coordinate reference system</h2>
 <p>Coordinates only have meaning on the Earth’s surface when their coordinate reference system (CRS) is known.</p>
 <p>Overview of <a href="https://www.e-education.psu.edu/natureofgeoinfo/c2_p28.html">projection systems</a></p>
-</section><section id="reproject-to-equal-earth-projection" class="slide level2">
-<h2>Reproject to <a href="http://equal-earth.com/equal-earth-projection.html">“Equal Earth” projection</a></h2>
+</section><section id="reproject-to-goode-homolosine-projection" class="slide level2">
+<h2>Reproject to <a href="https://proj.org/operations/projections/goode.html">“Goode Homolosine” projection</a></h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">data</span>(world) <span class="co"># from spData package</span></a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">st_crs</span>(world)</a></code></pre></div>
 <pre><code>## Coordinate Reference System:
@@ -674,106 +674,17 @@ document.getElementsByTagName('head')[0].appendChild(style);
 ##     UNIT[&quot;degree&quot;,0.0174532925199433,
 ##         AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],
 ##     AUTHORITY[&quot;EPSG&quot;,&quot;4326&quot;]]</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">world_albers=world <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="st">  </span><span class="kw">st_transform</span>(<span class="dt">crs =</span> <span class="st">&quot;+proj=eqearth +wktext&quot;</span>)</a></code></pre></div>
-<pre><code>## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">p1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(world,<span class="kw">aes</span>(<span class="dt">fill=</span>gdpPercap))<span class="op">+</span><span class="kw">geom_sf</span>()</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">p2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(world_albers,<span class="kw">aes</span>(<span class="dt">fill=</span>gdpPercap))<span class="op">+</span><span class="kw">geom_sf</span>()</a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="kw">ggarrange</span>(p1,p2,<span class="dt">common.legend =</span> T)</a></code></pre></div>
-<pre><code>## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth
-
-## Warning in CPL_crs_parameters(x): GDAL Error 1: PROJ: proj_as_wkt: Unsupported
-## conversion method: Equal Earth</code></pre>
-<p><img data-src="PS_05_files/figure-revealjs/unnamed-chunk-3-1.png" /></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">world_homolosine=world <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="st">  </span><span class="kw">st_transform</span>(<span class="dt">crs =</span> <span class="st">&quot;+proj=goode&quot;</span>)</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">p1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(world,<span class="kw">aes</span>(<span class="dt">fill=</span>gdpPercap))<span class="op">+</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_sf</span>()</a>
+<a class="sourceLine" id="cb3-6" data-line-number="6">p2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(world_homolosine,<span class="kw">aes</span>(<span class="dt">fill=</span>gdpPercap))<span class="op">+</span></a>
+<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="st">  </span><span class="kw">geom_sf</span>()</a></code></pre></div>
+</section><section id="section" class="slide level2">
+<h2></h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">ggarrange</span>(p1,p2,<span class="dt">common.legend =</span> T)</a></code></pre></div>
+<p><img data-src="PS_05_files/figure-revealjs/unnamed-chunk-4-1.png" /></p>
 </section><section id="defining-a-projection" class="slide level2">
 <h2>Defining a projection</h2>
 <ul>
@@ -790,7 +701,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li><code>GEOGCS[&quot;WGS 84&quot;,   DATUM[&quot;WGS_1984&quot;,    SPHEROID[&quot;WGS 84&quot;,6378137,298.257223563,        AUTHORITY[&quot;EPSG&quot;,&quot;7030&quot;]],    AUTHORITY[&quot;EPSG&quot;,&quot;6326&quot;]],   PRIMEM[&quot;Greenwich&quot;,0,    AUTHORITY[&quot;EPSG&quot;,&quot;8901&quot;]],   UNIT[&quot;degree&quot;,0.01745329251994328,    AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],   AUTHORITY[&quot;EPSG&quot;,&quot;4326&quot;]]</code></li>
 </ul></li>
 </ul>
-<p><a href="https://spatialreference.org/ref/epsg/wgs-84/prettywkt/">spatialreference.org</a></p>
+<p><a href="https://spatialreference.org/ref/epsg/wgs-84/prettywkt/">spatialreference.org</a> <a href="https://proj.org/operations/projections/index.html">proj.org</a></p>
 </section><section id="how-simple-features-in-r-are-organized" class="slide level2">
 <h2>How simple features in R are organized</h2>
 <p>Like <a href="http://postgis.net/">PostGIS</a>, all functions in <code>sf</code> prefixed by <code>st_</code> (<em>spatial and temporal</em>). Easily findable by command-line completion.</p>
@@ -803,7 +714,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 </ul>
 </section><section class="slide level2">
 
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">glimpse</span>(world)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">glimpse</span>(world)</a></code></pre></div>
 <pre><code>## Rows: 177
 ## Columns: 11
 ## $ iso_a2    &lt;chr&gt; &quot;FJ&quot;, &quot;TZ&quot;, &quot;EH&quot;, &quot;CA&quot;, &quot;US&quot;, &quot;KZ&quot;, &quot;UZ&quot;, &quot;PG&quot;, &quot;ID&quot;, &quot;AR&quot;,…
@@ -844,9 +755,9 @@ POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))`</code></pre>
 <p><code>sp</code> and <code>sf</code> are <em>not</em> only formats for spatial objects. Other spatial packages may use their own class definitions for spatial data (for example <code>spatstat</code>). Usually you can find functions that convert <code>sp</code> and increasingly <code>sf</code> objects to and from these formats.</p>
 </section><section class="slide level2">
 
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">world_sp =<span class="st"> </span><span class="kw">as</span>(world, <span class="st">&quot;Spatial&quot;</span>)</a>
-<a class="sourceLine" id="cb10-2" data-line-number="2">world_sf =<span class="st"> </span><span class="kw">st_as_sf</span>(world_sp)</a>
-<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="kw">str</span>(world_sp)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">world_sp =<span class="st"> </span><span class="kw">as</span>(world, <span class="st">&quot;Spatial&quot;</span>)</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">world_sf =<span class="st"> </span><span class="kw">st_as_sf</span>(world_sp)</a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="kw">str</span>(world_sp)</a></code></pre></div>
 <pre><code>## Formal class &#39;SpatialPolygonsDataFrame&#39; [package &quot;sp&quot;] with 5 slots
 ##   ..@ data       :&#39;data.frame&#39;:  177 obs. of  10 variables:
 ##   .. ..$ iso_a2   : chr [1:177] &quot;FJ&quot; &quot;TZ&quot; &quot;EH&quot; &quot;CA&quot; ...
@@ -2550,7 +2461,7 @@ POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))`</code></pre>
 ##   .. .. ..@ projargs: chr &quot;+proj=longlat +datum=WGS84 +no_defs&quot;</code></pre>
 </section><section class="slide level2">
 
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">str</span>(world)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">str</span>(world)</a></code></pre></div>
 <pre><code>## tibble [177 × 11] (S3: sf/tbl_df/tbl/data.frame)
 ##  $ iso_a2   : chr [1:177] &quot;FJ&quot; &quot;TZ&quot; &quot;EH&quot; &quot;CA&quot; ...
 ##  $ name_long: chr [1:177] &quot;Fiji&quot; &quot;Tanzania&quot; &quot;Western Sahara&quot; &quot;Canada&quot; ...
@@ -2579,20 +2490,20 @@ POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))`</code></pre>
 <li><p>The structures in the <strong>sp</strong> packages are more complicated - <code>str(world_sf)</code> vs <code>str(world_sp)</code></p></li>
 <li><p>Moreover, many of the <strong>sp</strong> functions are not “pipeable” (it’s hard to combine them with the <strong>tidyverse</strong>)</p></li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">world_sp <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(name_long <span class="op">==</span><span class="st"> &quot;United Kingdom&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">world_sp <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(name_long <span class="op">==</span><span class="st"> &quot;United Kingdom&quot;</span>)</a></code></pre></div>
 <p><code>Error in UseMethod(&quot;filter_&quot;) :    no applicable method for 'filter_' applied to an object of class &quot;c('SpatialPolygonsDataFrame', 'SpatialPolygons', 'Spatial', 'SpatialPolygonsNULL', 'SpatialVector')&quot;</code></p>
 </section><section class="slide level2">
 
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">world <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(name_long <span class="op">==</span><span class="st"> &quot;United Kingdom&quot;</span>)<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="st">  </span><span class="kw">ggplot</span>()<span class="op">+</span><span class="kw">geom_sf</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">world <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(name_long <span class="op">==</span><span class="st"> &quot;United Kingdom&quot;</span>)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="st">  </span><span class="kw">ggplot</span>()<span class="op">+</span><span class="kw">geom_sf</span>()</a></code></pre></div>
 </section><section id="reading-and-writing-spatial-data" class="slide level2">
 <h2>Reading and writing spatial data</h2>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">vector_filepath =<span class="st"> </span><span class="kw">system.file</span>(<span class="st">&quot;shapes/world.gpkg&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;spData&quot;</span>)</a>
-<a class="sourceLine" id="cb16-2" data-line-number="2">vector_filepath</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">vector_filepath =<span class="st"> </span><span class="kw">system.file</span>(<span class="st">&quot;shapes/world.gpkg&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;spData&quot;</span>)</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2">vector_filepath</a></code></pre></div>
 <pre><code>## [1] &quot;/Library/Frameworks/R.framework/Versions/4.0/Resources/library/spData/shapes/world.gpkg&quot;</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">world =<span class="st"> </span><span class="kw">st_read</span>(vector_filepath)</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">world =<span class="st"> </span><span class="kw">st_read</span>(vector_filepath)</a></code></pre></div>
 <pre><code>## Reading layer `world&#39; from data source `/Library/Frameworks/R.framework/Versions/4.0/Resources/library/spData/shapes/world.gpkg&#39; using driver `GPKG&#39;
 ## Simple feature collection with 177 features and 10 fields
 ## geometry type:  MULTIPOLYGON
@@ -2602,7 +2513,7 @@ POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))`</code></pre>
 <p>Counterpart to <code>st_read()</code> is the <code>st_write</code> function, e.g. <code>st_write(world, 'data/new_world.gpkg')</code>. A full list of supported formats could be found using <code>sf::st_drivers()</code>.</p>
 </section><section id="structure-of-the-sf-objects" class="slide level2">
 <h2>Structure of the sf objects</h2>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">world</a></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">world</a></code></pre></div>
 <pre><code>## Simple feature collection with 177 features and 10 fields
 ## geometry type:  MULTIPOLYGON
 ## dimension:      XY
@@ -2617,13 +2528,13 @@ POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))`</code></pre>
 ## 1  19289.97   885806  69.960  8222.254 MULTIPOLYGON (((180 -16.067...
 ## 2 932745.79 52234869  64.163  2402.099 MULTIPOLYGON (((33.90371 -0...
 ## 3  96270.60       NA      NA        NA MULTIPOLYGON (((-8.66559 27...</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="kw">class</span>(world)</a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw">class</span>(world)</a></code></pre></div>
 <pre><code>## [1] &quot;sf&quot;         &quot;data.frame&quot;</code></pre>
 </section><section id="structure-of-the-sf-objects-1" class="slide level2">
 <h2>Structure of the sf objects</h2>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">world<span class="op">$</span>name_long</a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1">world<span class="op">$</span>name_long</a></code></pre></div>
 <pre><code>## [1] &quot;Fiji&quot;           &quot;Tanzania&quot;       &quot;Western Sahara&quot;</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">world<span class="op">$</span>geom</a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">world<span class="op">$</span>geom</a></code></pre></div>
 <pre><code>## Geometry set for 177 features 
 ## geometry type:  MULTIPOLYGON
 ## dimension:      XY
@@ -2635,13 +2546,13 @@ POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))`</code></pre>
 <pre><code>## MULTIPOLYGON (((-8.66559 27.65643, -8.665124 27...</code></pre>
 </section><section id="non-spatial-operations-on-the-sf-objects" class="slide level2">
 <h2>Non-spatial operations on the sf objects</h2>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1">world <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb31-2" data-line-number="2"><span class="st">  </span><span class="kw">left_join</span>(worldbank_df, <span class="dt">by =</span> <span class="st">&quot;iso_a2&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb31-3" data-line-number="3"><span class="st">  </span><span class="kw">select</span>(name_long, pop, pop_growth, area_km2) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb31-4" data-line-number="4"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">pop_density =</span> pop<span class="op">/</span>area_km2) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb31-5" data-line-number="5"><span class="st">  </span><span class="kw">rename</span>(<span class="dt">population =</span> pop) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb31-6" data-line-number="6"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(pop_density))<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb31-7" data-line-number="7"><span class="st">  </span><span class="kw">kable</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1">world <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb29-2" data-line-number="2"><span class="st">  </span><span class="kw">left_join</span>(worldbank_df, <span class="dt">by =</span> <span class="st">&quot;iso_a2&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb29-3" data-line-number="3"><span class="st">  </span><span class="kw">select</span>(name_long, pop, pop_growth, area_km2) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb29-4" data-line-number="4"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">pop_density =</span> pop<span class="op">/</span>area_km2) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb29-5" data-line-number="5"><span class="st">  </span><span class="kw">rename</span>(<span class="dt">population =</span> pop) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb29-6" data-line-number="6"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(pop_density))<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb29-7" data-line-number="7"><span class="st">  </span><span class="kw">kable</span>()</a></code></pre></div>
 <table>
 <colgroup>
 <col style="width: 31%" />
@@ -4114,9 +4025,9 @@ POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))`</code></pre>
 </table>
 </section><section id="non-spatial-operations" class="slide level2">
 <h2>Non-spatial operations</h2>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1">world_cont =<span class="st"> </span>world <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb32-2" data-line-number="2"><span class="st">        </span><span class="kw">group_by</span>(continent) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb32-3" data-line-number="3"><span class="st">        </span><span class="kw">summarize</span>(<span class="dt">pop_sum =</span> <span class="kw">sum</span>(pop, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1">world_cont =<span class="st"> </span>world <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb30-2" data-line-number="2"><span class="st">        </span><span class="kw">group_by</span>(continent) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb30-3" data-line-number="3"><span class="st">        </span><span class="kw">summarize</span>(<span class="dt">pop_sum =</span> <span class="kw">sum</span>(pop, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</a></code></pre></div>
 <pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <pre><code>## Simple feature collection with 8 features and 2 fields
 ## geometry type:  MULTIPOLYGON
@@ -4128,11 +4039,12 @@ POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))`</code></pre>
 ##   &lt;chr&gt;         &lt;dbl&gt;                                         &lt;MULTIPOLYGON [°]&gt;
 ## 1 Africa       1.15e9 (((32.83012 -26.74219, 32.58026 -27.47016, 32.46213 -28.3…
 ## # … with 7 more rows</code></pre>
+<p><img data-src="PS_05_files/figure-revealjs/unnamed-chunk-20-1.png" /></p>
 </section><section class="slide level2">
 
 <p>The <code>st_set_geometry</code> function can be used to remove the geometry column:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1">world_df =<span class="kw">st_set_geometry</span>(world_cont, <span class="ot">NULL</span>)</a>
-<a class="sourceLine" id="cb35-2" data-line-number="2"><span class="kw">class</span>(world_df)</a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1">world_df =<span class="kw">st_set_geometry</span>(world_cont, <span class="ot">NULL</span>)</a>
+<a class="sourceLine" id="cb33-2" data-line-number="2"><span class="kw">class</span>(world_df)</a></code></pre></div>
 <pre><code>## [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;</code></pre>
 </section><section id="spatial-operations" class="slide level2">
 <h2>Spatial operations</h2>
@@ -4149,10 +4061,10 @@ POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))`</code></pre>
 </section><section id="crs" class="slide level2">
 <h2>CRS</h2>
 <p>Transform (warp) to a different projection:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1">na_<span class="dv">2163</span> =<span class="st"> </span>world <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb37-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(continent <span class="op">==</span><span class="st"> &quot;North America&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb37-3" data-line-number="3"><span class="st">  </span><span class="kw">st_transform</span>(<span class="dv">2163</span>) <span class="co">#US National Atlas Equal Area</span></a>
-<a class="sourceLine" id="cb37-4" data-line-number="4"><span class="kw">st_crs</span>(na_<span class="dv">2163</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1">na_<span class="dv">2163</span> =<span class="st"> </span>world <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb35-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(continent <span class="op">==</span><span class="st"> &quot;North America&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb35-3" data-line-number="3"><span class="st">  </span><span class="kw">st_transform</span>(<span class="dv">2163</span>) <span class="co">#US National Atlas Equal Area</span></a>
+<a class="sourceLine" id="cb35-4" data-line-number="4"><span class="kw">st_crs</span>(na_<span class="dv">2163</span>)</a></code></pre></div>
 <pre><code>## Coordinate Reference System:
 ##   User input: EPSG:2163 
 ##   wkt:
@@ -4193,58 +4105,60 @@ POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))`</code></pre>
 ##     ID[&quot;EPSG&quot;,2163]]</code></pre>
 </section><section id="compare-projections" class="slide level2">
 <h2>Compare projections</h2>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1">na =<span class="st"> </span>world <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb39-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(continent <span class="op">==</span><span class="st"> &quot;North America&quot;</span>) </a>
-<a class="sourceLine" id="cb39-3" data-line-number="3">p1=<span class="kw">ggplot</span>(na)<span class="op">+</span><span class="kw">geom_sf</span>()</a>
-<a class="sourceLine" id="cb39-4" data-line-number="4">p2=<span class="kw">ggplot</span>(na_<span class="dv">2163</span>)<span class="op">+</span><span class="kw">geom_sf</span>()</a>
-<a class="sourceLine" id="cb39-5" data-line-number="5"><span class="kw">ggarrange</span>(p1,p2)</a></code></pre></div>
-<p><img data-src="PS_05_files/figure-revealjs/unnamed-chunk-22-1.png" /></p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1">na =<span class="st"> </span>world <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb37-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(continent <span class="op">==</span><span class="st"> &quot;North America&quot;</span>) </a>
+<a class="sourceLine" id="cb37-3" data-line-number="3">p1=<span class="kw">ggplot</span>(na)<span class="op">+</span><span class="kw">geom_sf</span>()</a>
+<a class="sourceLine" id="cb37-4" data-line-number="4">p2=<span class="kw">ggplot</span>(na_<span class="dv">2163</span>)<span class="op">+</span><span class="kw">geom_sf</span>()</a>
+<a class="sourceLine" id="cb37-5" data-line-number="5"><span class="kw">ggarrange</span>(p1,p2)</a></code></pre></div>
+<p><img data-src="PS_05_files/figure-revealjs/unnamed-chunk-23-1.png" /></p>
 </section><section id="the-world-dataset" class="slide level2">
 <h2>The <code>world</code> dataset</h2>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="kw">plot</span>(na_<span class="dv">2163</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="kw">plot</span>(na_<span class="dv">2163</span>)</a></code></pre></div>
 <pre><code>## Warning: plotting the first 9 out of 10 attributes; use max.plot = 10 to plot
 ## all</code></pre>
-<p><img data-src="PS_05_files/figure-revealjs/unnamed-chunk-23-1.png" /></p>
+<p><img data-src="PS_05_files/figure-revealjs/unnamed-chunk-24-1.png" /></p>
 </section><section id="spatial-operations-1" class="slide level2">
 <h2>Spatial operations</h2>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1">canada =<span class="st"> </span>na_<span class="dv">2163</span> <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb42-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(name_long<span class="op">==</span><span class="st">&quot;Canada&quot;</span>)</a>
-<a class="sourceLine" id="cb42-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb42-4" data-line-number="4">canada_buffer=canada<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb42-5" data-line-number="5"><span class="st">  </span><span class="kw">st_buffer</span>(<span class="dv">500000</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb42-6" data-line-number="6"><span class="st">  </span><span class="kw">filter</span>()</a>
-<a class="sourceLine" id="cb42-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb42-8" data-line-number="8"><span class="kw">ggplot</span>()<span class="op">+</span></a>
-<a class="sourceLine" id="cb42-9" data-line-number="9"><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data=</span>canada)<span class="op">+</span></a>
-<a class="sourceLine" id="cb42-10" data-line-number="10"><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data=</span>canada_buffer,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">fill=</span><span class="ot">NA</span>)</a></code></pre></div>
-<p><img data-src="PS_05_files/figure-revealjs/unnamed-chunk-24-1.png" /></p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1">canada =<span class="st"> </span>na_<span class="dv">2163</span> <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb40-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(name_long<span class="op">==</span><span class="st">&quot;Canada&quot;</span>)</a>
+<a class="sourceLine" id="cb40-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb40-4" data-line-number="4">canada_buffer=canada<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb40-5" data-line-number="5"><span class="st">  </span><span class="kw">st_buffer</span>(<span class="dv">500000</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb40-6" data-line-number="6"><span class="st">  </span><span class="kw">filter</span>()</a>
+<a class="sourceLine" id="cb40-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb40-8" data-line-number="8"><span class="kw">ggplot</span>()<span class="op">+</span></a>
+<a class="sourceLine" id="cb40-9" data-line-number="9"><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data=</span>canada)<span class="op">+</span></a>
+<a class="sourceLine" id="cb40-10" data-line-number="10"><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data=</span>canada_buffer,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">fill=</span><span class="ot">NA</span>)</a></code></pre></div>
+<p><img data-src="PS_05_files/figure-revealjs/unnamed-chunk-25-1.png" /></p>
 </section><section id="basic-maps" class="slide level2">
 <h2>Basic maps</h2>
 <ul>
 <li>Basic maps of <code>sf</code> objects can be quickly created using the <code>plot()</code> function:</li>
 </ul>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="kw">plot</span>(world[<span class="dv">0</span>])</a></code></pre></div>
-<p><img data-src="PS_05_files/figure-revealjs/unnamed-chunk-25-1.png" /></p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="kw">plot</span>(world[<span class="st">&quot;pop&quot;</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="kw">plot</span>(world[<span class="dv">0</span>])</a></code></pre></div>
 <p><img data-src="PS_05_files/figure-revealjs/unnamed-chunk-26-1.png" /></p>
+</section><section id="basic-maps-1" class="slide level2">
+<h2>Basic maps</h2>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="kw">plot</span>(world[<span class="st">&quot;pop&quot;</span>])</a></code></pre></div>
+<p><img data-src="PS_05_files/figure-revealjs/unnamed-chunk-27-1.png" /></p>
 </section><section id="leaflet" class="slide level2">
 <h2>leaflet</h2>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="kw">library</span>(leaflet)</a>
-<a class="sourceLine" id="cb45-2" data-line-number="2"><span class="kw">library</span>(widgetframe)</a></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="kw">library</span>(leaflet)</a>
+<a class="sourceLine" id="cb43-2" data-line-number="2"><span class="kw">library</span>(widgetframe)</a></code></pre></div>
 <pre><code>## Loading required package: htmlwidgets</code></pre>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1"><span class="kw">leaflet</span>(world) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb47-2" data-line-number="2"><span class="st">        </span><span class="kw">addTiles</span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb47-3" data-line-number="3"><span class="st">        </span><span class="kw">addPolygons</span>(<span class="dt">color =</span> <span class="st">&quot;#444444&quot;</span>, <span class="dt">weight =</span> <span class="dv">1</span>, <span class="dt">fillOpacity =</span> <span class="fl">0.5</span>,</a>
-<a class="sourceLine" id="cb47-4" data-line-number="4">                    <span class="dt">fillColor =</span> <span class="op">~</span><span class="kw">colorQuantile</span>(<span class="st">&quot;YlOrRd&quot;</span>, lifeExp)(lifeExp),</a>
-<a class="sourceLine" id="cb47-5" data-line-number="5">                    <span class="dt">popup =</span> <span class="kw">paste</span>(<span class="kw">round</span>(world<span class="op">$</span>lifeExp, <span class="dv">2</span>)))</a></code></pre></div>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1">l =<span class="st"> </span><span class="kw">leaflet</span>(world) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb48-2" data-line-number="2"><span class="st">  </span><span class="kw">addTiles</span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb48-3" data-line-number="3"><span class="st">  </span><span class="kw">addPolygons</span>(<span class="dt">color =</span> <span class="st">&quot;#444444&quot;</span>, </a>
-<a class="sourceLine" id="cb48-4" data-line-number="4">              <span class="dt">weight =</span> <span class="dv">1</span>, <span class="dt">fillOpacity =</span> <span class="fl">0.5</span>, </a>
-<a class="sourceLine" id="cb48-5" data-line-number="5">              <span class="dt">fillColor =</span> <span class="op">~</span><span class="kw">colorQuantile</span>(<span class="st">&quot;YlOrRd&quot;</span>, lifeExp)(lifeExp),</a>
-<a class="sourceLine" id="cb48-6" data-line-number="6">              <span class="dt">popup =</span> <span class="kw">paste</span>(<span class="kw">round</span>(world<span class="op">$</span>lifeExp, <span class="dv">2</span>)))</a>
-<a class="sourceLine" id="cb48-7" data-line-number="7"><span class="kw">saveWidget</span>(l, <span class="dt">file =</span> <span class="st">&quot;leaflet.html&quot;</span>,<span class="dt">selfcontained =</span> T)</a></code></pre></div>
-</section><section id="section" class="slide level2">
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="kw">leaflet</span>(world) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb45-2" data-line-number="2"><span class="st">        </span><span class="kw">addTiles</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb45-3" data-line-number="3"><span class="st">        </span><span class="kw">addPolygons</span>(<span class="dt">color =</span> <span class="st">&quot;#444444&quot;</span>, <span class="dt">weight =</span> <span class="dv">1</span>, <span class="dt">fillOpacity =</span> <span class="fl">0.5</span>,</a>
+<a class="sourceLine" id="cb45-4" data-line-number="4">                    <span class="dt">fillColor =</span> <span class="op">~</span><span class="kw">colorQuantile</span>(<span class="st">&quot;YlOrRd&quot;</span>, lifeExp)(lifeExp),</a>
+<a class="sourceLine" id="cb45-5" data-line-number="5">                    <span class="dt">popup =</span> <span class="kw">paste</span>(<span class="kw">round</span>(world<span class="op">$</span>lifeExp, <span class="dv">2</span>)))</a></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" data-line-number="1">l =<span class="st"> </span><span class="kw">leaflet</span>(world) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb46-2" data-line-number="2"><span class="st">  </span><span class="kw">addTiles</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb46-3" data-line-number="3"><span class="st">  </span><span class="kw">addPolygons</span>(<span class="dt">color =</span> <span class="st">&quot;#444444&quot;</span>, </a>
+<a class="sourceLine" id="cb46-4" data-line-number="4">              <span class="dt">weight =</span> <span class="dv">1</span>, <span class="dt">fillOpacity =</span> <span class="fl">0.5</span>, </a>
+<a class="sourceLine" id="cb46-5" data-line-number="5">              <span class="dt">fillColor =</span> <span class="op">~</span><span class="kw">colorQuantile</span>(<span class="st">&quot;YlOrRd&quot;</span>, lifeExp)(lifeExp),</a>
+<a class="sourceLine" id="cb46-6" data-line-number="6">              <span class="dt">popup =</span> <span class="kw">paste</span>(<span class="kw">round</span>(world<span class="op">$</span>lifeExp, <span class="dv">2</span>)))</a>
+<a class="sourceLine" id="cb46-7" data-line-number="7"><span class="kw">saveWidget</span>(l, <span class="dt">file =</span> <span class="st">&quot;leaflet.html&quot;</span>,<span class="dt">selfcontained =</span> T)</a></code></pre></div>
+</section><section id="section-1" class="slide level2">
 <h2><iframe src="leaflet.html" width=100% height=400px></iframe></h2>
 </section><section id="raster-data-in-the-tidyverse" class="slide level2">
 <h2>Raster data in the tidyverse</h2>

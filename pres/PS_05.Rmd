@@ -132,8 +132,6 @@ What information do we need to store in order to define points, lines, polygons 
 # `sf` Package
 
 
----
-
 ## Simple feature geometry types
 
 The following seven simple feature types are the most common, and are for instance the only ones used for [GeoJSON](https://tools.ietf.org/html/rfc7946):
@@ -148,8 +146,6 @@ The following seven simple feature types are the most common, and are for instan
 | `MULTIPOLYGON` | set of polygons |
 | `GEOMETRYCOLLECTION` | set of geometries |
 
-
----
 
 ## Uncommon Geometry Types 
 10 more geometries 10 are rare:
@@ -176,14 +172,22 @@ Overview of [projection systems](https://www.e-education.psu.edu/natureofgeoinfo
 
 ---
 
-## Reproject to ["Equal Earth" projection](http://equal-earth.com/equal-earth-projection.html)
-```{r, fig.height=3}
+## Reproject to ["Goode Homolosine" projection](https://proj.org/operations/projections/goode.html)
+```{r, warning=F}
 data(world) # from spData package
 st_crs(world)
-world_albers=world %>% 
-  st_transform(crs = "+proj=eqearth +wktext")
-p1 <- ggplot(world,aes(fill=gdpPercap))+geom_sf()
-p2 <- ggplot(world_albers,aes(fill=gdpPercap))+geom_sf()
+
+world_homolosine=world %>% 
+  st_transform(crs = "+proj=goode")
+
+p1 <- ggplot(world,aes(fill=gdpPercap))+
+  geom_sf()
+p2 <- ggplot(world_homolosine,aes(fill=gdpPercap))+
+  geom_sf()
+```
+
+## 
+```{r}
 ggarrange(p1,p2,common.legend = T)
 ```
 
@@ -206,6 +210,7 @@ ggarrange(p1,p2,common.legend = T)
     AUTHORITY["EPSG","4326"]]`
 
 [spatialreference.org](https://spatialreference.org/ref/epsg/wgs-84/prettywkt/)
+[proj.org](https://proj.org/operations/projections/index.html)
 
 ---
 
@@ -368,6 +373,9 @@ world_cont = world %>%
 
 ```{r, echo=FALSE}
 print(world_cont, n = 1)
+
+ggplot(world_cont,aes(fill=pop_sum))+
+  geom_sf()
 ```
 
 ---
@@ -449,6 +457,8 @@ ggplot()+
 ```{r}
 plot(world[0])
 ```
+
+## Basic maps
 
 ```{r}
 plot(world["pop"])
