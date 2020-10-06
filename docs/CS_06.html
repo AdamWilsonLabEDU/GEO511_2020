@@ -430,7 +430,7 @@ div.tocify {
 <div id="background" class="section level1">
 <h1>Background</h1>
 <p>The raster data format is commonly used for environmental datasets such as elevation, climate, soil, and land cover. We commonly need to <code>extract</code> the data from raster objects using simple features (vector objects). For example if you had a set of points you collected using a GPS and wanted to know the mean annual temperature at each point, you might <code>extract</code> the data from each location in a raster-based map of temperature.</p>
-<p><img src="https://geocompr.robinlovelace.net/figures/pointextr-1.png" /></p>
+<p><img src="https://geocompr.robinlovelace.net/05-geometry-operations_files/figure-html/pointextr-1.png" /></p>
 <p>You could also be interested in some summary of the raster data across multiple pixels (such as the buffered points above, a transect, or within a polygon). For example, you might be interested in the mean elevation within the entire polygon in the above figure.</p>
 <p>In this case study we’ll work with a timeseries of temperature data from <a href="http://worldclim.org">WorldClim</a>. These are near-global rasters of various climatic variables available at several resolutions. For convenience, we’ll work with the very coarse data (0.5 degree, which is about 50km), but much finer data are available (~1km).</p>
 </div>
