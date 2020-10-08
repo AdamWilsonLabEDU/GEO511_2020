@@ -14,6 +14,14 @@ week: 6
 [source](http://wilsonlab.io/GEO511/Schedule.html)
 
 
+## Readings
+<iframe
+  src="https://geocompr.robinlovelace.net/intro.html"
+  width="100%" height="800">
+</iframe>
+[source](https://geocompr.robinlovelace.net/intro.html)
+
+
 ## Resource Presentations
 
 <iframe
