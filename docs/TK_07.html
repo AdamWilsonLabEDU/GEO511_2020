@@ -430,7 +430,7 @@ div.tocify {
 <h1>Tasks</h1>
 <ul>
 <li>Complete project proposal and upload .Rmd and .md to Github</li>
-<li>Post links to your project proposal .md file in the <a href="https://ubspatialdatascience.slack.com/messages/CDNEG4WN8">Project Channel on Slack</a>.</li>
+<li>Post links to your project proposal .md file in the Projects Channel on Slack.</li>
 </ul>
 <div id="project-proposal" class="section level3">
 <h3>Project Proposal</h3>
@@ -443,7 +443,15 @@ div.tocify {
 <li>Expected results: Describe what you want to produce (graphics, analyses, etc.)</li>
 </ol>
 <p>Finding good data takes time, and can take longer than the time to tidy your data. This task could easily take 3-6 hours to find the data you need for your project. After you find good data sources make sure to complete the remaining tasks.</p>
-<p>Use <a href="scripts/Project_ProposalTemplate.Rmd">this template (which is an R Markdown File) for your project proposal</a>. You can see what this file looks like ‘after rendering’ <a href="Project_ProposalTemplate.html">here</a>.</p>
+<p>Use <a href="scripts/Project_ProposalTemplate.Rmd">this template (which is an R Markdown File) for your project proposal</a>. You can view this file on <a href="https://github.com/AdamWilsonLab/GEO511/blob/master/Project_ProposalTemplate.Rmd">github here</a> and see what this file looks like ‘after rendering’ <a href="Project_ProposalTemplate.html">here</a>.</p>
+<p>In particular, notice the the YAML header of the .Rmd file:</p>
+<pre><code>---
+title: &quot;Project Proposal Template&quot;
+author: Ideel Stoodent
+output: 
+  github_document
+---</code></pre>
+<p>The <code>output: github_document</code> tells knitr to create a markdown file from your R markdown file. If you don’t have any code, R Markdown is essentially the same as markdown, but github knows how to display it (making headers bold, etc.). Then you can push the .Rmd and .md to github just like a R script as you have been doing.</p>
 </div>
 </div>
 

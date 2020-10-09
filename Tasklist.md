@@ -128,6 +128,7 @@ ___
 - Create a new project in Rstudio and connect it to the new repository in GitHub. Helpful instructions are [here](http://happygitwithr.com/rstudio-git-github.html#clone-the-new-github-repository-to-your-computer-via-rstudio)
 - Edit the README.md file in your repository to include a brief description of the repository (e.g. "Coursework for Spatial Data Science").
 - Stage and Commit your changes to Git (using the git tab in the upper right of RStudio)
+- Introduce yourself to git following [these instructions](https://happygitwithr.com/hello-git.html)
 - Push the repository up to GitHub
 - Confirm that the changes are visible on your github page
 </div>
@@ -251,7 +252,7 @@ ___
 
 ## Tasks
 - Complete project proposal and upload .Rmd and .md to Github
-- Post links to your project proposal .md file in the [Project Channel on Slack](https://ubspatialdatascience.slack.com/messages/CDNEG4WN8).
+- Post links to your project proposal .md file in the Projects Channel on Slack.
 </div>
 ___
 ## [ CS_08 :  One Script, Many Products ]( ./CS_08.html ) 

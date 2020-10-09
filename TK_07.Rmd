@@ -8,7 +8,7 @@ reading:
   - Chapters [3-4 in GCR](https://geocompr.robinlovelace.net/) 
 tasks:
   - Complete project proposal and upload .Rmd and .md to Github
-  - Post links to your project proposal .md file in the [Project Channel on Slack](https://ubspatialdatascience.slack.com/messages/CDNEG4WN8).
+  - Post links to your project proposal .md file in the Projects Channel on Slack.
 ---
 
 # Reading
@@ -41,4 +41,19 @@ Finding good data takes time, and can take longer than the time to tidy your dat
 file.copy("Project_ProposalTemplate.Rmd","scripts/Project_ProposalTemplate.Rmd")
 ```
 
-Use [this template (which is an R Markdown File) for your project proposal](scripts/Project_ProposalTemplate.Rmd).  You can see what this file looks like 'after rendering' [here](Project_ProposalTemplate.html).
+Use [this template (which is an R Markdown File) for your project proposal](scripts/Project_ProposalTemplate.Rmd).  You can view this file on [github here](https://github.com/AdamWilsonLab/GEO511/blob/master/Project_ProposalTemplate.Rmd) and see what this file looks like 'after rendering' [here](Project_ProposalTemplate.html).
+
+In particular, notice the the YAML header of the .Rmd file:
+```
+---
+title: "Project Proposal Template"
+author: Ideel Stoodent
+output: 
+  github_document
+---
+```
+
+The `output: github_document` tells knitr to create a markdown file from your R markdown file.  If you don't have any code, R Markdown is essentially the same as markdown, but github knows how to display it (making headers bold, etc.).    Then you can push the .Rmd and .md to github just like a R script as you have been doing.
+
+
+
