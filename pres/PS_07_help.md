@@ -1,10 +1,45 @@
 ---
 title: "HELP!"
+type: Presentation
+week: 7
 ---
 
 
 
 ---
+## Course Schedule
+<iframe
+  src="http://wilsonlab.io/GEO511/Schedule.html"
+  width="100%" height="800">
+</iframe>
+[source](http://wilsonlab.io/GEO511/Schedule.html)
+
+
+## Resource Presentations
+
+<iframe
+  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&single=true"
+  width="100%" height="800">
+</iframe>
+[source](https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&single=true)
+
+# Case Study Presentations
+
+## Let's pick a winner!
+
+<iframe
+  src="https://wheelofnames.com/bw4-gdt"
+  width="100%" height="500">
+</iframe>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&amp;single=true&amp;widget=true&amp;headers=false" style="height: 200px; width: 100%;"></iframe>
+
+## Next Week's Case Study
+
+<iframe
+  src="http://wilsonlab.io/GEO511/CS_07.html"
+  width="100%" height="800">
+</iframe>
+[source](http://wilsonlab.io/GEO511/CS_07.html)
 
 ## Got Problems?
 
@@ -265,14 +300,14 @@ Write a bit of code and copy it to the clipboard:
 
 
 ```r
-(y <- 1:4)
+y <- 1:4
 mean(y)
 ```
 Type `reprex()` in the R Console. In RStudio, you’ll see a preview of your rendered reprex:
 
 
 ```r
-(y <- 1:4)
+y <- 1:4
 #> [1] 1 2 3 4
 mean(y)
 #> [1] 2.5
@@ -288,9 +323,19 @@ Yes! You are asking other people to do work too. It’s a partnership.
 
 ## General Questions: Stack Overflow
 
-[R topics](https://stackoverflow.com/questions/tagged/r)
+<iframe
+  src="https://stackoverflow.com/questions/tagged/r"
+  width="100%" height="800">
+</iframe>
+[source](https://stackoverflow.com/questions/tagged/r)
+
+
 
 ## Specific Bug / Feature Request
 Github "Issues"
-[https://github.com/tidyverse/tidyr/issues](https://github.com/tidyverse/tidyr/issues)
 
+<iframe
+  src="https://github.com/tidyverse/tidyr/issues"
+  width="100%" height="800">
+</iframe>
+[source](https://github.com/tidyverse/tidyr/issues)
