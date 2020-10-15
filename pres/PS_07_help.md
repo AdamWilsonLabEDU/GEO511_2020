@@ -17,7 +17,9 @@ week: 7
 
 ## Project Proposal Example
 
-[Example here](https://github.com/geo511-2020/geo511-2020-tasks-coconn41/blob/master/Final_Project/Project_Proposal.md)
+[Example 1: Colin](https://github.com/geo511-2020/geo511-2020-tasks-coconn41/blob/master/Final_Project/Project_Proposal.md)
+
+[Example 2: Erik](https://github.com/geo511-2020/geo511-2020-tasks-erikwoyc/blob/master/week_07/Project_Proposal.md)
 
 ## Resource Presentations
 
