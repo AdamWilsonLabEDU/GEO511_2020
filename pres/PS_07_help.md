@@ -7,6 +7,7 @@ week: 7
 
 
 ---
+
 ## Course Schedule
 <iframe
   src="http://wilsonlab.io/GEO511/Schedule.html"
@@ -14,6 +15,9 @@ week: 7
 </iframe>
 [source](http://wilsonlab.io/GEO511/Schedule.html)
 
+## Project Proposal Example
+
+[Example here](https://github.com/geo511-2020/geo511-2020-tasks-coconn41/blob/master/Final_Project/Project_Proposal.md)
 
 ## Resource Presentations
 
