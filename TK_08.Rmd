@@ -53,8 +53,8 @@ library(knitr)
 
 Steps:
 
-1. Click on [this link](https://classroom.github.com/a/c_nqiAua) to make a copy of the project template.  
-2. Open your new repository in GitHub.  It will look something like [https://github.com/geo511-2019/2019_GEO_511_Project-adammwilson](http://wilsonlab.io/RDataScience_Project/)
+1. Click on [this link](https://classroom.github.com/a/dIMAJ57i) to make a copy of the project template.  
+2. Open your new repository in GitHub.  It will look something like [https://github.com/geo511-2020/2019_GEO_511_Project-adammwilson](http://wilsonlab.io/RDataScience_Project/)
 3. Click the green button "Clone or Download" and copy the URL.
 
 ## Clone the project template to your computer
@@ -63,7 +63,7 @@ Now you will make a local copy on your computer by creating a new project and 'c
 1. Open RStudio
 2. **File -> New Project -> Version Control -> Git**
   * URL: paste from above.  It will be similar to  `https://github.com/geo511-2019/2019_GEO_511_Project-adammwilson` but with your username.
-  * Project name: you can rename it if you want or keep the default: `2019_GEO_511_Project`
+  * Project name: you can rename it if you want or keep the default: `2020_GEO_511_Project`
   * Project as subdirectory of `~/Documents/repos` or wherever you want to put it.
 3.  It should download the project to your computer then open it to the `index.Rmd` file.
 
@@ -79,7 +79,7 @@ Now you will make a local copy on your computer by creating a new project and 'c
   *  Type in a brief message about the changes you made.  Maybe something like "First update to my project materials"
   * Click `Commit`, then `close`.
   * Click `Push` to push it back up to GitHub.
-2. Now go to your repository website (similar to `https://github.com/geo511-2019/2019_GEO_511_Project-adammwilson`
+2. Now go to your repository website (similar to `https://github.com/geo511-2020/2020_GEO_511_Project-adammwilson`
 3. Publish your website
    * Click settings in the upper right, then scroll down to `GitHub Pages` section
    * Change "Source" to `master branch /docs folder` and click Save
