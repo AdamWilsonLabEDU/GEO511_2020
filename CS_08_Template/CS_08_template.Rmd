@@ -1,7 +1,6 @@
 ---
 title: "Carbon Dioxide Concentrations at Mona Loa Observatory"
 author: "Adam M. Wilson"
-date: "October 9"
 output:
   html_document: default
   github_document: default

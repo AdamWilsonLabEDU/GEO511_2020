@@ -4,26 +4,72 @@ type: Presentation
 week: 8
 ---
 
-## Project Proposals
+## Course Schedule
+<iframe
+  src="http://wilsonlab.io/GEO511/Schedule.html"
+  width="100%" height="800">
+</iframe>
+[source](http://wilsonlab.io/GEO511/Schedule.html)
+
+## Resource Presentations
+
+<iframe
+  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&single=true"
+  width="100%" height="800">
+</iframe>
+[source](https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&single=true)
+
+# Case Study Presentations
+
+## Topics for leaders
+
+1. In what situations can a 'reproducible example' be useful?
+
+## Let's pick a winner!
+
+<iframe
+  src="https://wheelofnames.com/bw4-gdt"
+  width="100%" height="500">
+</iframe>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&amp;single=true&amp;widget=true&amp;headers=false" style="height: 200px; width: 100%;"></iframe>
+
+## Next Week's Case Study
+
+<iframe
+  src="http://wilsonlab.io/GEO511/CS_08.html"
+  width="100%" height="800">
+</iframe>
+[source](http://wilsonlab.io/GEO511/CS_08.html)
+
+## Final Projects
 
 * Refine your objectives:
    * answer 1-3 _important_ questions OR
    * solve 1-3 _important_ problems
 * Better to demonstrate 1-3 things well than 10 things poorly.
 
-## Resource Presentations
-
-## Case Study
-
-Topics for leaders:
-
-1. In what situations can a 'reproducible example' be useful?
-2. Check out the help for `reprex()`.  When might you use these different parameters?
 
 # RMarkdown 
 
 ## The goal of reproducible research
+
 > "The goal of reproducible research is to tie specific instructions to data analysis and experimental data so that scholarship can be recreated, better understood and verified."  <small> Max Kuhn, CRAN Task View: Reproducible Research </small>
+
+
+## Reproducible Research
+
+> "The goal of reproducible research is to tie specific instructions to data analysis and experimental data so that scholarship can be recreated, better understood, and verified."  
+
+<small> Max Kuhn, CRAN Task View: Reproducible Research </small>
+
+
+## Philosphy  
+Remember, the data and code are _real_, the products (tables, figures) are ephemeral...  
+
+## The Claerbout Principle
+> "An article about computational result is advertising, not scholarship. The actual scholarship is the full software environment, code and data, that produced the result." 
+
+<small> Claerbout and Karrenbach, Proceedings of the 62nd Annual International Meeting of the Society of Exploration Geophysics. 1992</small>
 
 
 ## Our work exists on a spectrum of reproducibility
