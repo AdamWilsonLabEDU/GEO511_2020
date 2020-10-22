@@ -48,6 +48,14 @@ week: 8
    * solve 1-3 _important_ problems
 * Better to demonstrate 1-3 things well than 10 things poorly.
 
+## Brief note on colors...
+
+<iframe
+  src="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html"
+  width="100%" height="800">
+</iframe>
+[source](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html)
+
 
 # RMarkdown 
 
