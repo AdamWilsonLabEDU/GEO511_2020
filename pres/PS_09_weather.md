@@ -14,6 +14,14 @@ week: 9
 </iframe>
 [source](http://wilsonlab.io/GEO511/Schedule.html)
 
+## Final Projects
+
+* Only 8 folks have published their sites...
+* Start moving your project proposal content into your website
+  * Title
+  * Introduction
+  * etc...
+
 ## Resource Presentations
 
 <iframe
@@ -102,6 +110,16 @@ cat(c1[3:4])
 * Government Demographic data (census, etc.)
 * Government Environmental data
 * Google, Twitter, etc.
+
+## ROpenSci
+
+<iframe
+  src="https://ropensci.org"
+  width="100%" height="800">
+</iframe>
+[source](https://ropensci.org)
+
+
 
 ## Pros & Cons
 
