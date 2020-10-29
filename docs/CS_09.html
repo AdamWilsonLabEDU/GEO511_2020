@@ -451,17 +451,19 @@ data(us_states)</code></pre>
 <p>In this case study you will download storm track data from NOAA, make a summary plot, and quantify how many storms have hit each of the United States. This will require you to use a spatial join (<code>st_join</code>).</p>
 <div id="your-goal" class="section level3">
 <h3>Your goal</h3>
+<pre class="r"><code># Doesn&#39;t work in October 2020.
+storms &lt;- storm_shp(basin = &quot;NA&quot;)
+storm_data &lt;- read_sf(storms$path)</code></pre>
 <pre class="r"><code># 2020 update - it appears NOAA changed the URL which broke the R function.  Use the following instead of storm_shp().
 dataurl=&quot;https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r00/access/shapefile/IBTrACS.NA.list.v04r00.points.zip&quot;
 tdir=tempdir()
 download.file(dataurl,destfile=file.path(tdir,&quot;temp.zip&quot;))
 unzip(file.path(tdir,&quot;temp.zip&quot;),exdir = tdir)
 list.files(tdir)</code></pre>
-<pre><code>## [1] &quot;file6d111342935&quot;                   &quot;file6d16596f0b7&quot;                  
-## [3] &quot;IBTrACS.NA.list.v04r00.points.dbf&quot; &quot;IBTrACS.NA.list.v04r00.points.prj&quot;
-## [5] &quot;IBTrACS.NA.list.v04r00.points.shp&quot; &quot;IBTrACS.NA.list.v04r00.points.shx&quot;
-## [7] &quot;temp.zip&quot;</code></pre>
-<pre class="r"><code>storm_data &lt;- read_sf(list.files(tdir,pattern=&quot;.shp&quot;))</code></pre>
+<pre><code>## [1] &quot;IBTrACS.NA.list.v04r00.points.dbf&quot; &quot;IBTrACS.NA.list.v04r00.points.prj&quot;
+## [3] &quot;IBTrACS.NA.list.v04r00.points.shp&quot; &quot;IBTrACS.NA.list.v04r00.points.shx&quot;
+## [5] &quot;temp.zip&quot;</code></pre>
+<pre class="r"><code>storm_data &lt;- read_sf(list.files(tdir,pattern=&quot;.shp&quot;,full.names = T))</code></pre>
 <p>Your desired figure looks something like the following: <img src="CS_09_files/figure-html/unnamed-chunk-4-1.png" /><!-- --></p>
 Calculate a table of the five states that have experienced the most storms.
 <table class="table" style="margin-left: auto; margin-right: auto;">

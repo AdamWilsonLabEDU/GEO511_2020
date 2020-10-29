@@ -1,7 +1,6 @@
 Carbon Dioxide Concentrations at Mona Loa Observatory
 ================
 Adam M. Wilson
-10/9/2019
 
 # Annual Mean Carbon Dioxide Concentrations 1959-Present
 
@@ -9,4 +8,6 @@ Adam M. Wilson
 
 # Top Five Annual Mean Carbon Dioxide Concentrations at Mona Loa
 
-![](table.png)<!-- -->
+    ## save_kable will have the best result with magick installed.
+
+<img src="table.png" width="317" />

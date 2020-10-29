@@ -73,13 +73,8 @@ code span.vs { color: #4e9a06; } /* VerbatimString */
 code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<link rel="stylesheet" href="externals/reveal.js-3.3.0.1/css/theme/black.css" id="theme">
+<link rel="stylesheet" href="externals/reveal.js-3.3.0.1/css/theme/sky.css" id="theme">
 
-<style type="text/css">
-.reveal section img {
-  background: rgba(255, 255, 255, 0.85);
-}
-</style>
 
   <!-- some tweaks to reveal css -->
   <style type="text/css">
@@ -521,6 +516,30 @@ document.getElementsByTagName('head')[0].appendChild(style);
     <h1 class="title">APIs, time-series, and weather Data</h1>
 </section>
 
+<section id="course-schedule" class="slide level2">
+<h2>Course Schedule</h2>
+<iframe src="http://wilsonlab.io/GEO511/Schedule.html" width="100%" height="800">
+</iframe>
+<p><a href="http://wilsonlab.io/GEO511/Schedule.html">source</a></p>
+</section>
+<section id="resource-presentations" class="slide level2">
+<h2>Resource Presentations</h2>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&amp;single=true" width="100%" height="800">
+</iframe>
+<p><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&amp;single=true">source</a></p>
+</section>
+<section><section id="case-study-presentations" class="title-slide slide level1"><h1>Case Study Presentations</h1></section><section id="lets-pick-a-winner" class="slide level2">
+<h2>Let’s pick a winner!</h2>
+<iframe src="https://wheelofnames.com/bw4-gdt" width="100%" height="500">
+</iframe>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&amp;single=true&amp;widget=true&amp;headers=false" style="height: 200px; width: 100%;">
+</iframe>
+</section><section id="next-weeks-case-study" class="slide level2">
+<h2>Next Week’s Case Study</h2>
+<iframe src="http://wilsonlab.io/GEO511/CS_09.html" width="100%" height="800">
+</iframe>
+<p><a href="http://wilsonlab.io/GEO511/CS_09.html">source</a></p>
+</section></section>
 <section><section id="api" class="title-slide slide level1"><h1>API</h1></section><section id="application-programming-interface" class="slide level2">
 <h2>Application Programming Interface</h2>
 <iframe src="https://en.wikipedia.org/wiki/Application_programming_interface" width="100%" height="400px">
@@ -1365,13 +1384,13 @@ document.getElementsByTagName('head')[0].appendChild(style);
 </section><section class="slide level2">
 
 <p>Limit to a few years and plot the daily range and average temperatures.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1">d_filtered_recent=<span class="kw">filter</span>(d_filtered,date<span class="op">&gt;</span><span class="kw">as.Date</span>(<span class="st">&quot;2015-01-01&quot;</span>))</a>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1">d_filtered_recent=<span class="kw">filter</span>(d_filtered,date<span class="op">&gt;</span><span class="kw">as.Date</span>(<span class="st">&quot;2017-01-01&quot;</span>))</a>
 <a class="sourceLine" id="cb33-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb33-3" data-line-number="3">  <span class="kw">ggplot</span>(d_filtered_recent,</a>
 <a class="sourceLine" id="cb33-4" data-line-number="4">         <span class="kw">aes</span>(<span class="dt">ymax=</span>tmax,<span class="dt">ymin=</span>tmin,<span class="dt">x=</span>date))<span class="op">+</span></a>
 <a class="sourceLine" id="cb33-5" data-line-number="5"><span class="st">    </span><span class="kw">geom_ribbon</span>(<span class="dt">col=</span><span class="st">&quot;grey&quot;</span>,<span class="dt">fill=</span><span class="st">&quot;grey&quot;</span>)<span class="op">+</span></a>
 <a class="sourceLine" id="cb33-6" data-line-number="6"><span class="st">    </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y=</span>(tmax<span class="op">+</span>tmin)<span class="op">/</span><span class="dv">2</span>),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a></code></pre></div>
-<pre><code>## Warning: Removed 13 rows containing missing values (geom_path).</code></pre>
+<pre><code>## Warning: Removed 13 row(s) containing missing values (geom_path).</code></pre>
 <p><img data-src="PS_09_weather_files/figure-revealjs/unnamed-chunk-19-1.png" /></p>
 </section><section id="zoo-package-for-rolling-functions" class="slide level2">
 <h2>Zoo package for rolling functions</h2>
@@ -1575,7 +1594,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 
 <p>Plot 10-year means (excluding years without complete data):</p>
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1">d_filtered2<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb54-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(year<span class="op">&gt;</span><span class="dv">1938</span>, year<span class="op">&lt;</span><span class="dv">2019</span>)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb54-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(year<span class="op">&gt;</span><span class="dv">1938</span>, year<span class="op">&lt;</span><span class="dv">2021</span>)<span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb54-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(dec)<span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb54-4" data-line-number="4"><span class="st">  </span><span class="kw">summarize</span>(</a>
 <a class="sourceLine" id="cb54-5" data-line-number="5">            <span class="dt">n=</span><span class="kw">n</span>(),</a>
@@ -1585,59 +1604,60 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <a class="sourceLine" id="cb54-9" data-line-number="9">            )<span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb54-10" data-line-number="10"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span>dec,<span class="dt">y=</span>tmax))<span class="op">+</span></a>
 <a class="sourceLine" id="cb54-11" data-line-number="11"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">col=</span><span class="st">&quot;grey&quot;</span>)</a></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <p><img data-src="PS_09_weather_files/figure-revealjs/unnamed-chunk-31-1.png" /></p>
-</section><section id="look-for-specific-events-was-2019-unusually-hot-in-buffalo-ny" class="slide level2">
-<h2>Look for specific events: was 2019 unusually hot in Buffalo, NY?</h2>
-<p>Let’s compare 2019 with all the previous years in the dataset. First add ‘day of year’ to the data to facilitate showing all years on the same plot.</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" data-line-number="1">df=d_filtered2<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb55-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">doy=</span><span class="kw">as.numeric</span>(<span class="kw">format</span>(date,<span class="st">&quot;%j&quot;</span>)),</a>
-<a class="sourceLine" id="cb55-3" data-line-number="3">         <span class="dt">doydate=</span><span class="kw">as.Date</span>(<span class="kw">paste</span>(<span class="st">&quot;2019-&quot;</span>,doy),<span class="dt">format=</span><span class="st">&quot;%Y-%j&quot;</span>))</a></code></pre></div>
+</section><section id="look-for-specific-events-was-2020-unusually-hot-in-buffalo-ny" class="slide level2">
+<h2>Look for specific events: was 2020 unusually hot in Buffalo, NY?</h2>
+<p>Let’s compare 2020 with all the previous years in the dataset. First add ‘day of year’ to the data to facilitate showing all years on the same plot.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1">df=d_filtered2<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb56-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">doy=</span><span class="kw">as.numeric</span>(<span class="kw">format</span>(date,<span class="st">&quot;%j&quot;</span>)),</a>
+<a class="sourceLine" id="cb56-3" data-line-number="3">         <span class="dt">doydate=</span><span class="kw">as.Date</span>(<span class="kw">paste</span>(<span class="st">&quot;2020-&quot;</span>,doy),<span class="dt">format=</span><span class="st">&quot;%Y-%j&quot;</span>))</a></code></pre></div>
 </section><section class="slide level2">
 
-<p>Then plot all years (in grey) and add 2017 in red.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1"><span class="kw">ggplot</span>(df,<span class="kw">aes</span>(<span class="dt">x=</span>doydate,<span class="dt">y=</span>tmax,<span class="dt">group=</span>year))<span class="op">+</span></a>
-<a class="sourceLine" id="cb56-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">col=</span><span class="st">&quot;grey&quot;</span>,<span class="dt">alpha=</span>.<span class="dv">5</span>)<span class="op">+</span><span class="st"> </span><span class="co"># plot each year in grey</span></a>
-<a class="sourceLine" id="cb56-3" data-line-number="3"><span class="st">  </span><span class="kw">stat_smooth</span>(<span class="kw">aes</span>(<span class="dt">group=</span><span class="dv">1</span>),<span class="dt">col=</span><span class="st">&quot;black&quot;</span>)<span class="op">+</span><span class="st">   </span><span class="co"># Add a smooth GAM to estimate the long-term mean</span></a>
-<a class="sourceLine" id="cb56-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">data=</span><span class="kw">filter</span>(df,year<span class="op">==</span><span class="dv">2019</span>),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)<span class="op">+</span><span class="st">  </span><span class="co"># add 2017 in red</span></a>
-<a class="sourceLine" id="cb56-5" data-line-number="5"><span class="st">  </span><span class="kw">scale_x_date</span>(<span class="dt">labels =</span> <span class="kw">date_format</span>(<span class="st">&quot;%b&quot;</span>),<span class="dt">date_breaks =</span> <span class="st">&quot;2 months&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb56-6" data-line-number="6"><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Day of year&quot;</span>)</a></code></pre></div>
+<p>Then plot all years (in grey) and add 2020 in red.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" data-line-number="1"><span class="kw">ggplot</span>(df,<span class="kw">aes</span>(<span class="dt">x=</span>doydate,<span class="dt">y=</span>tmax,<span class="dt">group=</span>year))<span class="op">+</span></a>
+<a class="sourceLine" id="cb57-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">col=</span><span class="st">&quot;grey&quot;</span>,<span class="dt">alpha=</span>.<span class="dv">5</span>)<span class="op">+</span><span class="st"> </span><span class="co"># plot each year in grey</span></a>
+<a class="sourceLine" id="cb57-3" data-line-number="3"><span class="st">  </span><span class="kw">stat_smooth</span>(<span class="kw">aes</span>(<span class="dt">group=</span><span class="dv">1</span>),<span class="dt">col=</span><span class="st">&quot;black&quot;</span>)<span class="op">+</span><span class="st">   </span><span class="co"># Add a smooth GAM to estimate the long-term mean</span></a>
+<a class="sourceLine" id="cb57-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">data=</span><span class="kw">filter</span>(df,year<span class="op">==</span><span class="dv">2020</span>),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)<span class="op">+</span><span class="st">  </span><span class="co"># add 2017 in red</span></a>
+<a class="sourceLine" id="cb57-5" data-line-number="5"><span class="st">  </span><span class="kw">scale_x_date</span>(<span class="dt">labels =</span> <span class="kw">date_format</span>(<span class="st">&quot;%b&quot;</span>),<span class="dt">date_breaks =</span> <span class="st">&quot;2 months&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb57-6" data-line-number="6"><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Day of year&quot;</span>)</a></code></pre></div>
 <pre><code>## `geom_smooth()` using method = &#39;gam&#39; and formula &#39;y ~ s(x, bs = &quot;cs&quot;)&#39;</code></pre>
 <p><img data-src="PS_09_weather_files/figure-revealjs/unnamed-chunk-33-1.png" /></p>
 </section><section class="slide level2">
 
 <p>Then ‘zoom’ into just the past few months and add 2019 in red.</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1"><span class="kw">ggplot</span>(df,<span class="kw">aes</span>(<span class="dt">x=</span>doydate,<span class="dt">y=</span>tmax,<span class="dt">group=</span>year))<span class="op">+</span></a>
-<a class="sourceLine" id="cb58-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">col=</span><span class="st">&quot;grey&quot;</span>,<span class="dt">alpha=</span>.<span class="dv">5</span>)<span class="op">+</span></a>
-<a class="sourceLine" id="cb58-3" data-line-number="3"><span class="st">  </span><span class="kw">stat_smooth</span>(<span class="kw">aes</span>(<span class="dt">group=</span><span class="dv">1</span>),<span class="dt">col=</span><span class="st">&quot;black&quot;</span>)<span class="op">+</span></a>
-<a class="sourceLine" id="cb58-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">data=</span><span class="kw">filter</span>(df,year<span class="op">==</span><span class="dv">2019</span>),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)<span class="op">+</span></a>
-<a class="sourceLine" id="cb58-5" data-line-number="5"><span class="st">  </span><span class="kw">scale_x_date</span>(<span class="dt">labels =</span> <span class="kw">date_format</span>(<span class="st">&quot;%b&quot;</span>),<span class="dt">date_breaks =</span> <span class="st">&quot;2 months&quot;</span>,</a>
-<a class="sourceLine" id="cb58-6" data-line-number="6">               <span class="dt">lim=</span><span class="kw">c</span>(<span class="kw">as.Date</span>(<span class="st">&quot;2019-08-01&quot;</span>),<span class="kw">as.Date</span>(<span class="st">&quot;2019-10-31&quot;</span>)))</a></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1"><span class="kw">ggplot</span>(df,<span class="kw">aes</span>(<span class="dt">x=</span>doydate,<span class="dt">y=</span>tmax,<span class="dt">group=</span>year))<span class="op">+</span></a>
+<a class="sourceLine" id="cb59-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">col=</span><span class="st">&quot;grey&quot;</span>,<span class="dt">alpha=</span>.<span class="dv">5</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb59-3" data-line-number="3"><span class="st">  </span><span class="kw">stat_smooth</span>(<span class="kw">aes</span>(<span class="dt">group=</span><span class="dv">1</span>),<span class="dt">col=</span><span class="st">&quot;black&quot;</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb59-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">data=</span><span class="kw">filter</span>(df,year<span class="op">==</span><span class="dv">2019</span>),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb59-5" data-line-number="5"><span class="st">  </span><span class="kw">scale_x_date</span>(<span class="dt">labels =</span> <span class="kw">date_format</span>(<span class="st">&quot;%b&quot;</span>),<span class="dt">date_breaks =</span> <span class="st">&quot;2 months&quot;</span>,</a>
+<a class="sourceLine" id="cb59-6" data-line-number="6">               <span class="dt">lim=</span><span class="kw">c</span>(<span class="kw">as.Date</span>(<span class="st">&quot;2019-08-01&quot;</span>),<span class="kw">as.Date</span>(<span class="st">&quot;2019-10-31&quot;</span>)))</a></code></pre></div>
 <p><img data-src="PS_09_weather_files/figure-revealjs/unnamed-chunk-34-1.png" /></p>
 </section><section id="summarize-by-season" class="slide level2">
 <h2>Summarize by season</h2>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1">seasonal=d_filtered2<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb59-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(year,season)<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb59-3" data-line-number="3"><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">n=</span><span class="kw">n</span>(),</a>
-<a class="sourceLine" id="cb59-4" data-line-number="4">            <span class="dt">tmin=</span><span class="kw">mean</span>(tmin),</a>
-<a class="sourceLine" id="cb59-5" data-line-number="5">            <span class="dt">tmax=</span><span class="kw">mean</span>(tmax),</a>
-<a class="sourceLine" id="cb59-6" data-line-number="6">            <span class="dt">prcp=</span><span class="kw">mean</span>(prcp))<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb59-7" data-line-number="7"><span class="st">  </span><span class="kw">filter</span>(n<span class="op">&gt;</span><span class="dv">75</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1">seasonal=d_filtered2<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb60-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(year,season)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb60-3" data-line-number="3"><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">n=</span><span class="kw">n</span>(),</a>
+<a class="sourceLine" id="cb60-4" data-line-number="4">            <span class="dt">tmin=</span><span class="kw">mean</span>(tmin),</a>
+<a class="sourceLine" id="cb60-5" data-line-number="5">            <span class="dt">tmax=</span><span class="kw">mean</span>(tmax),</a>
+<a class="sourceLine" id="cb60-6" data-line-number="6">            <span class="dt">prcp=</span><span class="kw">mean</span>(prcp))<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb60-7" data-line-number="7"><span class="st">  </span><span class="kw">filter</span>(n<span class="op">&gt;</span><span class="dv">75</span>)</a></code></pre></div>
 </section><section id="seasonal-trends" class="slide level2">
 <h2>Seasonal Trends</h2>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1"><span class="kw">ggplot</span>(seasonal,<span class="kw">aes</span>(<span class="dt">y=</span>tmin,<span class="dt">x=</span>year))<span class="op">+</span></a>
-<a class="sourceLine" id="cb60-2" data-line-number="2"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>season,<span class="dt">scales =</span> <span class="st">&quot;free_y&quot;</span>)<span class="op">+</span></a>
-<a class="sourceLine" id="cb60-3" data-line-number="3"><span class="st">  </span><span class="kw">stat_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>, <span class="dt">se=</span>T)<span class="op">+</span></a>
-<a class="sourceLine" id="cb60-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_line</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1"><span class="kw">ggplot</span>(seasonal,<span class="kw">aes</span>(<span class="dt">y=</span>tmin,<span class="dt">x=</span>year))<span class="op">+</span></a>
+<a class="sourceLine" id="cb61-2" data-line-number="2"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>season,<span class="dt">scales =</span> <span class="st">&quot;free_y&quot;</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb61-3" data-line-number="3"><span class="st">  </span><span class="kw">stat_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>, <span class="dt">se=</span>T)<span class="op">+</span></a>
+<a class="sourceLine" id="cb61-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_line</span>()</a></code></pre></div>
 <p><img data-src="PS_09_weather_files/figure-revealjs/unnamed-chunk-36-1.png" /></p>
 </section><section id="fit-a-linear-model-to-a-single-season" class="slide level2">
 <h2>Fit a linear model to a single season</h2>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1">lm1=seasonal<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb61-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(season<span class="op">==</span><span class="st">&quot;Summer&quot;</span>)<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb61-3" data-line-number="3"><span class="st">  </span><span class="kw">lm</span>(tmin<span class="op">~</span>year,<span class="dt">data=</span>.)</a>
-<a class="sourceLine" id="cb61-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb61-5" data-line-number="5"><span class="kw">summary</span>(lm1)<span class="op">$</span>r.squared</a></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" data-line-number="1">lm1=seasonal<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb62-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(season<span class="op">==</span><span class="st">&quot;Summer&quot;</span>)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb62-3" data-line-number="3"><span class="st">  </span><span class="kw">lm</span>(tmin<span class="op">~</span>year,<span class="dt">data=</span>.)</a>
+<a class="sourceLine" id="cb62-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb62-5" data-line-number="5"><span class="kw">summary</span>(lm1)<span class="op">$</span>r.squared</a></code></pre></div>
 <pre><code>## [1] 0.2595873</code></pre>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" data-line-number="1"><span class="kw">tidy</span>(lm1)<span class="op">%&gt;%</span><span class="kw">kable</span>() </a></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" data-line-number="1"><span class="kw">tidy</span>(lm1)<span class="op">%&gt;%</span><span class="kw">kable</span>() </a></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -1667,18 +1687,18 @@ document.getElementsByTagName('head')[0].appendChild(style);
 </table>
 </section><section id="linear-regression-for-each-season" class="slide level2">
 <h2>Linear regression for <em>each</em> season</h2>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" data-line-number="1"><span class="co"># fit a lm model for each group</span></a>
-<a class="sourceLine" id="cb64-2" data-line-number="2">  d_filtered2 <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb64-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(season) <span class="op">%&gt;%</span><span class="st"> </span><span class="co">#process by season</span></a>
-<a class="sourceLine" id="cb64-4" data-line-number="4"><span class="st">  </span><span class="kw">nest</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># cut into groups</span></a>
-<a class="sourceLine" id="cb64-5" data-line-number="5"><span class="st">  </span><span class="kw">mutate</span>(</a>
-<a class="sourceLine" id="cb64-6" data-line-number="6">    <span class="dt">lm_tmin =</span> purrr<span class="op">::</span><span class="kw">map</span>(data, <span class="dt">.f =</span> <span class="op">~</span><span class="st"> </span><span class="kw">lm</span>(tmin <span class="op">~</span><span class="st"> </span>year, <span class="dt">data =</span> .)), <span class="co">#fit model for each group</span></a>
-<a class="sourceLine" id="cb64-7" data-line-number="7">    <span class="dt">tmin_tidy =</span> purrr<span class="op">::</span><span class="kw">map</span>(lm_tmin, broom<span class="op">::</span>tidy) <span class="co">#summarize model for each group</span></a>
-<a class="sourceLine" id="cb64-8" data-line-number="8">  ) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb64-9" data-line-number="9"><span class="st">  </span><span class="kw">unnest</span>(tmin_tidy) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb64-10" data-line-number="10"><span class="st">  </span><span class="kw">filter</span>(term <span class="op">==</span><span class="st"> &quot;year&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb64-11" data-line-number="11"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>data, <span class="op">-</span>lm_tmin) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb64-12" data-line-number="12"><span class="st">  </span><span class="kw">kable</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1"><span class="co"># fit a lm model for each group</span></a>
+<a class="sourceLine" id="cb65-2" data-line-number="2">  d_filtered2 <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb65-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(season) <span class="op">%&gt;%</span><span class="st"> </span><span class="co">#process by season</span></a>
+<a class="sourceLine" id="cb65-4" data-line-number="4"><span class="st">  </span><span class="kw">nest</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># cut into groups</span></a>
+<a class="sourceLine" id="cb65-5" data-line-number="5"><span class="st">  </span><span class="kw">mutate</span>(</a>
+<a class="sourceLine" id="cb65-6" data-line-number="6">    <span class="dt">lm_tmin =</span> purrr<span class="op">::</span><span class="kw">map</span>(data, <span class="dt">.f =</span> <span class="op">~</span><span class="st"> </span><span class="kw">lm</span>(tmin <span class="op">~</span><span class="st"> </span>year, <span class="dt">data =</span> .)), <span class="co">#fit model for each group</span></a>
+<a class="sourceLine" id="cb65-7" data-line-number="7">    <span class="dt">tmin_tidy =</span> purrr<span class="op">::</span><span class="kw">map</span>(lm_tmin, broom<span class="op">::</span>tidy) <span class="co">#summarize model for each group</span></a>
+<a class="sourceLine" id="cb65-8" data-line-number="8">  ) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb65-9" data-line-number="9"><span class="st">  </span><span class="kw">unnest</span>(tmin_tidy) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb65-10" data-line-number="10"><span class="st">  </span><span class="kw">filter</span>(term <span class="op">==</span><span class="st"> &quot;year&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb65-11" data-line-number="11"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>data, <span class="op">-</span>lm_tmin) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb65-12" data-line-number="12"><span class="st">  </span><span class="kw">kable</span>()</a></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -1741,7 +1761,6 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <section><section id="climate-metrics" class="title-slide slide level1"><h1>Climate Metrics</h1></section><section id="climate-metrics-climdex" class="slide level2">
 <h2>Climate Metrics: ClimdEX</h2>
 <p>Indices representing extreme aspects of climate derived from daily data:</p>
-<p><img src="../08_assets/climdex.png" alt="alt text" width="50%"></p>
 <p>Climate Change Research Centre (CCRC) at University of New South Wales (UNSW) (<a href="http://www.climdex.org">climdex.org</a>).</p>
 </section><section id="core-indices" class="slide level2">
 <h2>27 Core indices</h2>
@@ -1762,33 +1781,33 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <p><a href="http://www.climdex.org/indices.html">ClimDex</a></p>
 </section><section id="format-data-for-climdex" class="slide level2">
 <h2>Format data for <code>climdex</code></h2>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1"><span class="kw">library</span>(PCICt)</a>
-<a class="sourceLine" id="cb65-2" data-line-number="2"><span class="co">## Parse the dates into PCICt.</span></a>
-<a class="sourceLine" id="cb65-3" data-line-number="3">pc.dates &lt;-<span class="st"> </span><span class="kw">as.PCICt</span>(<span class="kw">as.POSIXct</span>(d_filtered<span class="op">$</span>date),<span class="dt">cal=</span><span class="st">&quot;gregorian&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" data-line-number="1"><span class="kw">library</span>(PCICt)</a>
+<a class="sourceLine" id="cb66-2" data-line-number="2"><span class="co">## Parse the dates into PCICt.</span></a>
+<a class="sourceLine" id="cb66-3" data-line-number="3">pc.dates &lt;-<span class="st"> </span><span class="kw">as.PCICt</span>(<span class="kw">as.POSIXct</span>(d_filtered<span class="op">$</span>date),<span class="dt">cal=</span><span class="st">&quot;gregorian&quot;</span>)</a></code></pre></div>
 </section><section id="generate-the-climdex-object" class="slide level2">
 <h2>Generate the climdex object</h2>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" data-line-number="1">  <span class="kw">library</span>(climdex.pcic)</a>
-<a class="sourceLine" id="cb66-2" data-line-number="2">    ci &lt;-<span class="st"> </span><span class="kw">climdexInput.raw</span>(</a>
-<a class="sourceLine" id="cb66-3" data-line-number="3">      <span class="dt">tmax=</span>d_filtered<span class="op">$</span>tmax,</a>
-<a class="sourceLine" id="cb66-4" data-line-number="4">      <span class="dt">tmin=</span>d_filtered<span class="op">$</span>tmin,</a>
-<a class="sourceLine" id="cb66-5" data-line-number="5">      <span class="dt">prec=</span>d_filtered<span class="op">$</span>prcp,</a>
-<a class="sourceLine" id="cb66-6" data-line-number="6">      pc.dates,pc.dates,pc.dates, </a>
-<a class="sourceLine" id="cb66-7" data-line-number="7">      <span class="dt">base.range=</span><span class="kw">c</span>(<span class="dv">1971</span>, <span class="dv">2000</span>))</a>
-<a class="sourceLine" id="cb66-8" data-line-number="8">years=<span class="kw">as.numeric</span>(<span class="kw">as.character</span>(<span class="kw">unique</span>(ci<span class="op">@</span>date.factors<span class="op">$</span>annual)))</a></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1">  <span class="kw">library</span>(climdex.pcic)</a>
+<a class="sourceLine" id="cb67-2" data-line-number="2">    ci &lt;-<span class="st"> </span><span class="kw">climdexInput.raw</span>(</a>
+<a class="sourceLine" id="cb67-3" data-line-number="3">      <span class="dt">tmax=</span>d_filtered<span class="op">$</span>tmax,</a>
+<a class="sourceLine" id="cb67-4" data-line-number="4">      <span class="dt">tmin=</span>d_filtered<span class="op">$</span>tmin,</a>
+<a class="sourceLine" id="cb67-5" data-line-number="5">      <span class="dt">prec=</span>d_filtered<span class="op">$</span>prcp,</a>
+<a class="sourceLine" id="cb67-6" data-line-number="6">      pc.dates,pc.dates,pc.dates, </a>
+<a class="sourceLine" id="cb67-7" data-line-number="7">      <span class="dt">base.range=</span><span class="kw">c</span>(<span class="dv">1971</span>, <span class="dv">2000</span>))</a>
+<a class="sourceLine" id="cb67-8" data-line-number="8">years=<span class="kw">as.numeric</span>(<span class="kw">as.character</span>(<span class="kw">unique</span>(ci<span class="op">@</span>date.factors<span class="op">$</span>annual)))</a></code></pre></div>
 </section><section id="cumulative-dry-days" class="slide level2">
 <h2>Cumulative dry days</h2>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1">cdd=<span class="st"> </span><span class="kw">climdex.cdd</span>(ci, <span class="dt">spells.can.span.years =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb67-2" data-line-number="2"><span class="kw">plot</span>(cdd<span class="op">~</span>years,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" data-line-number="1">cdd=<span class="st"> </span><span class="kw">climdex.cdd</span>(ci, <span class="dt">spells.can.span.years =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb68-2" data-line-number="2"><span class="kw">plot</span>(cdd<span class="op">~</span>years,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>)</a></code></pre></div>
 <p><img data-src="PS_09_weather_files/figure-revealjs/unnamed-chunk-41-1.png" /></p>
 </section><section id="diurnal-temperature-range" class="slide level2">
 <h2>Diurnal Temperature Range</h2>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" data-line-number="1">dtr=<span class="kw">climdex.dtr</span>(ci, <span class="dt">freq =</span> <span class="kw">c</span>(<span class="st">&quot;annual&quot;</span>))</a>
-<a class="sourceLine" id="cb68-2" data-line-number="2"><span class="kw">plot</span>(dtr<span class="op">~</span>years,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1">dtr=<span class="kw">climdex.dtr</span>(ci, <span class="dt">freq =</span> <span class="kw">c</span>(<span class="st">&quot;annual&quot;</span>))</a>
+<a class="sourceLine" id="cb69-2" data-line-number="2"><span class="kw">plot</span>(dtr<span class="op">~</span>years,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>)</a></code></pre></div>
 <p><img data-src="PS_09_weather_files/figure-revealjs/unnamed-chunk-42-1.png" /></p>
 </section><section id="frost-days" class="slide level2">
 <h2>Frost Days</h2>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1">fd=<span class="kw">climdex.fd</span>(ci)</a>
-<a class="sourceLine" id="cb69-2" data-line-number="2"><span class="kw">plot</span>(fd<span class="op">~</span>years,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" data-line-number="1">fd=<span class="kw">climdex.fd</span>(ci)</a>
+<a class="sourceLine" id="cb70-2" data-line-number="2"><span class="kw">plot</span>(fd<span class="op">~</span>years,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>)</a></code></pre></div>
 <p><img data-src="PS_09_weather_files/figure-revealjs/unnamed-chunk-43-1.png" /></p>
 </section></section>
     </div>

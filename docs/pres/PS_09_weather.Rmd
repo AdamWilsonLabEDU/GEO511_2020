@@ -16,6 +16,41 @@ knitr::opts_chunk$set(cache=T,
 library(knitr)
 ```
 
+
+## Course Schedule
+<iframe
+  src="http://wilsonlab.io/GEO511/Schedule.html"
+  width="100%" height="800">
+</iframe>
+[source](http://wilsonlab.io/GEO511/Schedule.html)
+
+## Resource Presentations
+
+<iframe
+  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&single=true"
+  width="100%" height="800">
+</iframe>
+[source](https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&single=true)
+
+# Case Study Presentations
+
+## Let's pick a winner!
+
+<iframe
+  src="https://wheelofnames.com/bw4-gdt"
+  width="100%" height="500">
+</iframe>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&amp;single=true&amp;widget=true&amp;headers=false" style="height: 200px; width: 100%;"></iframe>
+
+## Next Week's Case Study
+
+<iframe
+  src="http://wilsonlab.io/GEO511/CS_09.html"
+  width="100%" height="800">
+</iframe>
+[source](http://wilsonlab.io/GEO511/CS_09.html)
+
+
 # API
 
 ## Application Programming Interface
@@ -371,7 +406,7 @@ ggplot(d_filtered,
 
 Limit to a few years and plot the daily range and average temperatures.
 ```{r, fig.height=6}
-d_filtered_recent=filter(d_filtered,date>as.Date("2015-01-01"))
+d_filtered_recent=filter(d_filtered,date>as.Date("2017-01-01"))
 
   ggplot(d_filtered_recent,
          aes(ymax=tmax,ymin=tmin,x=date))+
@@ -518,7 +553,7 @@ d_filtered2%>%
 Plot 10-year means (excluding years without complete data):
 ```{r, warning=F}
 d_filtered2%>%
-  filter(year>1938, year<2019)%>%
+  filter(year>1938, year<2021)%>%
   group_by(dec)%>%
   summarize(
             n=n(),
@@ -531,22 +566,22 @@ d_filtered2%>%
 ```
 
 
-## Look for specific events: was 2019 unusually hot in Buffalo, NY?
-Let's compare 2019 with all the previous years in the dataset.  First add 'day of year' to the data to facilitate showing all years on the same plot.
+## Look for specific events: was 2020 unusually hot in Buffalo, NY?
+Let's compare 2020 with all the previous years in the dataset.  First add 'day of year' to the data to facilitate showing all years on the same plot.
 ```{r, warning=F}
 df=d_filtered2%>%
   mutate(doy=as.numeric(format(date,"%j")),
-         doydate=as.Date(paste("2019-",doy),format="%Y-%j"))
+         doydate=as.Date(paste("2020-",doy),format="%Y-%j"))
 ```
 
 ---
 
-Then plot all years (in grey) and add 2017 in red.
+Then plot all years (in grey) and add 2020 in red.
 ```{r, warning=F}
 ggplot(df,aes(x=doydate,y=tmax,group=year))+
   geom_line(col="grey",alpha=.5)+ # plot each year in grey
   stat_smooth(aes(group=1),col="black")+   # Add a smooth GAM to estimate the long-term mean
-  geom_line(data=filter(df,year==2019),col="red")+  # add 2017 in red
+  geom_line(data=filter(df,year==2020),col="red")+  # add 2017 in red
   scale_x_date(labels = date_format("%b"),date_breaks = "2 months") + 
   xlab("Day of year")
 ```
@@ -626,8 +661,6 @@ See [Time Series Analysis Task View](https://cran.r-project.org/web/views/TimeSe
 
 ## Climate Metrics: ClimdEX
 Indices representing extreme aspects of climate derived from daily data:
-
-<img src="../08_assets/climdex.png" alt="alt text" width="50%">
 
 Climate Change Research Centre (CCRC) at University of New South Wales (UNSW) ([climdex.org](http://www.climdex.org)).  
 

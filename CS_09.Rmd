@@ -46,7 +46,8 @@ data(us_states)
 In this case study you will download storm track data from NOAA, make a summary plot, and quantify how many storms have hit each of the United States.  This will require you to use a spatial join (`st_join`).
 
 ### Your goal
-```{r download_data, eval=F, echo=F, purl=F, warning=F}
+```{r download_data, eval=F, echo=T, purl=F, warning=F}
+# Doesn't work in October 2020.
 storms <- storm_shp(basin = "NA")
 storm_data <- read_sf(storms$path)
 ```
@@ -58,7 +59,7 @@ tdir=tempdir()
 download.file(dataurl,destfile=file.path(tdir,"temp.zip"))
 unzip(file.path(tdir,"temp.zip"),exdir = tdir)
 list.files(tdir)
-storm_data <- read_sf(list.files(tdir,pattern=".shp"))
+storm_data <- read_sf(list.files(tdir,pattern=".shp",full.names = T))
 ```
 
 ```{r, echo=F, purl=F, warning=F}
