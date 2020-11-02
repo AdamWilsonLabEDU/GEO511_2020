@@ -3,17 +3,15 @@
 #' subtitle:  Processing MODIS data from NASA
 #' week: 10
 #' type: Task
-#' presentation: PS_10_RS.html
 #' reading: 
 #'    - 
 #' tasks: 
-#'    - Work through the materials on [processing MODIS RS data](09_RemoteSensing_appeears.html)
+#'    - Look through this week's case study [processing MODIS RS data](CS_10.html)
 #'    - Take notes on interesting or useful things you learned in your course repository.
+#'    - Keep working on your project!
 #' ---
 #' 
 
-#' 
-#' `r presframe()`
 #' 
 #' # Reading
 #' 
@@ -28,6 +26,8 @@ md_bullet(rmarkdown::metadata$tasks)
 
 #' 
 #' # More Resources
+#' 
+#' If you are interested in extracting data from NASA sensors, the following (optional) video overview of AppEEARS may be useful.  
 #' 
 #' <iframe width="560" height="315" src="https://www.youtube.com/embed/8VHzCiupTVo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 #' 

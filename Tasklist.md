@@ -343,8 +343,9 @@ ___
 - NULL
 
 ## Tasks
-- Work through the materials on [processing MODIS RS data](09_RemoteSensing_appeears.html)
+- Look through this week's case study [processing MODIS RS data](CS_10.html)
 - Take notes on interesting or useful things you learned in your course repository.
+- Keep working on your project!
 </div>
 ___
 ## [ CS_11 :  Parallel Computing with R ]( ./CS_11.html ) 
