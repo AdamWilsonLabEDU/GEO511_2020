@@ -41,14 +41,14 @@ Plan to spend at least 1 hour for each review (2 hours total). The objectives fo
 
 ### Selecting a project to evaluate
 
-1. Browse the [current drafts of projects here](Projects.html).  
+1. Browse the [current drafts of projects here](https://github.com/geo511-2020?q=project&type=&language=).  
 2. Select two repositories and evaluate them according to the instructions listed in the [Project First Draft task](TK_11.html) 
 
 ![](project_assets/project_evaluation.png)
 
 ### Download and reproduce the project
 
-1) Explore the final projects in the [class repository](https://github.com/geo511-2019?utf8=%E2%9C%93&q=project)
+1) Explore the final projects in the [class repository](https://github.com/geo511-2020?q=project&type=&language=)
 2) Select two projects that do not already have two evaluations (pull requests). For example, in the image above, there are 0 pull requests, so this repository would be available for you to review.  If there are already 2 pull requests, select another repository.
 2) Go to the github page linked in the assignment and download the repository as a zip file (click on the <img src='project_assets/download.png' width=100> button).
 3) Unzip the file after it downloads

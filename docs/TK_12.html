@@ -25,8 +25,19 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -447,7 +458,7 @@ div.tocify {
 <div id="selecting-a-project-to-evaluate" class="section level3">
 <h3>Selecting a project to evaluate</h3>
 <ol style="list-style-type: decimal">
-<li>Browse the <a href="Projects.html">current drafts of projects here</a>.<br />
+<li>Browse the <a href="https://github.com/geo511-2020?q=project&amp;type=&amp;language=">current drafts of projects here</a>.<br />
 </li>
 <li>Select two repositories and evaluate them according to the instructions listed in the <a href="TK_11.html">Project First Draft task</a></li>
 </ol>
@@ -456,7 +467,7 @@ div.tocify {
 <div id="download-and-reproduce-the-project" class="section level3">
 <h3>Download and reproduce the project</h3>
 <ol style="list-style-type: decimal">
-<li>Explore the final projects in the <a href="https://github.com/geo511-2019?utf8=%E2%9C%93&amp;q=project">class repository</a></li>
+<li>Explore the final projects in the <a href="https://github.com/geo511-2020?q=project&amp;type=&amp;language=">class repository</a></li>
 <li>Select two projects that do not already have two evaluations (pull requests). For example, in the image above, there are 0 pull requests, so this repository would be available for you to review. If there are already 2 pull requests, select another repository.</li>
 <li>Go to the github page linked in the assignment and download the repository as a zip file (click on the <img src='project_assets/download.png' width=100> button).</li>
 <li>Unzip the file after it downloads</li>
@@ -548,7 +559,7 @@ div.tocify {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
