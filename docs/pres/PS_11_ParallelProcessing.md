@@ -272,7 +272,7 @@ toc()
 ```
 
 ```
-## 0.016 sec elapsed
+## 0.006 sec elapsed
 ```
 
 ```r
@@ -284,7 +284,7 @@ toc()
 ```
 
 ```
-## 0.037 sec elapsed
+## 0.029 sec elapsed
 ```
 
 ## Test the relative speed
@@ -299,7 +299,7 @@ toc()
 ```
 
 ```
-## 9.02 sec elapsed
+## 9.021 sec elapsed
 ```
 
 ```r
@@ -311,7 +311,7 @@ toc()
 ```
 
 ```
-## 3.035 sec elapsed
+## 3.034 sec elapsed
 ```
 
 ## Nested foreach loops
@@ -409,7 +409,7 @@ toc()
 ```
 
 ```
-## 0.062 sec elapsed
+## 0.061 sec elapsed
 ```
 
 ```r
@@ -419,7 +419,7 @@ toc()
 ```
 
 ```
-## 0.596 sec elapsed
+## 0.592 sec elapsed
 ```
 
 ```r
