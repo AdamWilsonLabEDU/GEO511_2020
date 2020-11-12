@@ -302,7 +302,7 @@ gplot(lstkeep[[4:8]])+
 
 
 Mask the lst data using the QC data and overwrite the original data.
-```{r, purl=F}
+```{r, eval=F, purl=F}
 lst=mask(lst,mask=lstkeep,maskval=0)
 ```
 
@@ -394,7 +394,7 @@ Now we will use a function called `stackApply()` to calculate monthly mean land 
 
 Hints:
 
-1. First make a variable called `tmonth` by converting the dates to months using `as.numeric(format(getZ(lst2),"%m"))`
+1. First make a variable called `tmonth` by converting the dates to months using `as.numeric(format(getZ(lst),"%m"))`
 2. Use `stackApply()` to summarize the mean value per month (using the `tmonth` variable you just created) and save the results as `lst_month`.
 3. Set the names of the layers to months with `names(lst_month)=month.name`
 4. Plot the map for each month with `gplot()` in the RasterVis Package.
@@ -407,7 +407,7 @@ A plot of the monthly climatologies will look like this:
 ```{r, fig.height=8, purl=F, echo=F, message=F}
 tmonth=as.numeric(format(getZ(lst),"%m"))
 
-lst_month=stackApply(lst,indices = tmonth,mean,na.rm=T)
+lst_month=stackApply(lst,indices = tmonth,fun = mean,na.rm=T)
 names(lst_month)=month.name
 
 gplot(lst_month)+geom_raster(aes(fill=value))+

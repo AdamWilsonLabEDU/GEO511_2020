@@ -1,0 +1,1909 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>APIs, time-series, and weather Data</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="externals/reveal.js-3.3.0.1/css/reveal.css"/>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  { background-color: #f8f8f8; }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="externals/reveal.js-3.3.0.1/css/theme/sky.css" id="theme">
+
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+    <link rel="stylesheet" href="reveal.css"/>
+
+<!-- Printing and PDF exports -->
+<script id="paper-css" type="application/dynamic-css">
+
+/* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+
+
+@media print {
+
+	/* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+	html {
+		background: #fff;
+		width: auto;
+		height: auto;
+		overflow: visible;
+	}
+	body {
+		background: #fff;
+		font-size: 20pt;
+		width: auto;
+		height: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
+		overflow: visible;
+		float: none !important;
+	}
+
+	/* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+	.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds {
+		display: none !important;
+	}
+
+	/* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+	body, p, td, li, div {
+		font-size: 20pt!important;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		color: #000;
+	}
+
+	/* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+	h1,h2,h3,h4,h5,h6 {
+		color: #000!important;
+		height: auto;
+		line-height: normal;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		text-shadow: 0 0 0 #000 !important;
+		text-align: left;
+		letter-spacing: normal;
+	}
+	/* Need to reduce the size of the fonts for printing */
+	h1 { font-size: 28pt !important;  }
+	h2 { font-size: 24pt !important; }
+	h3 { font-size: 22pt !important; }
+	h4 { font-size: 22pt !important; font-variant: small-caps; }
+	h5 { font-size: 21pt !important; }
+	h6 { font-size: 20pt !important; font-style: italic; }
+
+	/* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+	a:link,
+	a:visited {
+		color: #000 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	/*
+	.reveal a:link:after,
+	.reveal a:visited:after {
+		content: " (" attr(href) ") ";
+		color: #222 !important;
+		font-size: 90%;
+	}
+	*/
+
+
+	/* SECTION 6: more reveal.js specific additions by @skypanther */
+	ul, ol, div, p {
+		visibility: visible;
+		position: static;
+		width: auto;
+		height: auto;
+		display: block;
+		overflow: visible;
+		margin: 0;
+		text-align: left !important;
+	}
+	.reveal pre,
+	.reveal table {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.reveal pre code {
+		padding: 20px;
+		border: 1px solid #ddd;
+	}
+	.reveal blockquote {
+		margin: 20px 0;
+	}
+	.reveal .slides {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 0 !important;
+		zoom: 1 !important;
+
+		overflow: visible !important;
+		display: block !important;
+
+		text-align: left !important;
+		-webkit-perspective: none;
+		   -moz-perspective: none;
+		    -ms-perspective: none;
+		        perspective: none;
+
+		-webkit-perspective-origin: 50% 50%;
+		   -moz-perspective-origin: 50% 50%;
+		    -ms-perspective-origin: 50% 50%;
+		        perspective-origin: 50% 50%;
+	}
+	.reveal .slides section {
+		visibility: visible !important;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		display: block !important;
+		overflow: visible !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 60px 20px !important;
+		z-index: auto !important;
+
+		opacity: 1 !important;
+
+		page-break-after: always !important;
+
+		-webkit-transform-style: flat !important;
+		   -moz-transform-style: flat !important;
+		    -ms-transform-style: flat !important;
+		        transform-style: flat !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+
+		-webkit-transition: none !important;
+		   -moz-transition: none !important;
+		    -ms-transition: none !important;
+		        transition: none !important;
+	}
+	.reveal .slides section.stack {
+		padding: 0 !important;
+	}
+	.reveal section:last-of-type {
+		page-break-after: avoid !important;
+	}
+	.reveal section .fragment {
+		opacity: 1 !important;
+		visibility: visible !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+	}
+	.reveal section img {
+		display: block;
+		margin: 15px 0px;
+		background: rgba(255,255,255,1);
+		border: 1px solid #666;
+		box-shadow: none;
+	}
+
+	.reveal section small {
+		font-size: 0.8em;
+	}
+
+}  
+</script>
+
+
+<script id="pdf-css" type="application/dynamic-css">
+    
+/**
+ * This stylesheet is used to print reveal.js
+ * presentations to PDF.
+ *
+ * https://github.com/hakimel/reveal.js#pdf-export
+ */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+/* Remove any elements not needed in print. */
+.nestedarrow,
+.reveal .controls,
+.reveal .progress,
+.reveal .playback,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 0 0 0 #000 !important;
+}
+
+.reveal pre code {
+	overflow: hidden !important;
+	font-family: Courier, 'Courier New', monospace !important;
+}
+
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides {
+	position: static;
+	width: 100%;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: visible;
+	display: block;
+
+	-webkit-perspective: none;
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+.reveal .slides section {
+	page-break-after: always !important;
+
+	visibility: visible !important;
+	position: relative !important;
+	display: block !important;
+	position: relative !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	min-height: 1px;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+
+.reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+
+.reveal img {
+	box-shadow: none;
+}
+
+.reveal .roll {
+	overflow: visible;
+	line-height: 1em;
+}
+
+/* Slide backgrounds are placed inside of their slide when exporting to PDF */
+.reveal section .slide-background {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* All elements should be above the slide-background */
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Display slide speaker notes when 'showNotes' is enabled */
+.reveal .speaker-notes-pdf {
+	display: block;
+	width: 100%;
+	max-height: none;
+	left: auto;
+	top: auto;
+	z-index: 100;
+}
+
+/* Display slide numbers when 'slideNumber' is enabled */
+.reveal .slide-number-pdf {
+	display: block;
+	position: absolute;
+	font-size: 14px;
+}
+
+</script>
+
+
+<script>
+var style = document.createElement( 'style' );
+style.type = 'text/css';
+var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
+var style_script = document.getElementById(style_script_id).text;
+style.innerHTML = style_script;
+document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+    <link href="externals/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+    <link href="externals/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">APIs, time-series, and weather Data</h1>
+</section>
+
+<section id="course-schedule" class="slide level2">
+<h2>Course Schedule</h2>
+<iframe src="http://wilsonlab.io/GEO511/Schedule.html" width="100%" height="800">
+</iframe>
+<p><a href="http://wilsonlab.io/GEO511/Schedule.html">source</a></p>
+</section>
+<section id="final-projects" class="slide level2">
+<h2>Final Projects</h2>
+<ul>
+<li>Only 8 folks have published their sites…</li>
+<li>Start moving your project proposal content into your website
+<ul>
+<li>Title</li>
+<li>Introduction</li>
+<li>etc…</li>
+</ul></li>
+</ul>
+</section>
+<section id="resource-presentations" class="slide level2">
+<h2>Resource Presentations</h2>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&amp;single=true" width="100%" height="800">
+</iframe>
+<p><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&amp;single=true">source</a></p>
+</section>
+<section><section id="case-study-presentations" class="title-slide slide level1"><h1>Case Study Presentations</h1></section><section id="lets-pick-a-winner" class="slide level2">
+<h2>Let’s pick a winner!</h2>
+<iframe src="https://wheelofnames.com/bw4-gdt" width="100%" height="500">
+</iframe>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&amp;single=true&amp;widget=true&amp;headers=false" style="height: 200px; width: 100%;">
+</iframe>
+</section><section id="next-weeks-case-study" class="slide level2">
+<h2>Next Week’s Case Study</h2>
+<iframe src="http://wilsonlab.io/GEO511/CS_09.html" width="100%" height="800">
+</iframe>
+<p><a href="http://wilsonlab.io/GEO511/CS_09.html">source</a></p>
+</section></section>
+<section><section id="api" class="title-slide slide level1"><h1>API</h1></section><section id="application-programming-interface" class="slide level2">
+<h2>Application Programming Interface</h2>
+<iframe src="https://en.wikipedia.org/wiki/Application_programming_interface" width="100%" height="400px">
+</iframe>
+<ul>
+<li class="fragment">Imagine I wanted to work with Wikipedia content…</li>
+</ul>
+</section><section id="manually-processing-information-from-the-web" class="slide level2">
+<h2>Manually processing information from the web</h2>
+<ul>
+<li>Browse to page, <code>File-&gt;Save As</code>, repeat.</li>
+<li>Deal with ugly html stuff…</li>
+</ul>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot;&gt;
+  &lt;title&gt;APIs, time-series, and weather Data&lt;/title&gt;
+  &lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;
+  &lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black-translucent&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;externals/reveal.js-3.3.0.1/css/reveal.css&quot;/&gt;</code></pre>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(WikipediR)</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">library</span>(tidyverse)</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">content=<span class="kw">page_content</span>(</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">  <span class="dt">page_name =</span> <span class="st">&quot;Application_programming_interface&quot;</span>,</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">  <span class="dt">project=</span><span class="st">&quot;Wikipedia&quot;</span>,</a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">  <span class="dt">language=</span><span class="st">&quot;en&quot;</span>,</a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">  <span class="dt">as_wikitext=</span>T)</a></code></pre></div>
+</section><section id="apis-allow-direct-and-often-custom-sharing-of-data" class="slide level2">
+<h2>APIs allow direct (and often custom) sharing of data</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">c1=content<span class="op">$</span>parse<span class="op">$</span>wikitext<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="st">  </span><span class="kw">str_split</span>(<span class="kw">boundary</span>(<span class="st">&quot;sentence&quot;</span>),<span class="dt">simplify =</span> T)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="st">  </span><span class="kw">str_replace_all</span>(<span class="st">&quot;&#39;&quot;</span>,<span class="st">&quot;&quot;</span>)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="st">  </span><span class="kw">str_replace_all</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">[|</span><span class="ch">\\</span><span class="st">]&quot;</span>,<span class="st">&quot;&quot;</span>)</a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co"># results:</span></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="kw">cat</span>(c1[<span class="dv">3</span><span class="op">:</span><span class="dv">4</span>])</a></code></pre></div>
+<pre><code>## 
+##  An application programming interface (API) is an Interface (computing)|interface or communication protocol between a Client–server model|client and a server intended to simplify the building of client-side software.</code></pre>
+</section><section id="many-data-providers-now-have-apis" class="slide level2">
+<h2>Many data providers now have APIs</h2>
+<ul>
+<li>Government Demographic data (census, etc.)</li>
+<li>Government Environmental data</li>
+<li>Google, Twitter, etc.</li>
+</ul>
+</section><section id="ropensci" class="slide level2">
+<h2>ROpenSci</h2>
+<iframe src="https://ropensci.org" width="100%" height="800">
+</iframe>
+<p><a href="https://ropensci.org">source</a></p>
+</section><section id="pros-cons" class="slide level2">
+<h2>Pros &amp; Cons</h2>
+<h3 id="pros">Pros</h3>
+<ul>
+<li>Get the data you want, when you want it</li>
+<li>Automatic updates - just re-run the request</li>
+</ul>
+<h3 id="cons">Cons</h3>
+<ul>
+<li>Dependent on real-time access</li>
+<li>APIs, permissions, etc. can change and break code</li>
+</ul>
+</section><section id="generic-api-access" class="slide level2">
+<h2>Generic API Access</h2>
+<ol type="1">
+<li>Provide R with a URL to request information</li>
+<li>The API sends you back a response
+<ul>
+<li>JavaScript Object Notation (JSON)</li>
+<li>Extensible Markup Language (XML).</li>
+</ul></li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw">library</span>(httr)</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="kw">library</span>(jsonlite)</a></code></pre></div>
+</section><section id="endpoints" class="slide level2">
+<h2>Endpoints</h2>
+<p>The URL you will request information from.</p>
+<ul>
+<li>Data.gov API: <a href="https://www.data.gov/developers/apis" class="uri">https://www.data.gov/developers/apis</a></li>
+<li>Github API: <a href="https://api.github.com" class="uri">https://api.github.com</a></li>
+<li>U.S. Census API: <a href="http://api.census.gov" class="uri">http://api.census.gov</a></li>
+</ul>
+</section><section id="some-r-packages-for-specific-apis" class="slide level2">
+<h2>Some R Packages for specific APIs</h2>
+</section><section id="census-data" class="slide level2">
+<h2>Census data</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">library</span>(tidycensus)</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3">net_migration &lt;-<span class="st"> </span><span class="kw">get_estimates</span>(<span class="dt">geography =</span> <span class="st">&quot;county&quot;</span>,</a>
+<a class="sourceLine" id="cb6-4" data-line-number="4">                               <span class="dt">variables =</span> <span class="st">&quot;RNETMIG&quot;</span>,</a>
+<a class="sourceLine" id="cb6-5" data-line-number="5">                               <span class="dt">geometry =</span> <span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb6-6" data-line-number="6">                               <span class="dt">shift_geo =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb6-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb6-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb6-9" data-line-number="9">net_migration &lt;-<span class="st"> </span>net_migration <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">groups =</span> <span class="kw">case_when</span>(</a>
+<a class="sourceLine" id="cb6-11" data-line-number="11">    value <span class="op">&gt;</span><span class="st"> </span><span class="dv">15</span> <span class="op">~</span><span class="st"> &quot;+15 and up&quot;</span>,</a>
+<a class="sourceLine" id="cb6-12" data-line-number="12">    value <span class="op">&gt;</span><span class="st"> </span><span class="dv">5</span> <span class="op">~</span><span class="st"> &quot;+5 to +15&quot;</span>,</a>
+<a class="sourceLine" id="cb6-13" data-line-number="13">    value <span class="op">&gt;</span><span class="st"> </span><span class="dv">-5</span> <span class="op">~</span><span class="st"> &quot;-5 to +5&quot;</span>,</a>
+<a class="sourceLine" id="cb6-14" data-line-number="14">    value <span class="op">&gt;</span><span class="st"> </span><span class="dv">-15</span> <span class="op">~</span><span class="st"> &quot;-15 to -5&quot;</span>,</a>
+<a class="sourceLine" id="cb6-15" data-line-number="15">    <span class="ot">TRUE</span> <span class="op">~</span><span class="st"> &quot;-15 and below&quot;</span></a>
+<a class="sourceLine" id="cb6-16" data-line-number="16">  ))</a>
+<a class="sourceLine" id="cb6-17" data-line-number="17"></a>
+<a class="sourceLine" id="cb6-18" data-line-number="18"><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb6-19" data-line-number="19"><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> net_migration, <span class="kw">aes</span>(<span class="dt">fill =</span> groups, <span class="dt">color =</span> groups), <span class="dt">lwd =</span> <span class="fl">0.1</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb6-20" data-line-number="20"><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> tidycensus<span class="op">::</span>state_laea, <span class="dt">fill =</span> <span class="ot">NA</span>, <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">lwd =</span> <span class="fl">0.1</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb6-21" data-line-number="21"><span class="st">  </span><span class="kw">scale_fill_brewer</span>(<span class="dt">palette =</span> <span class="st">&quot;PuOr&quot;</span>, <span class="dt">direction =</span> <span class="dv">-1</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb6-22" data-line-number="22"><span class="st">  </span><span class="kw">scale_color_brewer</span>(<span class="dt">palette =</span> <span class="st">&quot;PuOr&quot;</span>, <span class="dt">direction =</span> <span class="dv">-1</span>, <span class="dt">guide =</span> <span class="ot">FALSE</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb6-23" data-line-number="23"><span class="st">  </span><span class="kw">coord_sf</span>(<span class="dt">datum =</span> <span class="ot">NA</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb6-24" data-line-number="24"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Net migration per 1000 residents by county&quot;</span>,</a>
+<a class="sourceLine" id="cb6-25" data-line-number="25">       <span class="dt">subtitle =</span> <span class="st">&quot;US Census Bureau 2017 Population Estimates&quot;</span>,</a>
+<a class="sourceLine" id="cb6-26" data-line-number="26">       <span class="dt">fill =</span> <span class="st">&quot;Rate&quot;</span>,</a>
+<a class="sourceLine" id="cb6-27" data-line-number="27">       <span class="dt">caption =</span> <span class="st">&quot;Data acquired with the R tidycensus package&quot;</span>)</a></code></pre></div>
+</section><section id="results" class="slide level2">
+<h2>Results</h2>
+<p><img data-src="PS_09_weather_files/figure-revealjs/census-1.png" /></p>
+</section><section id="feddata-package" class="slide level2">
+<h2><code>FedData</code> package</h2>
+<ul>
+<li>National Elevation Dataset digital elevation models (1 and 1/3 arc-second; USGS)</li>
+<li>National Hydrography Dataset (USGS)</li>
+<li>Soil Survey Geographic (SSURGO) database</li>
+<li>International Tree Ring Data Bank.</li>
+<li>Global Historical Climatology Network (GHCN)</li>
+<li>Others</li>
+</ul>
+</section><section id="noaa-apiv2" class="slide level2">
+<h2>NOAA APIv2</h2>
+<iframe src="https://www.ncdc.noaa.gov/cdo-web/webservices/v2" width="100%" height="400px">
+</iframe>
+<p><a href="http://www.ncdc.noaa.gov/cdo-web/webservices/v2">National Climatic Data Center application programming interface (API)</a>.</p>
+</section><section id="rnoaa-package" class="slide level2">
+<h2><code>rNOAA</code> package</h2>
+<p>Handles downloading data directly from NOAA APIv2.</p>
+<ul>
+<li><code>buoy_*</code> NOAA Buoy data from the National Buoy Data Center</li>
+<li><code>ghcnd_*</code> GHCND daily data from NOAA</li>
+<li><code>isd_*</code> ISD/ISH data from NOAA</li>
+<li><code>homr_*</code> Historical Observing Metadata Repository</li>
+<li><code>ncdc_*</code> NOAA National Climatic Data Center (NCDC)</li>
+<li><code>seaice</code> Sea ice</li>
+<li><code>storm_</code> Storms (IBTrACS)</li>
+<li><code>swdi</code> Severe Weather Data Inventory (SWDI)</li>
+<li><code>tornadoes</code> From the NOAA Storm Prediction Center</li>
+</ul>
+</section></section>
+<section><section id="global-historical-climatology-network-ghcn" class="title-slide slide level1"><h1>Global Historical Climatology Network (GHCN)</h1></section><section id="libraries" class="slide level2">
+<h2>Libraries</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">library</span>(sf)</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw">library</span>(broom)</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="kw">library</span>(tidyverse)</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="kw">library</span>(ggmap)</a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="kw">library</span>(scales)</a>
+<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="co"># New Packages</span></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="kw">library</span>(rnoaa)</a>
+<a class="sourceLine" id="cb7-8" data-line-number="8"><span class="kw">library</span>(climdex.pcic)</a>
+<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="kw">library</span>(zoo)</a></code></pre></div>
+</section><section id="station-locations" class="slide level2">
+<h2>Station locations</h2>
+<p>Download the GHCN station inventory with <code>ghcnd_stations()</code> and convert to <code>sf</code> object. The download can take a minute or two.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">st =<span class="st"> </span><span class="kw">ghcnd_stations</span>()<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="st">  </span><span class="kw">na.omit</span>()<span class="op">%&gt;%</span><span class="st">  </span><span class="co"># remove records with missing values</span></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="st">  </span><span class="kw">st_as_sf</span>(<span class="dt">coords=</span><span class="kw">c</span>(<span class="st">&quot;longitude&quot;</span>,<span class="st">&quot;latitude&quot;</span>))<span class="op">%&gt;%</span><span class="st"> </span><span class="co">#convert to sf</span></a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="st">  </span><span class="kw">st_set_crs</span>(<span class="st">&quot;+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs&quot;</span>)</a>
+<a class="sourceLine" id="cb8-5" data-line-number="5">  <span class="kw">head</span>(st)<span class="op">%&gt;%</span><span class="kw">kable</span>()</a></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">id</th>
+<th style="text-align: right;">elevation</th>
+<th style="text-align: left;">state</th>
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">gsn_flag</th>
+<th style="text-align: left;">wmo_id</th>
+<th style="text-align: left;">element</th>
+<th style="text-align: right;">first_year</th>
+<th style="text-align: right;">last_year</th>
+<th style="text-align: left;">geometry</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ACW00011604</td>
+<td style="text-align: right;">10.1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ST JOHNS COOLIDGE FLD</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">TMAX</td>
+<td style="text-align: right;">1949</td>
+<td style="text-align: right;">1949</td>
+<td style="text-align: left;">c(-61.7833, 17.1167)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ACW00011604</td>
+<td style="text-align: right;">10.1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ST JOHNS COOLIDGE FLD</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">TMIN</td>
+<td style="text-align: right;">1949</td>
+<td style="text-align: right;">1949</td>
+<td style="text-align: left;">c(-61.7833, 17.1167)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ACW00011604</td>
+<td style="text-align: right;">10.1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ST JOHNS COOLIDGE FLD</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">PRCP</td>
+<td style="text-align: right;">1949</td>
+<td style="text-align: right;">1949</td>
+<td style="text-align: left;">c(-61.7833, 17.1167)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ACW00011604</td>
+<td style="text-align: right;">10.1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ST JOHNS COOLIDGE FLD</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">SNOW</td>
+<td style="text-align: right;">1949</td>
+<td style="text-align: right;">1949</td>
+<td style="text-align: left;">c(-61.7833, 17.1167)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ACW00011604</td>
+<td style="text-align: right;">10.1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ST JOHNS COOLIDGE FLD</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">SNWD</td>
+<td style="text-align: right;">1949</td>
+<td style="text-align: right;">1949</td>
+<td style="text-align: left;">c(-61.7833, 17.1167)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ACW00011604</td>
+<td style="text-align: right;">10.1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ST JOHNS COOLIDGE FLD</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">PGTM</td>
+<td style="text-align: right;">1949</td>
+<td style="text-align: right;">1949</td>
+<td style="text-align: left;">c(-61.7833, 17.1167)</td>
+</tr>
+</tbody>
+</table>
+</section><section id="ghcnd-variables-5-core-values" class="slide level2">
+<h2>GHCND Variables: 5 core values</h2>
+<ul>
+<li><strong>PRCP</strong> Precipitation (tenths of mm)</li>
+<li><strong>SNOW</strong> Snowfall (mm)</li>
+<li><strong>SNWD</strong> Snow depth (mm)</li>
+<li><strong>TMAX</strong> Maximum temperature</li>
+<li><strong>TMIN</strong> Minimum temperature</li>
+</ul>
+</section><section class="slide level2">
+
+<h3 id="and-50-others-for-example">And ~50 others! For example:</h3>
+<ul>
+<li><strong>ACMC</strong> Average cloudiness midnight to midnight from 30-second ceilometer</li>
+<li><strong>AWND</strong> Average daily wind speed</li>
+<li><strong>FMTM</strong> Time of fastest mile or fastest 1-minute wind</li>
+<li><strong>MDSF</strong> Multiday snowfall total</li>
+</ul>
+</section><section id="filter-to-temperature-and-precipitation" class="slide level2">
+<h2><code>filter()</code> to temperature and precipitation</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">st_filtered=dplyr<span class="op">::</span><span class="kw">filter</span>(st,element<span class="op">%in%</span><span class="kw">c</span>(<span class="st">&quot;TMAX&quot;</span>,<span class="st">&quot;TMIN&quot;</span>,<span class="st">&quot;PRCP&quot;</span>))</a></code></pre></div>
+</section><section id="map-ghcnd-stations" class="slide level2">
+<h2>Map GHCND stations</h2>
+<p>First, get a global country polygon</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">library</span>(spData)</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="kw">data</span>(world)</a></code></pre></div>
+</section><section id="station-locations-1" class="slide level2">
+<h2>Station locations</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">map1=<span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data=</span>world,<span class="dt">inherit.aes =</span> F,<span class="dt">size=</span>.<span class="dv">1</span>,<span class="dt">fill=</span><span class="st">&quot;grey&quot;</span>,<span class="dt">colour=</span><span class="st">&quot;black&quot;</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>element)<span class="op">+</span></a>
+<a class="sourceLine" id="cb11-4" data-line-number="4"><span class="st">  </span><span class="kw">stat_bin2d</span>(<span class="dt">data=</span>st_filtered,</a>
+<a class="sourceLine" id="cb11-5" data-line-number="5">             <span class="kw">aes</span>(<span class="dt">y=</span><span class="kw">st_coordinates</span>(st_filtered)[,<span class="dv">2</span>],</a>
+<a class="sourceLine" id="cb11-6" data-line-number="6">                 <span class="dt">x=</span><span class="kw">st_coordinates</span>(st_filtered)[,<span class="dv">1</span>]),<span class="dt">bins=</span><span class="dv">100</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb11-7" data-line-number="7"><span class="st">  </span><span class="kw">scale_fill_distiller</span>(<span class="dt">palette=</span><span class="st">&quot;YlOrRd&quot;</span>,<span class="dt">trans=</span><span class="st">&quot;log&quot;</span>,<span class="dt">direction=</span><span class="op">-</span><span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb11-8" data-line-number="8">                       <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">10</span>,<span class="dv">100</span>,<span class="dv">1000</span>))<span class="op">+</span></a>
+<a class="sourceLine" id="cb11-9" data-line-number="9"><span class="st">  </span><span class="kw">coord_sf</span>()<span class="op">+</span></a>
+<a class="sourceLine" id="cb11-10" data-line-number="10"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;&quot;</span>,<span class="dt">y=</span><span class="st">&quot;&quot;</span>)</a></code></pre></div>
+</section><section class="slide level2">
+
+<p><img data-src="PS_09_weather_files/figure-revealjs/unnamed-chunk-10-1.png" /></p>
+</section><section id="download-daily-data-from-ghcn" class="slide level2">
+<h2>Download daily data from GHCN</h2>
+<p><code>ghcnd()</code> will download a <code>.dly</code> text file for a particular station. But how to choose?</p>
+</section><section id="geocode-in-ggmap-package-useful-for-geocoding-place-names" class="slide level2">
+<h2><code>geocode</code> in ggmap package useful for geocoding place names</h2>
+<p>Geocodes a location (find latitude and longitude) using either (1) the Data Science Toolkit (<a href="http://www.datasciencetoolkit.org/about" class="uri">http://www.datasciencetoolkit.org/about</a>) or (2) Google Maps.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">geocode</span>(<span class="st">&quot;University at Buffalo, NY&quot;</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 1 x 2
+##     lon   lat
+##   &lt;dbl&gt; &lt;dbl&gt;
+## 1 -78.8  43.0</code></pre>
+</section><section class="slide level2">
+
+<p>However, you have to be careful:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw">geocode</span>(<span class="st">&quot;Washington&quot;</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 1 x 2
+##     lon   lat
+##   &lt;dbl&gt; &lt;dbl&gt;
+## 1 -121.  47.8</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">geocode</span>(<span class="st">&quot;Washington D.C.&quot;</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 1 x 2
+##     lon   lat
+##   &lt;dbl&gt; &lt;dbl&gt;
+## 1 -77.0  38.9</code></pre>
+</section><section class="slide level2">
+
+<p>But this is pretty safe for well known and well-defined places.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1">buffalo_c=<span class="kw">geocode</span>(<span class="st">&quot;Buffalo International Airport, NY&quot;</span>)</a>
+<a class="sourceLine" id="cb18-2" data-line-number="2">buffalo_c</a></code></pre></div>
+<pre><code>## # A tibble: 1 x 2
+##     lon   lat
+##   &lt;dbl&gt; &lt;dbl&gt;
+## 1 -78.7  42.9</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">buffalo=buffalo_c<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb20-2" data-line-number="2"><span class="st">  </span><span class="kw">st_as_sf</span>(<span class="dt">coords=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))<span class="op">%&gt;%</span><span class="st"> </span><span class="co">#convert to sf</span></a>
+<a class="sourceLine" id="cb20-3" data-line-number="3"><span class="st">  </span><span class="kw">st_set_crs</span>(<span class="st">&quot;+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs&quot;</span>)</a></code></pre></div>
+</section><section class="slide level2">
+
+<p>Now use that location to spatially filter stations.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">buffalo_b=<span class="kw">st_buffer</span>(buffalo, <span class="fl">0.1</span>) <span class="co">#radius of buffer in decimal degrees</span></a>
+<a class="sourceLine" id="cb21-2" data-line-number="2">st1=<span class="kw">st_within</span>(st_filtered,buffalo_b)<span class="op">%&gt;%</span><span class="st"> </span><span class="co">#find stations in the buffered polygon</span></a>
+<a class="sourceLine" id="cb21-3" data-line-number="3"><span class="st">  </span><span class="kw">apply</span>(<span class="dv">1</span>, any) </a>
+<a class="sourceLine" id="cb21-4" data-line-number="4"><span class="kw">str</span>(st1)</a></code></pre></div>
+<pre><code>##  logi [1:192884] FALSE FALSE FALSE FALSE FALSE FALSE ...</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="kw">kable</span>(st_filtered[st1,])</a></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">id</th>
+<th style="text-align: right;">elevation</th>
+<th style="text-align: left;">state</th>
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">gsn_flag</th>
+<th style="text-align: left;">wmo_id</th>
+<th style="text-align: left;">element</th>
+<th style="text-align: right;">first_year</th>
+<th style="text-align: right;">last_year</th>
+<th style="text-align: left;">geometry</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">US1NYER0004</td>
+<td style="text-align: right;">184.1</td>
+<td style="text-align: left;">NY</td>
+<td style="text-align: left;">WILLIAMSVILLE 4.1 N</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">PRCP</td>
+<td style="text-align: right;">2009</td>
+<td style="text-align: right;">2011</td>
+<td style="text-align: left;">c(-78.7432, 43.0216)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">US1NYER0006</td>
+<td style="text-align: right;">187.1</td>
+<td style="text-align: left;">NY</td>
+<td style="text-align: left;">KENMORE 2.7 E</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">PRCP</td>
+<td style="text-align: right;">2008</td>
+<td style="text-align: right;">2012</td>
+<td style="text-align: left;">c(-78.8176, 42.9625)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">US1NYER0007</td>
+<td style="text-align: right;">214.0</td>
+<td style="text-align: left;">NY</td>
+<td style="text-align: left;">WILLIAMSVILLE 2.7 E</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">PRCP</td>
+<td style="text-align: right;">2008</td>
+<td style="text-align: right;">2019</td>
+<td style="text-align: left;">c(-78.6879, 42.9693)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">US1NYER0013</td>
+<td style="text-align: right;">182.6</td>
+<td style="text-align: left;">NY</td>
+<td style="text-align: left;">WEST SENECA 2.3 NW</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">PRCP</td>
+<td style="text-align: right;">1998</td>
+<td style="text-align: right;">2019</td>
+<td style="text-align: left;">c(-78.7854, 42.8593)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">US1NYER0035</td>
+<td style="text-align: right;">203.9</td>
+<td style="text-align: left;">NY</td>
+<td style="text-align: left;">WEST SENECA 2.6 ENE</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">PRCP</td>
+<td style="text-align: right;">2008</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: left;">c(-78.7034, 42.8526)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">US1NYER0040</td>
+<td style="text-align: right;">185.6</td>
+<td style="text-align: left;">NY</td>
+<td style="text-align: left;">EAST AMHERST 1.4 ESE</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">PRCP</td>
+<td style="text-align: right;">2008</td>
+<td style="text-align: right;">2008</td>
+<td style="text-align: left;">c(-78.6705, 43.0153)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">US1NYER0046</td>
+<td style="text-align: right;">199.3</td>
+<td style="text-align: left;">NY</td>
+<td style="text-align: left;">WILLIAMSVILLE 3.6 ENE</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">PRCP</td>
+<td style="text-align: right;">2008</td>
+<td style="text-align: right;">2009</td>
+<td style="text-align: left;">c(-78.677, 42.986)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">US1NYER0054</td>
+<td style="text-align: right;">178.0</td>
+<td style="text-align: left;">NY</td>
+<td style="text-align: left;">EAST AMHERST 1.2 WNW</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">PRCP</td>
+<td style="text-align: right;">2009</td>
+<td style="text-align: right;">2019</td>
+<td style="text-align: left;">c(-78.719, 43.0225)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">US1NYER0068</td>
+<td style="text-align: right;">222.5</td>
+<td style="text-align: left;">NY</td>
+<td style="text-align: left;">LANCASTER 2.1 NNW</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">PRCP</td>
+<td style="text-align: right;">2009</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: left;">c(-78.6785, 42.9314)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">US1NYER0079</td>
+<td style="text-align: right;">206.7</td>
+<td style="text-align: left;">NY</td>
+<td style="text-align: left;">DEPEW 0.1 S</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">PRCP</td>
+<td style="text-align: right;">1998</td>
+<td style="text-align: right;">2019</td>
+<td style="text-align: left;">c(-78.7049, 42.9108)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">US1NYER0083</td>
+<td style="text-align: right;">96.9</td>
+<td style="text-align: left;">NY</td>
+<td style="text-align: left;">WILLIAMSVILLE 1 NW</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">PRCP</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: right;">2014</td>
+<td style="text-align: left;">c(-78.7663, 42.9698)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">US1NYER0102</td>
+<td style="text-align: right;">214.3</td>
+<td style="text-align: left;">NY</td>
+<td style="text-align: left;">CHEEKTOWAGA 2.7 NE</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">PRCP</td>
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">2019</td>
+<td style="text-align: left;">c(-78.7193, 42.9412)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">US1NYER0104</td>
+<td style="text-align: right;">179.5</td>
+<td style="text-align: left;">NY</td>
+<td style="text-align: left;">WILLIAMSVILLE 2.2 NNW</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">PRCP</td>
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">2019</td>
+<td style="text-align: left;">c(-78.7526, 42.9942)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">US1NYER0107</td>
+<td style="text-align: right;">186.2</td>
+<td style="text-align: left;">NY</td>
+<td style="text-align: left;">AMHERST 3.3 ENE</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">PRCP</td>
+<td style="text-align: right;">2014</td>
+<td style="text-align: right;">2018</td>
+<td style="text-align: left;">c(-78.7269, 42.9855)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">US1NYER0122</td>
+<td style="text-align: right;">204.5</td>
+<td style="text-align: left;">NY</td>
+<td style="text-align: left;">CHEEKTOWAGA 2.4 NW</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">PRCP</td>
+<td style="text-align: right;">2015</td>
+<td style="text-align: right;">2019</td>
+<td style="text-align: left;">c(-78.783, 42.9346)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">US1NYER0124</td>
+<td style="text-align: right;">199.0</td>
+<td style="text-align: left;">NY</td>
+<td style="text-align: left;">CHEEKTOWAGA 1.3 NW</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">PRCP</td>
+<td style="text-align: right;">2016</td>
+<td style="text-align: right;">2016</td>
+<td style="text-align: left;">c(-78.7679, 42.9235)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">US1NYER0132</td>
+<td style="text-align: right;">213.4</td>
+<td style="text-align: left;">NY</td>
+<td style="text-align: left;">LANCASTER 1.9 SSE</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">PRCP</td>
+<td style="text-align: right;">2017</td>
+<td style="text-align: right;">2019</td>
+<td style="text-align: left;">c(-78.6603, 42.8744)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">US1NYER0135</td>
+<td style="text-align: right;">187.5</td>
+<td style="text-align: left;">NY</td>
+<td style="text-align: left;">WEST SENECA 1.5 NW</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">PRCP</td>
+<td style="text-align: right;">2017</td>
+<td style="text-align: right;">2019</td>
+<td style="text-align: left;">c(-78.7716, 42.854)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">US1NYER0147</td>
+<td style="text-align: right;">180.7</td>
+<td style="text-align: left;">NY</td>
+<td style="text-align: left;">WILLIAMSVILLE 2.4 N</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">PRCP</td>
+<td style="text-align: right;">1998</td>
+<td style="text-align: right;">2018</td>
+<td style="text-align: left;">c(-78.7403, 42.9974)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">US1NYER0159</td>
+<td style="text-align: right;">222.2</td>
+<td style="text-align: left;">NY</td>
+<td style="text-align: left;">LANCASTER 2.9 NE</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">PRCP</td>
+<td style="text-align: right;">2018</td>
+<td style="text-align: right;">2019</td>
+<td style="text-align: left;">c(-78.6336, 42.9334)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">USW00014733</td>
+<td style="text-align: right;">211.2</td>
+<td style="text-align: left;">NY</td>
+<td style="text-align: left;">BUFFALO</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">HCN 72528</td>
+<td style="text-align: left;">TMAX</td>
+<td style="text-align: right;">1938</td>
+<td style="text-align: right;">2019</td>
+<td style="text-align: left;">c(-78.7369, 42.9486)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">USW00014733</td>
+<td style="text-align: right;">211.2</td>
+<td style="text-align: left;">NY</td>
+<td style="text-align: left;">BUFFALO</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">HCN 72528</td>
+<td style="text-align: left;">TMIN</td>
+<td style="text-align: right;">1938</td>
+<td style="text-align: right;">2019</td>
+<td style="text-align: left;">c(-78.7369, 42.9486)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">USW00014733</td>
+<td style="text-align: right;">211.2</td>
+<td style="text-align: left;">NY</td>
+<td style="text-align: left;">BUFFALO</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">HCN 72528</td>
+<td style="text-align: left;">PRCP</td>
+<td style="text-align: right;">1938</td>
+<td style="text-align: right;">2019</td>
+<td style="text-align: left;">c(-78.7369, 42.9486)</td>
+</tr>
+</tbody>
+</table>
+</section><section class="slide level2">
+
+<p>With the station ID, we can download daily data from NOAA.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">d=<span class="kw">meteo_pull_monitors</span>(<span class="dt">monitors=</span><span class="kw">c</span>(<span class="st">&quot;USW00014733&quot;</span>),</a>
+<a class="sourceLine" id="cb24-2" data-line-number="2">                   <span class="dt">var =</span> <span class="kw">c</span>(<span class="st">&quot;TMAX&quot;</span>,<span class="st">&quot;TMIN&quot;</span>,<span class="st">&quot;PRCP&quot;</span>),</a>
+<a class="sourceLine" id="cb24-3" data-line-number="3">                   <span class="dt">keep_flags =</span> T)</a></code></pre></div>
+<pre><code>## file path:          /Users/adamw/Library/Caches/rnoaa/ghcnd/USW00014733.dly</code></pre>
+<pre><code>## file last updated:  2019-10-21 13:09:14</code></pre>
+<pre><code>## file min/max dates: 1938-05-01 / 2019-10-31</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">head</span>(d)<span class="op">%&gt;%</span><span class="kw">kable</span>()</a></code></pre></div>
+<table>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 3%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">id</th>
+<th style="text-align: left;">date</th>
+<th style="text-align: left;">mflag_prcp</th>
+<th style="text-align: left;">mflag_tmax</th>
+<th style="text-align: left;">mflag_tmin</th>
+<th style="text-align: right;">prcp</th>
+<th style="text-align: left;">qflag_prcp</th>
+<th style="text-align: left;">qflag_tmax</th>
+<th style="text-align: left;">qflag_tmin</th>
+<th style="text-align: left;">sflag_prcp</th>
+<th style="text-align: left;">sflag_tmax</th>
+<th style="text-align: left;">sflag_tmin</th>
+<th style="text-align: right;">tmax</th>
+<th style="text-align: right;">tmin</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">USW00014733</td>
+<td style="text-align: left;">1938-05-01</td>
+<td style="text-align: left;">T</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">144</td>
+<td style="text-align: right;">39</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">USW00014733</td>
+<td style="text-align: left;">1938-05-02</td>
+<td style="text-align: left;">T</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">211</td>
+<td style="text-align: right;">83</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">USW00014733</td>
+<td style="text-align: left;">1938-05-03</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">25</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">167</td>
+<td style="text-align: right;">72</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">USW00014733</td>
+<td style="text-align: left;">1938-05-04</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">112</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">206</td>
+<td style="text-align: right;">94</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">USW00014733</td>
+<td style="text-align: left;">1938-05-05</td>
+<td style="text-align: left;">T</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">311</td>
+<td style="text-align: right;">106</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">USW00014733</td>
+<td style="text-align: left;">1938-05-06</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">64</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: right;">194</td>
+<td style="text-align: right;">78</td>
+</tr>
+</tbody>
+</table>
+</section><section class="slide level2">
+
+<p>See <a href="http://www1.ncdc.noaa.gov/pub/data/cdo/documentation/GHCND_documentation.pdf">CDO Daily Description</a> and raw <a href="http://www1.ncdc.noaa.gov/pub/data/ghcn/daily/readme.txt">GHCND metadata</a> for more details.</p>
+</section><section id="quality-control-mflag" class="slide level2">
+<h2>Quality Control: MFLAG</h2>
+<p>Measurement Flag/Attribute</p>
+<ul>
+<li><strong>Blank</strong> no measurement information applicable</li>
+<li><strong>B</strong> precipitation total formed from two twelve-hour totals</li>
+<li><strong>H</strong> represents highest or lowest hourly temperature (TMAX or TMIN) or average of hourly values (TAVG)</li>
+<li><strong>K</strong> converted from knots</li>
+<li>…</li>
+</ul>
+<p>See <a href="http://www1.ncdc.noaa.gov/pub/data/cdo/documentation/GHCND_documentation.pdf">CDO Description</a></p>
+</section><section id="quality-control-qflag" class="slide level2">
+<h2>Quality Control: QFLAG</h2>
+<ul>
+<li><strong>Blank</strong> did not fail any quality assurance check</li>
+<li><strong>D</strong> failed duplicate check</li>
+<li><strong>G</strong> failed gap check</li>
+<li><strong>I</strong> failed internal consistency check</li>
+<li><strong>K</strong> failed streak/frequent-value check</li>
+<li><strong>N</strong> failed naught check</li>
+<li><strong>O</strong> failed climatological outlier check</li>
+<li><strong>S</strong> failed spatial consistency check</li>
+<li><strong>T</strong> failed temporal consistency check</li>
+<li><strong>W</strong> temperature too warm for snow</li>
+<li>…</li>
+</ul>
+<p>See <a href="http://www1.ncdc.noaa.gov/pub/data/cdo/documentation/GHCND_documentation.pdf">CDO Description</a></p>
+</section><section id="quality-control-sflag" class="slide level2">
+<h2>Quality Control: SFLAG</h2>
+<p>Indicates the source of the data…</p>
+</section><section id="summarize-qc-flags" class="slide level2">
+<h2>Summarize QC flags</h2>
+<p>Summarize the QC flags. How many of which type are there? Should we be more conservative?</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw">table</span>(d<span class="op">$</span>qflag_tmin)  </a></code></pre></div>
+<pre><code>## 
+##           G     I     S 
+## 29756     2     7     4</code></pre>
+<ul>
+<li><strong>G</strong> failed gap check</li>
+<li><strong>I</strong> failed internal consistency check</li>
+<li><strong>S</strong> failed spatial consistency check</li>
+</ul>
+</section><section class="slide level2">
+
+<h3 id="filter-with-qc-data-and-change-units">Filter with QC data and change units</h3>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1">d_filtered=d<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb31-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">tmax=</span><span class="kw">ifelse</span>(qflag_tmax<span class="op">!=</span><span class="st">&quot; &quot;</span><span class="op">|</span>tmax<span class="op">==-</span><span class="dv">9999</span>,<span class="ot">NA</span>,tmax<span class="op">/</span><span class="dv">10</span>))<span class="op">%&gt;%</span><span class="st">  </span><span class="co"># convert to degrees C</span></a>
+<a class="sourceLine" id="cb31-3" data-line-number="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">tmin=</span><span class="kw">ifelse</span>(qflag_tmin<span class="op">!=</span><span class="st">&quot; &quot;</span><span class="op">|</span>tmin<span class="op">==-</span><span class="dv">9999</span>,<span class="ot">NA</span>,tmin<span class="op">/</span><span class="dv">10</span>))<span class="op">%&gt;%</span><span class="st">  </span><span class="co"># convert to degrees C</span></a>
+<a class="sourceLine" id="cb31-4" data-line-number="4"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">prcp=</span><span class="kw">ifelse</span>(qflag_prcp<span class="op">!=</span><span class="st">&quot; &quot;</span><span class="op">|</span>prcp<span class="op">==-</span><span class="dv">9999</span>,<span class="ot">NA</span>,prcp))<span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb31-5" data-line-number="5"><span class="st">  </span><span class="kw">arrange</span>(date)</a></code></pre></div>
+</section><section class="slide level2">
+
+<p>Plot temperatures</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="kw">ggplot</span>(d_filtered,</a>
+<a class="sourceLine" id="cb32-2" data-line-number="2">       <span class="kw">aes</span>(<span class="dt">y=</span>tmax,<span class="dt">x=</span>date))<span class="op">+</span></a>
+<a class="sourceLine" id="cb32-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb32-4" data-line-number="4"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>id)</a></code></pre></div>
+<p><img data-src="PS_09_weather_files/figure-revealjs/unnamed-chunk-18-1.png" /></p>
+</section><section class="slide level2">
+
+<p>Limit to a few years and plot the daily range and average temperatures.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1">d_filtered_recent=<span class="kw">filter</span>(d_filtered,date<span class="op">&gt;</span><span class="kw">as.Date</span>(<span class="st">&quot;2017-01-01&quot;</span>))</a>
+<a class="sourceLine" id="cb33-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb33-3" data-line-number="3">  <span class="kw">ggplot</span>(d_filtered_recent,</a>
+<a class="sourceLine" id="cb33-4" data-line-number="4">         <span class="kw">aes</span>(<span class="dt">ymax=</span>tmax,<span class="dt">ymin=</span>tmin,<span class="dt">x=</span>date))<span class="op">+</span></a>
+<a class="sourceLine" id="cb33-5" data-line-number="5"><span class="st">    </span><span class="kw">geom_ribbon</span>(<span class="dt">col=</span><span class="st">&quot;grey&quot;</span>,<span class="dt">fill=</span><span class="st">&quot;grey&quot;</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb33-6" data-line-number="6"><span class="st">    </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y=</span>(tmax<span class="op">+</span>tmin)<span class="op">/</span><span class="dv">2</span>),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</a></code></pre></div>
+<pre><code>## Warning: Removed 13 row(s) containing missing values (geom_path).</code></pre>
+<p><img data-src="PS_09_weather_files/figure-revealjs/unnamed-chunk-19-1.png" /></p>
+</section><section id="zoo-package-for-rolling-functions" class="slide level2">
+<h2>Zoo package for rolling functions</h2>
+<p>Infrastructure for Regular and Irregular Time Series (Z’s Ordered Observations)</p>
+<ul>
+<li><code>rollmean()</code>: Rolling mean</li>
+<li><code>rollsum()</code>: Rolling sum</li>
+<li><code>rollapply()</code>: Custom functions</li>
+</ul>
+<p>Use rollmean to calculate a rolling 60-day average.</p>
+<ul>
+<li><code>align</code> whether the index of the result should be left- or right-aligned or centered</li>
+</ul>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1">d_rollmean =<span class="st"> </span>d_filtered_recent <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb35-2" data-line-number="2"><span class="st">  </span><span class="kw">arrange</span>(date) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb35-3" data-line-number="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">tmax.60 =</span> <span class="kw">rollmean</span>(<span class="dt">x =</span> tmax, <span class="dv">60</span>, <span class="dt">align =</span> <span class="st">&quot;center&quot;</span>, <span class="dt">fill =</span> <span class="ot">NA</span>),</a>
+<a class="sourceLine" id="cb35-4" data-line-number="4">         <span class="dt">tmax.b60 =</span> <span class="kw">rollmean</span>(<span class="dt">x =</span> tmax, <span class="dv">60</span>, <span class="dt">align =</span> <span class="st">&quot;right&quot;</span>, <span class="dt">fill =</span> <span class="ot">NA</span>))</a></code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" data-line-number="1">d_rollmean<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb36-2" data-line-number="2"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">ymax=</span>tmax,<span class="dt">ymin=</span>tmin,<span class="dt">x=</span>date))<span class="op">+</span></a>
+<a class="sourceLine" id="cb36-3" data-line-number="3"><span class="st">    </span><span class="kw">geom_ribbon</span>(<span class="dt">fill=</span><span class="st">&quot;grey&quot;</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb36-4" data-line-number="4"><span class="st">    </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y=</span>(tmin<span class="op">+</span>tmax)<span class="op">/</span><span class="dv">2</span>),<span class="dt">col=</span><span class="kw">grey</span>(<span class="fl">0.4</span>),<span class="dt">size=</span>.<span class="dv">5</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb36-5" data-line-number="5"><span class="st">    </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y=</span>tmax<span class="fl">.60</span>),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb36-6" data-line-number="6"><span class="st">    </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">y=</span>tmax.b60),<span class="dt">col=</span><span class="st">&quot;darkred&quot;</span>)</a></code></pre></div>
+<p><img data-src="PS_09_weather_files/figure-revealjs/unnamed-chunk-21-1.png" /></p>
+</section></section>
+<section><section id="time-series-analysis" class="title-slide slide level1"><h1>Time Series analysis</h1></section><section id="temporal-autocorrelation" class="slide level2">
+<h2>Temporal autocorrelation</h2>
+<p>Values are highly correlated!</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="kw">ggplot</span>(d_filtered_recent,<span class="kw">aes</span>(<span class="dt">y=</span>tmin,<span class="dt">x=</span><span class="kw">lag</span>(tmin)))<span class="op">+</span></a>
+<a class="sourceLine" id="cb37-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_point</span>()<span class="op">+</span></a>
+<a class="sourceLine" id="cb37-3" data-line-number="3"><span class="st">  </span><span class="kw">geom_abline</span>(<span class="dt">intercept=</span><span class="dv">0</span>, <span class="dt">slope=</span><span class="dv">1</span>)</a></code></pre></div>
+<pre><code>## Warning: Removed 14 rows containing missing values (geom_point).</code></pre>
+<p><img data-src="PS_09_weather_files/figure-revealjs/unnamed-chunk-23-1.png" /></p>
+</section><section id="autocorrelation-functions" class="slide level2">
+<h2>Autocorrelation functions</h2>
+<ul>
+<li>autocorrelation <span class="math inline">\(x\)</span> vs. <span class="math inline">\(x_{t-1}\)</span> (lag=1)</li>
+<li>partial autocorrelation. <span class="math inline">\(x\)</span> vs. <span class="math inline">\(x_{n}\)</span> <em>after</em> controlling for correlations <span class="math inline">\(\in t-1:n\)</span></li>
+</ul>
+</section><section id="autocorrelation" class="slide level2">
+<h2>Autocorrelation</h2>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="kw">acf</span>(tmin.ts,<span class="dt">lag.max =</span> <span class="dv">365</span><span class="op">*</span><span class="dv">3</span>,<span class="dt">na.action =</span> na.exclude )</a></code></pre></div>
+<p><img data-src="PS_09_weather_files/figure-revealjs/unnamed-chunk-24-1.png" /></p>
+</section><section class="slide level2">
+
+<h3 id="partial-autocorrelation">Partial Autocorrelation</h3>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="kw">pacf</span>(tmin.ts,<span class="dt">lag.max =</span> <span class="dv">365</span>,<span class="dt">na.action =</span> na.exclude )</a></code></pre></div>
+<p><img data-src="PS_09_weather_files/figure-revealjs/unnamed-chunk-25-1.png" /></p>
+</section></section>
+<section><section id="trend-analysis" class="title-slide slide level1"><h1>Trend analysis</h1></section><section id="group-by-month-season-year-and-decade." class="slide level2">
+<h2>Group by month, season, year, and decade.</h2>
+<p>How to convert years into ‘decades’?</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="dv">1938</span></a></code></pre></div>
+<pre><code>## [1] 1938</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="kw">round</span>(<span class="dv">1938</span>,<span class="op">-</span><span class="dv">1</span>)</a></code></pre></div>
+<pre><code>## [1] 1940</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="kw">floor</span>(<span class="dv">1938</span><span class="op">/</span><span class="dv">10</span>)</a></code></pre></div>
+<pre><code>## [1] 193</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1"><span class="kw">floor</span>(<span class="dv">1938</span><span class="op">/</span><span class="dv">10</span>)<span class="op">*</span><span class="dv">10</span> </a></code></pre></div>
+<pre><code>## [1] 1930</code></pre>
+<p>Now we can make a ‘decade’ grouping variable.</p>
+</section><section class="slide level2">
+
+<p>Calculate seasonal and decadal mean temperatures.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1">d_filtered2=d_filtered<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb49-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">month=</span><span class="kw">as.numeric</span>(<span class="kw">format</span>(date,<span class="st">&quot;%m&quot;</span>)),</a>
+<a class="sourceLine" id="cb49-3" data-line-number="3">        <span class="dt">year=</span><span class="kw">as.numeric</span>(<span class="kw">format</span>(date,<span class="st">&quot;%Y&quot;</span>)),</a>
+<a class="sourceLine" id="cb49-4" data-line-number="4">        <span class="dt">season=</span><span class="kw">case_when</span>(</a>
+<a class="sourceLine" id="cb49-5" data-line-number="5">          month<span class="op">%in%</span><span class="kw">c</span>(<span class="dv">12</span>,<span class="dv">1</span>,<span class="dv">2</span>)<span class="op">~</span><span class="st">&quot;Winter&quot;</span>,</a>
+<a class="sourceLine" id="cb49-6" data-line-number="6">          month<span class="op">%in%</span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)<span class="op">~</span><span class="st">&quot;Spring&quot;</span>,</a>
+<a class="sourceLine" id="cb49-7" data-line-number="7">          month<span class="op">%in%</span><span class="kw">c</span>(<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>)<span class="op">~</span><span class="st">&quot;Summer&quot;</span>,</a>
+<a class="sourceLine" id="cb49-8" data-line-number="8">          month<span class="op">%in%</span><span class="kw">c</span>(<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">11</span>)<span class="op">~</span><span class="st">&quot;Fall&quot;</span>),</a>
+<a class="sourceLine" id="cb49-9" data-line-number="9">        <span class="dt">dec=</span>(<span class="kw">floor</span>(<span class="kw">as.numeric</span>(<span class="kw">format</span>(date,<span class="st">&quot;%Y&quot;</span>))<span class="op">/</span><span class="dv">10</span>)<span class="op">*</span><span class="dv">10</span>))</a>
+<a class="sourceLine" id="cb49-10" data-line-number="10">d_filtered2<span class="op">%&gt;%</span>dplyr<span class="op">::</span><span class="kw">select</span>(date,month,year,season,dec,tmax)<span class="op">%&gt;%</span><span class="kw">head</span>()<span class="op">%&gt;%</span><span class="kw">kable</span>()</a></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">date</th>
+<th style="text-align: right;">month</th>
+<th style="text-align: right;">year</th>
+<th style="text-align: left;">season</th>
+<th style="text-align: right;">dec</th>
+<th style="text-align: right;">tmax</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1938-05-01</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1938</td>
+<td style="text-align: left;">Spring</td>
+<td style="text-align: right;">1930</td>
+<td style="text-align: right;">14.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1938-05-02</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1938</td>
+<td style="text-align: left;">Spring</td>
+<td style="text-align: right;">1930</td>
+<td style="text-align: right;">21.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1938-05-03</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1938</td>
+<td style="text-align: left;">Spring</td>
+<td style="text-align: right;">1930</td>
+<td style="text-align: right;">16.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1938-05-04</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1938</td>
+<td style="text-align: left;">Spring</td>
+<td style="text-align: right;">1930</td>
+<td style="text-align: right;">20.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1938-05-05</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1938</td>
+<td style="text-align: left;">Spring</td>
+<td style="text-align: right;">1930</td>
+<td style="text-align: right;">31.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1938-05-06</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1938</td>
+<td style="text-align: left;">Spring</td>
+<td style="text-align: right;">1930</td>
+<td style="text-align: right;">19.4</td>
+</tr>
+</tbody>
+</table>
+</section><section id="timeseries-models" class="slide level2">
+<h2>Timeseries models</h2>
+<p>How to assess change? Simple differences?</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1">d_filtered2<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb50-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">period=</span><span class="kw">ifelse</span>(year<span class="op">&lt;=</span><span class="dv">1976-01-01</span>,<span class="st">&quot;early&quot;</span>,<span class="st">&quot;late&quot;</span>))<span class="op">%&gt;%</span><span class="st"> </span><span class="co">#create two time periods before and after 1976</span></a>
+<a class="sourceLine" id="cb50-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(period)<span class="op">%&gt;%</span><span class="st">  </span><span class="co"># divide the data into the two groups</span></a>
+<a class="sourceLine" id="cb50-4" data-line-number="4"><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">n=</span><span class="kw">n</span>(),    <span class="co"># calculate the means between the two periods</span></a>
+<a class="sourceLine" id="cb50-5" data-line-number="5">            <span class="dt">tmin=</span><span class="kw">mean</span>(tmin,<span class="dt">na.rm=</span>T),</a>
+<a class="sourceLine" id="cb50-6" data-line-number="6">            <span class="dt">tmax=</span><span class="kw">mean</span>(tmax,<span class="dt">na.rm=</span>T),</a>
+<a class="sourceLine" id="cb50-7" data-line-number="7">            <span class="dt">prcp=</span><span class="kw">mean</span>(prcp,<span class="dt">na.rm=</span>T))<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb50-8" data-line-number="8"><span class="st">  </span><span class="kw">kable</span>()</a></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">period</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">tmin</th>
+<th style="text-align: right;">tmax</th>
+<th style="text-align: right;">prcp</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">early</td>
+<td style="text-align: right;">13394</td>
+<td style="text-align: right;">4.199753</td>
+<td style="text-align: right;">13.67348</td>
+<td style="text-align: right;">25.09372</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">late</td>
+<td style="text-align: right;">16375</td>
+<td style="text-align: right;">4.774282</td>
+<td style="text-align: right;">13.75139</td>
+<td style="text-align: right;">28.56570</td>
+</tr>
+</tbody>
+</table>
+</section><section class="slide level2">
+
+<p>But be careful, there were lots of missing data in the beginning of the record</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" data-line-number="1">d_filtered2<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb51-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(year)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb51-3" data-line-number="3"><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">n=</span><span class="kw">n</span>())<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb51-4" data-line-number="4"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span>year,<span class="dt">y=</span>n))<span class="op">+</span></a>
+<a class="sourceLine" id="cb51-5" data-line-number="5"><span class="st">  </span><span class="kw">geom_line</span>()</a></code></pre></div>
+<p><img data-src="PS_09_weather_files/figure-revealjs/unnamed-chunk-29-1.png" /></p>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" data-line-number="1"><span class="co"># which years don&#39;t have complete data?</span></a>
+<a class="sourceLine" id="cb52-2" data-line-number="2">d_filtered2<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb52-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(year)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb52-4" data-line-number="4"><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">n=</span><span class="kw">n</span>())<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb52-5" data-line-number="5"><span class="st">  </span><span class="kw">filter</span>(n<span class="op">&lt;</span><span class="dv">360</span>)</a></code></pre></div>
+<pre><code>## # A tibble: 2 x 2
+##    year     n
+##   &lt;dbl&gt; &lt;int&gt;
+## 1  1938   245
+## 2  2019   304</code></pre>
+</section><section class="slide level2">
+
+<p>Plot 10-year means (excluding years without complete data):</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" data-line-number="1">d_filtered2<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb54-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(year<span class="op">&gt;</span><span class="dv">1938</span>, year<span class="op">&lt;</span><span class="dv">2021</span>)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb54-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(dec)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb54-4" data-line-number="4"><span class="st">  </span><span class="kw">summarize</span>(</a>
+<a class="sourceLine" id="cb54-5" data-line-number="5">            <span class="dt">n=</span><span class="kw">n</span>(),</a>
+<a class="sourceLine" id="cb54-6" data-line-number="6">            <span class="dt">tmin=</span><span class="kw">mean</span>(tmin,<span class="dt">na.rm=</span>T),</a>
+<a class="sourceLine" id="cb54-7" data-line-number="7">            <span class="dt">tmax=</span><span class="kw">mean</span>(tmax,<span class="dt">na.rm=</span>T),</a>
+<a class="sourceLine" id="cb54-8" data-line-number="8">            <span class="dt">prcp=</span><span class="kw">mean</span>(prcp,<span class="dt">na.rm=</span>T)</a>
+<a class="sourceLine" id="cb54-9" data-line-number="9">            )<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb54-10" data-line-number="10"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span>dec,<span class="dt">y=</span>tmax))<span class="op">+</span></a>
+<a class="sourceLine" id="cb54-11" data-line-number="11"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">col=</span><span class="st">&quot;grey&quot;</span>)</a></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<p><img data-src="PS_09_weather_files/figure-revealjs/unnamed-chunk-31-1.png" /></p>
+</section><section id="look-for-specific-events-was-2020-unusually-hot-in-buffalo-ny" class="slide level2">
+<h2>Look for specific events: was 2020 unusually hot in Buffalo, NY?</h2>
+<p>Let’s compare 2020 with all the previous years in the dataset. First add ‘day of year’ to the data to facilitate showing all years on the same plot.</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1">df=d_filtered2<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb56-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">doy=</span><span class="kw">as.numeric</span>(<span class="kw">format</span>(date,<span class="st">&quot;%j&quot;</span>)),</a>
+<a class="sourceLine" id="cb56-3" data-line-number="3">         <span class="dt">doydate=</span><span class="kw">as.Date</span>(<span class="kw">paste</span>(<span class="st">&quot;2020-&quot;</span>,doy),<span class="dt">format=</span><span class="st">&quot;%Y-%j&quot;</span>))</a></code></pre></div>
+</section><section class="slide level2">
+
+<p>Then plot all years (in grey) and add 2020 in red.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" data-line-number="1"><span class="kw">ggplot</span>(df,<span class="kw">aes</span>(<span class="dt">x=</span>doydate,<span class="dt">y=</span>tmax,<span class="dt">group=</span>year))<span class="op">+</span></a>
+<a class="sourceLine" id="cb57-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">col=</span><span class="st">&quot;grey&quot;</span>,<span class="dt">alpha=</span>.<span class="dv">5</span>)<span class="op">+</span><span class="st"> </span><span class="co"># plot each year in grey</span></a>
+<a class="sourceLine" id="cb57-3" data-line-number="3"><span class="st">  </span><span class="kw">stat_smooth</span>(<span class="kw">aes</span>(<span class="dt">group=</span><span class="dv">1</span>),<span class="dt">col=</span><span class="st">&quot;black&quot;</span>)<span class="op">+</span><span class="st">   </span><span class="co"># Add a smooth GAM to estimate the long-term mean</span></a>
+<a class="sourceLine" id="cb57-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">data=</span><span class="kw">filter</span>(df,year<span class="op">==</span><span class="dv">2020</span>),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)<span class="op">+</span><span class="st">  </span><span class="co"># add 2017 in red</span></a>
+<a class="sourceLine" id="cb57-5" data-line-number="5"><span class="st">  </span><span class="kw">scale_x_date</span>(<span class="dt">labels =</span> <span class="kw">date_format</span>(<span class="st">&quot;%b&quot;</span>),<span class="dt">date_breaks =</span> <span class="st">&quot;2 months&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb57-6" data-line-number="6"><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Day of year&quot;</span>)</a></code></pre></div>
+<pre><code>## `geom_smooth()` using method = &#39;gam&#39; and formula &#39;y ~ s(x, bs = &quot;cs&quot;)&#39;</code></pre>
+<p><img data-src="PS_09_weather_files/figure-revealjs/unnamed-chunk-33-1.png" /></p>
+</section><section class="slide level2">
+
+<p>Then ‘zoom’ into just the past few months and add 2019 in red.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" data-line-number="1"><span class="kw">ggplot</span>(df,<span class="kw">aes</span>(<span class="dt">x=</span>doydate,<span class="dt">y=</span>tmax,<span class="dt">group=</span>year))<span class="op">+</span></a>
+<a class="sourceLine" id="cb59-2" data-line-number="2"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">col=</span><span class="st">&quot;grey&quot;</span>,<span class="dt">alpha=</span>.<span class="dv">5</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb59-3" data-line-number="3"><span class="st">  </span><span class="kw">stat_smooth</span>(<span class="kw">aes</span>(<span class="dt">group=</span><span class="dv">1</span>),<span class="dt">col=</span><span class="st">&quot;black&quot;</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb59-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">data=</span><span class="kw">filter</span>(df,year<span class="op">==</span><span class="dv">2019</span>),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb59-5" data-line-number="5"><span class="st">  </span><span class="kw">scale_x_date</span>(<span class="dt">labels =</span> <span class="kw">date_format</span>(<span class="st">&quot;%b&quot;</span>),<span class="dt">date_breaks =</span> <span class="st">&quot;2 months&quot;</span>,</a>
+<a class="sourceLine" id="cb59-6" data-line-number="6">               <span class="dt">lim=</span><span class="kw">c</span>(<span class="kw">as.Date</span>(<span class="st">&quot;2019-08-01&quot;</span>),<span class="kw">as.Date</span>(<span class="st">&quot;2019-10-31&quot;</span>)))</a></code></pre></div>
+<p><img data-src="PS_09_weather_files/figure-revealjs/unnamed-chunk-34-1.png" /></p>
+</section><section id="summarize-by-season" class="slide level2">
+<h2>Summarize by season</h2>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" data-line-number="1">seasonal=d_filtered2<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb60-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(year,season)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb60-3" data-line-number="3"><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">n=</span><span class="kw">n</span>(),</a>
+<a class="sourceLine" id="cb60-4" data-line-number="4">            <span class="dt">tmin=</span><span class="kw">mean</span>(tmin),</a>
+<a class="sourceLine" id="cb60-5" data-line-number="5">            <span class="dt">tmax=</span><span class="kw">mean</span>(tmax),</a>
+<a class="sourceLine" id="cb60-6" data-line-number="6">            <span class="dt">prcp=</span><span class="kw">mean</span>(prcp))<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb60-7" data-line-number="7"><span class="st">  </span><span class="kw">filter</span>(n<span class="op">&gt;</span><span class="dv">75</span>)</a></code></pre></div>
+</section><section id="seasonal-trends" class="slide level2">
+<h2>Seasonal Trends</h2>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" data-line-number="1"><span class="kw">ggplot</span>(seasonal,<span class="kw">aes</span>(<span class="dt">y=</span>tmin,<span class="dt">x=</span>year))<span class="op">+</span></a>
+<a class="sourceLine" id="cb61-2" data-line-number="2"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>season,<span class="dt">scales =</span> <span class="st">&quot;free_y&quot;</span>)<span class="op">+</span></a>
+<a class="sourceLine" id="cb61-3" data-line-number="3"><span class="st">  </span><span class="kw">stat_smooth</span>(<span class="dt">method=</span><span class="st">&quot;lm&quot;</span>, <span class="dt">se=</span>T)<span class="op">+</span></a>
+<a class="sourceLine" id="cb61-4" data-line-number="4"><span class="st">  </span><span class="kw">geom_line</span>()</a></code></pre></div>
+<p><img data-src="PS_09_weather_files/figure-revealjs/unnamed-chunk-36-1.png" /></p>
+</section><section id="fit-a-linear-model-to-a-single-season" class="slide level2">
+<h2>Fit a linear model to a single season</h2>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" data-line-number="1">lm1=seasonal<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb62-2" data-line-number="2"><span class="st">  </span><span class="kw">filter</span>(season<span class="op">==</span><span class="st">&quot;Summer&quot;</span>)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb62-3" data-line-number="3"><span class="st">  </span><span class="kw">lm</span>(tmin<span class="op">~</span>year,<span class="dt">data=</span>.)</a>
+<a class="sourceLine" id="cb62-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb62-5" data-line-number="5"><span class="kw">summary</span>(lm1)<span class="op">$</span>r.squared</a></code></pre></div>
+<pre><code>## [1] 0.2595873</code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" data-line-number="1"><span class="kw">tidy</span>(lm1)<span class="op">%&gt;%</span><span class="kw">kable</span>() </a></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">-25.1389291</td>
+<td style="text-align: right;">7.7169440</td>
+<td style="text-align: right;">-3.257627</td>
+<td style="text-align: right;">0.0016571</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">year</td>
+<td style="text-align: right;">0.0205215</td>
+<td style="text-align: right;">0.0038993</td>
+<td style="text-align: right;">5.262818</td>
+<td style="text-align: right;">0.0000012</td>
+</tr>
+</tbody>
+</table>
+</section><section id="linear-regression-for-each-season" class="slide level2">
+<h2>Linear regression for <em>each</em> season</h2>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" data-line-number="1"><span class="co"># fit a lm model for each group</span></a>
+<a class="sourceLine" id="cb65-2" data-line-number="2">  d_filtered2 <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb65-3" data-line-number="3"><span class="st">  </span><span class="kw">group_by</span>(season) <span class="op">%&gt;%</span><span class="st"> </span><span class="co">#process by season</span></a>
+<a class="sourceLine" id="cb65-4" data-line-number="4"><span class="st">  </span><span class="kw">nest</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># cut into groups</span></a>
+<a class="sourceLine" id="cb65-5" data-line-number="5"><span class="st">  </span><span class="kw">mutate</span>(</a>
+<a class="sourceLine" id="cb65-6" data-line-number="6">    <span class="dt">lm_tmin =</span> purrr<span class="op">::</span><span class="kw">map</span>(data, <span class="dt">.f =</span> <span class="op">~</span><span class="st"> </span><span class="kw">lm</span>(tmin <span class="op">~</span><span class="st"> </span>year, <span class="dt">data =</span> .)), <span class="co">#fit model for each group</span></a>
+<a class="sourceLine" id="cb65-7" data-line-number="7">    <span class="dt">tmin_tidy =</span> purrr<span class="op">::</span><span class="kw">map</span>(lm_tmin, broom<span class="op">::</span>tidy) <span class="co">#summarize model for each group</span></a>
+<a class="sourceLine" id="cb65-8" data-line-number="8">  ) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb65-9" data-line-number="9"><span class="st">  </span><span class="kw">unnest</span>(tmin_tidy) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb65-10" data-line-number="10"><span class="st">  </span><span class="kw">filter</span>(term <span class="op">==</span><span class="st"> &quot;year&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb65-11" data-line-number="11"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>data, <span class="op">-</span>lm_tmin) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb65-12" data-line-number="12"><span class="st">  </span><span class="kw">kable</span>()</a></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">season</th>
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Spring</td>
+<td style="text-align: left;">year</td>
+<td style="text-align: right;">0.0144491</td>
+<td style="text-align: right;">0.0033594</td>
+<td style="text-align: right;">4.301160</td>
+<td style="text-align: right;">1.72e-05</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Summer</td>
+<td style="text-align: left;">year</td>
+<td style="text-align: right;">0.0212577</td>
+<td style="text-align: right;">0.0018155</td>
+<td style="text-align: right;">11.709039</td>
+<td style="text-align: right;">0.00e+00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Fall</td>
+<td style="text-align: left;">year</td>
+<td style="text-align: right;">0.0157276</td>
+<td style="text-align: right;">0.0031219</td>
+<td style="text-align: right;">5.037759</td>
+<td style="text-align: right;">5.00e-07</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Winter</td>
+<td style="text-align: left;">year</td>
+<td style="text-align: right;">0.0140660</td>
+<td style="text-align: right;">0.0030484</td>
+<td style="text-align: right;">4.614171</td>
+<td style="text-align: right;">4.00e-06</td>
+</tr>
+</tbody>
+</table>
+</section><section id="autoregressive-models" class="slide level2">
+<h2>Autoregressive models</h2>
+<p>See <a href="https://cran.r-project.org/web/views/TimeSeries.html">Time Series Analysis Task View</a> for summary of available pack,-ages/models.</p>
+<ul>
+<li>Moving average (MA) models</li>
+<li>autoregressive (AR) models</li>
+<li>autoregressive moving average (ARMA) models</li>
+<li>frequency analysis</li>
+<li>Many, many more…</li>
+</ul>
+</section><section class="slide level2">
+
+</section></section>
+<section><section id="climate-metrics" class="title-slide slide level1"><h1>Climate Metrics</h1></section><section id="climate-metrics-climdex" class="slide level2">
+<h2>Climate Metrics: ClimdEX</h2>
+<p>Indices representing extreme aspects of climate derived from daily data:</p>
+<p>Climate Change Research Centre (CCRC) at University of New South Wales (UNSW) (<a href="http://www.climdex.org">climdex.org</a>).</p>
+</section><section id="core-indices" class="slide level2">
+<h2>27 Core indices</h2>
+<p>For example:</p>
+<ul>
+<li><strong>FD</strong> Number of frost days: Annual count of days when TN (daily minimum temperature) &lt; 0C.</li>
+<li><strong>SU</strong> Number of summer days: Annual count of days when TX (daily maximum temperature) &gt; 25C.</li>
+<li><strong>ID</strong> Number of icing days: Annual count of days when TX (daily maximum temperature) &lt; 0C.</li>
+<li><strong>TR</strong> Number of tropical nights: Annual count of days when TN (daily minimum temperature) &gt; 20C.</li>
+<li><strong>GSL</strong> Growing season length: Annual (1st Jan to 31st Dec in Northern Hemisphere (NH), 1st July to 30th June in Southern Hemisphere (SH)) count between first span of at least 6 days with daily mean temperature TG&gt;5C and first span after July 1st (Jan 1st in SH) of 6 days with TG&lt;5C.</li>
+<li><strong>TXx</strong> Monthly maximum value of daily maximum temperature</li>
+<li><strong>TN10p</strong> Percentage of days when TN &lt; 10th percentile</li>
+<li><strong>Rx5day</strong> Monthly maximum consecutive 5-day precipitation</li>
+<li><strong>SDII</strong> Simple pricipitation intensity index</li>
+</ul>
+</section><section id="climdex-indices" class="slide level2">
+<h2>Climdex indices</h2>
+<p><a href="http://www.climdex.org/indices.html">ClimDex</a></p>
+</section><section id="format-data-for-climdex" class="slide level2">
+<h2>Format data for <code>climdex</code></h2>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" data-line-number="1"><span class="kw">library</span>(PCICt)</a>
+<a class="sourceLine" id="cb66-2" data-line-number="2"><span class="co">## Parse the dates into PCICt.</span></a>
+<a class="sourceLine" id="cb66-3" data-line-number="3">pc.dates &lt;-<span class="st"> </span><span class="kw">as.PCICt</span>(<span class="kw">as.POSIXct</span>(d_filtered<span class="op">$</span>date),<span class="dt">cal=</span><span class="st">&quot;gregorian&quot;</span>)</a></code></pre></div>
+</section><section id="generate-the-climdex-object" class="slide level2">
+<h2>Generate the climdex object</h2>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" data-line-number="1">  <span class="kw">library</span>(climdex.pcic)</a>
+<a class="sourceLine" id="cb67-2" data-line-number="2">    ci &lt;-<span class="st"> </span><span class="kw">climdexInput.raw</span>(</a>
+<a class="sourceLine" id="cb67-3" data-line-number="3">      <span class="dt">tmax=</span>d_filtered<span class="op">$</span>tmax,</a>
+<a class="sourceLine" id="cb67-4" data-line-number="4">      <span class="dt">tmin=</span>d_filtered<span class="op">$</span>tmin,</a>
+<a class="sourceLine" id="cb67-5" data-line-number="5">      <span class="dt">prec=</span>d_filtered<span class="op">$</span>prcp,</a>
+<a class="sourceLine" id="cb67-6" data-line-number="6">      pc.dates,pc.dates,pc.dates, </a>
+<a class="sourceLine" id="cb67-7" data-line-number="7">      <span class="dt">base.range=</span><span class="kw">c</span>(<span class="dv">1971</span>, <span class="dv">2000</span>))</a>
+<a class="sourceLine" id="cb67-8" data-line-number="8">years=<span class="kw">as.numeric</span>(<span class="kw">as.character</span>(<span class="kw">unique</span>(ci<span class="op">@</span>date.factors<span class="op">$</span>annual)))</a></code></pre></div>
+</section><section id="cumulative-dry-days" class="slide level2">
+<h2>Cumulative dry days</h2>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" data-line-number="1">cdd=<span class="st"> </span><span class="kw">climdex.cdd</span>(ci, <span class="dt">spells.can.span.years =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb68-2" data-line-number="2"><span class="kw">plot</span>(cdd<span class="op">~</span>years,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>)</a></code></pre></div>
+<p><img data-src="PS_09_weather_files/figure-revealjs/unnamed-chunk-41-1.png" /></p>
+</section><section id="diurnal-temperature-range" class="slide level2">
+<h2>Diurnal Temperature Range</h2>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" data-line-number="1">dtr=<span class="kw">climdex.dtr</span>(ci, <span class="dt">freq =</span> <span class="kw">c</span>(<span class="st">&quot;annual&quot;</span>))</a>
+<a class="sourceLine" id="cb69-2" data-line-number="2"><span class="kw">plot</span>(dtr<span class="op">~</span>years,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>)</a></code></pre></div>
+<p><img data-src="PS_09_weather_files/figure-revealjs/unnamed-chunk-42-1.png" /></p>
+</section><section id="frost-days" class="slide level2">
+<h2>Frost Days</h2>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" data-line-number="1">fd=<span class="kw">climdex.fd</span>(ci)</a>
+<a class="sourceLine" id="cb70-2" data-line-number="2"><span class="kw">plot</span>(fd<span class="op">~</span>years,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>)</a></code></pre></div>
+<p><img data-src="PS_09_weather_files/figure-revealjs/unnamed-chunk-43-1.png" /></p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="externals/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="externals/reveal.js-3.3.0.1/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // Vertical centering of slides
+        center: false,
+        // Enable slide navigation via mouse wheel
+        mouseWheel: true,
+        // Opens links in an iframe preview overlay
+        previewLinks: true,
+        // Transition style
+        transition: 'zoom', // none/fade/slide/convex/concave/zoom
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: '90%',
+        height: '90%',
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 1,
+        maxScale: 3,
+
+
+
+        chalkboard: {
+        },
+
+        keyboard: {
+          67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
+          66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
+          46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
+           8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+          68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'externals/reveal.js-3.3.0.1/plugin/zoom-js/zoom.js', async: true },
+          { src: 'externals/reveal.js-3.3.0.1/plugin/chalkboard/chalkboard.js', async: true },
+        ]
+      });
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>

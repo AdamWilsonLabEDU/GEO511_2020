@@ -9,6 +9,10 @@ library(doParallel)
 registerDoParallel(4)
 getDoParWorkers() # check registered cores
 
+## # go to  http://api.census.gov/data/key_signup.html and get a key, then run the line below with your key.  Don't push your key to github!
+## library(tidycensus)
+## census_api_key("YOUR API KEY GOES HERE")
+
 library(tidycensus)
 racevars <- c(White = "P005003", 
               Black = "P005004", 

@@ -4,9 +4,36 @@ week: 11
 type: Presentation
 ---
 
+## Course Schedule
+<iframe
+  src="http://wilsonlab.io/GEO511/Schedule.html"
+  width="100%" height="800">
+</iframe>
+[source](http://wilsonlab.io/GEO511/Schedule.html)
+
 ## Resource Presentations
 
-## Case Study Discussion
+<iframe
+  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&single=true"
+  width="100%" height="800">
+</iframe>
+[source](https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&single=true)
+
+## Case Study: Let's pick a winner!
+
+<iframe
+  src="https://wheelofnames.com/bw4-gdt"
+  width="100%" height="500">
+</iframe>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&amp;single=true&amp;widget=true&amp;headers=false" style="height: 200px; width: 100%;"></iframe>
+
+## Next Week's Case Study
+
+<iframe
+  src="http://wilsonlab.io/GEO511/CS_11.html"
+  width="100%" height="800">
+</iframe>
+[source](http://wilsonlab.io/GEO511/CS_11.html)
 
 # Introduction to Parallel Processing
 
@@ -78,7 +105,7 @@ There are many R packages for parallelization, check out the CRAN Task View on [
 * [multidplyr](https://github.com/hadley/multidplyr/blob/master/vignettes/multidplyr.md)
 
 
-## Foreach Package
+## `ForEach` Package
 In this session we'll focus on the foreach package, which has numerous advantages including:
 
   * intuitive `for()` loop-like syntax
@@ -245,7 +272,7 @@ toc()
 ```
 
 ```
-## 0.061 sec elapsed
+## 0.016 sec elapsed
 ```
 
 ```r
@@ -257,7 +284,7 @@ toc()
 ```
 
 ```
-## 0.051 sec elapsed
+## 0.037 sec elapsed
 ```
 
 ## Test the relative speed
@@ -272,7 +299,7 @@ toc()
 ```
 
 ```
-## 9.013 sec elapsed
+## 9.02 sec elapsed
 ```
 
 ```r
@@ -284,7 +311,7 @@ toc()
 ```
 
 ```
-## 3.04 sec elapsed
+## 3.035 sec elapsed
 ```
 
 ## Nested foreach loops
@@ -369,9 +396,7 @@ Some functions in the raster package also easy to parallelize.
 library(raster)
 ncores=2
 beginCluster(ncores)
-fn=function(x){
-  x^3 #define some function to calculate
-}
+fn=function(x) x^3 #define some function to calculate
 r=raster() # make an empty raster
 values(r)<-rnorm(ncell(r)) #fill it with random numbers
 ```
@@ -384,7 +409,7 @@ toc()
 ```
 
 ```
-## 0.052 sec elapsed
+## 0.062 sec elapsed
 ```
 
 ```r
@@ -394,7 +419,7 @@ toc()
 ```
 
 ```
-## 0.767 sec elapsed
+## 0.596 sec elapsed
 ```
 
 ```r

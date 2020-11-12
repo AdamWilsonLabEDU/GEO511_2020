@@ -275,7 +275,7 @@ lst=setZ(lst,tdates)
 #' 
 #' Hints:
 #' 
-#' 1. First make a variable called `tmonth` by converting the dates to months using `as.numeric(format(getZ(lst2),"%m"))`
+#' 1. First make a variable called `tmonth` by converting the dates to months using `as.numeric(format(getZ(lst),"%m"))`
 #' 2. Use `stackApply()` to summarize the mean value per month (using the `tmonth` variable you just created) and save the results as `lst_month`.
 #' 3. Set the names of the layers to months with `names(lst_month)=month.name`
 #' 4. Plot the map for each month with `gplot()` in the RasterVis Package.

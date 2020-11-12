@@ -48,6 +48,14 @@ registerDoParallel(4)
 getDoParWorkers() # check registered cores
 
 #' 
+#' To use the tidycensus package, you will need to load the package and set your Census API key. A key can be obtained from http://api.census.gov/data/key_signup.html. You will only need to do that once (unless you delete your .Renviron file or move to a different computer).
+#' 
+## ---- eval=F------------------------------------------------------------------
+## # go to  http://api.census.gov/data/key_signup.html and get a key, then run the line below with your key.  Don't push your key to github!
+## library(tidycensus)
+## census_api_key("YOUR API KEY GOES HERE")
+
+#' 
 #' <div class="well">
 #' <button data-toggle="collapse" class="btn btn-primary btn-sm round" data-target="#demo1">Show Hints</button>
 #' <div id="demo1" class="collapse">
@@ -70,7 +78,7 @@ erie <- get_decennial(geography = "block", variables = racevars,
                   summary_var = "P001001", cache_table=T) 
 
 #' * Crop the county-level data to `c(xmin=-78.9,xmax=-78.85,ymin=42.888,ymax=42.92)` to reduce the computational burdern. Feel free to enlarge this area if your computer is fast (or you are patient).
-#' * Write a foreach loop that does the following steps _for each racial group_ in the `variable` column of the `erie` dataset and rbind the results into a single `sf` object.  You may want to convert the variable column into a factor and use `levels()` or use `unique()`.
+#' * Write a foreach loop that does the following steps _for each racial group_ in the `variable` column of the `erie` dataset and `rbind`s the results (e.g. `.combine=rbind`) into a single `sf` object.  You may want to convert the variable column into a factor and use `levels()` or use `unique()`.
 #'    * filter the the data to include only one race at time
 #'    * use `st_sample()` to generate random points for each person that resided within each polygon.  If you use a pipe (`%>%`), you will have to set `size=.$value`.  The `.` indicates that the column comes from the dataset that was passed to the function. See [here](https://magrittr.tidyverse.org/reference/pipe.html) for details on how to use the `.` in a pipe.
 #'    * convert the points from `st_sample()` to spatial features with `st_as_sf()`
