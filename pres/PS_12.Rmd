@@ -55,7 +55,8 @@ Questions? Concerns?
 ```{r, message=F}
 library(widgetframe)
 library(DT)
-datatable(iris, options = list(pageLength = 5))
+datatable(iris, options = list(pageLength = 5)) %>% 
+  frameableWidget()
 ```
 
 ## rbokeh
@@ -78,7 +79,6 @@ figure(width = 800, height=400) %>%
 ```{r, warning=F, message=F}
 library(leaflet)
 library(ggmap)
-geocode("Buffalo, NY")
 m <- leaflet() %>% setView(lng = -78.88642, lat = 42.89606, zoom = 12) %>%   addTiles()
 ```
 
@@ -200,7 +200,7 @@ rn1=radialNetwork(List = Flare, fontSize = 10, opacity = 0.9, height = 400, widt
 
 ---
 
-```{r}
+```{r, echo=F}
 frameWidget(rn1,height =500)
 ```
 
@@ -246,8 +246,21 @@ rg1=browsable(tagList(
 ---
 <iframe class='embed-responsive-item' src='rgl.html'  width=100% height=700px allowfullscreen></iframe>
 
+## GGplotly
+<iframe
+  src="https://plotly.com/ggplot2/"
+  width="100%" height="800">
+</iframe>
+[source](https://plotly.com/ggplot2/)
+
+
 ## Flexdashboard
 
-[Also check out the flexdashboard format](https://rmarkdown.rstudio.com/flexdashboard/)
+<iframe
+  src="https://rmarkdown.rstudio.com/flexdashboard/"
+  width="100%" height="800">
+</iframe>
+[source](https://rmarkdown.rstudio.com/flexdashboard/)
+
 
 
