@@ -121,6 +121,19 @@ buffalo_dots=
    }
 ```
 
+
+```{r eval=F, echo=F, purl=F, message=F, warning=F}
+# Or, do it without pipes
+buffalo_dots=
+   foreach(r=unique(buffalo$variable),.combine=rbind)%dopar%{
+   buffalo_race = filter(buffalo,variable==r)  #do one variable at a time
+   buffalo_sample = st_sample(buffalo_race, 
+                              size=buffalo_race$value)  #generate a point for each person randomly
+   buffalo_sf = st_as_sf(buffalo_sample)  #convert to a full sf object
+   mutate(buffalo_sf, variable=r) #add the variable onto the points
+   }
+```
+
 Your final result should look something like this:
 ```{r, echo=F, purl=F, fig.width=2,fig.height=2, warning=F, as.is=T, cache=F}
 mapview(buffalo_dots,zcol="variable",cex=1,lwd=0)

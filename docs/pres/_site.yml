@@ -14,7 +14,7 @@ output:
       transition: zoom
       reveal_options:
         previewLinks: true
-        mouseWheel: true
+        mouseWheel: false
         slideNumber: true
         minScale: 1
         maxScale: 3

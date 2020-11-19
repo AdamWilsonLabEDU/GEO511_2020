@@ -25,11 +25,22 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<script src="site_libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="site_libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
 <script src="site_libs/pymjs-1.3.2/pym.v1.js"></script>
 <script src="site_libs/widgetframe-binding-0.3.1/widgetframe.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -457,44 +468,34 @@ library(widgetframe)</code></pre>
 <div id="detailed-steps" class="section level2">
 <h2>Detailed Steps</h2>
 <p>First use the following code to download the daily weather data.</p>
-<pre class="r"><code>library(rnoaa)
-library(xts)</code></pre>
-<pre><code>## Loading required package: zoo</code></pre>
-<pre><code>## 
-## Attaching package: &#39;zoo&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     as.Date, as.Date.numeric</code></pre>
-<pre><code>## 
-## Attaching package: &#39;xts&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:leaflet&#39;:
-## 
-##     addLegend</code></pre>
-<pre><code>## The following objects are masked from &#39;package:dplyr&#39;:
-## 
-##     first, last</code></pre>
-<pre class="r"><code>library(dygraphs)
-
+<pre class="r"><code>library(tidyverse)
+library(rnoaa)
+library(xts)
+library(dygraphs)
+ 
 d=meteo_tidy_ghcnd(&quot;USW00014733&quot;,
                    date_min = &quot;2016-01-01&quot;, 
                    var = c(&quot;TMAX&quot;),
-                   keep_flags=T)</code></pre>
+                   keep_flags=T) %&gt;% 
+   mutate(date=as.Date(date),
+          tmax=as.numeric(tmax)/10) #Divide the tmax data by 10 to convert to degrees.</code></pre>
+<pre><code>## using cached file: /Users/adamw/Library/Caches/R/noaa_ghcnd/USW00014733.dly</code></pre>
+<pre><code>## date created (size, mb): 2020-09-16 11:00:11 (8.417)</code></pre>
 <pre><code>## file min/max dates: 1938-05-01 / 2020-09-30</code></pre>
-<pre class="r"><code>d$date=as.Date(d$date)</code></pre>
 <p>Remaining steps:</p>
 <ol style="list-style-type: decimal">
 <li>Convert <code>d</code> into an <code>xts</code> time series object using <code>xts()</code>. You will need to specifify which column has the data (<code>d$tmax</code>) and <code>order.by=d$date</code>. See <code>?xts</code> for help.</li>
 <li>Use <code>dygraph()</code> to draw the plot</li>
 <li>Set the title of the dygraph to be <code>main=&quot;Daily Maximum Temperature in Buffalo, NY&quot;</code></li>
-<li>Add a <code>dyRangeSelector()</code> with a <code>dateWindow</code> of <code>c(&quot;2017-01-01&quot;, &quot;2017-12-31&quot;)</code></li>
+<li>Add a <code>dyRangeSelector()</code> with a <code>dateWindow</code> of <code>c(&quot;2020-01-01&quot;, &quot;2020-10-31&quot;)</code></li>
 <li>Explore other options. You could download another variable (precipitation?) and add it to the plot. Or imagine another way to visualize the data using one of the other interactive libraries.</li>
 </ol>
 </div>
 <div id="output" class="section level2">
 <h2>Output</h2>
 <p>At a minimum, your final graph should look something like this:</p>
-<div id="htmlwidget-6cd7bc201e23f6b79a69" style="width:100%;height:500px;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6cd7bc201e23f6b79a69">{"x":{"url":"CS_12_files/figure-html//widgets/widget_unnamed-chunk-3.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-2a768384232cef0f58d6" style="width:100%;height:500px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2a768384232cef0f58d6">{"x":{"url":"CS_12_files/figure-html//widgets/widget_unnamed-chunk-3.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
 <p>What other visualizations can you make with these data?</p>
 </div>
 </div>
@@ -560,7 +561,7 @@ d=meteo_tidy_ghcnd(&quot;USW00014733&quot;,
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();

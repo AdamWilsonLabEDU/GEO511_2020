@@ -44,24 +44,26 @@ library(widgetframe)
 #' 
 #' First use the following code to download the daily weather data.
 #' 
-## ---- messages=F, warning=F, results=F----------------------------------------
+## ---- messages=F, warning=F, results="hide"-----------------------------------
+library(tidyverse)
 library(rnoaa)
 library(xts)
 library(dygraphs)
-
+ 
 d=meteo_tidy_ghcnd("USW00014733",
                    date_min = "2016-01-01", 
                    var = c("TMAX"),
-                   keep_flags=T)
-d$date=as.Date(d$date)
+                   keep_flags=T) %>% 
+   mutate(date=as.Date(date),
+          tmax=as.numeric(tmax)/10) #Divide the tmax data by 10 to convert to degrees.
 
 #' 
 #' Remaining steps:
 #' 
-#' 1. Convert `d` into an `xts` time series object using `xts()`.  You will need to specifify which column has the data (`d$tmax`) and `order.by=d$date`. See `?xts` for help. 
+#' 1. Convert `d` into an `xts` time series object using `xts()`.  You will need to specifify which column has the data (`d$tmax`) and `order.by=d$date`.   See `?xts` for help. 
 #' 2. Use `dygraph()` to draw the plot
 #' 3. Set the title of the dygraph to be `main="Daily Maximum Temperature in Buffalo, NY"`
-#' 4. Add a `dyRangeSelector()` with a `dateWindow` of `c("2017-01-01", "2017-12-31")`
+#' 4. Add a `dyRangeSelector()` with a `dateWindow` of `c("2020-01-01", "2020-10-31")`
 #' 5. Explore other options.  You could download another variable (precipitation?) and add it to the plot. Or imagine another way to visualize the data using one of the other interactive libraries.  
 #' 
 #' ## Output

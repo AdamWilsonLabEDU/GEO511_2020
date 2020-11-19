@@ -91,6 +91,9 @@ erie <- get_decennial(geography = "block", variables = racevars,
 #' 
 
 #' 
+#' 
+
+#' 
 #' Your final result should look something like this:
 
 #' 

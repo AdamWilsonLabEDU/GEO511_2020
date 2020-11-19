@@ -25,8 +25,19 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -437,11 +448,11 @@ div.tocify {
 <li>plot a simple ggplot line graph of mean annual <span class="math inline"><em>C</em><em>O</em><sub>2</sub></span> concentration each year as shown below</li>
 </ol>
 <pre><code>## Response [https://scrippsco2.ucsd.edu/assets/data/atmospheric/stations/in_situ_co2/monthly/monthly_in_situ_co2_mlo.csv]
-##   Date: 2020-11-02 17:10
+##   Date: 2020-11-19 18:17
 ##   Status: 200
 ##   Content-Type: text/csv
 ##   Size: 75.7 kB
-## &lt;ON DISK&gt;  /var/folders/fh/g_hk6yxx4cj5c83096lj3g4r0000gn/T//RtmpQsnP9l/file10ba1338dd93c</code></pre>
+## &lt;ON DISK&gt;  /var/folders/fh/g_hk6yxx4cj5c83096lj3g4r0000gn/T//RtmpOTWip4/file13bff3c34b453</code></pre>
 <p><img src="CS_15_files/figure-html/unnamed-chunk-2-1.png" /><!-- --></p>
 </div>
 
@@ -506,7 +517,7 @@ div.tocify {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();

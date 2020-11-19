@@ -8,12 +8,43 @@ knitr::opts_knit$set(root.dir = NULL)
 knitr::opts_chunk$set(fig.width=800,fig.height=400)
 ```
 
-## Logistics
-<iframe class='embed-responsive-item' src='Schedule.html'  width=100% height=700px allowfullscreen></iframe>
+## Course Schedule
+<iframe
+  src="http://wilsonlab.io/GEO511/Schedule.html"
+  width="100%" height="800">
+</iframe>
+[source](http://wilsonlab.io/GEO511/Schedule.html)
+
+## Datacamp
+
+Many people behind on DataCamp Courses.  
+
+Questions? Concerns?
 
 ## Resource Presentations
 
-## Case Studies
+<iframe
+  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&single=true"
+  width="100%" height="800">
+</iframe>
+[source](https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&single=true)
+
+## Case Study: Let's pick a winner!
+
+<iframe
+  src="https://wheelofnames.com/bw4-gdt"
+  width="100%" height="500">
+</iframe>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&amp;single=true&amp;widget=true&amp;headers=false" style="height: 200px; width: 100%;"></iframe>
+
+## Next Week's Case Study
+
+<iframe
+  src="http://wilsonlab.io/GEO511/CS_12.html"
+  width="100%" height="800">
+</iframe>
+[source](http://wilsonlab.io/GEO511/CS_12.html)
+
 
 # HTML Visualization
 
@@ -158,9 +189,7 @@ frameWidget(sn1,height =500)
 
 ## Radial Network
 ```{r}
-URL <- paste0(
-        "https://cdn.rawgit.com/christophergandrud/networkD3/",
-        "master/JSONdata//flare.json")
+URL <- "https://raw.githubusercontent.com/christophergandrud/networkD3/master/JSONdata/flare.json"
 ## Convert to list format
 Flare <- jsonlite::fromJSON(URL, simplifyDataFrame = FALSE)
 # Use subset of data for more readable diagram
