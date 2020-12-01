@@ -184,9 +184,10 @@ In a specifications-grading system all tasks are evaluated on a high-standards p
 
 #### Coding Challenge
 
-On the last day of class you will be asked to complete a coding challenge.  You will not be able to work with others.  The coding challenge will use the techniques and programming developed from the course and is meant to demonstrate a foundational understanding of the course material.
+Near the end of the semester, you will be asked to complete a coding assessment via DataCamp.   It is an _adaptive assessment tool that measures your data science skill level in R_. The assessment will take about 10 minutes to complete (if you succeed the first time). After completing the assessment, you will receive an assessment score and percentile ranking, your skill level, an overview of your strengths and skill gaps, and personalized course recommendations for areas of improvement.
 
-1. **You must pass the challenge to keep grade earned from your [completed tasks](Syllabus.html).**
+1. **To pass the challenge, you must achieve an 80% or greater.  You may take it multiple times until you achieve this score.**
+2. You must pass the challenge to keep grade earned from your [completed tasks](Syllabus.html).
 2. Failure to pass the challenge will lower your grade 1-2 steps.
 
 **There will be no final exam.**
@@ -200,7 +201,8 @@ On the last day of class you will be asked to complete a coding challenge.  You 
 * Grade Request
    * Before the last day of classes, you will submit a cover letter (<1 page) stating:
         * the key concepts and techniques that you learned during the course (~500-1,000 words)
-        * a semester task form that records your completed tasks during the semester
+        * a semester task form that records your completed tasks during the semester.  This is something you compile based on the assignments that you completed.
+        * the score you earned on the DataCamp assessment course described above
         * a grade request based your completion of course tasks (using the table above) 
 * Final project website
 
