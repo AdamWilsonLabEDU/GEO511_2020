@@ -186,9 +186,9 @@ In a specifications-grading system all tasks are evaluated on a high-standards p
 
 Near the end of the semester, you will be asked to complete a coding assessment via DataCamp.   It is an _adaptive assessment tool that measures your data science skill level in R_. The assessment will take about 10 minutes to complete (if you succeed the first time). After completing the assessment, you will receive an assessment score and percentile ranking, your skill level, an overview of your strengths and skill gaps, and personalized course recommendations for areas of improvement.
 
-1. **To pass the challenge, you must achieve an 80% or greater.  You may take it multiple times until you achieve this score.**
-2. You must pass the challenge to keep grade earned from your [completed tasks](Syllabus.html).
-2. Failure to pass the challenge will lower your grade 1-2 steps.
+1. **To pass the challenge, you must achieve an 80% or greater on the assessment. You may take it multiple times until you achieve this score.**
+2. Failure to pass the challenge (80+%) will lower your grade 1-2 steps from the grade earned via your [completed tasks](Syllabus.html).
+
 
 **There will be no final exam.**
 
