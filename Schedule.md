@@ -38,7 +38,6 @@ We will refer to the following texts (all available online):
  |  13 |  11/23/20 |   |  [Thanksgiving Week (Tuesday Class Optional)](./TK_13.html) |  []() |   |
  |  14 |  11/30/20 |  [<i class='fas fa-desktop'>   </i>](pres/PS_13.html){target='_blank'} |  [Project Workshop](./TK_14.html) |  []() |   |
  |  15 |  12/7/20 |   |  [Final Presentation](./TK_15.html) |  [Final Presentation](./TK_15.html) |   |
- |  16 |  12/14/20 |   |  [Publish Final Project](./TK_16.html) |  []() |   |
  
 
 

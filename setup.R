@@ -21,7 +21,7 @@ node [shape = rectangle, style = filled, fillcolor = Linen]
 
 data1 [label = 'Dataset 1', shape = folder, fillcolor = Beige]
 data2 [label = 'Dataset 2', shape = folder, fillcolor = Beige]
-script [label =  'RMarkdown Script \n .md']
+script [label =  'RMarkdown Script \n .Rmd']
 knitr [label = 'Knitr \n (runs R code)']
 md [label = 'Markdown \n .md']
 results1 [label= 'Webpage (html)']
