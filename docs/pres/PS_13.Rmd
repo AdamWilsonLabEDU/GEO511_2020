@@ -115,6 +115,13 @@ Break up chunks with narrative to explain what the code is doing.  Chunks longer
 
 Don't forget to use spell check (Edit->Check Spelling)!  It's not automatic!
 
+## And many more options to customize!
+<iframe
+  src="https://bookdown.org/yihui/rmarkdown-cookbook/html-scroll.html"
+  width="100%" height="800">
+</iframe>
+[source](https://bookdown.org/yihui/rmarkdown-cookbook/html-scroll.html)
+
 
 ## Convert .Rmd to .R 
 

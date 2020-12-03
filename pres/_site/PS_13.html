@@ -568,17 +568,17 @@ document.getElementsByTagName('head')[0].appendChild(style);
 ## lm(formula = rnorm(10) ~ runif(10))
 ## 
 ## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -1.3038 -0.6697 -0.1487  0.4535  2.0395 
+##      Min       1Q   Median       3Q      Max 
+## -0.79424 -0.35346 -0.09462  0.34267  1.15380 
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(&gt;|t|)
-## (Intercept) -0.53383    0.60463  -0.883    0.403
-## runif(10)    0.07774    1.16289   0.067    0.948
+## (Intercept) -0.19628    0.29455  -0.666    0.524
+## runif(10)   -0.05514    0.59420  -0.093    0.928
 ## 
-## Residual standard error: 1.016 on 8 degrees of freedom
-## Multiple R-squared:  0.0005583,  Adjusted R-squared:  -0.1244 
-## F-statistic: 0.004469 on 1 and 8 DF,  p-value: 0.9483</code></pre>
+## Residual standard error: 0.6169 on 8 degrees of freedom
+## Multiple R-squared:  0.001075,   Adjusted R-squared:  -0.1238 
+## F-statistic: 0.00861 on 1 and 8 DF,  p-value: 0.9284</code></pre>
 </section><section id="code-output-1" class="slide level2">
 <h2>Code output</h2>
 <p>Convert results to properly formatted output.</p>
@@ -598,17 +598,17 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">0.02</td>
-<td style="text-align: right;">1.06</td>
-<td style="text-align: right;">0.02</td>
-<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">-0.51</td>
+<td style="text-align: right;">0.48</td>
+<td style="text-align: right;">-1.06</td>
+<td style="text-align: right;">0.32</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">runif(10)</td>
-<td style="text-align: right;">0.34</td>
-<td style="text-align: right;">1.76</td>
-<td style="text-align: right;">0.20</td>
-<td style="text-align: right;">0.85</td>
+<td style="text-align: right;">0.57</td>
+<td style="text-align: right;">0.76</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">0.47</td>
 </tr>
 </tbody>
 </table>
@@ -624,6 +624,11 @@ document.getElementsByTagName('head')[0].appendChild(style);
 </section><section id="spelling" class="slide level2">
 <h2>Spelling</h2>
 <p>Don’t forget to use spell check (Edit-&gt;Check Spelling)! It’s not automatic!</p>
+</section><section id="and-many-more-options-to-customize" class="slide level2">
+<h2>And many more options to customize!</h2>
+<iframe src="https://bookdown.org/yihui/rmarkdown-cookbook/html-scroll.html" width="100%" height="800">
+</iframe>
+<p><a href="https://bookdown.org/yihui/rmarkdown-cookbook/html-scroll.html">source</a></p>
 </section><section id="convert-.rmd-to-.r" class="slide level2">
 <h2>Convert .Rmd to .R</h2>
 <p>You can always convert a .Rmd file to a .R file (with or without comments) like this:</p>
