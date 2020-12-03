@@ -1,5 +1,5 @@
 ---
-title: "Final Project Notes"
+title: "Semester Wrap Up!"
 type: Presentation
 week: 13
 ---
@@ -10,15 +10,52 @@ library(tidyverse)
 library(knitr)
 ```
 
-## Logistics
-<iframe class='embed-responsive-item' src='../Schedule.html'  width=100% height=700px allowfullscreen></iframe>
 
-## Resource Presentations
+## Course Schedule
+<iframe
+  src="http://wilsonlab.io/GEO511/Schedule.html"
+  width="100%" height="800">
+</iframe>
+[source](http://wilsonlab.io/GEO511/Schedule.html)
 
-## Case Studies
+## Case Study: Let's pick a winner!
+
+<iframe
+  src="https://wheelofnames.com/bw4-gdt"
+  width="100%" height="500">
+</iframe>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSm_SdDqTPR5j7dXg_VeaUaKSxCVevvytsWQYKcT_kBCgOkKMsouHfafZ6wtbVjXaUSYxODReZgxAC3/pubhtml?gid=868447735&amp;single=true&amp;widget=true&amp;headers=false" style="height: 200px; width: 100%;"></iframe>
 
 
-# Project Suggestions
+## Final Deliverables
+Final deadline 1 week from last day of classes (December 18th).
+
+<iframe
+  src="http://wilsonlab.io/GEO511/Syllabus.html#semester-deliverables"
+  width="100%" height="800">
+</iframe>
+[source](http://wilsonlab.io/GEO511/Syllabus.html#semester-deliverables)
+
+
+# Final Projects
+
+## Presentation Schedule
+<iframe
+  src="http://wilsonlab.io/GEO511/Student_projects.html#section"
+  width="100%" height="800">
+</iframe>
+[source](http://wilsonlab.io/GEO511/Student_projects.html#section)
+
+## Presentation Details
+
+<iframe
+  src="http://wilsonlab.io/GEO511/TK_15.html"
+  width="100%" height="800">
+</iframe>
+[source](http://wilsonlab.io/GEO511/TK_15.html)
+
+
+# Tips and Tricks
 
 ## Messages
 

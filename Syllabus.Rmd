@@ -131,16 +131,18 @@ Near the end of the semester, you will be asked to complete a coding assessment 
 
 ## Semester Deliverables
 
+### All items are due on the last day of exam week (though earlier is fine too)
+
 * GitHub Profile
     * Course Repository
         * Tasks
         * Case Studies
 * Grade Request
-   * Before the last day of classes, you will submit a cover letter (<1 page) stating:
+   * You will submit a cover letter (<1 page) stating:
         * the key concepts and techniques that you learned during the course (~500-1,000 words)
         * a semester task form that records your completed tasks during the semester.  This is something you compile based on the assignments that you completed.
-        * the score you earned on the DataCamp assessment course described above
-        * a grade request based your completion of course tasks (using the table above) 
+        * the score you earned on the DataCamp assessment course described above.
+        * a grade request based your completion of course tasks (using the table above). 
 * Final project website
 
 ## Textbook
