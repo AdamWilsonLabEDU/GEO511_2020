@@ -24,15 +24,17 @@ You are invited to explore the student projects below (click on a title to visit
 |Student       |Title                                                                                                                                                                                   | group|
 |:-------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----:|
 |btkunz        |[GEO 511 Final Project](https://geo511-2020.github.io/geo511-2020-project-btkunz)                                                                                                       |     1|
-|erikwoyc      |[A Look at Single Family Housing Prices Across Buffalo](https://geo511-2020.github.io/geo511-2020-project-erikwoyc)                                                                     |     1|
-|hsare         |[Using R to Search for future mining and landing sites on Mars](https://geo511-2020.github.io/geo511-2020-project-hsare)                                                                |     1|
+|erikwoyc      |[Price Analysis for Single Family Housing in Buffalo](https://geo511-2020.github.io/geo511-2020-project-erikwoyc)                                                                       |     1|
+|hsare         |[Search for future mining and landing sites on Mars](https://geo511-2020.github.io/geo511-2020-project-hsare)                                                                           |     1|
 |lazin-buff    |[US Federal Election 2020](https://geo511-2020.github.io/geo511-2020-project-lazin-buff)                                                                                                |     1|
 |smnotaro      |[Environmental Justice Mapping](https://geo511-2020.github.io/geo511-2020-project-smnotaro)                                                                                             |     1|
-|tingtchang    |[My Final Project Template](https://geo511-2020.github.io/geo511-2020-project-tingtchang)                                                                                               |     1|
-|BhavanaPoladi |[Final Project](https://geo511-2020.github.io/geo511-2020-project-BhavanaPoladi)                                                                                                        |     2|
+|tingtchang    |[Reported Domestic Violence in Chicago City, IL](https://geo511-2020.github.io/geo511-2020-project-tingtchang)                                                                          |     1|
+|BhavanaPoladi |[Global Prevalence of Depression](https://geo511-2020.github.io/geo511-2020-project-BhavanaPoladi)                                                                                      |     2|
 |BoweiZhao     |[Analysis of the temporal and spatial distribution of COVID-19 in New York City and its correlation with demographic data](https://geo511-2020.github.io/geo511-2020-project-BoweiZhao) |     2|
 |coconn41      |[Tickborne Pathogen Prevalence and Forest Cover in New York State](https://geo511-2020.github.io/geo511-2020-project-coconn41)                                                          |     2|
+|mahmoodkaiser |[Vehicle Towing in Buffalo](https://geo511-2020.github.io/geo511-2020-project-mahmoodkaiser)                                                                                            |     2|
 |shruti8297    |[Statistical Comparision of NASA-TROPOMI - Satellite and GEOS-CF - Model Data](https://geo511-2020.github.io/geo511-2020-project-shruti8297)                                            |     2|
+|WeishanBai    |[My Final Project Presentation](https://geo511-2020.github.io/geo511-2020-project-WeishanBai)                                                                                           |     2|
 |ZaqueEvans    |[GEO 511 &#124; Fall 2020 &#124; Project](https://geo511-2020.github.io/geo511-2020-project-ZaqueEvans)                                                                                 |     2|
 |Zixuan0127    |[Distribution of Precipitation in a Interactive Map](https://geo511-2020.github.io/geo511-2020-project-Zixuan0127)                                                                      |     2|
 
