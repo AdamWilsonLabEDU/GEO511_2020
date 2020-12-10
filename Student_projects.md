@@ -20,87 +20,24 @@ You are invited to explore the student projects below (click on a title to visit
 
 
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> Student </th>
-   <th style="text-align:left;"> Title </th>
-   <th style="text-align:right;"> group </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> btkunz </td>
-   <td style="text-align:left;"> [GEO 511 Final Project](https://geo511-2020.github.io/geo511-2020-project-btkunz) </td>
-   <td style="text-align:right;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> erikwoyc </td>
-   <td style="text-align:left;"> [Price Analysis for Single Family Housing in Buffalo](https://geo511-2020.github.io/geo511-2020-project-erikwoyc) </td>
-   <td style="text-align:right;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> hsare </td>
-   <td style="text-align:left;"> [Search for future landing site and mining locations on Mars](https://geo511-2020.github.io/geo511-2020-project-hsare) </td>
-   <td style="text-align:right;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> lazin-buff </td>
-   <td style="text-align:left;"> [US Federal Election 2020](https://geo511-2020.github.io/geo511-2020-project-lazin-buff) </td>
-   <td style="text-align:right;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> smnotaro </td>
-   <td style="text-align:left;"> [Environmental Justice Mapping](https://geo511-2020.github.io/geo511-2020-project-smnotaro) </td>
-   <td style="text-align:right;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> tingtchang </td>
-   <td style="text-align:left;"> [Reported Domestic Violence in Chicago City, IL](https://geo511-2020.github.io/geo511-2020-project-tingtchang) </td>
-   <td style="text-align:right;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> BhavanaPoladi </td>
-   <td style="text-align:left;"> [Global Prevalence of Depression](https://geo511-2020.github.io/geo511-2020-project-BhavanaPoladi) </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> BoweiZhao </td>
-   <td style="text-align:left;"> [Analysis of the temporal and spatial distribution of COVID-19 in New York City and its correlation with demographic data](https://geo511-2020.github.io/geo511-2020-project-BoweiZhao) </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> coconn41 </td>
-   <td style="text-align:left;"> [Tick-borne Pathogen Prevalence and Forest Cover in New York State](https://geo511-2020.github.io/geo511-2020-project-coconn41) </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> mahmoodkaiser </td>
-   <td style="text-align:left;"> [Vehicle Towing in Buffalo](https://geo511-2020.github.io/geo511-2020-project-mahmoodkaiser) </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> shruti8297 </td>
-   <td style="text-align:left;"> [Statistical Comparision of NASA-TROPOMI - Satellite and GEOS-CF - Model Data](https://geo511-2020.github.io/geo511-2020-project-shruti8297) </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> WeishanBai </td>
-   <td style="text-align:left;"> [My Final Project Presentation](https://geo511-2020.github.io/geo511-2020-project-WeishanBai) </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ZaqueEvans </td>
-   <td style="text-align:left;"> [GEO 511 | Fall 2020 | Project](https://geo511-2020.github.io/geo511-2020-project-ZaqueEvans) </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Zixuan0127 </td>
-   <td style="text-align:left;"> [Distribution of Precipitation in an Interactive Map](https://geo511-2020.github.io/geo511-2020-project-Zixuan0127) </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-</tbody>
-</table>
+
+|Student       |Title                                                                                                                                                                      | group|
+|:-------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----:|
+|btkunz        |[GEO 511 Final Project](https://geo511-2020.github.io/geo511-2020-project-btkunz)                                                                                          |     1|
+|erikwoyc      |[Price Analysis for Single Family Housing in Buffalo](https://geo511-2020.github.io/geo511-2020-project-erikwoyc)                                                          |     1|
+|hsare         |[Search for future landing site and mining locations on Mars](https://geo511-2020.github.io/geo511-2020-project-hsare)                                                     |     1|
+|lazin-buff    |[US Federal Election 2020](https://geo511-2020.github.io/geo511-2020-project-lazin-buff)                                                                                   |     1|
+|smnotaro      |[Environmental Justice Mapping](https://geo511-2020.github.io/geo511-2020-project-smnotaro)                                                                                |     1|
+|tingtchang    |[Reported Domestic Violence in Chicago City, IL](https://geo511-2020.github.io/geo511-2020-project-tingtchang)                                                             |     1|
+|betsymccall   |[What Makes a District Map Fair?](https://geo511-2020.github.io/geo511-2020-project-betsymccall)                                                                           |     2|
+|BhavanaPoladi |[Global Prevalence of Depression](https://geo511-2020.github.io/geo511-2020-project-BhavanaPoladi)                                                                         |     2|
+|BoweiZhao     |[Analysis of the spatial distribution of COVID-19 in New York City and its correlation with demographic data](https://geo511-2020.github.io/geo511-2020-project-BoweiZhao) |     2|
+|coconn41      |[Tick-borne Pathogen Prevalence and Forest Cover in New York State](https://geo511-2020.github.io/geo511-2020-project-coconn41)                                            |     2|
+|mahmoodkaiser |[Vehicle Towing in Buffalo](https://geo511-2020.github.io/geo511-2020-project-mahmoodkaiser)                                                                               |     2|
+|shruti8297    |[Statistical Comparision of NASA-TROPOMI - Satellite and GEOS-CF - Model Data](https://geo511-2020.github.io/geo511-2020-project-shruti8297)                               |     2|
+|WeishanBai    |[My Final Project Presentation](https://geo511-2020.github.io/geo511-2020-project-WeishanBai)                                                                              |     2|
+|ZaqueEvans    |[GEO 511 &#124; Fall 2020 &#124; Project](https://geo511-2020.github.io/geo511-2020-project-ZaqueEvans)                                                                    |     2|
+|Zixuan0127    |[Distribution of Precipitation in an Interactive Map](https://geo511-2020.github.io/geo511-2020-project-Zixuan0127)                                                        |     2|
 
 
 ## 2019
@@ -109,97 +46,25 @@ You are invited to explore the student projects below (click on a title to visit
 
 
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> Student </th>
-   <th style="text-align:left;"> Title </th>
-   <th style="text-align:right;"> group </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> AJKlisavage </td>
-   <td style="text-align:left;"> [Invasive Species Tracker](https://geo511-2019.github.io/2019-geo511-project-AJKlisavage) </td>
-   <td style="text-align:right;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> anuwatpe </td>
-   <td style="text-align:left;"> [Opioid-Related Deaths in New York State](https://geo511-2019.github.io/2019-geo511-project-anuwatpe) </td>
-   <td style="text-align:right;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> austin3087 </td>
-   <td style="text-align:left;"> [GEO-511 Semester Project](https://geo511-2019.github.io/2019-geo511-project-austin3087) </td>
-   <td style="text-align:right;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> davidjtor </td>
-   <td style="text-align:left;"> [GEO 511: Spatial Data Science Project](https://geo511-2019.github.io/2019-geo511-project-davidjtor) </td>
-   <td style="text-align:right;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> gbream </td>
-   <td style="text-align:left;"> [Building, Crossdating, and Analyzing a Tree Ring Chronology from New York’s Genesee Valley](https://geo511-2019.github.io/2019-geo511-project-gbream) </td>
-   <td style="text-align:right;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> hsare </td>
-   <td style="text-align:left;"> [Title: “Design a Controller to stabilize a spacecraft’s Attitude”](https://geo511-2019.github.io/2019-geo511-project-hsare) </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> jpreg </td>
-   <td style="text-align:left;"> [Differences in Travel Costs in Talbot County, Md between the White and African American Populations c. 1880](https://geo511-2019.github.io/2019-geo511-project-jpreg) </td>
-   <td style="text-align:right;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> katlynse </td>
-   <td style="text-align:left;"> [The Construction and Deconstruction of Empanada](https://geo511-2019.github.io/2019-geo511-project-katlynse) </td>
-   <td style="text-align:right;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> kli57 </td>
-   <td style="text-align:left;"> [Monitoring vegetation change for over 30 years](https://geo511-2019.github.io/2019-geo511-project-kli57) </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> mimonzil </td>
-   <td style="text-align:left;"> [A New Development Index](https://geo511-2019.github.io/2019-geo511-project-mimonzil) </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> mitchhitch-1 </td>
-   <td style="text-align:left;"> [Tool for identifing replicate field study locations](https://geo511-2019.github.io/2019-geo511-project-mitchhitch-1) </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> moiraone </td>
-   <td style="text-align:left;"> [A Regionalized SUNY Impact Assessment](https://geo511-2019.github.io/2019-geo511-project-moiraone) </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> oliviadelos2 </td>
-   <td style="text-align:left;"> [Neighborhood Disadvantage and Crime Variation Over Time](https://geo511-2019.github.io/2019-geo511-project-oliviadelos2) </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Stella-Liao </td>
-   <td style="text-align:left;"> [Crime Prediction in Manhattan, NYC](https://geo511-2019.github.io/2019-geo511-project-Stella-Liao) </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> yliu282 </td>
-   <td style="text-align:left;"> [Analysis of the impacts of Land use/Land cover change on Land Surface Temperature in Austin, Texas](https://geo511-2019.github.io/2019-geo511-project-yliu282) </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> zolal-ayazpour </td>
-   <td style="text-align:left;"> [COPMARISON OF DIFFERENT CLIMATE DATASETS](https://geo511-2019.github.io/2019-geo511-project-zolal-ayazpour) </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-</tbody>
-</table>
+
+|Student        |Title                                                                                                                                                                  | group|
+|:--------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----:|
+|AJKlisavage    |[Invasive Species Tracker](https://geo511-2019.github.io/2019-geo511-project-AJKlisavage)                                                                              |     1|
+|anuwatpe       |[Opioid-Related Deaths in New York State](https://geo511-2019.github.io/2019-geo511-project-anuwatpe)                                                                  |     1|
+|austin3087     |[GEO-511 Semester Project](https://geo511-2019.github.io/2019-geo511-project-austin3087)                                                                               |     1|
+|davidjtor      |[GEO 511: Spatial Data Science Project](https://geo511-2019.github.io/2019-geo511-project-davidjtor)                                                                   |     1|
+|gbream         |[Building, Crossdating, and Analyzing a Tree Ring Chronology from New York’s Genesee Valley](https://geo511-2019.github.io/2019-geo511-project-gbream)                 |     1|
+|hsare          |[Title: “Design a Controller to stabilize a spacecraft’s Attitude”](https://geo511-2019.github.io/2019-geo511-project-hsare)                                           |     2|
+|jpreg          |[Differences in Travel Costs in Talbot County, Md between the White and African American Populations c. 1880](https://geo511-2019.github.io/2019-geo511-project-jpreg) |     1|
+|katlynse       |[The Construction and Deconstruction of Empanada](https://geo511-2019.github.io/2019-geo511-project-katlynse)                                                          |     1|
+|kli57          |[Monitoring vegetation change for over 30 years](https://geo511-2019.github.io/2019-geo511-project-kli57)                                                              |     2|
+|mimonzil       |[A New Development Index](https://geo511-2019.github.io/2019-geo511-project-mimonzil)                                                                                  |     2|
+|mitchhitch-1   |[Tool for identifing replicate field study locations](https://geo511-2019.github.io/2019-geo511-project-mitchhitch-1)                                                  |     2|
+|moiraone       |[A Regionalized SUNY Impact Assessment](https://geo511-2019.github.io/2019-geo511-project-moiraone)                                                                    |     2|
+|oliviadelos2   |[Neighborhood Disadvantage and Crime Variation Over Time](https://geo511-2019.github.io/2019-geo511-project-oliviadelos2)                                              |     2|
+|Stella-Liao    |[Crime Prediction in Manhattan, NYC](https://geo511-2019.github.io/2019-geo511-project-Stella-Liao)                                                                    |     2|
+|yliu282        |[Analysis of the impacts of Land use/Land cover change on Land Surface Temperature in Austin, Texas](https://geo511-2019.github.io/2019-geo511-project-yliu282)        |     2|
+|zolal-ayazpour |[COPMARISON OF DIFFERENT CLIMATE DATASETS](https://geo511-2019.github.io/2019-geo511-project-zolal-ayazpour)                                                           |     2|
 
 
 
@@ -207,93 +72,26 @@ You are invited to explore the student projects below (click on a title to visit
 
 
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> Student </th>
-   <th style="text-align:left;"> Title </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> acerpovicz </td>
-   <td style="text-align:left;"> [Wave Patterns and Hurricanes](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-acerpovicz/) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> allisonleet </td>
-   <td style="text-align:left;"> [Spatial differences in surface temperature mapping using LANDSAT and NOAA weather stations](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-allisonleet) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Canacelqr </td>
-   <td style="text-align:left;"> [Spatial pattern of plant species biodiversity in South Africa—Using Proteaceae family as example](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-Canacelqr) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> HamedGhodsi90 </td>
-   <td style="text-align:left;"> [Interpreting The Stormwater Management Model (SWMM) Output Files](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-HamedGhodsi90) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Henryxie1003 </td>
-   <td style="text-align:left;"> [Tracking tree phenology of Nature View Park in Buffalo](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-Henryxie1003) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> hkhorasani </td>
-   <td style="text-align:left;"> [Investigation of the eutrophication trends in the united states’ northeastern and midwestern lakes](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-hkhorasani) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Jim-King </td>
-   <td style="text-align:left;"> [GWR models in estimating median home value based on urban sustainability framwork](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-Jim-King/) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> jiyuanzh </td>
-   <td style="text-align:left;"> [US Airport Delay and snowfall in January 2018](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-jiyuanzh) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> JonathanMLynch </td>
-   <td style="text-align:left;"> [Historical Hazardous Material Spills in Erie County](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-JonathanMLynch/) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Katie-M-Walsh </td>
-   <td style="text-align:left;"> [Establishing Floodzones and Potential Constructed Wetlands for Wastewater Management](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-Katie-M-Walsh) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> matthewamoia </td>
-   <td style="text-align:left;"> [The occurence of Clemmys guttata (Spotted Turtle) with respect to wetland habitat suitability](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-matthewamoia/) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> nathandubinin </td>
-   <td style="text-align:left;"> [The Story Pollen Tells Us](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-nathandubinin/) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Nino-Martinez </td>
-   <td style="text-align:left;"> [Gentrification and Displacement in Buffalo, NY](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-Nino-Martinez/) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> seankono </td>
-   <td style="text-align:left;"> [Crime and Census Data in Buffalo, New York](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-seankono/) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> sunjiazh </td>
-   <td style="text-align:left;"> [A common nosedive of European tourism in 2015](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-sunjiazh) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> talentstuder </td>
-   <td style="text-align:left;"> [October Temperature Analysis in Buffalo and Western New York Area](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-talentstuder) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> wwang52 </td>
-   <td style="text-align:left;"> [Higher Education in New York State](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-wwang52) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> YingLuGit </td>
-   <td style="text-align:left;"> [Buffalo Land Cover Mapping](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-YingLuGit/) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> zero12r </td>
-   <td style="text-align:left;"> [Visualizing Racial Skewing in Police Traffic Stop](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-zero12r) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> zhang224 </td>
-   <td style="text-align:left;"> [Connection between Deer Tick and Lyme Disease](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-zhang224) </td>
-  </tr>
-</tbody>
-</table>
+
+|Student        |Title                                                                                                                                                                        |
+|:--------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|acerpovicz     |[Wave Patterns and Hurricanes](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-acerpovicz/)                                                                      |
+|allisonleet    |[Spatial differences in surface temperature mapping using LANDSAT and NOAA weather stations](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-allisonleet)        |
+|Canacelqr      |[Spatial pattern of plant species biodiversity in South Africa—Using Proteaceae family as example](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-Canacelqr)    |
+|HamedGhodsi90  |[Interpreting The Stormwater Management Model (SWMM) Output Files](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-HamedGhodsi90)                                |
+|Henryxie1003   |[Tracking tree phenology of Nature View Park in Buffalo](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-Henryxie1003)                                           |
+|hkhorasani     |[Investigation of the eutrophication trends in the united states’ northeastern and midwestern lakes](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-hkhorasani) |
+|Jim-King       |[GWR models in estimating median home value based on urban sustainability framwork](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-Jim-King/)                   |
+|jiyuanzh       |[US Airport Delay and snowfall in January 2018](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-jiyuanzh)                                                        |
+|JonathanMLynch |[Historical Hazardous Material Spills in Erie County](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-JonathanMLynch/)                                           |
+|Katie-M-Walsh  |[Establishing Floodzones and Potential Constructed Wetlands for Wastewater Management](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-Katie-M-Walsh)            |
+|matthewamoia   |[The occurence of Clemmys guttata (Spotted Turtle) with respect to wetland habitat suitability](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-matthewamoia/)   |
+|nathandubinin  |[The Story Pollen Tells Us](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-nathandubinin/)                                                                      |
+|Nino-Martinez  |[Gentrification and Displacement in Buffalo, NY](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-Nino-Martinez/)                                                 |
+|seankono       |[Crime and Census Data in Buffalo, New York](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-seankono/)                                                          |
+|sunjiazh       |[A common nosedive of European tourism in 2015](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-sunjiazh)                                                        |
+|talentstuder   |[October Temperature Analysis in Buffalo and Western New York Area](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-talentstuder)                                |
+|wwang52        |[Higher Education in New York State](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-wwang52)                                                                    |
+|YingLuGit      |[Buffalo Land Cover Mapping](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-YingLuGit/)                                                                         |
+|zero12r        |[Visualizing Racial Skewing in Police Traffic Stop](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-zero12r)                                                     |
+|zhang224       |[Connection between Deer Tick and Lyme Disease](https://adamwilsonlabedu.github.io/geo503-2018-finalproject-zhang224)                                                        |

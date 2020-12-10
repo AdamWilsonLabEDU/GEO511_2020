@@ -38,9 +38,10 @@ d=data.frame(url=
   "geo511-2020-project-BhavanaPoladi",
   "geo511-2020-project-coconn41",
   "geo511-2020-project-WeishanBai",
-  "geo511-2020-project-mahmoodkaiser"
+  "geo511-2020-project-mahmoodkaiser",
+  "geo511-2020-project-betsymccall"
   )),
-  group=c(rep(1,6),rep(2,8)),
+  group=c(rep(1,6),rep(2,9)),
   stringsAsFactors = F)
 
 d=d%>%mutate(user=sub("/","",
