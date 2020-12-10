@@ -36,12 +36,13 @@ examples:
 
 first draft submitted earilier for video feedback.
 
+
 File Structure
 
 * put all case studies in .Rmd with github markdown output (include summary of project, name, etc.)
-* Use travis CI to ensure content builds
+* Use github actions to ensure content builds
 * gitignore data
-* Grand checklist for completed tasks
+* Grand checklist for completed tasks?
 * update links to course repository
 
 
@@ -63,6 +64,12 @@ General repository rules:
 Package presentation?  IF keeping, use a Rmd structure inside course repositories so they can be opened on the fly.
 
 
+## 2020
+
+* Break assignments into separate repositories with tests?
+* Spatial regression using buffalo data?
+* Use piggyback for associated data?
+
 ## Tasks to add
 early:
 * Data visualization: https://dcl-2017-04.github.io/curriculum/vis-perception.html
@@ -75,11 +82,10 @@ early:
 * update profile on github
 * Add short description to top-level README in github repository
 
-
 ### Project related tasks
-* convert project to separate tasks and upload to git repository
+* convert project to separate tasks (?) and upload to git repository
 
 ## Every Semester
 * update google sheets links - do I still need to do this with classroom?
-* Create new assignment
+* Create new assignments
 * Update github classroom links in task 2
