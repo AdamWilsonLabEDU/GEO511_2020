@@ -1,0 +1,22 @@
+Package: UB.GEO511
+Type: Website
+Title: Course Website for Spatial Data Science (GEO511)
+Version: 0.1.0
+Author: Adam M. Wilson <adamw@buffalo.edu>
+Maintainer: Adam M. Wilson <adamw@buffalo.edu>
+Description: Includes course details, syllabus, and assignments for GEO511
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports:
+    rmarkdown,
+    DT,
+    zoo,
+    sf,
+    tidyverse,
+    leaflet,
+    doParallel,
+    lubridate
+Suggests: 
+    testthat
+RoxygenNote: 7.1.1
