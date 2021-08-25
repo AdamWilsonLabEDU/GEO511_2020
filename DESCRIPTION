@@ -16,7 +16,8 @@ Imports:
     tidyverse,
     leaflet,
     doParallel,
-    lubridate
+    lubridate,
+    ggthemes
 Suggests: 
     testthat
 RoxygenNote: 7.1.1
